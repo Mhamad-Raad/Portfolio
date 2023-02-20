@@ -25,6 +25,7 @@ ul {
       font-size: 18px;
       color: $Primary-Text-Color;
       font-weight: bold;
+      font-family: $Header-Font;
       &:hover {
         color: #f1c40f;
       }
@@ -36,6 +37,7 @@ ul {
   &__logo {
     font-weight: bolder;
     font-size: 20px;
+    font-family: $Header-Font;
     color: $Primary-Text-Color;
   }
 }
