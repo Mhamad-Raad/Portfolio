@@ -1,6 +1,6 @@
 // import NavBar from './Components/Navbar/NavBar';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Stars, Cloud, Html } from '@react-three/drei';
+import { OrbitControls, Stars, Cloud, Html, Text3D, Sky } from '@react-three/drei';
 // import Background from './Components/Background'
 
 import './App.scss';
@@ -9,19 +9,24 @@ function App() {
   return (
     <div
       style={{
-        height: '100vh',
+        height: '500px',
+        width: '100%',
       }}
     >
       <Canvas
         camera={{
-          position: [0, 0, 50],
+          position: [0, 10, 20],
         }}
-        
+        style={
+          {
+            width: '100%'
+          }
+        }
       >
         <group>
-          <Cloud opacity={0.3} depth={1.5} segments={20}></Cloud>
           <Html
-            position={[-1, 0, 0]}
+          
+            position={[0, 0, 0]}
             style={{
               width: '100%',
               height: '100%',
@@ -29,23 +34,37 @@ function App() {
               justifyContent: 'center',
               alignItems: 'center',
               flexDirection: 'column',
-              background: 'red'
+              position: 'relative'
             }}
           >
-            <h1 style={{
-              color: 'white',
-              fontSize: '5rem',
-              fontWeight: 'bold',
-              textShadow: '0 0 10px #000',
-              width: '500px'
-            }}>Mhamad Raad</h1>
+            <h1
+              style={{
+                fontSize: '3rem',
+                fontWeight: 'bold',
+                color: 'white',
+                width: '100%',
+              }}
+            >
+              Mhamad Raad
+            </h1>
             <h2>Front-end Developer</h2>
           </Html>
-          <Stars />
         </group>
-        <OrbitControls
-          enableZoom={false}
-        />
+        <OrbitControls enableZoom={false} />
+        <Stars 
+          radius={100}
+          depth={100}
+          count={5000} 
+          factor={4} 
+          saturation={1} 
+          fade 
+          speed={1.25}
+         />
+      </Canvas>
+
+      <Canvas  camera={{
+          position: [0, 10, 20],
+        }}>
       </Canvas>
     </div>
   );
