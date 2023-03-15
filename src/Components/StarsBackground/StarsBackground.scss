@@ -1,0 +1,29 @@
+@use '../../Styles/variables' as *;
+
+.stars-bg {
+  height: 500px;
+  width: 100%;
+}
+
+.name-position-bg {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    font-family: $Header-Font;
+  }
+
+  &__position {
+    font-weight: bold;
+    color: white;
+    font-family: $Header-Font;
+  }
+}
