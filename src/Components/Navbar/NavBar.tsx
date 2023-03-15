@@ -1,8 +1,9 @@
 // import { Link } from 'react-router-dom';
-// import './variables.scss'
 import './Navbar.scss';
 
-const Header: React.FC<{}> = () => {
+interface HeaderProps {}
+
+const Header: React.FC<HeaderProps> = () => {
   return (
     <ul className='nav'>
       <li className='nav__logo'>Logo</li>
