@@ -16,12 +16,13 @@ export default function Background() {
           radius={100}
           depth={100}
           count={5000}
-          factor={4}
+          factor={5}
           saturation={1}
           fade
           speed={1.25}
         />
       </Canvas>
+
       <div className='name-position-bg'>
         <h1 className='name-position-bg__name'>Mhamad Raad</h1>
         <h2 className='name-position-bg__position'>Front-end Developer</h2>
