@@ -1,9 +1,14 @@
 import { useState, useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial, Preload, OrbitControls} from '@react-three/drei';
+import {
+  Points,
+  PointMaterial,
+  Preload,
+  OrbitControls,
+} from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
 
-import './StarsBackground.scss'
+import './StarsBackground.scss';
 
 const Stars = (props) => {
   const ref = useRef();
@@ -35,8 +40,10 @@ const MovingMeteor = () => {
   const ref = useRef();
 
   useFrame((state, delta) => {
-    ref.current.position.x += delta;
-    ref.current.position.y += delta;
+    if (ref.current.position.x > -0.5 && ref.current.position.x < 2) {
+      ref.current.position.x += delta;
+      ref.current.position.y += delta;
+    } 
   });
 
   return (
@@ -45,7 +52,7 @@ const MovingMeteor = () => {
       <meshStandardMaterial color='#f272c8' />
     </mesh>
   );
-}
+};
 
 const StarsCanvas = () => {
   return (
