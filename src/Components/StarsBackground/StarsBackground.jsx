@@ -5,6 +5,7 @@ import {
   PointMaterial,
   Preload,
   OrbitControls,
+  useGLTF,
 } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
 
@@ -38,13 +39,13 @@ const Stars = (props) => {
 
 const MovingMeteor = () => {
   const ref = useRef();
-  const [reverse, setReverse] = useState(false)
+  const [reverse, setReverse] = useState(false);
 
   useFrame((state, delta) => {
     if (ref.current.position.x < -5 && ref.current.position.y < -5) {
-      setReverse(true)
+      setReverse(true);
     } else if (ref.current.position.x > 5 && ref.current.position.y > 5) {
-      setReverse(false)
+      setReverse(false);
     }
 
     if (!reverse) {
@@ -64,14 +65,31 @@ const MovingMeteor = () => {
   );
 };
 
+const FloatingTesla = () => {
+  const ref = useRef();
+  const { scene } = useGLTF('./models/tesla.glb');
+
+  // useFrame((state, delta) => {
+  //   ref.current.rotation.y += delta / 2;
+  // });
+
+  return (
+    <group position={[2,2,2]} scale={.1}>
+      <primitive object={scene} />;
+    </group>
+  );
+};
+
 const StarsCanvas = () => {
   return (
     <div className='stars-bg'>
       <Canvas camera={{ position: [0, 0, 1] }}>
+        <ambientLight />
         <OrbitControls />
         <Suspense fallback={null}>
           <Stars />
           <MovingMeteor />
+          <FloatingTesla />
         </Suspense>
 
         <Preload all />
