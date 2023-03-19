@@ -38,16 +38,26 @@ const Stars = (props) => {
 
 const MovingMeteor = () => {
   const ref = useRef();
+  const [reverse, setReverse] = useState(false)
 
   useFrame((state, delta) => {
-    if (ref.current.position.x > -0.5 && ref.current.position.x < 2) {
-      ref.current.position.x += delta;
-      ref.current.position.y += delta;
-    } 
+    if (ref.current.position.x < -5 && ref.current.position.y < -5) {
+      setReverse(true)
+    } else if (ref.current.position.x > 5 && ref.current.position.y > 5) {
+      setReverse(false)
+    }
+
+    if (!reverse) {
+      ref.current.position.x -= delta / 2;
+      ref.current.position.y -= delta / 2;
+    } else if (reverse) {
+      ref.current.position.x += delta / 2;
+      ref.current.position.y += delta / 2;
+    }
   });
 
   return (
-    <mesh ref={ref} position={[0, 0, 0]}>
+    <mesh ref={ref} position={[-5, -5, 0]}>
       <sphereGeometry args={[0.1, 32, 32]} />
       <meshStandardMaterial color='#f272c8' />
     </mesh>
