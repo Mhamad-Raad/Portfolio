@@ -72,11 +72,8 @@ const FloatingTesla = () => {
 
   useFrame((state, delta) => {
     const t = state.clock.getElapsedTime();
-    // ref.current.rotation.x = -Math.PI / 1.75 + Math.cos(t / 4) / 8
-    ref.current.rotation.y = Math.sin(t / 4) / 8
-    ref.current.rotation.z = (1 + Math.sin(t / 1.5)) / 20
-    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 10
-    ref.current.rotation.x -= delta / 10;
+    ref.current.rotation.z = (1 + Math.sin(t/ 10)) / 10
+    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 5
     ref.current.rotation.y -= delta / 15;
   });
 
