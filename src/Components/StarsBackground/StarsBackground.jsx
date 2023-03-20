@@ -72,13 +72,18 @@ const FloatingTesla = () => {
 
   useFrame((state, delta) => {
     const t = state.clock.getElapsedTime();
-    ref.current.rotation.z = (1 + Math.sin(t/ 10)) / 10
-    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 5
+    ref.current.rotation.z = (1 + Math.sin(t / 10)) / 10;
+    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 5;
     ref.current.rotation.y -= delta / 15;
   });
 
   return (
-    <group position={[1.5, -0.1, 0]} scale={0.071} rotation={[1, -1, 0]} ref={ref}>
+    <group
+      position={[1.5, -0.1, 0]}
+      scale={0.071}
+      rotation={[1, -1, 0]}
+      ref={ref}
+    >
       <primitive object={scene} />;
       <pointLight
         position={[10, 10, 10]}
@@ -86,6 +91,26 @@ const FloatingTesla = () => {
         color='white'
         castShadow
       />
+    </group>
+  );
+};
+
+const Astronount = () => {
+  const ref = useRef();
+  const { scene } = useGLTF('./models/satalite.glb');
+
+  useFrame((state, delta) => {
+    ref.current.rotation.y -= delta / 15;
+  });
+
+  return (
+    <group
+      position={[-1.4, -.5, 0]}
+      scale={0.01}
+      ref={ref}
+    >
+      <primitive object={scene} />;
+      <ambientLight />
     </group>
   );
 };
@@ -100,6 +125,7 @@ const StarsCanvas = () => {
           <Stars />
           <MovingMeteor />
           <FloatingTesla />
+          <Astronount />
         </Suspense>
 
         <Preload all />
