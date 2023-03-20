@@ -1,4 +1,5 @@
 import { useState, useRef, Suspense } from 'react';
+import * as THREE from 'three';
 import { Canvas, useFrame } from '@react-three/fiber';
 import {
   Points,
@@ -18,7 +19,7 @@ const Stars = (props) => {
   );
 
   useFrame((state, delta) => {
-    // ref.current.rotation.x -= delta / 10;
+    ref.current.rotation.x -= delta / 10;
     ref.current.rotation.y -= delta / 15;
   });
 
@@ -69,13 +70,25 @@ const FloatingTesla = () => {
   const ref = useRef();
   const { scene } = useGLTF('./models/tesla.glb');
 
-  // useFrame((state, delta) => {
-  //   ref.current.rotation.y += delta / 2;
-  // });
+  useFrame((state, delta) => {
+    const t = state.clock.getElapsedTime();
+    // ref.current.rotation.x = -Math.PI / 1.75 + Math.cos(t / 4) / 8
+    ref.current.rotation.y = Math.sin(t / 4) / 8
+    ref.current.rotation.z = (1 + Math.sin(t / 1.5)) / 20
+    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 10
+    ref.current.rotation.x -= delta / 10;
+    ref.current.rotation.y -= delta / 15;
+  });
 
   return (
-    <group position={[2,2,2]} scale={.1}>
+    <group position={[1.5, -0.1, 0]} scale={0.071} rotation={[1, -1, 0]} ref={ref}>
       <primitive object={scene} />;
+      <pointLight
+        position={[10, 10, 10]}
+        intensity={1}
+        color='white'
+        castShadow
+      />
     </group>
   );
 };
