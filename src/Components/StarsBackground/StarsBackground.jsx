@@ -1,5 +1,4 @@
 import { useState, useRef, Suspense } from 'react';
-import * as THREE from 'three';
 import { Canvas, useFrame } from '@react-three/fiber';
 import {
   Points,
@@ -42,6 +41,8 @@ const MovingMeteor = () => {
   const ref = useRef();
   const [reverse, setReverse] = useState(false);
 
+  const { scene } = useGLTF('./models/meteor.glb');
+
   useFrame((state, delta) => {
     if (ref.current.position.x < -5 && ref.current.position.y < -5) {
       setReverse(true);
@@ -59,10 +60,9 @@ const MovingMeteor = () => {
   });
 
   return (
-    <mesh ref={ref} position={[-5, -5, 0]}>
-      <sphereGeometry args={[0.1, 32, 32]} />
-      <meshStandardMaterial color='#f272c8' />
-    </mesh>
+    <group position={[-5, -5, 0]} ref={ref} scale={0.1}>
+      <primitive object={scene} />;
+    </group>
   );
 };
 
