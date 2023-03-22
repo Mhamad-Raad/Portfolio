@@ -1,11 +1,9 @@
 import { useRef } from 'react';
-import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import Samurai from './Scene';
+import Samurai from './Samurai';
 
 const SamuraiModel = () => {
   const group = useRef();
-
 
   useFrame(() => {
     // group.current.rotation.y += 0.01;
