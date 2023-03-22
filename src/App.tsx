@@ -1,14 +1,17 @@
 import NavBar from './Components/Navbar/NavBar';
 import Background from './Components/StarsBackground/StarsBackground';
+import AboutMe from './Components/AboutMe/AboutMe';
+import Clouds from './Components/CloudSeperator/Clouds';
 
 import './App.scss';
-import { Canvas } from '@react-three/fiber';
 
 const App = () => {
   return (
     <div className='app-page'>
       <NavBar />
-        <Background />
+      <Background />
+      <Clouds />
+      <AboutMe />
     </div>
   );
 };
