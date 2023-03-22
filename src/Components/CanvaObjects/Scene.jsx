@@ -7,13 +7,14 @@ Source: https://sketchfab.com/3d-models/cyber-samurai-26ccafaddb2745ceb56ae5cfc6
 Title: Cyber Samurai
 */
 
-// import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
 const Model = (props) => {
+  const ref = useRef()
   const { nodes, materials } = useGLTF('/models/samurai.glb')
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} ref={ref}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <mesh castShadow geometry={nodes.Object_2.geometry} material={materials.Robe2} />
         <mesh castShadow geometry={nodes.Object_3.geometry} material={materials.Robe} />
