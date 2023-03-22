@@ -13,7 +13,7 @@ const AboutMe: FC<AboutMeProps> = () => {
       <div className="about-me__description">
       </div>
       <div className="about-me__samurai">
-        <Canvas>
+        <Canvas shadows>
           <OrbitControls />
           <ambientLight />
           <pointLight position={[10, 10, 10]} />

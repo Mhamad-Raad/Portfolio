@@ -11,8 +11,8 @@ const SamuraiModel = () => {
   });
 
   return (
-    <group ref={group}>
-      <primitive object={scene} />
+    <group ref={group} position={[0, -2, 0]} scale={2}>
+      <primitive object={scene} castShadow/>
     </group>
   );
 };
