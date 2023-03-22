@@ -1,14 +1,13 @@
-import { FC } from 'react'
+import { FC } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { OrbitControls, Plane, Cloud } from '@react-three/drei';
 
-import SamuraiModel from '../CanvaObjects/SamuraiModel'
-import './AboutMe.scss'
+import SamuraiModel from '../CanvaObjects/SamuraiModel';
+import './AboutMe.scss';
 
 interface AboutMeProps {}
 
 const AboutMe: FC<AboutMeProps> = () => {
-
   return (
     <section className='about-me'>
       <div className='about-me__description'></div>
@@ -34,17 +33,17 @@ const AboutMe: FC<AboutMeProps> = () => {
           >
             <meshStandardMaterial attach='material' color='grey' />
           </Plane>
-          <Cloud opacity={0.75} position={[0, 2, -5]} scale={[0.5, 0.5, 0.5]} />
+          <Cloud opacity={0.75} position={[-3, 1, -5]} scale={[0.5, 0.5, 0.5]} />
           <Cloud
             opacity={0.75}
-            position={[-4, 3, -4]}
+            position={[-6, 0, -1]}
             scale={[0.5, 0.5, 0.5]}
           />
-          <Cloud opacity={0.75} position={[3, 2, -6]} scale={[0.5, 0.5, 0.5]} />
+          <Cloud opacity={0.75} position={[3, 1, -6]} scale={[0.5, 0.5, 0.5]} />
         </Canvas>
       </div>
     </section>
   );
-}
+};
 
 export default AboutMe;
