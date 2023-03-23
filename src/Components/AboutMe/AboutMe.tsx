@@ -10,7 +10,9 @@ interface AboutMeProps {}
 const AboutMe: FC<AboutMeProps> = () => {
   return (
     <section className='about-me'>
-      <div className='about-me__description'></div>
+      <div className='about-me__description'>
+        <h2 className='about-me__description__title'>About Me</h2>
+      </div>
       <div className='about-me__samurai'>
         <Canvas
           shadows
