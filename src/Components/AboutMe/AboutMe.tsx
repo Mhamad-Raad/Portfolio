@@ -12,16 +12,17 @@ const AboutMe: FC<AboutMeProps> = () => {
     <section className='about-me'>
       <div className='about-me__description'>
         <h2 className='about-me__description__title'>
-          Hi There <span className='about-me__description__title__wave'>👋</span>,
-          I am Mhamad
+          Hi There{' '}
+          <span className='about-me__description__title__wave'>👋</span>
+          , I am Mhamad
         </h2>
-        <h4 className='about-me__description__subheader'></h4>
-        <p>
-          I am a full stack developer with a passion for learning new
-          technologies. I have a background in the hospitality industry and
-          customer service. I am a self-taught developer who is always looking
-          to improve my skills and learn new things. I am currently looking for
-          a full time position as a developer.
+        <p className='about-me__description__me'>
+          I am a Software Engineer Graduate, that is very passionate about learning new technologies,
+          making new connections, and make a career in front end development, of course in this field only tech skills wont be enough,
+          thoughout my experience and journey I have also improved my time management, and communications, but also I have recieved
+          a lot of feedback from my colleagues and friends, such as I am highly adaptive, dedicated, and hard working, like
+          a Samurai which is a great honor toward both work and my surroundings,
+          interested in learning more?
         </p>
       </div>
       <div className='about-me__samurai'>
