@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Plane, Cloud } from '@react-three/drei';
 
 import SamuraiModel from '../CanvaObjects/SamuraiModel';
