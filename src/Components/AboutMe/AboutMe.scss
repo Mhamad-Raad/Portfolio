@@ -22,6 +22,14 @@
       color: $Primary-Text-Color;
       font-family: $Header-Font;
       margin-bottom: 1rem;
+
+      &__wave {
+          animation-duration: 2.5s;
+          animation-iteration-count: infinite;
+          transform-origin: 70% 70%;
+          display: inline-block;
+          animation-name: wave;
+      }
     }
   }
 
@@ -39,4 +47,13 @@
     box-sizing: border-box;
     
   }
+}
+
+@keyframes wave {
+  20% { transform: rotate(-8.0deg) }
+  30% { transform: rotate(14.0deg) }
+  40% { transform: rotate(-4.0deg) }
+  50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
 }
