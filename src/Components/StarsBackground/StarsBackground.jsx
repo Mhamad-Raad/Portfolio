@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Preload, OrbitControls } from '@react-three/drei';
+import { Link } from 'react-scroll';
 
 import Stars from '../CanvaObjects/Stars';
 import Satalite from '../CanvaObjects/Satalite';
@@ -29,10 +30,16 @@ const StarsCanvas = () => {
         </h2>
       </div>
       <div className='stars-bg__scroll'>
-        <a href="#about-me">
+        <Link
+          to='about-me'
+          ignoreCancelEvents={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+        >
           <span className='stars-bg__scroll__title'>Scroll</span>
           <span className='stars-bg__scroll__scroll'></span>
-        </a>
+        </Link>
       </div>
     </section>
   );
