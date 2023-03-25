@@ -11,7 +11,7 @@ const Satalite = () => {
   });
 
   return (
-    <group position={[-1.4, -0.5, 0]} scale={0.01} ref={ref}>
+    <group position={[-1, -0.3, 0]} scale={0.01} ref={ref}>
       <primitive object={scene} />;
       <ambientLight />
     </group>
