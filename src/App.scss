@@ -27,4 +27,9 @@ input {
   border: none;
   background: none;
   text-decoration: none;
+
+  &:hover {
+    cursor: pointer !important;
+  }
 }
+
