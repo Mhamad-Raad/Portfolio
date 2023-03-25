@@ -29,7 +29,7 @@ const StarsCanvas = () => {
         </h2>
       </div>
       <div className='stars-bg__scroll'>
-        <a>
+        <a href="#about-me">
           <span className='stars-bg__scroll__title'>Scroll</span>
           <span className='stars-bg__scroll__scroll'></span>
         </a>

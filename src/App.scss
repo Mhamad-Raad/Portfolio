@@ -8,6 +8,8 @@
 
 body {
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   height: 100vh;
   background-color: $Background-Color;
 }
@@ -25,5 +27,4 @@ input {
   border: none;
   background: none;
   text-decoration: none;
-  cursor: pointer;
 }

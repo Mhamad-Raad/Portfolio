@@ -41,6 +41,7 @@
 
   &__scroll {
     position: absolute;
+    z-index: 10;
     bottom: 75px;
     left: 50%;
     margin-left: -12px;

@@ -10,10 +10,10 @@ interface AboutMeProps {}
 
 const AboutMe: FC<AboutMeProps> = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
 
   return (
-    <section className='about-me' ref={ref}>
+    <section className='about-me' id='about-me' ref={ref}>
       <div
         className='about-me__description'
         style={{
