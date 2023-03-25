@@ -33,3 +33,24 @@ input {
   }
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  // display: none;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #3d3244;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4f4857;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2b2433;
+}
+
