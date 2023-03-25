@@ -17,3 +17,13 @@ body {
   height: 100vh;
   position: relative;
 }
+
+a, 
+button,
+input {
+  outline: none;
+  border: none;
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
+}
