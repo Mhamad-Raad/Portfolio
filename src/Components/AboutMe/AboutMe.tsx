@@ -38,6 +38,12 @@ const AboutMe: FC<AboutMeProps> = () => {
           is a great honor toward both work and my surroundings, interested in
           learning more?
         </p>
+
+        <div className='about-me__description__connection'>
+          <h3 className='about-me__description__connection__title'>Let's Connect</h3>
+          <div className='about-me__description__connection__social'>
+          </div>
+        </div>
       </div>
       <div
         className='about-me__samurai'
