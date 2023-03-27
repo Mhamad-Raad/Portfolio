@@ -54,3 +54,13 @@ input {
   background: #2b2433;
 }
 
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}

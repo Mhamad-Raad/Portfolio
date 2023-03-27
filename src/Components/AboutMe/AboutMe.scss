@@ -25,11 +25,11 @@
       margin-bottom: 1rem;
 
       &__wave {
-          animation-duration: 2.5s;
-          animation-iteration-count: infinite;
-          transform-origin: 70% 70%;
-          display: inline-block;
-          animation-name: wave;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        transform-origin: 70% 70%;
+        display: inline-block;
+        animation-name: wave;
       }
     }
 
@@ -45,22 +45,90 @@
 
     &__connection {
       margin-top: 75px;
+      width: 75%;
+      position: relative;
+      justify-content: flex-start;
+      align-items: flex-start;
 
-      &__title {
-        font-size: 1rem;
-        font-weight: 400;
-        color: $Primary-Text-Color;
-        font-family: $Header-Font;
-        margin-left: 18px;
+      &__connect {
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 50%;
+
+        &__title {
+          font-size: 1rem;
+          font-weight: 400;
+          color: $Primary-Text-Color;
+          font-family: $Header-Font;
+          margin-left: 15px;
+        }
+
+        &__social {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          width: 50%;
+          height: 100px;
+        }
       }
 
-      &__social {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
+      &__resume {
         width: 50%;
-        height: 100px;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        &__title {
+          font-size: 1rem;
+          font-weight: 400;
+          color: $Primary-Text-Color;
+          font-family: $Header-Font;
+        }
+
+        &__download {
+          position: relative;
+          background: none;
+          color: aqua;
+          text-transform: uppercase;
+          text-decoration: none;
+          border: 0.2em solid aqua;
+          padding: 0.5em 1em;
+
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 10%;
+            background: #222;
+            height: 0.3em;
+            right: 20%;
+            top: -0.21em;
+            transform: skewX(-45deg);
+            -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+            transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+          }
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 10%;
+            background: #222;
+            height: 0.3em;
+            left: 20%;
+            bottom: -0.25em;
+            transform: skewX(45deg);
+            -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+            transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+          }
+          &:hover {
+            &::before {
+              right: 80%;
+            }
+            &::after {
+              left: 80%;
+            }
+          }
+        }
       }
     }
   }
@@ -77,15 +145,26 @@
     border-top-right-radius: 20px;
     background-color: transparent;
     box-sizing: border-box;
-    
   }
 }
 
 @keyframes wave {
-  20% { transform: rotate(-8.0deg) }
-  30% { transform: rotate(14.0deg) }
-  40% { transform: rotate(-4.0deg) }
-  50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
-  100% { transform: rotate( 0.0deg) }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
 }

@@ -51,13 +51,23 @@ const AboutMe: FC<AboutMeProps> = () => {
           learning more?
         </p>
 
-        <div className='about-me__description__connection'>
-          <h3 className='about-me__description__connection__title'>
-            Let's Connect
-          </h3>
-          <div className='about-me__description__connection__social'>
-            <ConnectionItem img={LinkedInImg} clickHandler={goToLinkedIn} />
-            <ConnectionItem img={GitHubImg} clickHandler={goToGithub} />
+        <div className='about-me__description__connection row'>
+          <div className='column about-me__description__connection__connect'>
+            <h3 className='about-me__description__connection__connect__title'>
+              Let's Connect
+            </h3>
+            <div className='about-me__description__connection__connect__social'>
+              <ConnectionItem img={LinkedInImg} clickHandler={goToLinkedIn} />
+              <ConnectionItem img={GitHubImg} clickHandler={goToGithub} />
+            </div>
+          </div>
+          <div className='column about-me__description__connection__resume'>
+            <h3 className='about-me__description__connection__resume__title'>
+              Resume
+            </h3>
+            <a className='about-me__description__connection__resume__download'>
+              Download
+            </a>
           </div>
         </div>
       </div>
