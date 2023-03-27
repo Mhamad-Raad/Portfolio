@@ -91,10 +91,10 @@
           font-weight: bolder;
           background: none;
           font-family: $Body-Font;
-          color: rgb(162, 0, 255);
+          color: $Active-Color;
           text-transform: uppercase;
           text-decoration: none;
-          border: 0.2em solid rgb(162, 0, 255);
+          border: 0.2em solid $Active-Color;
           padding: 0.5em 1em;
 
           &::before {

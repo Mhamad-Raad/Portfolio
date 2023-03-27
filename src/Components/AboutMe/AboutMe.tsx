@@ -65,7 +65,7 @@ const AboutMe: FC<AboutMeProps> = () => {
             <h3 className='about-me__description__connection__resume__title'>
               Resume
             </h3>
-            <a className='about-me__description__connection__resume__download'>
+            <a className='about-me__description__connection__resume__download'  href='./primary.pdf' target='_blank'>
               Download
             </a>
           </div>
