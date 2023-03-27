@@ -7,6 +7,9 @@ import SamuraiModel from '../CanvaObjects/SamuraiModel';
 import './AboutMe.scss';
 import ConnectionItem from './ConnectionItem';
 
+import LinkedInImg from '../../assets/LinkedIn.jpg';
+import GitHubImg from '../../assets/GitHub.png';
+
 interface AboutMeProps {}
 
 const AboutMe: FC<AboutMeProps> = () => {
@@ -45,9 +48,8 @@ const AboutMe: FC<AboutMeProps> = () => {
             Let's Connect
           </h3>
           <div className='about-me__description__connection__social'>
-            <ConnectionItem />
-            <ConnectionItem />
-            <ConnectionItem />
+            <ConnectionItem img={LinkedInImg} />
+            <ConnectionItem img={GitHubImg} />
           </div>
         </div>
       </div>

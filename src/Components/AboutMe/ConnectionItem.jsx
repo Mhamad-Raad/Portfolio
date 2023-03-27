@@ -3,8 +3,6 @@ import { TextureLoader } from 'three/src/loaders/TextureLoader.js';
 import { useRef, Suspense } from 'react';
 import { OrbitControls } from '@react-three/drei';
 
-import img1 from '../../assets/LinkedIn.jpg';
-
 const Item = ({ img }) => {
   const ref = useRef(null);
 
@@ -31,14 +29,14 @@ const Item = ({ img }) => {
   );
 };
 
-const Connection = () => {
-  const texture_1 = useLoader(TextureLoader, img1);
+const Connection = ({img}) => {
+  const texture = useLoader(TextureLoader, img);
   return (
     <Canvas style={{ width: '75px' }}>
       <OrbitControls enableZoom={false} enablePan={false} />
       <ambientLight intensity={0.38} />
       <Suspense fallback={null}>
-        <Item img={texture_1} />
+        <Item img={texture} />
       </Suspense>
     </Canvas>
   );
