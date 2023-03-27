@@ -3,7 +3,7 @@ import { TextureLoader } from 'three/src/loaders/TextureLoader.js';
 import { useRef, Suspense } from 'react';
 import { OrbitControls } from '@react-three/drei';
 
-const Item = ({ img }) => {
+const Item = ({ img, clickHandler }) => {
   const ref = useRef(null);
 
   useFrame(() => {
@@ -12,7 +12,7 @@ const Item = ({ img }) => {
   });
 
   return (
-    <mesh ref={ref} onClick={(e) => console.log('click')}>
+    <mesh ref={ref} onClick={(e) => clickHandler()}>
       <boxBufferGeometry
         attach='geometry'
         position={[-2, 0, 0]}
@@ -29,7 +29,7 @@ const Item = ({ img }) => {
   );
 };
 
-const Connection = ({img}) => {
+const Connection = ({img, clickHandler}) => {
   const texture = useLoader(TextureLoader, img);
   return (
     <Canvas style={{
@@ -39,7 +39,7 @@ const Connection = ({img}) => {
       <OrbitControls enableZoom={false} enablePan={false} />
       <ambientLight intensity={0.38} />
       <Suspense fallback={null}>
-        <Item img={texture} />
+        <Item img={texture} clickHandler={clickHandler} />
       </Suspense>
     </Canvas>
   );

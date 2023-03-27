@@ -16,6 +16,14 @@ const AboutMe: FC<AboutMeProps> = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref);
 
+  const goToGithub = () => {
+    window.open('https://github.com/Mhamad-Raad');
+  };
+
+  const goToLinkedIn = () => {
+    window.open('https://www.linkedin.com/in/mhamad-raad');
+  };
+
   return (
     <section className='about-me' id='about-me' ref={ref}>
       <div
@@ -48,8 +56,8 @@ const AboutMe: FC<AboutMeProps> = () => {
             Let's Connect
           </h3>
           <div className='about-me__description__connection__social'>
-            <ConnectionItem img={LinkedInImg} />
-            <ConnectionItem img={GitHubImg} />
+            <ConnectionItem img={LinkedInImg} clickHandler={goToLinkedIn} />
+            <ConnectionItem img={GitHubImg} clickHandler={goToGithub} />
           </div>
         </div>
       </div>
