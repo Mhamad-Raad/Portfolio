@@ -32,7 +32,10 @@ const Item = ({ img }) => {
 const Connection = ({img}) => {
   const texture = useLoader(TextureLoader, img);
   return (
-    <Canvas style={{ width: '75px' }}>
+    <Canvas style={{
+      width: '75px',
+      height: '100px',
+    }}>
       <OrbitControls enableZoom={false} enablePan={false} />
       <ambientLight intensity={0.38} />
       <Suspense fallback={null}>
