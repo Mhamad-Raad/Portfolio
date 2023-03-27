@@ -52,6 +52,16 @@
         color: $Primary-Text-Color;
         font-family: $Header-Font;
         margin-bottom: 1rem;
+        margin-left: 18px;
+      }
+
+      &__social {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 50%;
+        height: 100px;
       }
     }
   }

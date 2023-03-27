@@ -6,7 +6,7 @@ import { OrbitControls } from '@react-three/drei';
 import img1 from '../../assets/LinkedIn.jpg';
 
 const Item = ({ img }) => {
-  const ref = useRef();
+  const ref = useRef(null);
 
   useFrame(() => {
     ref.current.rotation.x += 0.01;
@@ -14,10 +14,10 @@ const Item = ({ img }) => {
   });
 
   return (
-    <mesh ref={ref}>
+    <mesh ref={ref} onClick={(e) => console.log('click')}>
       <boxBufferGeometry
         attach='geometry'
-        position={[0, 0, 0]}
+        position={[-2, 0, 0]}
         radius={0}
         args={[2, 2, 2]}
       />
@@ -34,14 +34,9 @@ const Item = ({ img }) => {
 const Connection = () => {
   const texture_1 = useLoader(TextureLoader, img1);
   return (
-    <Canvas colorManagement>
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-      />
+    <Canvas style={{ width: '75px' }}>
+      <OrbitControls enableZoom={false} enablePan={false} />
       <ambientLight intensity={0.38} />
-      {/* <spotLight position={[10, 10, 10]} angle={0.15} intensity={.5} /> */}
-      <pointLight position={[-10, -10, -10]} />
       <Suspense fallback={null}>
         <Item img={texture_1} />
       </Suspense>

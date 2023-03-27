@@ -5,7 +5,7 @@ import { useInView } from 'framer-motion';
 
 import SamuraiModel from '../CanvaObjects/SamuraiModel';
 import './AboutMe.scss';
-import ConnectionList from './ConnectionList';
+import ConnectionItem from './ConnectionItem';
 
 interface AboutMeProps {}
 
@@ -41,9 +41,13 @@ const AboutMe: FC<AboutMeProps> = () => {
         </p>
 
         <div className='about-me__description__connection'>
-          <h3 className='about-me__description__connection__title'>Let's Connect</h3>
+          <h3 className='about-me__description__connection__title'>
+            Let's Connect
+          </h3>
           <div className='about-me__description__connection__social'>
-            <ConnectionList />
+            <ConnectionItem />
+            <ConnectionItem />
+            <ConnectionItem />
           </div>
         </div>
       </div>
