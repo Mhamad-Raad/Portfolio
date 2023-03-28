@@ -6,7 +6,8 @@ import { Link } from 'react-scroll';
 import Stars from '../CanvaObjects/Stars';
 import Satalite from '../CanvaObjects/Satalite';
 import MovingMeteor from '../CanvaObjects/MovingMeteor';
-import FloatingTesla from '../CanvaObjects/Astronount';
+import Astrounount from '../CanvaObjects/Astronount';
+import Ship from '../CanvaObjects/ShipModel';
 
 import './StarsBackground.scss';
 
@@ -18,8 +19,9 @@ const StarsCanvas = () => {
         <Suspense fallback={null}>
           <Stars />
           <MovingMeteor />
-          <FloatingTesla />
+          <Astrounount />
           <Satalite />
+          <Ship />
         </Suspense>
         <Preload all />
       </Canvas>

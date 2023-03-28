@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { useGLTF } from '@react-three/drei';
+
+import Astr from './Astr';
 
 const FloatingTesla = () => {
   const ref = useRef();
-  const { scene } = useGLTF('./models/astr.glb');
 
   useFrame((state, delta) => {
     const t = state.clock.getElapsedTime();
@@ -20,7 +20,7 @@ const FloatingTesla = () => {
       rotation={[1, -1, 0]}
       ref={ref}
     >
-      <primitive object={scene} />;
+      <Astr />
       <pointLight
         position={[10, 10, 10]}
         intensity={1}
