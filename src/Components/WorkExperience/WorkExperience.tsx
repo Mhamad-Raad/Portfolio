@@ -10,6 +10,7 @@ import LezanImg from '../../assets/Lezan.jpg';
 import MicroverseImg from '../../assets/Microverse.jpg';
 import GatewayImg from '../../assets/Gateway.png';
 import IndexImg from '../../assets/Index.jpg';
+import UtmImg from '../../assets/UTM.png';
 
 export default function WorkExperience() {
   return (
@@ -80,12 +81,15 @@ export default function WorkExperience() {
           }
         >
           <h3 className='vertical-timeline-element-title work-experience__job-title'>
-            Web Development 
+            Web Development
           </h3>
           <h4 className='vertical-timeline-element-subtitle'>
             Student, Microverse
           </h4>
-          <p>HTML, CSS, Sass, JavaScript, React, Ruby, Ruby on Rails, Jest, Rest API, Es6, Responsive Web Design  Management, Communication, Teamwork</p>
+          <p>
+            HTML, CSS, Sass, JavaScript, React, Ruby, Ruby on Rails, Jest, Rest
+            API, Es6, Responsive Web Design Management, Communication, Teamwork
+          </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           date='MAR-2022 - JUL-2022'
@@ -130,6 +134,32 @@ export default function WorkExperience() {
             Student, Index Academy
           </h4>
           <p>Flutter, Firebase, Team lead, Communication, Teamwork</p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          date='SEP-2019 - MAR-2023'
+          dateClassName='work-experience__date'
+          iconClassName='work-experience__icon'
+          contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          icon={
+            <img
+              src={UtmImg}
+              alt='Universit of Technology Malaysia'
+              className='work-experience__logo'
+              title='Universit of Technology Malaysia'
+            />
+          }
+        >
+          <h3 className='vertical-timeline-element-title work-experience__job-title'>
+            Software Engineer
+          </h3>
+          <h4 className='vertical-timeline-element-subtitle'>
+            Student, Universit of Technology Malaysia, Bachelor's degree
+          </h4>
+          <p>
+            C++, C#, Java, JavaScript, Dart, HTML5, CSS, Bootstrap5, jQuery,
+            Flutter, Servlet, JSP, ASP .Net, AI, Network, Digital
+            Logic, Embedded System, Microcontrollers, Development Methodologies
+          </p>
         </VerticalTimelineElement>
       </VerticalTimeline>
     </section>
