@@ -6,7 +6,7 @@ import { Link } from 'react-scroll';
 import Stars from '../CanvaObjects/Stars';
 import Satalite from '../CanvaObjects/Satalite';
 import MovingMeteor from '../CanvaObjects/MovingMeteor';
-import FloatingTesla from '../CanvaObjects/FloatingTesla';
+import FloatingTesla from '../CanvaObjects/Astronount';
 
 import './StarsBackground.scss';
 
