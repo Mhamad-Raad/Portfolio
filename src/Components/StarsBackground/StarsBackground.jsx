@@ -36,7 +36,7 @@ const StarsCanvas = () => {
           to='about-me'
           ignoreCancelEvents={true}
           smooth={true}
-          offset={50}
+          offset={-160}
           duration={500}
         >
           <span className='stars-bg__scroll__title'>Scroll</span>
