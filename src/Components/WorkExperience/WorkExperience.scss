@@ -23,4 +23,26 @@
     opacity: 0.75;
     margin-left: 10px;
   }
+
+  &__job-title {
+    font-family: $Header-Font;
+  }
+
+  &__job-subtitle {
+    font-family: $Body-Font;
+  }
+
+  &__date {
+    font-family: $Body-Font;
+  }
+
+  &__icon {
+    box-shadow: 0 0 0 0.2rem $Active-Color;
+  }
+
+  &__logo {
+    border-radius: 50%;
+    width: 100%;
+    border-color: black;
+  }
 }
