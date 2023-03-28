@@ -2,8 +2,8 @@ import './WorkExperience.scss';
 
 export default function WorkExperience() {
   return (
-    <div>
+    <section className="work-experience column">
       
-    </div>
+    </section>
   )
 }
