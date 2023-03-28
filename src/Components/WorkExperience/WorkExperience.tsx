@@ -9,6 +9,7 @@ import './WorkExperience.scss';
 import LezanImg from '../../assets/Lezan.jpg';
 import MicroverseImg from '../../assets/Microverse.jpg';
 import GatewayImg from '../../assets/Gateway.png';
+import IndexImg from '../../assets/Index.jpg';
 
 export default function WorkExperience() {
   return (
@@ -43,7 +44,7 @@ export default function WorkExperience() {
           </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
-          date='AUG-2022 - MAR-2023'
+          date='SEP-2022 - MAR-2023'
           dateClassName='work-experience__date'
           iconClassName='work-experience__icon'
           contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
@@ -65,6 +66,28 @@ export default function WorkExperience() {
           <p>HTML, CSS, Management, Communication, Teamwork</p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
+          date='AUG-2022 - APR-2023'
+          dateClassName='work-experience__date'
+          iconClassName='work-experience__icon'
+          contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          icon={
+            <img
+              src={MicroverseImg}
+              alt='Mircroverse Logo'
+              className='work-experience__logo'
+              title='Microverse'
+            />
+          }
+        >
+          <h3 className='vertical-timeline-element-title work-experience__job-title'>
+            Web Development 
+          </h3>
+          <h4 className='vertical-timeline-element-subtitle'>
+            Student, Microverse
+          </h4>
+          <p>HTML, CSS, Sass, JavaScript, React, Ruby, Ruby on Rails, Jest, Rest API, Es6, Responsive Web Design  Management, Communication, Teamwork</p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
           date='MAR-2022 - JUL-2022'
           dateClassName='work-experience__date'
           iconClassName='work-experience__icon'
@@ -83,6 +106,28 @@ export default function WorkExperience() {
           </h3>
           <h4 className='vertical-timeline-element-subtitle'>
             ApprenticeShip, Lezan
+          </h4>
+          <p>Flutter, Firebase, Team lead, Communication, Teamwork</p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          date='JAN-2022 - MAR-2022'
+          dateClassName='work-experience__date'
+          iconClassName='work-experience__icon'
+          contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          icon={
+            <img
+              src={IndexImg}
+              alt='Index'
+              className='work-experience__logo'
+              title='Index Academy'
+            />
+          }
+        >
+          <h3 className='vertical-timeline-element-title work-experience__job-title'>
+            Flutter Developer
+          </h3>
+          <h4 className='vertical-timeline-element-subtitle'>
+            Student, Index Academy
           </h4>
           <p>Flutter, Firebase, Team lead, Communication, Teamwork</p>
         </VerticalTimelineElement>
