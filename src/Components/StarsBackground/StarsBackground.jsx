@@ -33,7 +33,6 @@ const StarsCanvas = () => {
       </div>
       <div className='stars-bg__scroll'>
         <Link
-          className="nav-item"
           to='about-me'
           ignoreCancelEvents={true}
           smooth={true}

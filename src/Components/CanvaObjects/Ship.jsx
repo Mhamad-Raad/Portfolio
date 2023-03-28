@@ -17,320 +17,113 @@ const Ship = (props) => {
   console.log(names);
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name='Sketchfab_Scene'>
-        <group name='Sketchfab_model' rotation={[-Math.PI / 2, 0, 0]}>
-          <group
-            name='2530f5e783c34c458216d4fb39daf477fbx'
-            rotation={[Math.PI / 2, 0, 0]}
-            scale={0.01}
-          >
-            <group name='Object_2'>
-              <group name='RootNode'>
-                <group
-                  name='Armature'
-                  position={[0, -95.39, -597.35]}
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={20.94}
-                >
-                  <group name='Object_59'>
+      <group name="Sketchfab_Scene">
+        <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
+          <group name="2530f5e783c34c458216d4fb39daf477fbx" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+            <group name="Object_2">
+              <group name="RootNode">
+                <group name="Armature" position={[0, -95.39, -597.35]} rotation={[-Math.PI / 2, 0, 0]} scale={20.94}>
+                  <group name="Object_59">
                     <primitive object={nodes._rootJoint} />
                   </group>
                 </group>
-                <group
-                  name='Armature003'
-                  position={[-40.33, 332.21, -812.99]}
-                  scale={19.78}
-                >
-                  <group name='Object_80'>
+                <group name="Armature003" position={[-40.33, 332.21, -812.99]} scale={19.78}>
+                  <group name="Object_80">
                     <primitive object={nodes._rootJoint_1} />
                   </group>
                 </group>
-                <group name='Cube' rotation={[-Math.PI / 2, 0, 0]} scale={100}>
-                  <group name='Cube001'>
-                    <mesh
-                      name='Cube001_CockPit_0'
-                      geometry={nodes.Cube001_CockPit_0.geometry}
-                      material={materials.CockPit}
-                    />
+                <group name="Cube" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <group name="Cube001">
+                    <mesh name="Cube001_CockPit_0" geometry={nodes.Cube001_CockPit_0.geometry} material={materials.CockPit} />
                   </group>
-                  <group name='Cube002'>
-                    <mesh
-                      name='Cube002_CockFrame_0'
-                      geometry={nodes.Cube002_CockFrame_0.geometry}
-                      material={materials.CockFrame}
-                    />
+                  <group name="Cube002">
+                    <mesh name="Cube002_CockFrame_0" geometry={nodes.Cube002_CockFrame_0.geometry} material={materials.CockFrame} />
                   </group>
-                  <group name='Cube003'>
-                    <mesh
-                      name='Cube003_Metal_0'
-                      geometry={nodes.Cube003_Metal_0.geometry}
-                      material={materials.Metal}
-                    />
+                  <group name="Cube003">
+                    <mesh name="Cube003_Metal_0" geometry={nodes.Cube003_Metal_0.geometry} material={materials.Metal} />
                   </group>
-                  <group name='Cube004'>
-                    <mesh
-                      name='Cube004_Emissive_0'
-                      geometry={nodes.Cube004_Emissive_0.geometry}
-                      material={materials.Emissive}
-                    >
-                      <meshStandardMaterial attach='material' color='#6667ab' />
+                  <group name="Cube004">
+                    <mesh name="Cube004_Emissive_0" geometry={nodes.Cube004_Emissive_0.geometry} material={materials.Emissive} >
+                      <meshStandardMaterial attach="material" color="#6667ab" />
                     </mesh>
                   </group>
-                  <mesh
-                    name='Cube_CockpitFrame_0'
-                    geometry={nodes.Cube_CockpitFrame_0.geometry}
-                    material={materials.CockpitFrame}
-                  />
+                  <mesh name="Cube_CockpitFrame_0" geometry={nodes.Cube_CockpitFrame_0.geometry} material={materials.CockpitFrame} />
                 </group>
-                <group
-                  name='Cube005'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <group name='Cube006'>
-                    <mesh
-                      name='Cube006_Material001_0'
-                      geometry={nodes.Cube006_Material001_0.geometry}
-                      material={materials['Material.001']}
-                    />
+                <group name="Cube005" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <group name="Cube006">
+                    <mesh name="Cube006_Material001_0" geometry={nodes.Cube006_Material001_0.geometry} material={materials['Material.001']} />
                   </group>
-                  <mesh
-                    name='Cube005_Emissive2_0'
-                    geometry={nodes.Cube005_Emissive2_0.geometry}
-                    material={materials.Emissive2}
-                  >
-                    <meshStandardMaterial attach='material' color='#6667ab' />
+                  <mesh name="Cube005_Emissive2_0" geometry={nodes.Cube005_Emissive2_0.geometry} material={materials.Emissive2} >
+                    <meshStandardMaterial attach="material" color="#6667ab" />
                   </mesh>
                 </group>
-                <group
-                  name='BezierCurve'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='BezierCurve_Pipes1_0'
-                    geometry={nodes.BezierCurve_Pipes1_0.geometry}
-                    material={materials.Pipes1}
-                  />
+                <group name="BezierCurve" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="BezierCurve_Pipes1_0" geometry={nodes.BezierCurve_Pipes1_0.geometry} material={materials.Pipes1} />
                 </group>
-                <group
-                  name='Cylinder'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cylinder_Fuel_0'
-                    geometry={nodes.Cylinder_Fuel_0.geometry}
-                    material={materials.Fuel}
-                  />
+                <group name="Cylinder" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cylinder_Fuel_0" geometry={nodes.Cylinder_Fuel_0.geometry} material={materials.Fuel} />
                 </group>
-                <group
-                  name='Cube007'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cube007_Anthena_0'
-                    geometry={nodes.Cube007_Anthena_0.geometry}
-                    material={materials.Anthena}
-                  />
+                <group name="Cube007" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cube007_Anthena_0" geometry={nodes.Cube007_Anthena_0.geometry} material={materials.Anthena} />
                 </group>
-                <group
-                  name='Sphere'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Sphere_AnthenaGlow_0'
-                    geometry={nodes.Sphere_AnthenaGlow_0.geometry}
-                    material={materials.AnthenaGlow}
-                  />
+                <group name="Sphere" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Sphere_AnthenaGlow_0" geometry={nodes.Sphere_AnthenaGlow_0.geometry} material={materials.AnthenaGlow} />
                 </group>
-                <group
-                  name='NurbsPath'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='NurbsPath_Pipes2_0'
-                    geometry={nodes.NurbsPath_Pipes2_0.geometry}
-                    material={materials.Pipes2}
-                  />
+                <group name="NurbsPath" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="NurbsPath_Pipes2_0" geometry={nodes.NurbsPath_Pipes2_0.geometry} material={materials.Pipes2} />
                 </group>
-                <group
-                  name='Cylinder003'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cylinder003_GunHolder_0'
-                    geometry={nodes.Cylinder003_GunHolder_0.geometry}
-                    material={materials.GunHolder}
-                  />
+                <group name="Cylinder003" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cylinder003_GunHolder_0" geometry={nodes.Cylinder003_GunHolder_0.geometry} material={materials.GunHolder} />
                 </group>
-                <group
-                  name='Cube008'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cube008_GunHolder2_0'
-                    geometry={nodes.Cube008_GunHolder2_0.geometry}
-                    material={materials.GunHolder2}
-                  />
+                <group name="Cube008" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cube008_GunHolder2_0" geometry={nodes.Cube008_GunHolder2_0.geometry} material={materials.GunHolder2} />
                 </group>
-                <group
-                  name='Cube009'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <group name='Cube010'>
-                    <mesh
-                      name='Cube010_Eye1_0'
-                      geometry={nodes.Cube010_Eye1_0.geometry}
-                      material={materials.Eye1}
-                    />
+                <group name="Cube009" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <group name="Cube010">
+                    <mesh name="Cube010_Eye1_0" geometry={nodes.Cube010_Eye1_0.geometry} material={materials.Eye1} />
                   </group>
-                  <group name='Cube011'>
-                    <mesh
-                      name='Cube011_Eye2_0'
-                      geometry={nodes.Cube011_Eye2_0.geometry}
-                      material={materials.Eye2}
-                    />
+                  <group name="Cube011">
+                    <mesh name="Cube011_Eye2_0" geometry={nodes.Cube011_Eye2_0.geometry} material={materials.Eye2} />
                   </group>
-                  <mesh
-                    name='Cube009_Droid_0'
-                    geometry={nodes.Cube009_Droid_0.geometry}
-                    material={materials.Droid}
-                  />
+                  <mesh name="Cube009_Droid_0" geometry={nodes.Cube009_Droid_0.geometry} material={materials.Droid} />
                 </group>
-                <group
-                  name='Cube012'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cube012_GunHolder3_0'
-                    geometry={nodes.Cube012_GunHolder3_0.geometry}
-                    material={materials.GunHolder3}
-                  />
+                <group name="Cube012" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cube012_GunHolder3_0" geometry={nodes.Cube012_GunHolder3_0.geometry} material={materials.GunHolder3} />
                 </group>
-                <group
-                  name='Cylinder004'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cylinder004_CockpitFrame_0'
-                    geometry={nodes.Cylinder004_CockpitFrame_0.geometry}
-                    material={materials.CockpitFrame}
-                  />
+                <group name="Cylinder004" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cylinder004_CockpitFrame_0" geometry={nodes.Cylinder004_CockpitFrame_0.geometry} material={materials.CockpitFrame} />
                 </group>
-                <group
-                  name='NurbsPath001'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='NurbsPath001_TubeGun_0'
-                    geometry={nodes.NurbsPath001_TubeGun_0.geometry}
-                    material={materials.TubeGun}
-                  />
+                <group name="NurbsPath001" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="NurbsPath001_TubeGun_0" geometry={nodes.NurbsPath001_TubeGun_0.geometry} material={materials.TubeGun} />
                 </group>
-                <group
-                  name='Cylinder007'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cylinder007_CockpitFrame_0'
-                    geometry={nodes.Cylinder007_CockpitFrame_0.geometry}
-                    material={materials.CockpitFrame}
-                  />
+                <group name="Cylinder007" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cylinder007_CockpitFrame_0" geometry={nodes.Cylinder007_CockpitFrame_0.geometry} material={materials.CockpitFrame} />
                 </group>
-                <group
-                  name='Cylinder008'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cylinder008_Pimpies_0'
-                    geometry={nodes.Cylinder008_Pimpies_0.geometry}
-                    material={materials.Pimpies}
-                  />
+                <group name="Cylinder008" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cylinder008_Pimpies_0" geometry={nodes.Cylinder008_Pimpies_0.geometry} material={materials.Pimpies} />
                 </group>
-                <group
-                  name='Cube013'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cube013_gun2_0'
-                    geometry={nodes.Cube013_gun2_0.geometry}
-                    material={materials.gun2}
-                  />
+                <group name="Cube013" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cube013_gun2_0" geometry={nodes.Cube013_gun2_0.geometry} material={materials.gun2} />
                 </group>
-                <group
-                  name='Cube014'
-                  position={[0, 370.71, -852.4]}
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cube014_Gun3_0'
-                    geometry={nodes.Cube014_Gun3_0.geometry}
-                    material={materials.Gun3}
-                  />
+                <group name="Cube014" position={[0, 370.71, -852.4]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cube014_Gun3_0" geometry={nodes.Cube014_Gun3_0.geometry} material={materials.Gun3} />
                 </group>
-                <group
-                  name='Cube004_RPanel'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cube004_RPanel_Panels1_0'
-                    geometry={nodes.Cube004_RPanel_Panels1_0.geometry}
-                    material={materials.Panels1}
-                  />
+                <group name="Cube004_RPanel" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cube004_RPanel_Panels1_0" geometry={nodes.Cube004_RPanel_Panels1_0.geometry} material={materials.Panels1} />
                 </group>
-                <group
-                  name='Cylinder_RLExtr'
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cylinder_RLExtr_Panels2_0'
-                    geometry={nodes.Cylinder_RLExtr_Panels2_0.geometry}
-                    material={materials.Panels2}
-                  />
+                <group name="Cylinder_RLExtr" rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cylinder_RLExtr_Panels2_0" geometry={nodes.Cylinder_RLExtr_Panels2_0.geometry} material={materials.Panels2} />
                 </group>
-                <group
-                  name='Cube015'
-                  position={[38.7, 331.95, -857.02]}
-                  rotation={[-Math.PI / 2, 0, 0]}
-                  scale={100}
-                >
-                  <mesh
-                    name='Cube015_gun2_0'
-                    geometry={nodes.Cube015_gun2_0.geometry}
-                    material={materials.gun2}
-                  />
+                <group name="Cube015" position={[38.7, 331.95, -857.02]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+                  <mesh name="Cube015_gun2_0" geometry={nodes.Cube015_gun2_0.geometry} material={materials.gun2} />
                 </group>
-                <group
-                  name='Armature001'
-                  position={[40.34, 331.95, -857.02]}
-                  scale={31.06}
-                >
-                  <group name='Object_66'>
+                <group name="Armature001" position={[40.34, 331.95, -857.02]} scale={31.06}>
+                  <group name="Object_66">
                     <primitive object={nodes._rootJoint_2} />
                   </group>
                 </group>
-                <group
-                  name='Armature002'
-                  position={[0, 370.71, -852.4]}
-                  scale={45.17}
-                >
-                  <group name='Object_73'>
+                <group name="Armature002" position={[0, 370.71, -852.4]} scale={45.17}>
+                  <group name="Object_73">
                     <primitive object={nodes._rootJoint_3} />
                   </group>
                 </group>
@@ -340,7 +133,7 @@ const Ship = (props) => {
         </group>
       </group>
     </group>
-  );
+  )
 }
 
 export default Ship

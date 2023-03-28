@@ -28,7 +28,7 @@
 
     &__position {
       font-weight: bold;
-      color: white;
+      color: $Active-Color;
       font-family: $Header-Font;
       -webkit-touch-callout: none;
       -webkit-user-select: none;
@@ -48,7 +48,7 @@
 
     &__title {
       font-weight: bold;
-      color: white;
+      color: $Active-Color;
       font-family: $Header-Font;
     }
 
@@ -58,8 +58,8 @@
         position: absolute;
         width: 24px;
         height: 24px;
-        border-left: 5px solid #fff;
-        border-bottom: 5px solid #fff;
+        border-left: 5px solid $Active-Color;
+        border-bottom: 5px solid $Active-Color;
         -webkit-transform: rotateZ(-45deg);
         transform: rotateZ(-45deg);
         -webkit-animation: sdb06 1.5s infinite;
