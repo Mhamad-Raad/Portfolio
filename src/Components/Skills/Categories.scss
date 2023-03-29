@@ -10,7 +10,7 @@
   &__card {
     width: 20%;
     min-width: 300px;
-    height: 300px;
+    height: 350px;
     overflow-y: hidden;
     padding: 10px;
     background-color: transparent;
@@ -28,9 +28,16 @@
     &__title {
       font-size: 1.5rem;
       font-weight: 600;
-      margin-bottom: 5px;
+      margin-bottom: 25px;
       color: white;
       font-family: $Header-Font;
+    }
+
+    &__img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 50px;
     }
 
     &__description {
