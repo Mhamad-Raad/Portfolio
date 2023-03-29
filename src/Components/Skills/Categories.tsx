@@ -2,7 +2,7 @@ import { FC } from 'react';
 import './Categories.scss';
 
 import StudentImg from '../../assets/Student.jpg';
-import FrontendImg from '../../assets/f.jpg';
+import FrontendImg from '../../assets/Frontend.jpg';
 import BackendImg from '../../assets/Backend.jpg';
 import FlutterImg from '../../assets/Flutter.jpg';
 
