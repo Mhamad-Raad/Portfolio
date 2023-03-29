@@ -1,16 +1,20 @@
-import { Canvas, useLoader } from '@react-three/fiber';
-import { OrbitControls, Decal, useTexture, Float } from '@react-three/drei';
-import { TextureLoader } from 'three/src/loaders/TextureLoader.js';
+import { Canvas } from '@react-three/fiber';
+import {
+  OrbitControls,
+  Decal,
+  useTexture,
+  Float,
+  Preload,
+} from '@react-three/drei';
 import { Suspense } from 'react';
 
-import Img from '../../assets/Frontend.jpg';
+import Loader from './Loader';
 
-const Howit = () => {
-  const [decal] = useTexture([Img]);
+const Ball = ({ img }) => {
+  const [decal] = useTexture([img]);
   return (
     <Float speed={3} floatIntensity={5}>
       <mesh castShadow receiveShadow scale={2}>
-        <ambientLight intensity={0.38} />
         <sphereBufferGeometry args={[1, 32, 32]} />
         <meshStandardMaterial />
         <Decal
@@ -25,21 +29,17 @@ const Howit = () => {
   );
 };
 
-const BallSkill = () => {
-  const texture = useLoader(TextureLoader, Img);
+const BallCanvas = ({ img }) => {
   return (
-    <Canvas
-      style={{
-        width: '15%',
-      }}
-    >
+    <Canvas>
       <OrbitControls enableZoom={false} enablePan={false} />
       <directionalLight position={[0, 0, 0.05]} />
-      <Suspense fallback={null}>
-        <Howit />
+      <Suspense fallback={Loader}>
+        <Ball img={img} />
       </Suspense>
+      <Preload all />
     </Canvas>
   );
 };
 
-export default BallSkill;
+export default BallCanvas;
