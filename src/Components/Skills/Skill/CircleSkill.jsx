@@ -1,11 +1,18 @@
-import React from 'react'
+import './CircleSkill.scss';
 
-const BallSkill = ({img}) => {
+const BallSkill = ({ img, title }) => {
+  const animationDelay = Math.random();
+
   return (
-    <div className='circle-skill'>
-      BallSkill
-    </div>
-  )
-}
+    <img
+      className='circle-skill'
+      style={{
+        animationDelay: `${animationDelay}s`,
+      }}
+      src={img}
+      title={title}
+    />
+  );
+};
 
-export default BallSkill
+export default BallSkill;

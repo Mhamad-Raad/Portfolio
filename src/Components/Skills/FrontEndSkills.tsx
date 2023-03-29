@@ -5,22 +5,22 @@ import CircleSkill from './Skill/CircleSkill';
 
 import './FrontEndSkills.scss';
 
-import HtmlImg from '../../assets/Html.jpg';
+import HtmlImg from '../../assets/Html.png';
 import CssImg from '../../assets/Css.png';
-import JsImg from '../../assets/JavaScript.jpg';
+import JsImg from '../../assets/JavaScript.png';
 import TsImg from '../../assets/TypeScript.png';
 import JqueryImg from '../../assets/Jquery.png';
 import ReactImg from '../../assets/React.png';
 import NextImg from '../../assets/Next.png';
-import RemixImg from '../../assets/Remix.jpg';
+import RemixImg from '../../assets/Remix.png';
 import RTFImg from '../../assets/RthreeF.png';
-import ReduxImg from '../../assets/Redux.png';
+import ReduxImg from '../../assets/Redux.jpg';
 import SassImg from '../../assets/Sass.png';
 import BootstrapImg from '../../assets/Bootstrap5.jpg';
 import TailwindImg from '../../assets/Tailwind.png';
 import MaterialUiImg from '../../assets/MaterialUi.png';
 import JestImg from '../../assets/Jest.png';
-import ReactTestingLibraryImg from '../../assets/ReactTestingLibrary.png';
+import ReactTestingLibraryImg from '../../assets/ReactTestingLibrary.jpg';
 import Flutter from '../../assets/Flutter.jpg';
 
 interface FrontEndSkillsInterface {}
@@ -30,23 +30,26 @@ const FrontEndSkills: FC<FrontEndSkillsInterface> = () => {
     <div className='front-end-skills column'>
       <h3 className='front-end-skills__title'>Front-End</h3>
       <div className='front-end-skills__techs'>
-        <CircleSkill img={HtmlImg} />
-        <CircleSkill img={CssImg} />
-        <CircleSkill img={SassImg} />
-        <CircleSkill img={JsImg} />
-        <CircleSkill img={TsImg} />
-        <CircleSkill img={JestImg} />
-        <CircleSkill img={JqueryImg} />
-        <CircleSkill img={ReactImg} />
-        <CircleSkill img={NextImg} />
-        <CircleSkill img={RemixImg} />
-        <CircleSkill img={RTFImg} />
-        <CircleSkill img={ReduxImg} />
-        <CircleSkill img={BootstrapImg} />
-        <CircleSkill img={TailwindImg} />
-        <CircleSkill img={MaterialUiImg} />
-        <CircleSkill img={ReactTestingLibraryImg} />
-        <CircleSkill img={Flutter} />
+        <CircleSkill img={HtmlImg} title='HTML 5' />
+        <CircleSkill img={CssImg} title='CSS 3' />
+        <CircleSkill img={SassImg} title='Sass' />
+        <CircleSkill img={JsImg} title='JavaScript' />
+        <CircleSkill img={TsImg} title='TypeScript' />
+        <CircleSkill img={JestImg} title='Jest' />
+        <CircleSkill img={JqueryImg} title='Jquery' />
+        <CircleSkill img={ReactImg} title='React.js' />
+        <CircleSkill img={NextImg} title='Next.js' />
+        <CircleSkill img={RemixImg} title='Remix.js' />
+        <CircleSkill img={RTFImg} title='React Three Fiber' />
+        <CircleSkill img={ReduxImg} title='Redux' />
+        <CircleSkill img={BootstrapImg} title='Bootstrap 5' />
+        <CircleSkill img={TailwindImg} title='Tailwind' />
+        <CircleSkill img={MaterialUiImg} title='Material UI' />
+        <CircleSkill
+          img={ReactTestingLibraryImg}
+          title='React Testing Library'
+        />
+        <CircleSkill img={Flutter} title='Flutter' />
       </div>
     </div>
   );
