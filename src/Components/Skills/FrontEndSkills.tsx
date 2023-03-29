@@ -1,8 +1,7 @@
 import { FC, } from 'react';
-import { useInView } from 'framer-motion';
 
 
-import BallSkill from '../CanvaObjects/BallSkill';
+import CircleSkill from './Skill/CircleSkill';
 
 import './FrontEndSkills.scss';
 
@@ -31,22 +30,23 @@ const FrontEndSkills: FC<FrontEndSkillsInterface> = () => {
     <div className='front-end-skills column'>
       <h3 className='front-end-skills__title'>Front-End</h3>
       <div className='front-end-skills__techs'>
-        <BallSkill img={HtmlImg} />
-        <BallSkill img={CssImg} />
-        <BallSkill img={SassImg} />
-        <BallSkill img={JsImg} />
-        <BallSkill img={TsImg} />
-        <BallSkill img={JestImg} />
-        <BallSkill img={JqueryImg} />
-        <BallSkill img={ReactImg} />
-        <BallSkill img={NextImg} />
-        <BallSkill img={RemixImg} />
-        <BallSkill img={RTFImg} />
-        <BallSkill img={ReduxImg} />
-        <BallSkill img={BootstrapImg} />
-        <BallSkill img={TailwindImg} />
-        <BallSkill img={MaterialUiImg} />
-        <BallSkill img={ReactTestingLibraryImg} />
+        <CircleSkill img={HtmlImg} />
+        <CircleSkill img={CssImg} />
+        <CircleSkill img={SassImg} />
+        <CircleSkill img={JsImg} />
+        <CircleSkill img={TsImg} />
+        <CircleSkill img={JestImg} />
+        <CircleSkill img={JqueryImg} />
+        <CircleSkill img={ReactImg} />
+        <CircleSkill img={NextImg} />
+        <CircleSkill img={RemixImg} />
+        <CircleSkill img={RTFImg} />
+        <CircleSkill img={ReduxImg} />
+        <CircleSkill img={BootstrapImg} />
+        <CircleSkill img={TailwindImg} />
+        <CircleSkill img={MaterialUiImg} />
+        <CircleSkill img={ReactTestingLibraryImg} />
+        <CircleSkill img={Flutter} />
       </div>
     </div>
   );
