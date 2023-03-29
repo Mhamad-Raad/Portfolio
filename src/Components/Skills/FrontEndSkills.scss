@@ -13,4 +13,12 @@
     color: $Active-Color;
     font-family: $Header-Font;
   }
+
+  &__techs {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 75%;
+    margin-top: 10px;
+  }
 }
