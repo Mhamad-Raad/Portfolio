@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import Categories from './Categories';
+import FrontEndSkills from './FrontEndSkills'
 
 import './Skills.scss';
 
@@ -14,6 +15,7 @@ const Skills: FC<SkillsInterface> = () => {
       <h2 className='skills__title'>Skills</h2>
       <h4 className="skills__subtitle">Techs I am Comfortable With</h4>
       <Categories />
+      <FrontEndSkills />
     </section>
   );
 }
