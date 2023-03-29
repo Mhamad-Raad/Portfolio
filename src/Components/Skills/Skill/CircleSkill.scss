@@ -5,6 +5,13 @@
   background-color: #fff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   animation: float 3s ease-in-out infinite;
+
+  &:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    animation: none;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
 }
 
 @keyframes float {
