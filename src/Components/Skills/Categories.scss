@@ -1,0 +1,45 @@
+@use '../../Styles/variables' as *;
+
+.skills-categories {
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+
+  &__card {
+    width: 20%;
+    min-width: 300px;
+    height: 300px;
+    overflow-y: hidden;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 white;
+    justify-content: flex-start;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: white;
+      font-family: $Header-Font;
+    }
+
+    &__description {
+      color: $Active-Color;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: $Body-Font;
+      margin-left: 10px;
+      text-align: center;
+    }
+  }
+}
