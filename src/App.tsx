@@ -2,16 +2,18 @@ import NavBar from './Components/Navbar/NavBar';
 import Background from './Components/StarsBackground/StarsBackground';
 import AboutMe from './Components/AboutMe/AboutMe';
 import WorkExperience from './Components/WorkExperience/WorkExperience';
+import Skills from './Components/Skills/Skills';
 import './App.scss';
 
 const App = () => {
   return (
-    <div className='app-page'>
+    <main className='app-page'>
       <NavBar />
       <Background />
       <AboutMe />
       <WorkExperience />
-    </div>
+      <Skills />
+    </main>
   );
 };
 
