@@ -5,6 +5,7 @@ import './CategorySkills.scss';
 import PosgresqlImg from '../../assets/Postgresql.png';
 import MysqlImg from '../../assets/Mysql.png';
 import RorImg from '../../assets/Ror.png';
+import NodeImg from '../../assets/Node.png';
 import RspecImg from '../../assets/Rspec.png';
 
 export default function BackendSkills() {
@@ -15,6 +16,7 @@ export default function BackendSkills() {
         <CircleSkill img={PosgresqlImg} title='PostgreSQL' />
         <CircleSkill img={MysqlImg} title='MySQL' />
         <CircleSkill img={RorImg} title='Ruby on Rails' />
+        <CircleSkill img={NodeImg} title='Node.js' />
         <CircleSkill img={RspecImg} title='Rspec' />
       </div>
     </div>
