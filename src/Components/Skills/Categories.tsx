@@ -4,7 +4,7 @@ import './Categories.scss';
 import StudentImg from '../../assets/Student.jpg';
 import FrontendImg from '../../assets/Frontend.jpg';
 import BackendImg from '../../assets/Backend.jpg';
-import FlutterImg from '../../assets/Flutter.jpg';
+import FlutterImg from '../../assets/frontend/Flutter.jpg';
 
 interface CategoriesInterface { }
 

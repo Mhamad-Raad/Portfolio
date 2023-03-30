@@ -8,7 +8,7 @@ import './AboutMe.scss';
 import ConnectionItem from './ConnectionItem';
 
 import LinkedInImg from '../../assets/LinkedIn.jpg';
-import GitHubImg from '../../assets/GitHub.png';
+import GitHubImg from '../../assets/ToolsMethodes/GitHub.png';
 
 interface AboutMeProps {}
 

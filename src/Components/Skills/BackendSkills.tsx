@@ -1,14 +1,18 @@
+import { FC } from 'react';
+
 import CircleSkill from './Skill/CircleSkill';
 
 import './CategorySkills.scss';
 
-import PosgresqlImg from '../../assets/Postgresql.png';
-import MysqlImg from '../../assets/Mysql.png';
-import RorImg from '../../assets/Ror.png';
-import NodeImg from '../../assets/Node.png';
-import RspecImg from '../../assets/Rspec.png';
+import PosgresqlImg from '../../assets/backend/Postgresql.png';
+import MysqlImg from '../../assets/backend/Mysql.png';
+import RorImg from '../../assets/backend/Ror.png';
+import NodeImg from '../../assets/backend/Node.png';
+import RspecImg from '../../assets/backend/Rspec.png';
 
-export default function BackendSkills() {
+interface BackendSkillsInterface {}
+
+const BackendSkills:FC<BackendSkillsInterface> = () => {
   return (
     <div className='category-skills column'>
       <h3 className='category-skills__title'>Back-End</h3>
@@ -22,3 +26,5 @@ export default function BackendSkills() {
     </div>
   );
 }
+
+export default BackendSkills;

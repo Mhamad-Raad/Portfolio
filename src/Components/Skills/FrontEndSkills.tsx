@@ -5,24 +5,24 @@ import CircleSkill from './Skill/CircleSkill';
 
 import './CategorySkills.scss';
 
-import HtmlImg from '../../assets/Html.png';
-import CssImg from '../../assets/Css.png';
-import JsImg from '../../assets/JavaScript.png';
-import TsImg from '../../assets/TypeScript.png';
-import JqueryImg from '../../assets/Jquery.png';
-import ReactImg from '../../assets/React.png';
-import NextImg from '../../assets/Next.png';
-import RemixImg from '../../assets/Remix.png';
-import RTFImg from '../../assets/RthreeF.png';
-import ReduxImg from '../../assets/Redux.jpg';
-import SassImg from '../../assets/Sass.png';
-import BootstrapImg from '../../assets/Bootstrap5.jpg';
-import Framer from '../../assets/Framer.png';
-import TailwindImg from '../../assets/Tailwind.png';
-import MaterialUiImg from '../../assets/MaterialUi.png';
-import JestImg from '../../assets/Jest.png';
-import ReactTestingLibraryImg from '../../assets/ReactTestingLibrary.jpg';
-import Flutter from '../../assets/Flutter.jpg';
+import HtmlImg from '../../assets/frontend/Html.png';
+import CssImg from '../../assets/frontend/Css.png';
+import JsImg from '../../assets/frontend/JavaScript.png';
+import TsImg from '../../assets/frontend/TypeScript.png';
+import JqueryImg from '../../assets/frontend/Jquery.png';
+import ReactImg from '../../assets/frontend/React.png';
+import NextImg from '../../assets/frontend/Next.png';
+import RemixImg from '../../assets/frontend/Remix.png';
+import RTFImg from '../../assets/frontend/RthreeF.png';
+import ReduxImg from '../../assets/frontend/Redux.jpg';
+import SassImg from '../../assets/frontend/Sass.png';
+import BootstrapImg from '../../assets/frontend/Bootstrap5.jpg';
+import Framer from '../../assets/frontend/Framer.png';
+import TailwindImg from '../../assets/frontend/Tailwind.png';
+import MaterialUiImg from '../../assets/frontend/MaterialUi.png';
+import JestImg from '../../assets/frontend/Jest.png';
+import ReactTestingLibraryImg from '../../assets/frontend/ReactTestingLibrary.jpg';
+import Flutter from '../../assets/frontend/Flutter.jpg';
 
 interface FrontEndSkillsInterface {}
 
