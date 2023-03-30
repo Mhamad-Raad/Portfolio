@@ -17,6 +17,7 @@ import RTFImg from '../../assets/RthreeF.png';
 import ReduxImg from '../../assets/Redux.jpg';
 import SassImg from '../../assets/Sass.png';
 import BootstrapImg from '../../assets/Bootstrap5.jpg';
+import Framer from '../../assets/Framer.png';
 import TailwindImg from '../../assets/Tailwind.png';
 import MaterialUiImg from '../../assets/MaterialUi.png';
 import JestImg from '../../assets/Jest.png';
@@ -43,6 +44,7 @@ const FrontEndSkills: FC<FrontEndSkillsInterface> = () => {
         <CircleSkill img={RTFImg} title='React Three Fiber' />
         <CircleSkill img={ReduxImg} title='Redux' />
         <CircleSkill img={BootstrapImg} title='Bootstrap 5' />
+        <CircleSkill img={Framer} title='Framer Motion' />
         <CircleSkill img={TailwindImg} title='Tailwind' />
         <CircleSkill img={MaterialUiImg} title='Material UI' />
         <CircleSkill
