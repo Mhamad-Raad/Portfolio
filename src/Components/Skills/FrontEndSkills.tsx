@@ -3,7 +3,7 @@ import { FC, } from 'react';
 
 import CircleSkill from './Skill/CircleSkill';
 
-import './FrontEndSkills.scss';
+import './CategorySkills.scss';
 
 import HtmlImg from '../../assets/Html.png';
 import CssImg from '../../assets/Css.png';
@@ -27,9 +27,9 @@ interface FrontEndSkillsInterface {}
 
 const FrontEndSkills: FC<FrontEndSkillsInterface> = () => {
   return (
-    <div className='front-end-skills column'>
-      <h3 className='front-end-skills__title'>Front-End</h3>
-      <div className='front-end-skills__techs'>
+    <div className='category-skills column'>
+      <h3 className='category-skills__title'>Front-End</h3>
+      <div className='category-skills__techs'>
         <CircleSkill img={HtmlImg} title='HTML 5' />
         <CircleSkill img={CssImg} title='CSS 3' />
         <CircleSkill img={SassImg} title='Sass' />
