@@ -5,7 +5,7 @@ import 'Projects.scss';
 interface ProjectsInterface {}
 
 const Projects: FC<ProjectsInterface> = () => {
-  return <div>Projects</div>;
+  return <section>Projects</section>;
 };
 
 export default Projects;

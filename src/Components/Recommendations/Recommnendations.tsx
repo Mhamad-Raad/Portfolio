@@ -5,7 +5,7 @@ import 'Recommentations.scss';
 interface RecommentationsInterface {}
 
 const Recommentations: FC<RecommentationsInterface> = () => {
-  return <div>Recommentations</div>;
+  return <section>Recommentations</section>;
 };
 
 export default Recommentations;

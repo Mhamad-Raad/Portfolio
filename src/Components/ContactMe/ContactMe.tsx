@@ -6,7 +6,7 @@ interface ContactMeInterface {}
 
 const ContactMe: FC<ContactMeInterface> = () => {
   return (
-    <div>ContactMe</div>
+    <section>ContactMe</section>
   )
 }
 
