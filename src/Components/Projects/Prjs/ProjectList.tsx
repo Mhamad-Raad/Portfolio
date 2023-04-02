@@ -10,7 +10,6 @@ export default function ProjectList() {
       <ProjectItem img={demoImg1} />
       <ProjectItem img={demoImg1} />
       <ProjectItem img={demoImg1} />
-      <ProjectItem img={demoImg1} />
     </div>
   );
 }
