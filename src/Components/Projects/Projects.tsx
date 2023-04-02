@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import 'Projects.scss';
+import './Projects.scss';
 
 interface ProjectsInterface {}
 

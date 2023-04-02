@@ -3,6 +3,7 @@ import Background from './Components/StarsBackground/StarsBackground';
 import AboutMe from './Components/AboutMe/AboutMe';
 import WorkExperience from './Components/WorkExperience/WorkExperience';
 import Skills from './Components/Skills/Skills';
+import Projects from './Components/Projects/Projects';
 import './App.scss';
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <AboutMe />
       <WorkExperience />
       <Skills />
+      <Projects />
     </main>
   );
 };
