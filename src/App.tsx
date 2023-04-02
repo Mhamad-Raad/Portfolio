@@ -4,6 +4,7 @@ import AboutMe from './Components/AboutMe/AboutMe';
 import WorkExperience from './Components/WorkExperience/WorkExperience';
 import Skills from './Components/Skills/Skills';
 import Projects from './Components/Projects/Projects';
+import Recommentations from './Components/Recommendations/Recommnendations';
 import './App.scss';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
       <WorkExperience />
       <Skills />
       <Projects />
+      <Recommentations />
     </main>
   );
 };
