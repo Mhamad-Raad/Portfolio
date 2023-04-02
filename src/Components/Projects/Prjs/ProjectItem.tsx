@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
-import { FaShare, FaGithub } from 'react-icons/fa';
+import Tech from './Tech';
 
+import { FaShare, FaGithub } from 'react-icons/fa';
 interface ProjectItemInterface {
   img: string;
 }
@@ -21,20 +22,13 @@ const ProjectItem: FC<ProjectItemInterface> = ({ img }) => {
       </p>
 
       <div className='projects-section__projects__project__techs row'>
-        <p className='projects-section__projects__project__techs__tech'>
-          React
-        </p>
-        <p className='projects-section__projects__project__techs__tech'>
-          Ruby on Rails
-        </p>
-        <p className='projects-section__projects__project__techs__tech'>
-          JavaScript
-        </p>
-        <p className='projects-section__projects__project__techs__tech'>SCSS</p>
-        <p className='projects-section__projects__project__techs__tech'>
-          something else
-        </p>
+        <Tech tech='React' />
+        <Tech tech='Ruby on Rails' />
+        <Tech tech='JavaScript' />
+        <Tech tech='SCSS' />
+        <Tech tech='something else' />
       </div>
+
       <div className='projects-section__projects__project__links row'>
         <a href='' className='projects-section__projects__project__links__link'>
           <FaGithub /> GitHub
