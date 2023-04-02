@@ -1,13 +1,13 @@
 import { FC } from 'react';
 
-import './Recommentations.scss';
+import './Recommendations.scss';
 
 interface RecommentationsInterface {}
 
 const Recommentations: FC<RecommentationsInterface> = () => {
   return (
-    <section className='recomendation-section column'>
-      <h2 className='recomendation-section__title'>Recommentations</h2>
+    <section className='recommendation-section column'>
+      <h2 className='recommendation-section__title'>Recommentations</h2>
     </section>
   );
 };
