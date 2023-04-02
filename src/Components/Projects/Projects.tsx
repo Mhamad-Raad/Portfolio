@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import demoImg1 from '../../assets/ToolsMethodes/GitHub.png';
-
+import { FaShare, FaGithub } from 'react-icons/fa';
 import './Projects.scss';
 
 interface ProjectsInterface {}
@@ -11,7 +11,7 @@ const Projects: FC<ProjectsInterface> = () => {
     <section className='projects-section column'>
       <h2 className='projects-section__title'>Projects</h2>
       <div className='projects-section__projects row'>
-        <div className='projects-section__projects__project'>
+        <div className='projects-section__projects__project column'>
           <img
             src={demoImg1}
             alt='demo'
@@ -41,6 +41,20 @@ const Projects: FC<ProjectsInterface> = () => {
             <p className='projects-section__projects__project__techs__tech'>
               something else
             </p>
+          </div>
+          <div className='projects-section__projects__project__links row'>
+            <a
+              href=''
+              className='projects-section__projects__project__links__link'
+            >
+            <FaGithub />  GitHub
+            </a>
+            <a
+              href=''
+              className='projects-section__projects__project__links__link'
+            >
+            <FaShare /> Live
+            </a>
           </div>
         </div>
       </div>
