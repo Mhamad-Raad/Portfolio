@@ -20,15 +20,30 @@
     gap: 25px;
 
     &__project {
-      width: 30%;
+      width: 23.7%;
       height: 500px;
+      max-width: 500px;
+      min-width: 300px;
       border-radius: 10px;
-      // margin-bottom: 20px;
+      position: relative;
       padding: 15px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
       transition: all 0.3s ease-in-out;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px;
+
+      &__github {
+        position: absolute;
+        top: 23px;
+        right: 23px;
+        font-size: 23px;
+        color: $Active-Color;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
 
       &:hover {
         transform: scale(1.05);
@@ -53,12 +68,11 @@
         font-weight: 400;
         color: white;
         margin: 12px 0;
-        text-align: center;
       }
 
       &__techs {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 5px;
         align-items: center;
 
@@ -75,8 +89,10 @@
       }
 
       &__links {
-        margin-top: 10px;
-        justify-content: center;
+        margin-top: auto;
+        width: 100%;
+        height: auto;
+        justify-content: flex-end;
         gap: 20px;
 
         &__link {
@@ -84,8 +100,8 @@
           justify-content: center;
           align-items: center;
           gap: 5px;
-          width: 100px;
-          height: 30px;
+          width: 120px;
+          height: 35px;
           border-radius: 5px;
           border: 1px solid $Active-Color;
           color: $Active-Color;

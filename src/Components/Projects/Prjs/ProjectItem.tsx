@@ -15,6 +15,9 @@ const ProjectItem: FC<ProjectItemInterface> = ({ img }) => {
         alt='demo'
         className='projects-section__projects__project__img'
       />
+      <a href='' className='projects-section__projects__project__github' title='Visite Github Repository'>
+        <FaGithub />
+      </a>
       <h3 className='projects-section__projects__project__title'>Project 1</h3>
       <p className='projects-section__projects__project__description'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
@@ -30,9 +33,6 @@ const ProjectItem: FC<ProjectItemInterface> = ({ img }) => {
       </div>
 
       <div className='projects-section__projects__project__links row'>
-        <a href='' className='projects-section__projects__project__links__link'>
-          <FaGithub /> GitHub
-        </a>
         <a href='' className='projects-section__projects__project__links__link'>
           <FaShare /> Live
         </a>

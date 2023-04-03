@@ -4,4 +4,14 @@
 .recommendation-section {
   width: 100%;
   height: 100vh;
+  margin-top: 100px;
+  padding: 0 20px;
+  
+  .recommendation-section__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+    font-family: $Header_Font;
+    color: white;
+  }
 }
