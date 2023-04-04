@@ -6,7 +6,7 @@
   margin-top: 100px;
   padding: 0 20px;
 
-  .recommendation-section__title {
+  &__title {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 100px;
@@ -19,6 +19,23 @@
     justify-content: flex-start;
     align-items: center;
     overflow-x: hidden;
+    position: relative;
+
+    &__right-scroll-button {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      font-size: 40px;
+      color: white;
+    }
+
+    &__left-scroll-button {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      font-size: 40px;
+      color: white;
+    }
 
     &__slide {
       min-width: 100%;
