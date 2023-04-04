@@ -16,57 +16,65 @@
 
   &__slideshow {
     width: 100%;
-    height: 100%;
     justify-content: flex-start;
     align-items: center;
+    overflow-x: hidden;
 
     &__slide {
-      width: 50%;
-      justify-content: flex-start;
+      min-width: 100%;
+      justify-content: center;
       align-items: center;
-      border: 1px solid black;
-      border-radius: 10px;
-      padding: 25px;
 
-      &__image {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-bottom: 10px;
-      }
+      &__slider-item {
+        width: 60%;
+        min-width: 800px;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 25px;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
 
-      &__name {
-        font-size: 1.5rem;
-        font-weight: 600;
-        font-family: $Header_Font;
-        color: white;
-      }
+        &__image {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 10px;
+        }
 
-      &__position {
-        font-size: 12px;
-        font-weight: 400;
-        font-family: $Header_Font;
-        color: white;
-        opacity: 0.5;
-      }
+        &__name {
+          font-size: 1.5rem;
+          font-weight: 600;
+          font-family: $Header_Font;
+          color: white;
+        }
 
-      &__seperator {
-        width: 75%;
-        height: 2px;
-        border-radius: 50%;
-        background-color: white;
-        opacity: 0.1;
-        margin: 20px 0;
-        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 1);
-      }
+        &__position {
+          font-size: 12px;
+          font-weight: 400;
+          font-family: $Header_Font;
+          color: white;
+          opacity: 0.5;
+        }
 
-      &__description {
-        font-size: 1rem;
-        font-weight: 400;
-        text-align: center;
-        font-family: $Body_Font;
-        color: white;
+        &__seperator {
+          width: 75%;
+          height: 2px;
+          border-radius: 50%;
+          background-color: white;
+          opacity: 0.1;
+          margin: 20px 0;
+          box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 1);
+        }
+
+        &__description {
+          font-size: 1rem;
+          font-weight: 400;
+          text-align: center;
+          font-family: $Body_Font;
+          color: white;
+        }
       }
     }
   }
