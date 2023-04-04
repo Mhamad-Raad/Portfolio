@@ -2,7 +2,7 @@ import img1 from '../../assets/ToolsMethodes/GitHub.png';
 
 export default function Slide() {
   return (
-    <div className='recommendation-section__slideshow__slide row'>
+    <div className='container'>
       <div className='recommendation-section__slideshow__slide__slider-item column'>
         <img
           src={img1}
