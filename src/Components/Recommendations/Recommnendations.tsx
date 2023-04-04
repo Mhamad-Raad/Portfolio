@@ -11,7 +11,7 @@ const Recommentations: FC<RecommentationsInterface> = () => {
     <section className='recommendation-section column'>
       <h2 className='recommendation-section__title'>Recommentations</h2>
       <div className='recommendation-section__slideshow column'>
-        <div className='recommendation-section__slideshow__slide'>
+        <div className='recommendation-section__slideshow__slide column'>
           <img
             src={img1}
             title='img'
