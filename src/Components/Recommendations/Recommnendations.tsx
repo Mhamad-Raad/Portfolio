@@ -1,4 +1,6 @@
 import { FC, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
 
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
@@ -31,16 +33,16 @@ const Recommentations: FC<RecommentationsInterface> = () => {
         >
           <FaAngleLeft />
         </button>
-        <div
+        <motion.div
           className='recommendation-section__slideshow__slide row'
-          style={{
-            transform: `translateX(-${index * 100}%)`,
-          }}
+          initial={{ x: 0 }}
+          animate={{ x: -index * 100 + '%' }}
+          transition={{ duration: 0.5 }}
         >
           <Slide />
           <Slide />
           <Slide />
-        </div>
+        </motion.div>
         <button
           type='button'
           className='recommendation-section__slideshow__right-scroll-button'
