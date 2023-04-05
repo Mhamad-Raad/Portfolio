@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from 'react';
-import { motion, animate } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useSwipeable } from 'react-swipeable';
 
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
@@ -20,6 +21,19 @@ const Recommentations: FC<RecommentationsInterface> = () => {
     setIndex(index - 1);
   };
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      clickRightHandle();
+      console.log('here')
+    },
+    onSwipedRight: () => {
+      clickLeftHandle();
+      console.log('here');
+    },
+    swipeDuration: 500,
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
   useEffect(() => {
     if (index < 0) {
       setIndex(2);
@@ -38,7 +52,7 @@ const Recommentations: FC<RecommentationsInterface> = () => {
     <section className='recommendation-section column'>
       <h2 className='recommendation-section__title'>Recommentations</h2>
 
-      <div className='recommendation-section__slideshow column'>
+      <div {...handlers} className='recommendation-section__slideshow column'>
         <button
           type='button'
           className='recommendation-section__slideshow__left-scroll-button'
