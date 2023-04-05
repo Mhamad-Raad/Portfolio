@@ -26,6 +26,12 @@ const Recommentations: FC<RecommentationsInterface> = () => {
     } else if (index > 2) {
       setIndex(0);
     }
+
+    const slideTimer = setTimeout(() => {
+      setIndex((prevState) => prevState + 1);
+    }, 5000);
+
+    return () => clearTimeout(slideTimer);
   }, [index]);
 
   return (
