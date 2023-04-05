@@ -1,6 +1,5 @@
 import { FC, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-
+import { motion, animate } from 'framer-motion';
 
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
@@ -17,15 +16,23 @@ const Recommentations: FC<RecommentationsInterface> = () => {
     setIndex(index + 1);
   };
 
-    const clickLeftHandle = () => {
-      setIndex(index - 1);
-    };
+  const clickLeftHandle = () => {
+    setIndex(index - 1);
+  };
+
+  useEffect(() => {
+    if (index < 0) {
+      setIndex(2);
+    } else if (index > 2) {
+      setIndex(0);
+    }
+  }, [index]);
 
   return (
     <section className='recommendation-section column'>
       <h2 className='recommendation-section__title'>Recommentations</h2>
 
-      <div className='recommendation-section__slideshow row'>
+      <div className='recommendation-section__slideshow column'>
         <button
           type='button'
           className='recommendation-section__slideshow__left-scroll-button'
@@ -35,8 +42,12 @@ const Recommentations: FC<RecommentationsInterface> = () => {
         </button>
         <motion.div
           className='recommendation-section__slideshow__slide row'
-          initial={{ x: 0 }}
-          animate={{ x: -index * 100 + '%' }}
+          initial={{
+            x: 0,
+          }}
+          animate={{
+            x: -index * 100 + '%',
+          }}
           transition={{ duration: 0.5 }}
         >
           <Slide />
@@ -50,6 +61,20 @@ const Recommentations: FC<RecommentationsInterface> = () => {
         >
           <FaAngleRight />
         </button>
+        <div className='recommendation-section__slideshow__dots row'>
+          {[0, 1, 2].map((item, i) => (
+            <button
+              type='button'
+              key={i}
+              className={`recommendation-section__slideshow__dots__dot ${
+                index === i ? 'active' : ''
+              }`}
+              onClick={() => setIndex(i)}
+            >
+              .
+            </button>
+          ))}
+        </div>
       </div>
     </section>
   );

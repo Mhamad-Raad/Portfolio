@@ -2,9 +2,9 @@
 
 .recommendation-section {
   width: 100%;
-  height: 100vh;
   margin-top: 100px;
   padding: 0 20px;
+  justify-content: flex-start;
 
   &__title {
     font-size: 2.5rem;
@@ -16,14 +16,34 @@
 
   &__slideshow {
     width: 100%;
+    height: 5%;
     justify-content: flex-start;
     align-items: center;
     overflow-x: hidden;
     position: relative;
 
+    &__dots {
+      position: absolute;
+      bottom: 10px;
+      justify-content: space-between;
+      align-items: center;
+      width: 100px;
+      z-index: 100;
+
+      &__dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: white;
+        opacity: 0.5;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+    }
+
     &__right-scroll-button {
       position: absolute;
-      top: 50%;
+      top: 40%;
       right: 10px;
       font-size: 40px;
       color: white;
@@ -32,7 +52,7 @@
 
     &__left-scroll-button {
       position: absolute;
-      top: 50%;
+      top: 40%;
       left: 10px;
       font-size: 40px;
       color: white;
@@ -99,9 +119,13 @@
 
 .container {
   min-width: 100%;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
+  margin-bottom: 50px;
+}
+
+.active {
+  opacity: 1;
+  transition: all 0.5s;
 }
