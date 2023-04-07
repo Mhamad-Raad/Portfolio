@@ -18,7 +18,10 @@ const ContactMe: FC<ContactMeInterface> = () => {
           <textarea placeholder={`What's up?`} />
           <button type='submit'>Send</button>
         </form>
-        <Blob />
+
+        <div className='contact-me__content__blob column'>
+          <Blob />
+        </div>
       </div>
     </section>
   );
