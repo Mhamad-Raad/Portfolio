@@ -4,25 +4,15 @@ import { OrbitControls, Plane, Cloud } from '@react-three/drei';
 import { useInView } from 'framer-motion';
 
 import SamuraiModel from '../CanvaObjects/SamuraiModel';
-import './AboutMe.scss';
-import ConnectionItem from './ConnectionItem';
+import ConnectThrough from './ConnectThrough';
 
-import LinkedInImg from '../../assets/LinkedIn.jpg';
-import GitHubImg from '../../assets/ToolsMethodes/GitHub.png';
+import './AboutMe.scss';
 
 interface AboutMeProps {}
 
 const AboutMe: FC<AboutMeProps> = () => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref);
-
-  const goToGithub = () => {
-    window.open('https://github.com/Mhamad-Raad');
-  };
-
-  const goToLinkedIn = () => {
-    window.open('https://www.linkedin.com/in/mhamad-raad');
-  };
 
   return (
     <section className='about-me' id='about-me' ref={ref}>
@@ -50,22 +40,24 @@ const AboutMe: FC<AboutMeProps> = () => {
           is a great honor toward both work and my surroundings, interested in
           learning more?
         </p>
-
         <div className='about-me__description__connection row'>
           <div className='column about-me__description__connection__connect'>
             <h3 className='about-me__description__connection__connect__title'>
               Let's Connect
             </h3>
-            <div className='about-me__description__connection__connect__social'>
-              <ConnectionItem img={LinkedInImg} clickHandler={goToLinkedIn} />
-              <ConnectionItem img={GitHubImg} clickHandler={goToGithub} />
-            </div>
+
+            <ConnectThrough />
+
           </div>
           <div className='column about-me__description__connection__resume'>
             <h3 className='about-me__description__connection__resume__title'>
               Resume
             </h3>
-            <a className='about-me__description__connection__resume__download'  href='./primary.pdf' target='_blank'>
+            <a
+              className='about-me__description__connection__resume__download'
+              href='./primary.pdf'
+              target='_blank'
+            >
               Download
             </a>
           </div>
