@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, FormEvent } from 'react';
 
 import Blob from '../CanvaObjects/Blob/Blob';
 
@@ -7,11 +7,14 @@ import './ContactMe.scss';
 interface ContactMeInterface {}
 
 const ContactMe: FC<ContactMeInterface> = () => {
+  const formSubmissionHandler = (e: FormEvent) => {
+    e.preventDefault();
+  }
   return (
     <section className='contact-me column'>
       <h2 className='contact-me__title'>Contact Me</h2>
       <div className='contact-me__content row'>
-        <form className='contact-me__content__form column'>
+        <form className='contact-me__content__form column' onSubmit={formSubmissionHandler}>
           <h3 className='contact-me__content__form__title'> Let's Connect</h3>
           <input type='text' placeholder='Full Name' required />
           <input type='email' placeholder='Email' required />
