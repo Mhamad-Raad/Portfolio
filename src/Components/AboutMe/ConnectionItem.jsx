@@ -37,7 +37,7 @@ const Connection = ({img, clickHandler}) => {
       height: '100px',
     }}>
       <OrbitControls enableZoom={false} enablePan={false} />
-      <ambientLight intensity={0.38} />
+      <ambientLight intensity={0.4} />
       <Suspense fallback={null}>
         <Item img={texture} clickHandler={clickHandler} />
       </Suspense>
