@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import Categories from './Categories';
+import Categories from './Categories/Categories';
 import FrontEndSkills from './FrontEndSkills';
 import BackendSkills from './BackendSkills';
 import ToolsMethodes from './ToolsMethodes';
