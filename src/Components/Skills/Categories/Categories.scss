@@ -11,42 +11,136 @@
     width: 20%;
     min-width: 300px;
     height: 350px;
-    overflow-y: hidden;
-    padding: 10px;
-    background-color: transparent;
-    border-radius: 10px;
-    box-shadow: 0 0 10px 0 white;
-    justify-content: flex-start;
-    align-items: center;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+    position: relative;
 
-    &:hover {
-      transform: scale(1.05);
+    &__hover-point {
+      position: absolute;
+      z-index: 20;
+      width: calc(100% / 3);
+      height: calc(100% / 3);
+
+      &:nth-child(1) {
+        top: 0;
+        left: 0;
+
+        &:hover ~ .skills-categories__card__content {
+          transform-origin: right top;
+          transform: perspective(1000px) rotateX(10deg);
+        }
+      }
+
+      &:nth-child(2) {
+        top: 0;
+        left: calc(100% / 3);
+
+        &:hover ~ .skills-categories__card__content {
+          transform-origin: center top;
+          transform: perspective(1000px) rotateX(10deg);
+        }
+      }
+
+      &:nth-child(3) {
+        top: 0;
+        right: 0;
+
+        &:hover ~ .skills-categories__card__content {
+          box-shadow: -15px 15px 50px rgba(0, 0, 0, 0.3);
+          transform-origin: left top;
+          transform: perspective(1000px) rotateX(10deg) rotateY(10deg)
+            rotateZ(-2deg);
+        }
+      }
+
+      &:nth-child(4) {
+        top: calc(100% / 3);
+        left: 0;
+
+        &:hover ~ .skills-categories__card__content {
+          transform-origin: left center;
+          transform: perspective(1000px) rotateY(-10deg);
+        }
+      }
+      &:nth-child(5) {
+        top: calc(100% / 3);
+        right: 0;
+
+        &:hover ~ .skills-categories__card__content {
+          transform-origin: right center;
+          transform: perspective(1000px) rotateY(10deg);
+        }
+      }
+      &:nth-child(6) {
+        bottom: 0;
+        left: 0;
+
+        &:hover ~ .skills-categories__card__content {
+          transform-origin: right bottom;
+          transform: perspective(1000px) rotateX(-10deg) rotateY(-10deg)
+            rotateZ(-2deg);
+        }
+      }
+      &:nth-child(7) {
+        bottom: 0;
+        left: calc(100% / 3);
+
+        &:hover ~ .skills-categories__card__content {
+          transform-origin: center bottom;
+          transform: perspective(1000px) rotateX(-10deg);
+        }
+      }
+      &:nth-child(8) {
+        bottom: 0;
+        right: 0;
+
+        &:hover ~ .skills-categories__card__content {
+          transform-origin: left bottom;
+          transform: perspective(1000px) rotateX(-10deg) rotateY(10deg)
+            rotateZ(2deg);
+        }
+      }
     }
 
-    &__title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 25px;
-      color: white;
-      font-family: $Header-Font;
-    }
+    &__content {
+      width: 100%;
+      height: 100%;
+      overflow-y: hidden;
+      padding: 10px;
+      background-color: transparent;
+      border-radius: 10px;
+      box-shadow: 0 0 10px 0 white;
+      justify-content: flex-start;
+      align-items: center;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      cursor: pointer;
 
-    &__img {
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
-      margin-bottom: 50px;
-    }
+      &:hover {
+        transform: scale(1.05);
+      }
 
-    &__description {
-      color: $Active-Color;
-      font-size: 14px;
-      font-weight: 400;
-      font-family: $Body-Font;
-      margin-left: 10px;
-      text-align: center;
+      &__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 25px;
+        color: white;
+        font-family: $Header-Font;
+      }
+
+      &__img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 50px;
+      }
+
+      &__description {
+        color: $Active-Color;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: $Body-Font;
+        margin-left: 10px;
+        text-align: center;
+      }
     }
   }
 }
