@@ -17,7 +17,10 @@ const StarsCanvas = () => {
   return (
     <section className='stars-bg'>
       <Canvas camera={{ position: [0, 0, 1] }}>
-        <OrbitControls />
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+        />
         <Suspense fallback={Loader}>
           <Stars />
           <MovingMeteor />
