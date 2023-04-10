@@ -61,6 +61,7 @@
 
     &__slide {
       width: 100%;
+      scroll-snap-type: x mandatory;
 
       &__slider-item {
         width: 60%;
