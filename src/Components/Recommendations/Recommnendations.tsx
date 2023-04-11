@@ -1,5 +1,5 @@
-import { FC, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { FC, useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { useSwipeable } from 'react-swipeable';
 
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
@@ -11,7 +11,10 @@ import './Recommendations.scss';
 interface RecommentationsInterface {}
 
 const Recommentations: FC<RecommentationsInterface> = () => {
+  const ref = useRef(null);
   const [index, setIndex] = useState(0);
+
+  const inView = useInView(ref);
 
   const clickRightHandle = () => {
     setIndex(index + 1);
@@ -24,7 +27,7 @@ const Recommentations: FC<RecommentationsInterface> = () => {
   const handlers = useSwipeable({
     onSwipedLeft: () => {
       clickRightHandle();
-      console.log('here')
+      console.log('here');
     },
     onSwipedRight: () => {
       clickLeftHandle();
@@ -49,39 +52,46 @@ const Recommentations: FC<RecommentationsInterface> = () => {
   }, [index]);
 
   return (
-    <section className='recommendation-section column'>
+    <section className='recommendation-section column' ref={ref}>
       <h2 className='recommendation-section__title'>Recommentations</h2>
 
       <div {...handlers} className='recommendation-section__slideshow column'>
-        <button
+        <motion.button
           type='button'
           className='recommendation-section__slideshow__left-scroll-button'
+          animate={{ x: inView ? 0 : -200 }}
+          transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
           onClick={clickLeftHandle}
         >
           <FaAngleLeft />
-        </button>
+        </motion.button>
         <motion.div
           className='recommendation-section__slideshow__slide row'
           initial={{
             x: 0,
           }}
           animate={{
-            x: -index * 100 + '%',
+            x: inView? -index * 100 + '%' : 100 + '%',
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
         >
           <Slide />
           <Slide />
           <Slide />
         </motion.div>
-        <button
+        <motion.button
           type='button'
           className='recommendation-section__slideshow__right-scroll-button'
+          animate={{ x: inView ? 0 : 200 }}
+          transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
           onClick={clickRightHandle}
         >
           <FaAngleRight />
-        </button>
-        <div className='recommendation-section__slideshow__dots row'>
+        </motion.button>
+        <motion.div className='recommendation-section__slideshow__dots row'
+          animate={{ y: inView ? 0 : 200 }}
+          transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
+        >
           {[0, 1, 2].map((item, i) => (
             <button
               type='button'
@@ -94,7 +104,7 @@ const Recommentations: FC<RecommentationsInterface> = () => {
               .
             </button>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
