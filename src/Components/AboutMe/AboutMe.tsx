@@ -12,17 +12,12 @@ interface AboutMeProps {}
 
 const AboutMe: FC<AboutMeProps> = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, {once: true});
+  const isInView = useInView(ref, { once: true });
 
   return (
     <section className='about-me' id='about-me' ref={ref}>
       <div
-        className='about-me__description'
-        style={{
-          transform: isInView ? 'none' : 'translateX(-200px)',
-          opacity: isInView ? 1 : 0,
-          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-        }}
+        className={`about-me__description ${isInView? '': 'description__framer'}`}
       >
         <h2 className='about-me__description__title'>
           Hi There{' '}
@@ -47,7 +42,6 @@ const AboutMe: FC<AboutMeProps> = () => {
             </h3>
 
             <ConnectThrough />
-
           </div>
           <div className='column about-me__description__connection__resume'>
             <h3 className='about-me__description__connection__resume__title'>
@@ -63,14 +57,7 @@ const AboutMe: FC<AboutMeProps> = () => {
           </div>
         </div>
       </div>
-      <div
-        className='about-me__samurai'
-        style={{
-          transform: isInView ? 'none' : 'translateX(200px)',
-          opacity: isInView ? 1 : 0,
-          transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-        }}
-      >
+      <div className={`about-me__samurai ${isInView ? '' : 'samurai__framer'}`}>
         <Canvas
           shadows
           camera={{ fov: 100, near: 0.1, far: 1000, position: [1.5, 1, 1.5] }}
@@ -88,7 +75,7 @@ const AboutMe: FC<AboutMeProps> = () => {
           <ambientLight intensity={0.3} />
           <SamuraiModel />
           <Plane
-            receiveShadow // highlight-line
+            receiveShadow 
             rotation={[-Math.PI / 2, 0, 0]}
             position={[0, -1.245, 0]}
             args={[1000, 1000]}
