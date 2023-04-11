@@ -21,7 +21,7 @@ const StarsCanvas = () => {
           enableZoom={false}
           enablePan={false}
         />
-        <Suspense fallback={Loader}>
+        <Suspense fallback={<Loader />}>
           <Stars />
           <MovingMeteor />
           <Astrounount />
