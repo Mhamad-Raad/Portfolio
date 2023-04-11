@@ -12,7 +12,7 @@ import GatewayImg from '../../assets/Gateway.png';
 import IndexImg from '../../assets/Index.jpg';
 import UtmImg from '../../assets/UTM.png';
 
-export default function WorkExperience() {
+const WorkExperience = () => {
   return (
     <section className='work-experience column'>
       <h2 className='work-experience__title'>Work Experience</h2>
@@ -157,11 +157,13 @@ export default function WorkExperience() {
           </h4>
           <p>
             C++, C#, Java, JavaScript, Dart, HTML5, CSS, Bootstrap5, jQuery,
-            Flutter, Servlet, JSP, ASP .Net, AI, Network, Digital
-            Logic, Embedded System, Microcontrollers, Development Methodologies
+            Flutter, Servlet, JSP, ASP .Net, AI, Network, Digital Logic,
+            Embedded System, Microcontrollers, Development Methodologies
           </p>
         </VerticalTimelineElement>
       </VerticalTimeline>
     </section>
   );
-}
+};
+
+export default WorkExperience;
