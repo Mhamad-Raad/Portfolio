@@ -11,6 +11,8 @@ const BallSkill: FC<Props> = ({ img, title }) => {
   const animationDelay: number = Math.random();
 
   return (
+    // the below comment is comming in a future update
+    /* hint-disable(-next)-line no-inline-styles*/
     <img
       className='circle-skill'
       style={{

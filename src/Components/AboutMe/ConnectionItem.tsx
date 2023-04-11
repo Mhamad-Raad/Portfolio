@@ -1,6 +1,6 @@
 import { Canvas, useLoader, useFrame } from '@react-three/fiber';
 import { TextureLoader } from 'three/src/loaders/TextureLoader.js';
-import { useRef, Suspense, FC } from 'react';
+import { useRef, FC } from 'react';
 import { OrbitControls } from '@react-three/drei';
 import { Mesh, Texture } from 'three';
 
@@ -53,9 +53,7 @@ const Connection: FC<ConnectionProps> = ({ img, clickHandler }) => {
     >
       <OrbitControls enableZoom={false} enablePan={false} />
       <ambientLight intensity={0.4} />
-      <Suspense fallback={null}>
-        <Item img={texture} clickHandler={clickHandler} />
-      </Suspense>
+      <Item img={texture} clickHandler={clickHandler} />
     </Canvas>
   );
 };
