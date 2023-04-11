@@ -19,6 +19,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s;
+    opacity: 1;
 
     &:hover {
       box-shadow: 0 0 10px 0 $Active-Color;
@@ -128,8 +130,6 @@
       background: rgba(255, 255, 255, 0.04);
       border-radius: 16px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
       width: 87%;
       height: 87%;
       overflow-y: hidden;
@@ -143,14 +143,6 @@
       &:hover {
         transform: scale(1.05);
       }
-
-      // & * {
-      //   transform: rotateX(0 deg) rotateY(0 deg) translateZ(1000px);
-      //   transform-style: preserve-3d;
-      //   perspective: 1000px;
-      //   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-      //   text-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-      // }
 
       &__title {
         font-size: 1.5rem;
@@ -181,4 +173,24 @@
       }
     }
   }
+}
+
+.card__framer {
+  opacity: 0;
+}
+
+.card__framer--front {
+  transform: translateX(-100%);
+}
+
+.card__framer--student {
+  transform: translateY(100%);
+}
+
+.card__framer--back {
+  transform: translateY(-100%);
+}
+
+.card__framer--flutter {
+  transform: translateX(100%);
 }

@@ -15,8 +15,8 @@ import FlutterImg from '../../../assets/frontend/Flutter.jpg';
 interface CategoriesInterface {}
 
 const Categories: FC<CategoriesInterface> = () => {
-  const catRef = useRef(null);
-  const isInView = useInView(catRef, { once: true });
+  const catRef = useRef<HTMLDivElement | null>(null);
+  const isInView:boolean = useInView(catRef);
   return (
     <div className='skills-categories row' ref={catRef}>
       <CategoriesItem

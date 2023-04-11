@@ -13,7 +13,7 @@ const CategoriesItem: FC<CategoriesItemInterface> = ({
   description,
   inView,
 }) => {
-  let show = '';
+  let show:string = '';
   if (title === 'Front-end') {
     show = 'translateX(-100%)';
   } else if (title === 'Student') {
@@ -26,12 +26,12 @@ const CategoriesItem: FC<CategoriesItemInterface> = ({
 
   return (
     <div
-      className='skills-categories__card'
-      style={{
-        transform: inView ? 'none' : `${ show }`,
-        opacity: inView ? 1 : 0,
-        transition: 'all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s',
-      }}
+      className={`skills-categories__card ${inView ? '' : 'card__framer'}
+        ${(title === 'Front-end' && !inView) ? 'card__framer--front' : ''}
+        ${(title === 'Student' && !inView) ? 'card__framer--student' : ''}
+        ${(title === 'Back-end' && !inView) ? 'card__framer--back' : ''}
+        ${(title === 'Flutter' && !inView) ? 'card__framer--flutter' : ''}
+      `}
     >
       <span className='skills-categories__card__hover-point'></span>
       <span className='skills-categories__card__hover-point'></span>
