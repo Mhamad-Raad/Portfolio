@@ -1,14 +1,18 @@
 import { FC, FormEvent, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
 import Blob from '../CanvaObjects/Blob/Blob';
 
 import './ContactMe.scss';
+import { scale } from 'maath/dist/declarations/src/vector3';
 
 interface ContactMeInterface {}
 
 const ContactMe: FC<ContactMeInterface> = () => {
   const form = useRef<HTMLFormElement | null>(null);
+  const contentRef = useRef(null);
+  const inView = useInView(contentRef, {once: true});
 
   const formSubmissionHandler = (e: FormEvent) => {
     e.preventDefault();
@@ -32,10 +36,10 @@ const ContactMe: FC<ContactMeInterface> = () => {
       );
   };
   return (
-    <section className='contact-me column'>
+    <section className='contact-me column' ref={contentRef}>
       <h2 className='contact-me__title'>Contact Me</h2>
       <div className='contact-me__content row'>
-        <form
+        <motion.form
           ref={form}
           className='contact-me__content__form column'
           onSubmit={formSubmissionHandler}
@@ -52,7 +56,7 @@ const ContactMe: FC<ContactMeInterface> = () => {
           <button type='submit' value='Send'>
             Send
           </button>
-        </form>
+        </motion.form>
 
         <div className='contact-me__content__blob column'>
           <Blob />

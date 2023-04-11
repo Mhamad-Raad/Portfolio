@@ -7,13 +7,14 @@ import demoImg1 from '../../../assets/ToolsMethodes/GitHub.png';
 
 export default function ProjectList() {
   const ref = useRef(null);
-  const inView = useInView(ref);
+  const inView = useInView(ref, { once: true });
 
   return (
-    <div className='projects-section__projects row'
+    <div
+      className='projects-section__projects row'
       ref={ref}
       style={{
-        transform: inView? 'scale(1)' : 'scale(0)',
+        transform: inView ? 'scale(1)' : 'scale(0)',
       }}
     >
       <ProjectItem img={demoImg1} />

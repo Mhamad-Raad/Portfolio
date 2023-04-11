@@ -12,7 +12,7 @@ interface AboutMeProps {}
 
 const AboutMe: FC<AboutMeProps> = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, {once: true});
 
   return (
     <section className='about-me' id='about-me' ref={ref}>

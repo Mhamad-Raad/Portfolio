@@ -14,7 +14,7 @@ const Recommentations: FC<RecommentationsInterface> = () => {
   const ref = useRef(null);
   const [index, setIndex] = useState(0);
 
-  const inView = useInView(ref);
+  const inView = useInView(ref, { once: true });
 
   const clickRightHandle = () => {
     setIndex(index + 1);
@@ -71,7 +71,7 @@ const Recommentations: FC<RecommentationsInterface> = () => {
             x: 0,
           }}
           animate={{
-            x: inView? -index * 100 + '%' : 100 + '%',
+            x: inView ? -index * 100 + '%' : 100 + '%',
           }}
           transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
         >
@@ -88,7 +88,8 @@ const Recommentations: FC<RecommentationsInterface> = () => {
         >
           <FaAngleRight />
         </motion.button>
-        <motion.div className='recommendation-section__slideshow__dots row'
+        <motion.div
+          className='recommendation-section__slideshow__dots row'
           animate={{ y: inView ? 0 : 200 }}
           transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
         >
