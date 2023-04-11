@@ -1,7 +1,14 @@
+import { FC } from 'react';
+
 import './CircleSkill.scss';
 
-const BallSkill = ({ img, title }) => {
-  const animationDelay = Math.random();
+interface Props {
+  img: string;
+  title: string;
+}
+
+const BallSkill: FC<Props> = ({ img, title }) => {
+  const animationDelay: number = Math.random();
 
   return (
     <img
