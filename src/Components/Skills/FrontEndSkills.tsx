@@ -30,6 +30,7 @@ interface FrontEndSkillsInterface {}
 const FrontEndSkills: FC<FrontEndSkillsInterface> = () => {
   const ref = useRef(null);
   const inView = useInView(ref);
+
   return (
     <div className='category-skills column'>
       <h3 className='category-skills__title'>Front-End</h3>

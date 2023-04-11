@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 import CircleSkill from './Skill/CircleSkill';
 
@@ -12,11 +13,20 @@ import RspecImg from '../../assets/backend/Rspec.png';
 
 interface BackendSkillsInterface {}
 
-const BackendSkills:FC<BackendSkillsInterface> = () => {
+const BackendSkills: FC<BackendSkillsInterface> = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref);
+
   return (
     <div className='category-skills column'>
       <h3 className='category-skills__title'>Back-End</h3>
-      <div className='category-skills__techs'>
+      <div className='category-skills__techs'
+        ref={ref}
+        style={{
+          opacity: inView ? '1' : '0',
+          transform: inView ? 'translateX(0)' : 'translateX(-100%)',
+        }}
+      >
         <CircleSkill img={PosgresqlImg} title='PostgreSQL' />
         <CircleSkill img={MysqlImg} title='MySQL' />
         <CircleSkill img={RorImg} title='Ruby on Rails' />
@@ -25,6 +35,6 @@ const BackendSkills:FC<BackendSkillsInterface> = () => {
       </div>
     </div>
   );
-}
+};
 
 export default BackendSkills;
