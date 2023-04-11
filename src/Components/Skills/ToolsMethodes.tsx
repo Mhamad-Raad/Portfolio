@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 import CircleSkill from './Skill/CircleSkill';
 
@@ -26,10 +27,20 @@ import VercelImg from '../../assets/ToolsMethodes/Vercel.jpg';
 interface ToolsMethodesInterface {}
 
 const ToolsMethodes: FC<ToolsMethodesInterface> = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref);
+
   return (
     <div className='category-skills column'>
       <h3 className='category-skills__title'>Tools & Methodes</h3>
-      <div className='category-skills__techs'>
+      <div className='category-skills__techs'
+        ref={ref}
+        style={{
+          opacity: inView ? 1 : 0,
+          transform: inView ? 'translateX(0)' : 'translateX(100%)',
+        }}
+
+      >
         <CircleSkill img={AgileImg} title='Agile' />
         <CircleSkill img={CDTImg} title='CDT' />
         <CircleSkill img={GitImg} title='Git' />
