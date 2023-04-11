@@ -16,7 +16,7 @@ interface CategoriesInterface {}
 
 const Categories: FC<CategoriesInterface> = () => {
   const catRef = useRef<HTMLDivElement | null>(null);
-  const isInView:boolean = useInView(catRef);
+  const isInView: boolean = useInView(catRef, { once: true });
   return (
     <div className='skills-categories row' ref={catRef}>
       <CategoriesItem

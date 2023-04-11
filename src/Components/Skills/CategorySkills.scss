@@ -14,7 +14,7 @@
     font-family: $Header-Font;
   }
 
-  &__techs {    
+  &__techs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -22,5 +22,22 @@
     margin-top: 40px;
     gap: 20px;
     transition: all 0.5s;
+    transform: none;
+    opacity: 1;
   }
+}
+
+.back-tech__framer {
+  opacity: 0 !important;
+  transform: translateX(-100%) !important;
+}
+
+.front-tech__framer {
+  opacity: 0 !important;
+  transform: translateY(100%) !important;
+}
+
+.tools-tech__framer {
+  opacity: 0 !important;
+  transform: translateX(100%) !important;
 }

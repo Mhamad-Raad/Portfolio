@@ -27,19 +27,17 @@ import VercelImg from '../../assets/ToolsMethodes/Vercel.jpg';
 interface ToolsMethodesInterface {}
 
 const ToolsMethodes: FC<ToolsMethodesInterface> = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView: boolean = useInView(ref, { once: true });
 
   return (
     <div className='category-skills column'>
       <h3 className='category-skills__title'>Tools & Methodes</h3>
       <div
-        className='category-skills__techs'
+        className={`category-skills__techs ${
+          inView ? '' : 'tools-tech__framer'
+        }`}
         ref={ref}
-        style={{
-          opacity: inView ? 1 : 0,
-          transform: inView ? 'translateX(0)' : 'translateX(100%)',
-        }}
       >
         <CircleSkill img={AgileImg} title='Agile' />
         <CircleSkill img={CDTImg} title='CDT' />

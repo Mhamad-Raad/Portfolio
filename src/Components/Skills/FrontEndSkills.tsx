@@ -28,19 +28,17 @@ import Flutter from '../../assets/frontend/Flutter.jpg';
 interface FrontEndSkillsInterface {}
 
 const FrontEndSkills: FC<FrontEndSkillsInterface> = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView: boolean = useInView(ref, { once: true });
 
   return (
     <div className='category-skills column'>
       <h3 className='category-skills__title'>Front-End</h3>
       <div
-        className='category-skills__techs'
+        className={`category-skills__techs ${
+          inView ? '' : 'front-tech__framer'
+        }`}
         ref={ref}
-        style={{
-          opacity: inView ? '1' : '0',
-          transform: inView ? 'translateY(0)' : 'translateY(100%)',
-        }}
       >
         <CircleSkill img={HtmlImg} title='HTML 5' />
         <CircleSkill img={CssImg} title='CSS 3' />

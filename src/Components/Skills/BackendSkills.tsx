@@ -14,18 +14,17 @@ import RspecImg from '../../assets/backend/Rspec.png';
 interface BackendSkillsInterface {}
 
 const BackendSkills: FC<BackendSkillsInterface> = () => {
-  const ref = useRef(null);
-  const inView = useInView(ref, {once: true});
+  const ref = useRef<HTMLDivElement | null>(null);
+  const inView: boolean = useInView(ref, {once: true});
 
   return (
     <div className='category-skills column'>
       <h3 className='category-skills__title'>Back-End</h3>
-      <div className='category-skills__techs'
+      <div
+        className={`category-skills__techs ${
+          inView ? '' : 'back-tech__framer'
+        }`}
         ref={ref}
-        style={{
-          opacity: inView ? '1' : '0',
-          transform: inView ? 'translateX(0)' : 'translateX(-100%)',
-        }}
       >
         <CircleSkill img={PosgresqlImg} title='PostgreSQL' />
         <CircleSkill img={MysqlImg} title='MySQL' />
