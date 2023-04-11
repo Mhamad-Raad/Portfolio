@@ -1,6 +1,6 @@
 import img1 from '../../assets/ToolsMethodes/GitHub.png';
 
-export default function Slide() {
+const Slide = () => {
   return (
     <div className='container column'>
       <div className='recommendation-section__slideshow__slide__slider-item column'>
@@ -27,3 +27,5 @@ export default function Slide() {
     </div>
   );
 }
+
+export default Slide;

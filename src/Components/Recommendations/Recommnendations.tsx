@@ -1,6 +1,6 @@
 import { FC, useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { useSwipeable } from 'react-swipeable';
+import { SwipeableHandlers, useSwipeable } from 'react-swipeable';
 
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
@@ -11,10 +11,10 @@ import './Recommendations.scss';
 interface RecommentationsInterface {}
 
 const Recommentations: FC<RecommentationsInterface> = () => {
-  const ref = useRef(null);
-  const [index, setIndex] = useState(0);
+  const ref = useRef<HTMLElement | null>(null);
+  const [index, setIndex] = useState<number>(0);
 
-  const inView = useInView(ref, { once: true });
+  const inView: boolean = useInView(ref, { once: true });
 
   const clickRightHandle = () => {
     setIndex(index + 1);
@@ -24,14 +24,12 @@ const Recommentations: FC<RecommentationsInterface> = () => {
     setIndex(index - 1);
   };
 
-  const handlers = useSwipeable({
+  const handlers: SwipeableHandlers = useSwipeable({
     onSwipedLeft: () => {
       clickRightHandle();
-      console.log('here');
     },
     onSwipedRight: () => {
       clickLeftHandle();
-      console.log('here');
     },
     swipeDuration: 500,
     preventScrollOnSwipe: true,
