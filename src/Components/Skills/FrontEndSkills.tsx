@@ -1,5 +1,6 @@
-import { FC, } from 'react';
+import { FC, useRef } from 'react';
 
+import { useInView } from 'framer-motion';
 
 import CircleSkill from './Skill/CircleSkill';
 
@@ -27,10 +28,19 @@ import Flutter from '../../assets/frontend/Flutter.jpg';
 interface FrontEndSkillsInterface {}
 
 const FrontEndSkills: FC<FrontEndSkillsInterface> = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref);
   return (
     <div className='category-skills column'>
       <h3 className='category-skills__title'>Front-End</h3>
-      <div className='category-skills__techs'>
+      <div
+        className='category-skills__techs'
+        ref={ref}
+        style={{
+          opacity: inView ? '1' : '0',
+          transform: inView ? 'translateY(0)' : 'translateY(100%)',
+        }}
+      >
         <CircleSkill img={HtmlImg} title='HTML 5' />
         <CircleSkill img={CssImg} title='CSS 3' />
         <CircleSkill img={SassImg} title='Sass' />
