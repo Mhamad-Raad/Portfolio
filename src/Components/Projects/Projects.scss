@@ -19,6 +19,7 @@
     align-items: center;
     gap: 25px;
     transition: all 0.5s;
+    transform: scale(1);
 
     &__project {
       width: 23.7%;
@@ -115,4 +116,8 @@
       }
     }
   }
+}
+
+.projects__framer {
+  transform: scale(0);
 }
