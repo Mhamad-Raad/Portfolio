@@ -1,4 +1,4 @@
-import { Suspense, lazy } from 'react';
+import { lazy } from 'react';
 import Loader from './Components/CanvaObjects/Loader/Loader';
 
 import WorkExperience from './Components/WorkExperience/WorkExperience';
@@ -18,18 +18,19 @@ const ContactMe = lazy(() => import('./Components/ContactMe/ContactMe'));
 
 const App = () => {
   return (
-    <Suspense fallback={<Loader />}>
-      <main className='app-page'>
-        <NavBar />
-        <Background />
-        <AboutMe />
-        <WorkExperience />
-        <Skills />
-        <Projects />
-        <Recommentations />
-        <ContactMe />
-      </main>
-    </Suspense>
+    <>
+    <Loader />
+    <main className='app-page'>
+      <NavBar />
+      <Background />
+      <AboutMe />
+      <WorkExperience />
+      <Skills />
+      <Projects />
+      <Recommentations />
+      <ContactMe />
+    </main>
+    </>
   );
 };
 

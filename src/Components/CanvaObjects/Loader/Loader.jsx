@@ -1,8 +1,9 @@
-import { Html, useProgress } from '@react-three/drei';
+import { useProgress } from '@react-three/drei';
 import './Loader.scss';
 
 const Loader = () => {
   const { progress } = useProgress();
+  console.log(progress);
   return (
     <div className='loader-body'>
       <div className='sky'>
