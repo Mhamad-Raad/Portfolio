@@ -1,12 +1,19 @@
+@use '../../../Styles/variables' as *;
+
 $bg-color: #171717;
 $star-white: white;
 $shining-size: 30px;
 $shooting-time: 3s;
 
+
 .loader-body {
   margin: 0;
   padding: 0;
-  background-image: radial-gradient(ellipse at bottom, #1D2B3B 0%, #09090C 100%);
+  background-image: radial-gradient(
+    ellipse at bottom,
+    #1d2b3b 0%,
+    #09090c 100%
+  );
   height: 100vh;
   overflow: hidden;
   width: 100%;
@@ -24,42 +31,51 @@ $shooting-time: 3s;
   top: -20%;
   left: -10%;
   transform: rotate(135deg);
-  
+
   .star {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 1px;
     background-image: linear-gradient(white 0, rgba(0, 0, 0, 0) 100%);
-    animation: 
-      tail $shooting-time ease-in-out infinite,
+    animation: tail $shooting-time ease-in-out infinite,
       shot $shooting-time ease-in-out infinite;
-    
+
     &:before {
       content: '';
       position: absolute;
       left: 0px;
       height: 2px;
-      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, white 50%, rgba(0, 0, 0, 0) 100%);
+      background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0) 0,
+        white 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
       transform: translateX(-50%) rotate(45deg);
-      box-shadow: 0 0 20px .1px white;
+      box-shadow: 0 0 20px 0.1px white;
       animation: shining $shooting-time ease-in-out infinite;
     }
-    
+
     &:after {
       // @extend .star:before;
       content: '';
       position: absolute;
       left: 0px;
       height: 2px;
-      background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, white 50%, rgba(0, 0, 0, 0) 100%);
+      background-image: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0) 0,
+        white 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
       transform: translateX(-50%) rotate(45deg);
-      box-shadow: 0 0 20px .1px white;
+      box-shadow: 0 0 20px 0.1px white;
       animation: shining $shooting-time ease-in-out infinite;
       transform: translateX(-50%) rotate(-45deg);
     }
-    
-   @for $i from 1 through 24 {
+
+    @for $i from 1 through 24 {
       &:nth-child(#{$i}) {
         $delay: random(9999) + 0ms;
         top: calc(#{random(100) + 0%});
@@ -78,10 +94,10 @@ $shooting-time: 3s;
 /* Rocket part */
 .rocket {
   position: absolute;
-  top: 50%;
-  right: 50%;
+  top: 30%;
+  left: 44%;
   transform: rotate(-45deg);
-  
+
   .rocket-body {
     &:before {
       content: '';
@@ -90,11 +106,11 @@ $shooting-time: 3s;
       left: 0px;
       width: 50px;
       height: 200px;
-      background-image: radial-gradient(#A80000 0 50%, black 100%);
+      background-image: radial-gradient(#a80000 0 50%, black 100%);
       border-radius: 50% 50% 10% 10% / 30% 30% 20% 20%;
-      transform: perspective(.5em) rotateX(-1.5deg);
+      transform: perspective(0.5em) rotateX(-1.5deg);
     }
-    
+
     &:after {
       content: '';
       position: absolute;
@@ -102,72 +118,106 @@ $shooting-time: 3s;
       left: 13px;
       width: 24px;
       height: 24px;
-      background-color: #E4E2E2;
+      background-color: #e4e2e2;
       border-radius: 50%;
-      transform: perspective(.5em) rotateX(-1.5deg);
-      box-shadow: 
-        inset 0 1px 0 2px #171717;
+      transform: perspective(0.5em) rotateX(-1.5deg);
+      box-shadow: inset 0 1px 0 2px #171717;
     }
-    
+
     .nose {
       position: absolute;
       top: -80px;
       left: 21px;
-      border-bottom: 50px solid #540202; 
+      border-bottom: 50px solid #540202;
       border-right: 4px solid transparent;
       border-left: 4px solid transparent;
     }
- 
-    .fin-left{
+
+    .fin-left {
       position: absolute;
       top: 120px;
       left: -20px;
       width: 40px;
       height: 50px;
-      background-image: linear-gradient(#9E0C02, #D15A07, #A88604);
+      background-image: linear-gradient(#9e0c02, #d15a07, #a88604);
       border-radius: 20% 0 0 0;
       transform: skewY(-50deg);
       z-index: -10;
     }
-    
-    .fin-right{
+
+    .fin-right {
       position: absolute;
       top: 120px;
       left: 30px;
       width: 40px;
       height: 50px;
-      background-image: linear-gradient(#9E0C02, #D15A07, #A88604);
+      background-image: linear-gradient(#9e0c02, #d15a07, #a88604);
       border-radius: 0 20% 0 0;
       transform: skewY(50deg);
       z-index: -10;
     }
-    
+
     .nozzle {
       position: absolute;
       top: 179px;
       left: 13px;
       width: 24px;
       height: 8px;
-      background-image: linear-gradient(90deg, #474747 10%, #9BA8AF 50%, #474747 100%);
+      background-image: linear-gradient(
+        90deg,
+        #474747 10%,
+        #9ba8af 50%,
+        #474747 100%
+      );
       border-radius: 0 0 40% 40%;
       border-top: 1px solid black;
     }
-    
+
     .flames {
       position: absolute;
       top: 195px;
       left: 10px;
       width: 30px;
       height: 120px;
-      background-image: 
-        radial-gradient(ellipse at top, white 0% 1%, rgba(white, 0) 20% 100%),
-        radial-gradient(ellipse at top, orange 0% 20%, rgba(orange, 0) 60% 100%
-      ),
+      background-image: radial-gradient(
+          ellipse at top,
+          white 0% 1%,
+          rgba(white, 0) 20% 100%
+        ),
+        radial-gradient(ellipse at top, orange 0% 20%, rgba(orange, 0) 60% 100%),
         radial-gradient(ellipse at top, red 0% 30%, rgba(red, 0) 70% 100%);
       border-radius: 40%;
-      animation: flames .5s ease-in-out infinite;
+      animation: flames 0.5s ease-in-out infinite;
     }
   }
+}
+
+.welcome-header {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: $Header-Font;
+  z-index: 10;
+  letter-spacing: 4px;
+}
+
+.made-by {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: $Body-Font;
+  z-index: 10;
+  letter-spacing: 4px;
 }
 
 @keyframes shining {
@@ -205,26 +255,26 @@ $shooting-time: 3s;
 
 @keyframes flames {
   0%,
-	100% {
-		transform-origin: top center;
-		transform: scalex(1);
-	}
+  100% {
+    transform-origin: top center;
+    transform: scalex(1);
+  }
   10% {
-		transform: scale(0.9, 0.8);
-	}
-	50% {
-		transform: scaleY(0.98);
-	}
-	50% {
-		transform: scaleY(0.68);
-	}
-	70% {
-		transform: scaleY(0.88);
-	}
-	80% {
-		transform: scaleY(0.78);
-	}
-	90% {
-		transform: scaleY(0.88);
-	}
+    transform: scale(0.9, 0.8);
+  }
+  50% {
+    transform: scaleY(0.98);
+  }
+  50% {
+    transform: scaleY(0.68);
+  }
+  70% {
+    transform: scaleY(0.88);
+  }
+  80% {
+    transform: scaleY(0.78);
+  }
+  90% {
+    transform: scaleY(0.88);
+  }
 }

@@ -1,6 +1,7 @@
 import { lazy, useEffect, useState } from 'react';
-import Loader from './Components/CanvaObjects/Loader/ScreenLoader';
+import { motion } from 'framer-motion';
 
+import Loader from './Components/CanvaObjects/Loader/ScreenLoader';
 import WorkExperience from './Components/WorkExperience/WorkExperience';
 import Skills from './Components/Skills/Skills';
 import Projects from './Components/Projects/Projects';
@@ -22,9 +23,9 @@ const App = () => {
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
     if (loading) {
-      timer = setTimeout(() => {
-        setLoading(false);
-      }, 5000);
+      // timer = setTimeout(() => {
+      //   setLoading(false);
+      // }, 6000);
     }
     // eslint-disable-next-line
     () => clearTimeout(timer);
@@ -34,7 +35,11 @@ const App = () => {
     <>
       {loading && <Loader />}
 
-      <main className={`app-page ${loading && 'disable-scroll'}`}>
+      <motion.main className={`app-page ${loading && 'disable-scroll'}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 6 }}
+      >
         <NavBar />
         <Background />
         <AboutMe />
@@ -43,7 +48,7 @@ const App = () => {
         <Projects />
         <Recommentations />
         <ContactMe />
-      </main>
+      </motion.main>
     </>
   );
 };
