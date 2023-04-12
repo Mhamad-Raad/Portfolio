@@ -4,7 +4,7 @@ import 'react-circular-progressbar/dist/styles.css';
 
 import './ComponentLoader.scss';
 
-export default function ComponentLoader() {
+const ComponentLoader = () => {
   const { progress } = useProgress();
   let percentage = progress.toFixed(2);
 
@@ -33,3 +33,5 @@ export default function ComponentLoader() {
     </Html>
   );
 }
+
+export default ComponentLoader;

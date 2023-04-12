@@ -1,7 +1,8 @@
-import { useMemo, useRef } from 'react';
+import { useMemo, useRef, Suspense } from 'react';
 import vertexShader from './vertexShader';
 import fragmentShader from './fragmentShader';
 import { Canvas, useFrame } from '@react-three/fiber';
+import  ComponentLoader  from '../Loader/ComponentLoader/ComponentLoader';
 
 import { MathUtils } from 'three';
 
@@ -49,9 +50,11 @@ const BlobObj = () => {
 const Blob = () => {
   return (
     <Canvas camera={{ position: [0.0, 0.0, 8.0] }}>
-      <BlobObj />
+      <Suspense fallback={<ComponentLoader />}>
+        <BlobObj />
+      </Suspense>
     </Canvas>
   );
-}
+};
 
 export default Blob;

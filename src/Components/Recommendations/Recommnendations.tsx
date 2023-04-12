@@ -71,7 +71,7 @@ const Recommentations: FC<RecommentationsInterface> = () => {
           animate={{
             x: inView ? -index * 100 + '%' : 100 + '%',
           }}
-          transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
+          transition={{ duration: 1.5, type: 'spring' }}
         >
           <Slide />
           <Slide />

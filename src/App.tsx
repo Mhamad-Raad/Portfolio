@@ -25,7 +25,7 @@ const App = () => {
     if (loading) {
       timer = setTimeout(() => {
         setLoading(false);
-      }, 6500);
+      }, 7000);
     }
     // eslint-disable-next-line
     () => clearTimeout(timer);
@@ -35,10 +35,11 @@ const App = () => {
     <>
       {loading && <Loader />}
 
-      <motion.main className={`app-page ${loading && 'disable-scroll'}`}
+      <motion.main
+        className={`app-page ${loading && 'disable-scroll'}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 6 }}
+        transition={{ duration: 1, delay: 7 }}
       >
         <NavBar />
         <Background />
@@ -47,7 +48,7 @@ const App = () => {
         <Skills />
         <Projects />
         <Recommentations />
-        <ContactMe />
+        {!loading && <ContactMe />}
       </motion.main>
     </>
   );

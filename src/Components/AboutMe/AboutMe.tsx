@@ -101,7 +101,7 @@ const AboutMe: FC<AboutMeProps> = () => {
               position={[3, 1, -6]}
               scale={[0.5, 0.5, 0.5]}
             />
-          </Suspense>{' '}
+          </Suspense>
         </Canvas>
       </div>
     </section>
