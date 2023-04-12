@@ -1,5 +1,5 @@
-import { lazy } from 'react';
-import Loader from './Components/CanvaObjects/Loader/Loader';
+import { lazy, useEffect, useState } from 'react';
+import Loader from './Components/CanvaObjects/Loader/ScreenLoader';
 
 import WorkExperience from './Components/WorkExperience/WorkExperience';
 import Skills from './Components/Skills/Skills';
@@ -17,19 +17,33 @@ const AboutMe = lazy(() => import('./Components/AboutMe/AboutMe'));
 const ContactMe = lazy(() => import('./Components/ContactMe/ContactMe'));
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
+    if (loading) {
+      timer = setTimeout(() => {
+        setLoading(false);
+      }, 5000);
+    }
+    // eslint-disable-next-line
+    () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
-    <Loader />
-    <main className='app-page'>
-      <NavBar />
-      <Background />
-      <AboutMe />
-      <WorkExperience />
-      <Skills />
-      <Projects />
-      <Recommentations />
-      <ContactMe />
-    </main>
+      {loading && <Loader />}
+
+      <main className={`app-page ${loading && 'disable-scroll'}`}>
+        <NavBar />
+        <Background />
+        <AboutMe />
+        <WorkExperience />
+        <Skills />
+        <Projects />
+        <Recommentations />
+        <ContactMe />
+      </main>
     </>
   );
 };

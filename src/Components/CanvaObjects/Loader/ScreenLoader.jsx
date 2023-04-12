@@ -1,9 +1,10 @@
-import { useProgress } from '@react-three/drei';
-import './Loader.scss';
+// import { useProgress } from '@react-three/drei';
+import { useEffect } from 'react';
+import './ScreenLoader.scss';
 
 const Loader = () => {
-  const { progress } = useProgress();
-  console.log(progress);
+  // const { progress } = useProgress();
+  // console.log(progress);
   return (
     <div className='loader-body'>
       <div className='sky'>
