@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react';
+import { FC, useRef, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Plane, Cloud } from '@react-three/drei';
 import { useInView } from 'framer-motion';
@@ -7,6 +7,7 @@ import SamuraiModel from '../CanvaObjects/SamuraiModel';
 import ConnectThrough from './ConnectThrough';
 
 import './AboutMe.scss';
+import ComponentLoader from '../CanvaObjects/Loader/ComponentLoader/ComponentLoader';
 
 interface AboutMeProps {}
 
@@ -17,7 +18,9 @@ const AboutMe: FC<AboutMeProps> = () => {
   return (
     <section className='about-me' id='about-me' ref={ref}>
       <div
-        className={`about-me__description ${isInView? '': 'description__framer'}`}
+        className={`about-me__description ${
+          isInView ? '' : 'description__framer'
+        }`}
       >
         <h2 className='about-me__description__title'>
           Hi There{' '}
@@ -65,34 +68,40 @@ const AboutMe: FC<AboutMeProps> = () => {
             borderRadius: '10px',
           }}
         >
-          <OrbitControls />
-          <directionalLight
-            visible
-            intensity={1}
-            position={[0, 10, 5]}
-            castShadow
-          />
-          <ambientLight intensity={0.3} />
-          <SamuraiModel />
-          <Plane
-            receiveShadow 
-            rotation={[-Math.PI / 2, 0, 0]}
-            position={[0, -1.245, 0]}
-            args={[1000, 1000]}
-          >
-            <meshStandardMaterial attach='material' color='grey' />
-          </Plane>
-          <Cloud
-            opacity={0.75}
-            position={[-3, 1, -5]}
-            scale={[0.5, 0.5, 0.5]}
-          />
-          <Cloud
-            opacity={0.75}
-            position={[-6, 0, -1]}
-            scale={[0.5, 0.5, 0.5]}
-          />
-          <Cloud opacity={0.75} position={[3, 1, -6]} scale={[0.5, 0.5, 0.5]} />
+          <Suspense fallback={<ComponentLoader />}>
+            <OrbitControls />
+            <directionalLight
+              visible
+              intensity={1}
+              position={[0, 10, 5]}
+              castShadow
+            />
+            <ambientLight intensity={0.3} />
+            <SamuraiModel />
+            <Plane
+              receiveShadow
+              rotation={[-Math.PI / 2, 0, 0]}
+              position={[0, -1.245, 0]}
+              args={[1000, 1000]}
+            >
+              <meshStandardMaterial attach='material' color='grey' />
+            </Plane>
+            <Cloud
+              opacity={0.75}
+              position={[-3, 1, -5]}
+              scale={[0.5, 0.5, 0.5]}
+            />
+            <Cloud
+              opacity={0.75}
+              position={[-6, 0, -1]}
+              scale={[0.5, 0.5, 0.5]}
+            />
+            <Cloud
+              opacity={0.75}
+              position={[3, 1, -6]}
+              scale={[0.5, 0.5, 0.5]}
+            />
+          </Suspense>{' '}
         </Canvas>
       </div>
     </section>

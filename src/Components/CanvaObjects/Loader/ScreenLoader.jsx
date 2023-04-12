@@ -1,12 +1,10 @@
-// import { useProgress } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import './ScreenLoader.scss';
 
 const Loader = () => {
-  // const { progress } = useProgress();
-  // console.log(progress);
   return (
-    <motion.div className='loader-body'
+    <motion.div
+      className='loader-body'
       initial={{ opacity: 1 }}
       animate={{ opacity: 0 }}
       transition={{ delay: 5, duration: 1 }}

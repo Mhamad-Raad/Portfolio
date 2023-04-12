@@ -23,9 +23,9 @@ const App = () => {
   useEffect(() => {
     let timer: ReturnType<typeof setTimeout>;
     if (loading) {
-      // timer = setTimeout(() => {
-      //   setLoading(false);
-      // }, 6000);
+      timer = setTimeout(() => {
+        setLoading(false);
+      }, 6500);
     }
     // eslint-disable-next-line
     () => clearTimeout(timer);

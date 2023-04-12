@@ -1,6 +1,8 @@
 import { Canvas } from '@react-three/fiber';
 import { Preload, OrbitControls } from '@react-three/drei';
 import { Link } from 'react-scroll';
+import { Suspense } from 'react';
+import ComponentLoader from '../CanvaObjects/Loader/ComponentLoader/ComponentLoader';
 
 import Stars from '../CanvaObjects/Stars';
 import Satalite from '../CanvaObjects/Satalite';
@@ -13,13 +15,17 @@ import './StarsBackground.scss';
 const StarsCanvas = () => {
   return (
     <section className='stars-bg'>
-      <Canvas camera={{ position: [0, 0, 1] }}>
+      <Canvas
+        camera={{ position: [0, 0, 1] }}
+      >
         <OrbitControls enableZoom={false} enablePan={false} />
-        <Stars />
-        <MovingMeteor />
-        <Astrounount />
-        <Satalite />
-        <Ship />
+        <Suspense fallback={<ComponentLoader />}>
+          <Stars />
+          <MovingMeteor />
+          <Astrounount />
+          <Satalite />
+          <Ship />
+        </Suspense>
         <Preload all />
       </Canvas>
       <div className='stars-bg__name-position-bg'>
