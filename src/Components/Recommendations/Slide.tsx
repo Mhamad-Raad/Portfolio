@@ -1,6 +1,10 @@
+import { FC } from 'react';
+
 import img1 from '../../assets/ToolsMethodes/GitHub.png';
 
-const Slide = () => {
+interface SlideProps {}
+
+const Slide: FC<SlideProps> = () => {
   return (
     <div className='container column'>
       <div className='recommendation-section__slideshow__slide__slider-item column'>
