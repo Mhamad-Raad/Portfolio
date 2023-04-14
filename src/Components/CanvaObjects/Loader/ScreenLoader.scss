@@ -8,11 +8,7 @@ $shooting-time: 3s;
 .loader-body {
   margin: 0;
   padding: 0;
-  background-image: radial-gradient(
-    ellipse at bottom,
-    #1d2b3b 0%,
-    #09090c 100%
-  );
+  background-image: $Background-Color;
   height: 100vh;
   overflow: hidden;
   width: 100%;
