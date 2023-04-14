@@ -5,7 +5,6 @@ $star-white: white;
 $shining-size: 30px;
 $shooting-time: 3s;
 
-
 .loader-body {
   margin: 0;
   padding: 0;
@@ -91,12 +90,26 @@ $shooting-time: 3s;
   }
 }
 
+@keyframes fly {
+  0% {
+    top: 30%;
+    left: 44%;
+  }
+  100% {
+    top: -100%;
+    left: 0%;
+  }
+}
+
 /* Rocket part */
 .rocket {
   position: absolute;
+  transform: rotate(-45deg);
+  animation: fly;
   top: 30%;
   left: 44%;
-  transform: rotate(-45deg);
+  animation-duration: 2s;
+  animation-delay: 5s;
 
   .rocket-body {
     &:before {
