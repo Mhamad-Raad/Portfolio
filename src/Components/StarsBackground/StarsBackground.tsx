@@ -15,9 +15,7 @@ import './StarsBackground.scss';
 const StarsCanvas = () => {
   return (
     <section className='stars-bg'>
-      <Canvas
-        camera={{ position: [0, 0, 1] }}
-      >
+      <Canvas camera={{ position: [0, 0, 1] }}>
         <OrbitControls enableZoom={false} enablePan={false} />
         <Suspense fallback={<ComponentLoader />}>
           <Stars />
@@ -28,11 +26,15 @@ const StarsCanvas = () => {
         </Suspense>
         <Preload all />
       </Canvas>
-      <div className='stars-bg__name-position-bg'>
-        <h1 className='stars-bg__name-position-bg__name'>Mhamad Raad</h1>
-        <h2 className='stars-bg__name-position-bg__position'>
-          Front-end Developer
-        </h2>
+      <div className='animated-title'>
+        <div className='text-top'>
+          <div>
+            <span>Mhamad Raad</span>
+          </div>
+        </div>
+        <div className='text-bottom'>
+          <div>Front-end Developer</div>
+        </div>
       </div>
       <div className='stars-bg__scroll'>
         <Link

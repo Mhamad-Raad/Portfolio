@@ -54,18 +54,18 @@
     }
 
     &__scroll {
-        left: 50%;
-        margin-left: -12px;
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        border-left: 5px solid $Active-Color;
-        border-bottom: 5px solid $Active-Color;
-        -webkit-transform: rotateZ(-45deg);
-        transform: rotateZ(-45deg);
-        -webkit-animation: sdb06 1.5s infinite;
-        animation: sdb06 1.5s infinite;
-        box-sizing: border-box;
+      left: 50%;
+      margin-left: -12px;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-left: 5px solid $Active-Color;
+      border-bottom: 5px solid $Active-Color;
+      -webkit-transform: rotateZ(-45deg);
+      transform: rotateZ(-45deg);
+      -webkit-animation: sdb06 1.5s infinite;
+      animation: sdb06 1.5s infinite;
+      box-sizing: border-box;
     }
   }
 }
@@ -97,3 +97,99 @@
   }
 }
 
+@keyframes showTopText {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+  60% {
+    transform: translate3d(0, 50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showBottomText {
+  0% {
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    left: -200%;
+  }
+  100% {
+    left: 50%;
+  }
+}
+
+.animated-title {
+  height: 200px;
+  left: 50%;
+  position: absolute;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  animation: slideIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 7s;
+
+  & > div {
+    height: 50%;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    div {
+      padding: 2vmin 0;
+      font-family: $Header-Font;
+      position: absolute;
+
+      span {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  & > div.text-top {
+    border-bottom: 1vmin solid white;
+    border-radius: 5px;
+    top: 0;
+    text-align: center;
+
+    div {
+      animation: showTopText 1s;
+      animation-delay: 8s;
+      animation-fill-mode: forwards;
+      bottom: 0;
+      transform: translate(0, 100%);
+
+      span {
+        color: white;
+        font-size: 3rem;
+      }
+    }
+  }
+
+  & > div.text-bottom {
+    bottom: 0;
+    font-size: 1.75rem;
+
+    div {
+      animation: showBottomText 1s;
+      animation-delay: 9s;
+      animation-fill-mode: forwards;
+      top: 0;
+      transform: translate(0, -100%);
+      color: $Active-Color;
+    }
+  }
+}
