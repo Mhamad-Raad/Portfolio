@@ -7,6 +7,7 @@ import Skills from './Components/Skills/Skills';
 import Projects from './Components/Projects/Projects';
 import Recommentations from './Components/Recommendations/Recommnendations';
 import NavBar from './Components/Navbar/NavBar';
+import Footer from './Components/Footer/Footer';
 
 import './App.scss';
 
@@ -49,6 +50,7 @@ const App = () => {
         <Projects />
         <Recommentations />
         {!loading && <ContactMe />}
+        <Footer />
       </motion.main>
     </>
   );
