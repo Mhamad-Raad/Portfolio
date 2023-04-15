@@ -6,6 +6,10 @@
   align-items: center;
   background-color: black;
 
+  & > * {
+    font-family: $Body-Font;
+  }
+
   &__made-by {
     color: white;
     font-size: 1rem;
@@ -20,12 +24,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
   }
 
   &__special-thanks {
     color: white;
     font-size: 0.75rem;
-    margin-top: 1rem;
   }
 }
