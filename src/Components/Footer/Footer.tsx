@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+import { FaLinkedin, FaGithubSquare } from 'react-icons/fa';
+
 import './Footer.scss';
 
 interface FooterProps {}
@@ -8,19 +10,21 @@ const Footer: FC<FooterProps> = () => {
   return (
     <div className='footer column'>
       <p className='footer__made-by'>
-        Made with ❤️ by <a href='\kjgsrn'>Mhamad Raad</a>
+        Made with ❤️
       </p>
-      <p className='foor__social-medias row'>
-        <a href=''>
-          <i className='fab fa-facebook-f'></i>
+      <div className='footer__social-medias row'>
+        <a href='' className='footer__social-medias__link row'>
+          <FaLinkedin />
+          <p>Mhamad Radd</p>
         </a>
-        <a href=''>
-          <i className='fab fa-instagram'></i>
+        <a href='' className='footer__social-medias__link row'>
+          <FaGithubSquare />
+          <p>Mhamad-Radd</p>
         </a>
-      </p>
+      </div>
       <p className='footer__copy-rights'>© 2023 - All rights reserved</p>
       <p className='footer__special-thanks'>
-        Special thanks to <a href=''>Dev Ed</a> and everyone else who their
+        Special thanks to and everyone else who their
         tutorials, 3d models and code helped through.
       </p>
     </div>

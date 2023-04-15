@@ -1,10 +1,11 @@
 @use '../../Styles/variables' as *;
+
 .footer {
   width: 100%;
   height: 150px;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #0c17252a;
 
   & > * {
     font-family: $Body-Font;
@@ -12,22 +13,42 @@
 
   &__made-by {
     color: white;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    margin-bottom: 5px;
   }
 
   &__copy-rights {
     color: white;
     font-size: 0.75rem;
+    margin-top: 5px;
   }
 
-  &__social-media {
+  &__social-medias {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &__link {
+      justify-content: center;
+      align-items: center;
+      margin: 0 10px;
+      color: $Active-Color;
+
+      p {
+        font-size: 0.75rem;
+        margin-left: 2px;
+      }
+
+      svg {
+        width: 0.75rem;
+        height: 0.75rem;
+      }
+    }
   }
 
   &__special-thanks {
     color: white;
     font-size: 0.75rem;
+    margin-top: 10px;
   }
 }
