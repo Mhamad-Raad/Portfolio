@@ -52,7 +52,7 @@ const AboutMe: FC<AboutMeProps> = () => {
             </h3>
             <a
               className='about-me__description__connection__resume__download'
-              href='./primary.pdf'
+              href='./Mhamad-Raad-Front-end.pdf'
               target='_blank'
             >
               Download
