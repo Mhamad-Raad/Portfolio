@@ -69,7 +69,10 @@ const AboutMe: FC<AboutMeProps> = () => {
           }}
         >
           <Suspense fallback={<ComponentLoader />}>
-            <OrbitControls />
+            <OrbitControls
+              enablePan={false}
+              enableZoom={false}
+            />
             <directionalLight
               visible
               intensity={1}
