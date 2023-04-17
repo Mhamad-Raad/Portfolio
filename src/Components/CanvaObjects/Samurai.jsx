@@ -14,41 +14,121 @@ const Model = (props) => {
   const ref = useRef()
   const { nodes, materials } = useGLTF('/models/samurai.glb')
   return (
-    <group {...props} dispose={null} ref={ref} position={[0,-1,0]}>
+    <group {...props} dispose={null} ref={ref} position={[0, -1, 0]}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
-        <mesh castShadow geometry={nodes.Object_2.geometry} material={materials.Robe2} />
-        <mesh castShadow geometry={nodes.Object_3.geometry} material={materials.Robe} >
-          <meshStandardMaterial attach="material" color="black" opacity={.5} transparent />
+        <mesh
+          castShadow
+          geometry={nodes.Object_2.geometry}
+          material={materials.Robe2}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_3.geometry}
+          material={materials.Robe}
+        >
+          <meshStandardMaterial
+            attach='material'
+            color='black'
+            opacity={0.5}
+            transparent
+          />
         </mesh>
-        <lineSegments geometry={nodes.Object_4.geometry} material={materials.LowSet3} />
-        <mesh castShadow geometry={nodes.Object_5.geometry} material={materials.LowSet1} />
-        <mesh castShadow geometry={nodes.Object_6.geometry} material={materials.LowSet1} />
+        <lineSegments
+          geometry={nodes.Object_4.geometry}
+          material={materials.LowSet3}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_5.geometry}
+          material={materials.LowSet1}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_6.geometry}
+          material={materials.LowSet1}
+        />
         {/* head */}
-        <mesh castShadow geometry={nodes.Object_7.geometry} material={materials.LowSet1} />
-        <mesh castShadow geometry={nodes.Object_8.geometry} material={materials.LowSet1} />
-        <mesh castShadow geometry={nodes.Object_9.geometry} material={materials.LowSet2} />
-        <mesh castShadow geometry={nodes.Object_10.geometry} material={materials.LowSet2} />
-        <mesh castShadow geometry={nodes.Object_11.geometry} material={materials.LowSet2} />
-        <mesh castShadow geometry={nodes.Object_12.geometry} material={materials.LowSet2} />
-        <mesh castShadow geometry={nodes.Object_13.geometry} material={materials.LowSet2} />
-        <mesh castShadow geometry={nodes.Object_14.geometry} material={materials.LowSet2} />
-        <mesh castShadow geometry={nodes.Object_15.geometry} material={materials.LowSet2} />
-        <mesh castShadow geometry={nodes.Object_16.geometry} material={materials.LowSet2} />
-        <mesh castShadow geometry={nodes.Object_17.geometry} material={materials.LowSet3} >
-          <meshStandardMaterial attach="material" color="red" />
+        <mesh
+          castShadow
+          geometry={nodes.Object_7.geometry}
+          material={materials.LowSet1}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_8.geometry}
+          material={materials.LowSet1}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_9.geometry}
+          material={materials.LowSet2}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_10.geometry}
+          material={materials.LowSet2}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_11.geometry}
+          material={materials.LowSet2}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_12.geometry}
+          material={materials.LowSet2}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_13.geometry}
+          material={materials.LowSet2}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_14.geometry}
+          material={materials.LowSet2}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_15.geometry}
+          material={materials.LowSet2}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_16.geometry}
+          material={materials.LowSet2}
+        />
+        <mesh
+          castShadow
+          geometry={nodes.Object_17.geometry}
+          material={materials.LowSet3}
+        >
+          <meshStandardMaterial attach='material' color='#84051e' />
         </mesh>
-        <mesh castShadow geometry={nodes.Object_18.geometry} material={materials.LowSet3} >
-          <meshStandardMaterial attach="material" color="red" />
+        <mesh
+          castShadow
+          geometry={nodes.Object_18.geometry}
+          material={materials.LowSet3}
+        >
+          <meshStandardMaterial attach='material' color='#84051e' />
         </mesh>
-        <mesh castShadow geometry={nodes.Object_19.geometry} material={materials.LowSet3} >
-          <meshStandardMaterial attach="material" color="red" />
+        <mesh
+          castShadow
+          geometry={nodes.Object_19.geometry}
+          material={materials.LowSet3}
+        >
+          <meshStandardMaterial attach='material' color='#84051e' />
         </mesh>
-        <mesh castShadow geometry={nodes.Object_20.geometry} material={materials.LowSet3} >
-          <meshStandardMaterial attach="material" color="red" />
+        <mesh
+          castShadow
+          geometry={nodes.Object_20.geometry}
+          material={materials.LowSet3}
+        >
+          <meshStandardMaterial attach='material' color='#84051e' />
         </mesh>
       </group>
     </group>
-  )
+  );
 }
 
 export default Model;
