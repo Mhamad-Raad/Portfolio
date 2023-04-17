@@ -19,8 +19,8 @@ const WorkExperience = () => {
       <h4 className='work-experience__subtitle'>WHAT I HAVE DONE SO FAR</h4>
       <VerticalTimeline lineColor='#8ab6f9'>
         <VerticalTimelineElement
-          contentStyle={{ background: '#7D7D7D', color: '#fff' }}
-          contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+          contentStyle={{ background: '#4073c5', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  #4073c5' }}
           date='OCT-2022 - APR-2023'
           dateClassName='work-experience__date'
           iconClassName='work-experience__icon'
@@ -48,7 +48,8 @@ const WorkExperience = () => {
           date='SEP-2022 - MAR-2023'
           dateClassName='work-experience__date'
           iconClassName='work-experience__icon'
-          contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          contentStyle={{ background: '#586f93', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid #586f93' }}
           icon={
             <img
               src={MicroverseImg}
@@ -70,7 +71,8 @@ const WorkExperience = () => {
           date='AUG-2022 - APR-2023'
           dateClassName='work-experience__date'
           iconClassName='work-experience__icon'
-          contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          contentStyle={{ background: '#586f93', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid #586f93' }}
           icon={
             <img
               src={MicroverseImg}
@@ -95,7 +97,8 @@ const WorkExperience = () => {
           date='MAR-2022 - JUL-2022'
           dateClassName='work-experience__date'
           iconClassName='work-experience__icon'
-          contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          contentStyle={{ background: '#586f93', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid #586f93' }}
           icon={
             <img
               src={LezanImg}
@@ -117,7 +120,8 @@ const WorkExperience = () => {
           date='JAN-2022 - MAR-2022'
           dateClassName='work-experience__date'
           iconClassName='work-experience__icon'
-          contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          contentStyle={{ background: '#586f93', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid #586f93' }}
           icon={
             <img
               src={IndexImg}
@@ -139,7 +143,8 @@ const WorkExperience = () => {
           date='SEP-2019 - MAR-2023'
           dateClassName='work-experience__date'
           iconClassName='work-experience__icon'
-          contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+          contentStyle={{ background: '#586f93', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid #586f93' }}
           icon={
             <img
               src={UtmImg}
