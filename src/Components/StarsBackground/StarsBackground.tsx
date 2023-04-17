@@ -33,7 +33,7 @@ const StarsCanvas = () => {
           </div>
         </div>
         <div className='text-bottom'>
-          <div>Front-end Developer</div>
+          <span>Front-end Developer</span>
         </div>
       </div>
       <div className='stars-bg__scroll'>

@@ -81,3 +81,8 @@ input {
   overflow: hidden;
   height: 100vh !important;
 }
+
+::selection {
+  color: white;
+  background: #34445c;;
+}
