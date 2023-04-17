@@ -69,10 +69,7 @@ const AboutMe: FC<AboutMeProps> = () => {
           }}
         >
           <Suspense fallback={<ComponentLoader />}>
-            <OrbitControls
-              enablePan={false}
-              enableZoom={false}
-            />
+            <OrbitControls enablePan={false} enableZoom={false} />
             <directionalLight
               visible
               intensity={1}
@@ -87,7 +84,7 @@ const AboutMe: FC<AboutMeProps> = () => {
               position={[0, -1.245, 0]}
               args={[1000, 1000]}
             >
-              <meshStandardMaterial attach='material' color='grey' />
+              <meshStandardMaterial attach='material' color='#172335' />
             </Plane>
             <Cloud
               opacity={0.75}
