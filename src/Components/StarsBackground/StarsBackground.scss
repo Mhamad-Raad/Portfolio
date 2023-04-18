@@ -160,8 +160,63 @@
   }
 }
 
-@media only screen and (max-width: 1100px){
-	.stars-bg {
+@media only screen and (max-width: 1100px) {
 
+  .animated-title {
+    & > div {
+      height: 50%;
+      overflow: hidden;
+      position: absolute;
+      width: 80%;
+      display: flex;
+      justify-content: center;
+
+      div {
+        padding: 2vmin 0;
+        font-family: $Header-Font;
+        position: absolute;
+
+        span {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    & > div.text-top {
+      border-bottom: 0.75vmin solid white;
+      border-radius: 5px;
+      top: 0;
+      text-align: center;
+
+      div {
+        animation: showTopText 1s;
+        animation-delay: 8s;
+        animation-fill-mode: forwards;
+        bottom: 0;
+        transform: translate(0, 100%);
+
+        span {
+          color: white;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    & > div.text-bottom {
+      bottom: 0;
+      font-size: 1.25rem;
+
+      span {
+        animation: showBottomText 1s;
+        animation-delay: 9s;
+        animation-fill-mode: forwards;
+        top: 0;
+        margin-top: 10px;
+        transform: translate(0, -100%);
+        color: $Active-Color;
+      }
+    }
   }
 }

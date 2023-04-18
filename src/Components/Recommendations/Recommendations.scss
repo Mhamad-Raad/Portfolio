@@ -130,3 +130,12 @@
   opacity: 1;
   transition: all 0.5s;
 }
+
+@media only screen and (max-width: 600px) {
+  .recommendation-section {
+
+    &__title {
+      font-size: 1.75rem;
+    }
+  }
+}
