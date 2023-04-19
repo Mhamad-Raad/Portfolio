@@ -87,10 +87,6 @@ $shooting-time: 3s;
 }
 
 @keyframes fly {
-  0% {
-    top: 30%;
-    left: 44%;
-  }
   100% {
     top: -100%;
     left: -100%;
@@ -98,6 +94,7 @@ $shooting-time: 3s;
 }
 
 /* Rocket part */
+
 .rocket {
   position: absolute;
   transform: rotate(-45deg);
@@ -285,5 +282,67 @@ $shooting-time: 3s;
   }
   90% {
     transform: scaleY(0.88);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .rocket {
+    left: 30%;
+    .rocket-body {
+      &:before {
+        width: 40px;
+        height: 160px;
+      }
+      &:after {
+        content: '';
+        top: 8px;
+        left: 10px;
+        width: 18px;
+        height: 18px;
+      }
+
+      .nose {
+        top: -67px;
+        left: 17px;
+        border-bottom: 40px solid black;
+      }
+
+      .fin-left {
+        top: 100px;
+        left: -25px;
+        width: 30px;
+        height: 40px;
+      }
+
+      .fin-right {
+        top: 100px;
+        left: 35px;
+        width: 30px;
+        height: 40px;
+      }
+
+      .nozzle {
+        top: 145px;
+        left: 10px;
+        width: 20px;
+        height: 6px;
+      }
+
+      .flames {
+        top: 155px;
+        left: 7px;
+        width: 25px;
+        height: 100px;
+      }
+    }
+  }
+
+  .welcome-header {
+    font-size: 1.25rem;
+  }
+
+  .made-by {
+    font-size: 0.6rem;
+    top: 75%;
   }
 }

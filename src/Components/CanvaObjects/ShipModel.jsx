@@ -26,12 +26,14 @@ const DestinyShip = () => {
     position = [-0.3, 0.4, 0];
     scale = 0.015;
   } else if (width < 500) {
-    position = [-0.2, 0.43, 0];
+    position = [-0.18, 0.43, 0];
     scale = 0.01;
   } else {
     position = [-0.8, 0.4, 0];
     scale = 0.02;
   }
+
+  console.log(width, position, scale);
 
   return (
     <group ref={ref} scale={scale} position={position} rotation={[-5.5, 0, 0]}>
