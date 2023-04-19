@@ -4,7 +4,6 @@ import { useGLTF } from '@react-three/drei';
 
 import useWindowSize from '../../CustomHooks/UseScreenSize';
 
-
 const Satalite = () => {
   const ref = useRef();
   const { width } = useWindowSize();
@@ -17,7 +16,9 @@ const Satalite = () => {
   let position = [-1, -0.3, 0];
   let scale = 0.01;
 
-  if (width < 1000 && width > 850) {
+  if (width < 1100 && width > 1000) {
+    position = [-0.6, -0.3, 0];
+  } else if (width < 1000 && width > 850) {
     position = [-0.5, -0.3, 0];
   } else if (width < 850 && width > 700) {
     position = [-0.4, -0.3, 0];
