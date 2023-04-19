@@ -4,6 +4,8 @@ import { Link } from 'react-scroll';
 import { Suspense } from 'react';
 import ComponentLoader from '../CanvaObjects/Loader/ComponentLoader/ComponentLoader';
 
+import useWindowSize from '../../CustomHooks/UseScreenSize';
+
 import Stars from '../CanvaObjects/Stars';
 import Satalite from '../CanvaObjects/Satalite';
 import MovingMeteor from '../CanvaObjects/MovingMeteor';
@@ -13,6 +15,8 @@ import Ship from '../CanvaObjects/ShipModel';
 import './StarsBackground.scss';
 
 const StarsCanvas = () => {
+  const { width } = useWindowSize();
+  console.log(width);
   return (
     <section className='stars-bg'>
       <Canvas camera={{ position: [0, 0, 1] }}>
@@ -26,7 +30,7 @@ const StarsCanvas = () => {
         </Suspense>
         <Preload all />
       </Canvas>
-      <div className='animated-title'>
+      <div className='animated-title row'>
         <div className='text-top'>
           <div>
             <span>Mhamad Raad</span>

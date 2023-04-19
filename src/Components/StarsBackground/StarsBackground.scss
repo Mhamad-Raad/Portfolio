@@ -9,8 +9,8 @@
     position: absolute;
     z-index: 10;
     top: 73%;
-    left: 50%;
-    margin-left: -12px;
+    left: 51%;
+    transform: translate(-50%, -50%);
 
     &__title {
       font-weight: bold;
@@ -19,8 +19,6 @@
     }
 
     &__scroll {
-      left: 50%;
-      margin-left: -12px;
       position: absolute;
       width: 24px;
       height: 24px;
@@ -30,7 +28,7 @@
       transform: rotateZ(-45deg);
       -webkit-animation: sdb06 1.5s infinite;
       animation: sdb06 1.5s infinite;
-      box-sizing: border-box;
+      margin-left: -34.5px;
     }
   }
 }
@@ -102,6 +100,8 @@
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-delay: 7s;
+  justify-content: center;
+  align-items: center;
 
   & > div {
     height: 50%;
@@ -161,7 +161,6 @@
 }
 
 @media only screen and (max-width: 1100px) {
-
   .animated-title {
     & > div {
       height: 50%;
@@ -207,15 +206,52 @@
     & > div.text-bottom {
       bottom: 0;
       font-size: 1.25rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .animated-title {
+    width: 75%;
+    left: 0;
+    right: 0;
+    top: 40%;
+
+    & > div {
+      height: 50%;
+      width: 100%;
+
+      div {
+        padding: 2vmin 0;
+        font-family: $Header-Font;
+        position: absolute;
+
+        span {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    & > div.text-top {
+      border-bottom: 0.75vmin solid white;
+      top: 0;
+      text-align: center;
+
+      div {
+        span {
+          color: white;
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    & > div.text-bottom {
+      font-size: 1.25rem;
 
       span {
-        animation: showBottomText 1s;
-        animation-delay: 9s;
-        animation-fill-mode: forwards;
-        top: 0;
-        margin-top: 10px;
-        transform: translate(0, -100%);
-        color: $Active-Color;
+        margin-top: 5px;
       }
     }
   }
