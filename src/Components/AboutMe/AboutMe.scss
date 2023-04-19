@@ -224,6 +224,20 @@
       &__me {
         width: 100%;
       }
+
+      &__connection {
+        width: 100%;
+        &__resume {
+          &__download {
+            font-size: 12px;
+          }
+        }
+        &__connect {
+          &__title {
+            margin-left: 5px;
+          }
+        }
+      }
     }
 
     &__samurai {
@@ -232,4 +246,3 @@
     }
   }
 }
-
