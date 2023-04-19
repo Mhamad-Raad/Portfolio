@@ -1,7 +1,11 @@
+import { FC } from 'react';
 import { motion } from 'framer-motion';
+
 import './ScreenLoader.scss';
 
-const Loader = () => {
+interface LoaderProps {}
+
+const Loader: FC<LoaderProps> = () => {
   return (
     <motion.div
       className='loader-body'
