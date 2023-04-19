@@ -93,7 +93,7 @@ $shooting-time: 3s;
   }
   100% {
     top: -100%;
-    left: 0%;
+    left: -100%;
   }
 }
 
@@ -104,8 +104,8 @@ $shooting-time: 3s;
   animation: fly;
   top: 30%;
   left: 44%;
-  animation-duration: 2s;
-  animation-delay: 5s;
+  animation-duration: 3s;
+  animation-delay: 4s;
 
   .rocket-body {
     &:before {
@@ -115,7 +115,7 @@ $shooting-time: 3s;
       left: 0px;
       width: 50px;
       height: 200px;
-      background-image: radial-gradient(#a80000 0 50%, black 100%);
+      background-image: radial-gradient(#9a1111 0 50%, black 100%);
       border-radius: 50% 50% 10% 10% / 30% 30% 20% 20%;
       transform: perspective(0.5em) rotateX(-1.5deg);
     }
@@ -137,7 +137,7 @@ $shooting-time: 3s;
       position: absolute;
       top: -80px;
       left: 21px;
-      border-bottom: 50px solid #540202;
+      border-bottom: 50px solid black;
       border-right: 4px solid transparent;
       border-left: 4px solid transparent;
     }
@@ -148,7 +148,7 @@ $shooting-time: 3s;
       left: -20px;
       width: 40px;
       height: 50px;
-      background-image: linear-gradient(#9e0c02, #d15a07, #a88604);
+      background-image: linear-gradient(#9e0c02, #760000, #000000);
       border-radius: 20% 0 0 0;
       transform: skewY(-50deg);
       z-index: -10;
@@ -160,7 +160,7 @@ $shooting-time: 3s;
       left: 30px;
       width: 40px;
       height: 50px;
-      background-image: linear-gradient(#9e0c02, #d15a07, #a88604);
+      background-image: linear-gradient(#9e0c02, #760000, #000000);
       border-radius: 0 20% 0 0;
       transform: skewY(50deg);
       z-index: -10;
