@@ -6,11 +6,7 @@ import ComponentLoader from '../Loader/ComponentLoader/ComponentLoader';
 
 import { MathUtils } from 'three';
 
-
-import useWindowSize from '../../../CustomHooks/UseScreenSize';
-
 const BlobObj = () => {
-  const { width } = useWindowSize();
   const mesh = useRef();
   const hover = useRef(false);
   const uniforms = useMemo(() => {
@@ -33,15 +29,11 @@ const BlobObj = () => {
       );
     }
   });
-  let scale = 1.5;
-  if (width < 400) {
-    scale = 1.2;
-  }
 
   return (
     <mesh
       ref={mesh}
-      scale={scale}
+      scale={1.42}
       position={[0, 0, 0]}
       onPointerOver={() => (hover.current = true)}
       onPointerOut={() => (hover.current = false)}
