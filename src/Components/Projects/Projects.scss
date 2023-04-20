@@ -124,3 +124,30 @@
 .projects__framer {
   transform: scale(0);
 }
+
+@media only screen and (max-width: 650px) {
+  .projects-section {
+
+    &__projects {
+
+      &__project {
+        width: 85%;
+        min-width: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .projects-section {
+
+    &__projects {
+
+      &__project {
+        width: 100%;
+        min-width: 0;
+        height: 600px;
+      }
+    }
+  }
+}
