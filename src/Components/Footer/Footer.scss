@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   background-color: #0c17252a;
+  padding: 0 20px;
 
   & > * {
     font-family: $Body-Font;
@@ -48,7 +49,8 @@
 
   &__special-thanks {
     color: white;
-    font-size: 0.75rem;
+    font-size: 0.6rem;
     margin-top: 10px;
+    text-align: center;
   }
 }
