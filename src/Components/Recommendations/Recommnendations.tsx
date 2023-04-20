@@ -2,6 +2,8 @@ import { FC, useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { SwipeableHandlers, useSwipeable } from 'react-swipeable';
 
+import useWindowSize from '../../CustomHooks/UseScreenSize';
+
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 import Slide from './Slide';
@@ -11,6 +13,7 @@ import './Recommendations.scss';
 interface RecommentationsInterface {}
 
 const Recommentations: FC<RecommentationsInterface> = () => {
+  const { width } = useWindowSize();
   const ref = useRef<HTMLElement | null>(null);
   const [index, setIndex] = useState<number>(0);
 
@@ -54,15 +57,17 @@ const Recommentations: FC<RecommentationsInterface> = () => {
       <h2 className='recommendation-section__title'>Recommentations</h2>
 
       <div {...handlers} className='recommendation-section__slideshow column'>
-        <motion.button
-          type='button'
-          className='recommendation-section__slideshow__left-scroll-button'
-          animate={{ x: inView ? 0 : -200 }}
-          transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
-          onClick={clickLeftHandle}
-        >
-          <FaAngleLeft />
-        </motion.button>
+        {width > 600 && (
+          <motion.button
+            type='button'
+            className='recommendation-section__slideshow__left-scroll-button'
+            animate={{ x: inView ? 0 : -200 }}
+            transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
+            onClick={clickLeftHandle}
+          >
+            <FaAngleLeft />
+          </motion.button>
+        )}
         <motion.div
           className='recommendation-section__slideshow__slide row'
           initial={{
@@ -77,15 +82,17 @@ const Recommentations: FC<RecommentationsInterface> = () => {
           <Slide />
           <Slide />
         </motion.div>
-        <motion.button
-          type='button'
-          className='recommendation-section__slideshow__right-scroll-button'
-          animate={{ x: inView ? 0 : 200 }}
-          transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
-          onClick={clickRightHandle}
-        >
-          <FaAngleRight />
-        </motion.button>
+        {width > 600 && (
+          <motion.button
+            type='button'
+            className='recommendation-section__slideshow__right-scroll-button'
+            animate={{ x: inView ? 0 : 200 }}
+            transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
+            onClick={clickRightHandle}
+          >
+            <FaAngleRight />
+          </motion.button>
+        )}
         <motion.div
           className='recommendation-section__slideshow__dots row'
           animate={{ y: inView ? 0 : 200 }}
