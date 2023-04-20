@@ -45,3 +45,15 @@
     border-color: black;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .work-experience {
+    margin-top: 50px;
+    &__title {
+      font-size: 1.75rem;
+    }
+    &__subtitle {
+      font-size: 0.75rem;
+    }
+  }
+}

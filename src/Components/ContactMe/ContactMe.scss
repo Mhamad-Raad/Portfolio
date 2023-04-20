@@ -179,3 +179,11 @@
     }
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .contact-me {
+    &__title {
+      font-size: 1.75rem;
+    }
+  }
+}
