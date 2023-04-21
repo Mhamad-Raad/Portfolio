@@ -8,7 +8,7 @@ interface FooterProps {}
 
 const Footer: FC<FooterProps> = () => {
   return (
-    <div className='footer column'>
+    <footer className='footer column'>
       <p className='footer__made-by'>Made with ❤️</p>
       <div className='footer__social-medias row'>
         <a
@@ -28,10 +28,10 @@ const Footer: FC<FooterProps> = () => {
       </div>
       <p className='footer__copy-rights'>© 2023 - All rights reserved</p>
       <p className='footer__special-thanks'>
-        Special thanks to and everyone else who their tutorials, 3d models and
-        code helped through.
+        Special thanks to everyone who their tutorials, 3d models and code
+        helped throughout the development.
       </p>
-    </div>
+    </footer>
   );
 };
 

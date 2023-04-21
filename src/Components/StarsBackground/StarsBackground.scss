@@ -235,3 +235,12 @@
     }
   }
 }
+
+@media only screen and (max-width: 500px) {
+    .animated-title {
+      top: 25%;
+    }
+    .stars-bg__scroll {
+      top: 55%;
+    }
+}

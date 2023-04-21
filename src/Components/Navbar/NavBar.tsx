@@ -10,6 +10,9 @@ interface Props {}
 const Header: FC<Props> = () => {
   const { width }: { width: number } = useWindowSize();
   const [opened, setOpened] = useState(false);
+  const openHandle = () => {
+    setOpened(!opened);
+  };
 
   useEffect(() => {
     if (opened) document.body.style.overflow = 'hidden';
@@ -21,18 +24,54 @@ const Header: FC<Props> = () => {
       <ul className='nav'>
         <li className='nav__logo'>Logo</li>
         <li className='nav__Links'>
-          <div className='nav__Links__item'>About</div>
-          <div className='nav__Links__item'>Projects</div>
-          <div className='nav__Links__item'>Experience</div>
-          <div className='nav__Links__item'>Contact</div>
+          <div className='nav__Links__item'>
+            <Link
+              to='about-me'
+              ignoreCancelEvents={true}
+              smooth={true}
+              duration={750}
+              onClick={openHandle}
+            >
+              About
+            </Link>
+          </div>
+          <div className='nav__Links__item'>
+            <Link
+              to='experience'
+              ignoreCancelEvents={true}
+              smooth={true}
+              duration={1000}
+              onClick={openHandle}
+            >
+              Experience
+            </Link>
+          </div>
+          <div className='nav__Links__item'>
+            <Link
+              to='projects'
+              ignoreCancelEvents={true}
+              smooth={true}
+              duration={1200}
+              onClick={openHandle}
+            >
+              Projects
+            </Link>
+          </div>
+          <div className='nav__Links__item'>
+            <Link
+              to='experience'
+              ignoreCancelEvents={true}
+              smooth={true}
+              duration={1000}
+              onClick={openHandle}
+            >
+              Contact
+            </Link>
+          </div>
         </li>
       </ul>
     );
   }
-
-  const openHandle = () => {
-    setOpened(!opened);
-  };
 
   return (
     <nav className='mobile-nav row'>
@@ -53,7 +92,7 @@ const Header: FC<Props> = () => {
               to='about-me'
               ignoreCancelEvents={true}
               smooth={true}
-              duration={500}
+              duration={750}
               onClick={openHandle}
             >
               About
@@ -61,21 +100,10 @@ const Header: FC<Props> = () => {
           </li>
           <li>
             <Link
-              to='projects'
-              ignoreCancelEvents={true}
-              smooth={true}
-              duration={500}
-              onClick={openHandle}
-            >
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link
               to='experience'
               ignoreCancelEvents={true}
               smooth={true}
-              duration={500}
+              duration={1000}
               onClick={openHandle}
             >
               Experience
@@ -83,10 +111,22 @@ const Header: FC<Props> = () => {
           </li>
           <li>
             <Link
+              to='projects'
+              ignoreCancelEvents={true}
+              smooth={true}
+              duration={1200}
+              onClick={openHandle}
+            >
+              Projects
+            </Link>
+          </li>
+
+          <li>
+            <Link
               to='contact'
               ignoreCancelEvents={true}
               smooth={true}
-              duration={500}
+              duration={1500}
               onClick={openHandle}
             >
               Contact

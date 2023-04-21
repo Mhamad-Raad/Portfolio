@@ -26,7 +26,7 @@ const Satalite = () => {
     position = [-0.3, -0.3, 0];
     scale = 0.009;
   } else if (width < 500) {
-    position = [-0.2, -0.25, 0];
+    position = [-0.2, -0.18, 0];
     scale = 0.008;
   } else {
     position = [-1, -0.3, 0];

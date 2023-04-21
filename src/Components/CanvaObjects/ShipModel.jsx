@@ -26,7 +26,7 @@ const DestinyShip = () => {
     position = [-0.3, 0.4, 0];
     scale = 0.015;
   } else if (width < 500) {
-    position = [-0.18, 0.43, 0];
+    position = [-0.18, 0.58, 0];
     scale = 0.01;
   } else {
     position = [-0.8, 0.4, 0];
