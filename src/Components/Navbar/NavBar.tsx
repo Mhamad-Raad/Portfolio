@@ -1,6 +1,6 @@
 import { Link } from 'react-scroll';
 
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import useWindowSize from '../../CustomHooks/UseScreenSize';
 
 import './Navbar.scss';
@@ -9,6 +9,12 @@ interface Props {}
 
 const Header: FC<Props> = () => {
   const { width }: { width: number } = useWindowSize();
+  const [opened, setOpened] = useState(false);
+
+  useEffect(() => {
+    if (opened) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'visible';
+  }, [opened]);
 
   if (width > 768) {
     return (
@@ -24,11 +30,21 @@ const Header: FC<Props> = () => {
     );
   }
 
+  const openHandle = () => {
+    setOpened(!opened);
+  };
+
   return (
     <nav className='mobile-nav row'>
       <div className='mobile-nav__logo'>Logo</div>
       <label htmlFor='mobile-nav__check' className='mobile-nav__btn'>
-        <input type='checkbox' id='mobile-nav__check' title='menu' />
+        <input
+          type='checkbox'
+          id='mobile-nav__check'
+          title='menu'
+          checked={opened}
+          onChange={openHandle}
+        />
         <div className='mobile-nav__hamburger' />
         <div className='bg' />
         <ul className='mobile-nav__items column'>
@@ -38,6 +54,7 @@ const Header: FC<Props> = () => {
               ignoreCancelEvents={true}
               smooth={true}
               duration={500}
+              onClick={openHandle}
             >
               About
             </Link>
@@ -48,6 +65,7 @@ const Header: FC<Props> = () => {
               ignoreCancelEvents={true}
               smooth={true}
               duration={500}
+              onClick={openHandle}
             >
               Projects
             </Link>
@@ -58,6 +76,7 @@ const Header: FC<Props> = () => {
               ignoreCancelEvents={true}
               smooth={true}
               duration={500}
+              onClick={openHandle}
             >
               Experience
             </Link>
@@ -68,6 +87,7 @@ const Header: FC<Props> = () => {
               ignoreCancelEvents={true}
               smooth={true}
               duration={500}
+              onClick={openHandle}
             >
               Contact
             </Link>
