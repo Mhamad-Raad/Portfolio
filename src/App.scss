@@ -7,7 +7,7 @@
 }
 
 body {
-  width: 100%;
+  width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -20,6 +20,7 @@ body {
   height: 100%;
   position: relative;
   background-image: $Background-Color;
+  overflow: hidden;
 }
 
 a,
@@ -84,5 +85,5 @@ input {
 
 ::selection {
   color: $Active-Color;
-  background: #ffffff;;
+  background: #ffffff;
 }

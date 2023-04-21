@@ -17,7 +17,7 @@ ul {
   padding: 25px 50px;
 
   &__Links {
-    width: 33%;
+    width: 500px;
     display: flex;
     justify-content: space-between;
     &__item {
@@ -32,8 +32,6 @@ ul {
     }
   }
 
-
-
   &__logo {
     font-weight: bolder;
     font-size: 20px;
@@ -46,4 +44,104 @@ li {
   font-weight: bolder;
   font-size: 1.2rem;
   text-decoration: none;
+}
+
+.mobile-nav__btn input:checked ~ .mobile-nav__hamburger {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.mobile-nav__btn input:checked ~ .mobile-nav__hamburger::before {
+  transform: rotate(-45deg) translateX(40px) translateY(40px);
+}
+
+.mobile-nav__btn input:checked ~ .mobile-nav__hamburger::after {
+  transform: rotate(45deg) translateX(40px) translateY(-40px);
+}
+
+.mobile-nav__btn input:checked ~ .mobile-nav__items {
+  left: 60%;
+}
+
+.mobile-nav {
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 0 10px;
+
+  &__logo {
+    font-weight: bolder;
+    font-size: 20px;
+    font-family: $Header-Font;
+    color: $Primary-Text-Color;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+    input {
+      display: none;
+    }
+  }
+
+  &__hamburger {
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 11;
+    transition: all 0.5s ease;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background: white;
+      border-radius: 5px;
+      transition: all 0.5s ease;
+    }
+
+    &::before {
+      transform: translateY(-6px);
+    }
+
+    &::after {
+      transform: translateY(6px);
+    }
+  }
+  &__items {
+    background-color: #44546b68;;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: absolute;
+    left: 100%;
+    height: 100%;
+    width: 40%;
+    padding-top: 70px;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+    z-index: 10;
+
+    li {
+      padding: 10px 0;
+      text-align: center;
+      list-style-type: none;
+      transition: all 0.2s ease;
+      color: white;
+
+      &:hover {
+        letter-spacing: 2px;
+        opacity: 0.6;
+      }
+    }
+  }
 }

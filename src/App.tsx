@@ -1,4 +1,4 @@
-import { lazy, useEffect, useState } from 'react';
+import React, { lazy, useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 import Loader from './Components/CanvaObjects/Loader/ScreenLoader';
@@ -19,6 +19,7 @@ const AboutMe = lazy(() => import('./Components/AboutMe/AboutMe'));
 const ContactMe = lazy(() => import('./Components/ContactMe/ContactMe'));
 
 const App = () => {
+  const nav = React.createRef<HTMLInputElement>();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,7 +43,7 @@ const App = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 7 }}
       >
-        <NavBar />
+        <NavBar ref={nav} />
         <Background />
         <AboutMe />
         <WorkExperience />

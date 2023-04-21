@@ -33,7 +33,6 @@ const DestinyShip = () => {
     scale = 0.02;
   }
 
-  console.log(width, position, scale);
 
   return (
     <group ref={ref} scale={scale} position={position} rotation={[-5.5, 0, 0]}>
