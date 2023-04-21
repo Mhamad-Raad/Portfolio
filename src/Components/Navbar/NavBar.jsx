@@ -1,15 +1,12 @@
 // import { Link } from 'react-router-dom';
-import { forwardRef , FC, ForwardedRef, Ref} from 'react';
 
 import useWindowSize from '../../CustomHooks/UseScreenSize';
 
 import './Navbar.scss';
+import { useEffect } from 'react';
 
-const Header = forwardRef<HTMLInputElement>((props, ref) => {
-  const { width }: { width: number } = useWindowSize();
-
-  
-  console.log(ref);
+const Header = () => {
+  const { width } = useWindowSize();
 
   if (width > 768) {
     return (
@@ -29,8 +26,9 @@ const Header = forwardRef<HTMLInputElement>((props, ref) => {
     <nav className='mobile-nav row'>
       <div className='mobile-nav__logo'>Logo</div>
       <label htmlFor='mobile-nav__check' className='mobile-nav__btn'>
-        <input type='checkbox' id='mobile-nav__check' title='menu' ref={ref} />
+        <input type='checkbox' id='mobile-nav__check' title='menu'/>
         <div className='mobile-nav__hamburger' />
+        <div className='bg' />
         <ul className='mobile-nav__items column'>
           <li>Home</li>
           <li>About</li>
@@ -39,6 +37,6 @@ const Header = forwardRef<HTMLInputElement>((props, ref) => {
       </label>
     </nav>
   );
-});
+};
 
 export default Header;
