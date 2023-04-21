@@ -1,4 +1,5 @@
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
+
 import { FC } from 'react';
 import useWindowSize from '../../CustomHooks/UseScreenSize';
 
@@ -31,9 +32,46 @@ const Header: FC<Props> = () => {
         <div className='mobile-nav__hamburger' />
         <div className='bg' />
         <ul className='mobile-nav__items column'>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link
+              to='about-me'
+              ignoreCancelEvents={true}
+              smooth={true}
+              duration={500}
+            >
+              About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='projects'
+              ignoreCancelEvents={true}
+              smooth={true}
+              duration={500}
+            >
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='experience'
+              ignoreCancelEvents={true}
+              smooth={true}
+              duration={500}
+            >
+              Experience
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='contact'
+              ignoreCancelEvents={true}
+              smooth={true}
+              duration={500}
+            >
+              Contact
+            </Link>
+          </li>
         </ul>
       </label>
     </nav>

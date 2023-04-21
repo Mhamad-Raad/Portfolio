@@ -9,7 +9,7 @@ interface ProjectsInterface {}
 
 const Projects: FC<ProjectsInterface> = () => {
   return (
-    <section className='projects-section column'>
+    <section className='projects-section column' id='projects'>
       <h2 className='projects-section__title'>Projects</h2>
       <ProjectList />
     </section>

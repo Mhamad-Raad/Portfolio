@@ -14,7 +14,7 @@ import UtmImg from '../../assets/UTM.png';
 
 const WorkExperience = () => {
   return (
-    <section className='work-experience column'>
+    <section className='work-experience column' id='experience'>
       <h2 className='work-experience__title'>Work Experience</h2>
       <h4 className='work-experience__subtitle'>WHAT I HAVE DONE SO FAR</h4>
       <VerticalTimeline lineColor='#8ab6f9'>
