@@ -20,6 +20,8 @@ ul {
     width: 500px;
     display: flex;
     justify-content: space-between;
+    z-index: 12;
+
     &__item {
       transition: all 0.3s ease-in-out;
       font-size: 18px;
@@ -27,7 +29,7 @@ ul {
       font-weight: bold;
       font-family: $Header-Font;
       &:hover {
-        color: #f1c40f;
+        color: $Active-Color;
       }
     }
   }

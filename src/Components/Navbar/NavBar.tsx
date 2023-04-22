@@ -24,50 +24,45 @@ const Header: FC<Props> = () => {
       <ul className='nav'>
         <li className='nav__logo'>Logo</li>
         <li className='nav__Links'>
-          <div className='nav__Links__item'>
-            <Link
-              to='about-me'
-              ignoreCancelEvents={true}
-              smooth={true}
-              duration={750}
-              onClick={openHandle}
-            >
-              About
-            </Link>
-          </div>
-          <div className='nav__Links__item'>
-            <Link
-              to='experience'
-              ignoreCancelEvents={true}
-              smooth={true}
-              duration={1000}
-              onClick={openHandle}
-            >
-              Experience
-            </Link>
-          </div>
-          <div className='nav__Links__item'>
-            <Link
-              to='projects'
-              ignoreCancelEvents={true}
-              smooth={true}
-              duration={1200}
-              onClick={openHandle}
-            >
-              Projects
-            </Link>
-          </div>
-          <div className='nav__Links__item'>
-            <Link
-              to='experience'
-              ignoreCancelEvents={true}
-              smooth={true}
-              duration={1000}
-              onClick={openHandle}
-            >
-              Contact
-            </Link>
-          </div>
+          <Link
+            to='about-me'
+            className='nav__Links__item'
+            ignoreCancelEvents={true}
+            smooth={true}
+            duration={750}
+          >
+            About
+          </Link>
+
+          <Link
+            className='nav__Links__item'
+            to='experience'
+            ignoreCancelEvents={true}
+            smooth={true}
+            duration={1000}
+          >
+            Experience
+          </Link>
+
+          <Link
+            className='nav__Links__item'
+            to='projects'
+            ignoreCancelEvents={true}
+            smooth={true}
+            duration={1200}
+          >
+            Projects
+          </Link>
+
+          <Link
+            className='nav__Links__item'
+            to='experience'
+            ignoreCancelEvents={true}
+            smooth={true}
+            duration={1000}
+          >
+            Contact
+          </Link>
         </li>
       </ul>
     );
