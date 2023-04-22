@@ -1,5 +1,8 @@
-import React, { lazy, useEffect, useState } from 'react';
+import { lazy, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+
+import firebaseDb from './firebase';
+import { collection, getDocs } from 'firebase/firestore';
 
 import Loader from './Components/CanvaObjects/Loader/ScreenLoader';
 import WorkExperience from './Components/WorkExperience/WorkExperience';
@@ -30,6 +33,20 @@ const App = () => {
     }
     // eslint-disable-next-line
     () => clearTimeout(timer);
+  }, []);
+
+  const fetchPost = async () => {
+    await getDocs(collection(firebaseDb, 'test')).then((querySnapshot) => {
+      const newData = querySnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      console.log(newData);
+    });
+  };
+
+  useEffect(() => {
+    fetchPost();
   }, []);
 
   return (
