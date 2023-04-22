@@ -15,6 +15,10 @@
   border-radius: 5px;
   gap: 25px;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &__text {
     font-size: 16px;
     color: white;
@@ -23,5 +27,8 @@
   &__btn {
     font-size: 16px;
     color: white;
+    &:hover {
+      color: red;
+    }
   }
 }

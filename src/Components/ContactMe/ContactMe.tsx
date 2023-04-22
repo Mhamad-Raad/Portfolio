@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 
 import Blob from '../CanvaObjects/Blob/Blob';
+import Modal from '../Modal/Modal';
 
 import './ContactMe.scss';
 
@@ -35,6 +36,7 @@ const ContactMe: FC<ContactMeInterface> = () => {
 
   return (
     <section className='contact-me column' id='contact'>
+      <Modal text={'Thank You'} delay={1} />
       <h2 className='contact-me__title'>Contact Me</h2>
       <div className='contact-me__content row'>
         <motion.form

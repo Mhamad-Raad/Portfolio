@@ -1,30 +1,31 @@
-import { FC, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { FaRegWindowClose } from 'react-icons/fa';
 
 import './Modal.scss';
 
-interface ModalProps {
-  text: string;
-}
-
 const Modal = ({ text, delay }: { text: string; delay: number }) => {
   const [modal, setModal] = useState(true);
+  let timer: number | NodeJS.Timeout;
 
   const cLickHandler = () => {
     setModal(false);
   };
 
-  useEffect(() => {
-    let timer = setTimeout(() => {
+  const setTimer = () => {
+    return setTimeout(() => {
       setModal(false);
-    }, 7000 + (delay * 1000));
+    }, 7000 + delay * 1000);
+  };
+
+  useEffect(() => {
+    timer = setTimer();
 
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  }, [delay]);
 
   return (
     <AnimatePresence>
@@ -36,10 +37,12 @@ const Modal = ({ text, delay }: { text: string; delay: number }) => {
             opacity: 0,
             y: -100,
           }}
+          onMouseEnter={() => clearTimeout(timer)}
           animate={{
             opacity: 1,
             y: 0,
           }}
+          onMouseLeave={setTimer}
           exit={{
             opacity: 0,
             y: -100,

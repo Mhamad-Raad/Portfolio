@@ -2,6 +2,7 @@ import { FC, useRef, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Plane, Cloud } from '@react-three/drei';
 import { useInView } from 'framer-motion';
+import Modal from '../Modal/Modal';
 
 import SamuraiModel from '../CanvaObjects/SamuraiModel';
 import ConnectThrough from './ConnectThrough';
@@ -13,10 +14,11 @@ interface AboutMeProps {}
 
 const AboutMe: FC<AboutMeProps> = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref);
 
   return (
     <section className='about-me' id='about-me' ref={ref}>
+      {isInView && <Modal text='keep in mind that any 3D module can be click and dragged to control the camera angle or hovered to see them change ;)' delay={2} />}
       <div
         className={`about-me__description ${
           isInView ? '' : 'description__framer'

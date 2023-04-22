@@ -49,11 +49,12 @@ const Connection: FC<ConnectionProps> = ({ img, clickHandler }) => {
       style={{
         width: '75px',
         height: '100px',
+        cursor: 'pointer',
       }}
     >
       <OrbitControls enableZoom={false} enablePan={false} />
       <ambientLight intensity={0.4} />
-        <Item img={texture} clickHandler={clickHandler} />
+      <Item img={texture} clickHandler={clickHandler} />
     </Canvas>
   );
 };
