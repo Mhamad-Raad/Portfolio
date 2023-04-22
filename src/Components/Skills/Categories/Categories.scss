@@ -208,6 +208,7 @@
 
 @media only screen and (max-width: 400px) {
   .skills-categories {
+    gap: 40px;
     &__card {
       width: 100%;
       min-width: 0;
