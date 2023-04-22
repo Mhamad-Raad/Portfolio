@@ -10,11 +10,14 @@ import MovingMeteor from '../CanvaObjects/MovingMeteor';
 import Astrounount from '../CanvaObjects/Astronount';
 import Ship from '../CanvaObjects/ShipModel';
 
+import Modal from '../Modal/Modal';
+
 import './StarsBackground.scss';
 
 const StarsCanvas = () => {
   return (
     <section className='stars-bg'>
+      <Modal text='This website is still under construction' />
       <Canvas camera={{ position: [0, 0, 1] }}>
         <OrbitControls enableZoom={false} enablePan={false} />
         <Suspense fallback={<ComponentLoader />}>

@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 
+import { delay, motion } from 'framer-motion';
 import { FaRegWindowClose } from 'react-icons/fa';
 
 import './Modal.scss';
@@ -14,13 +15,22 @@ const Modal: FC<ModalProps> = ({ text }) => {
   const cLickHandler = () => {
     setModal(false);
   };
-  return (
-    <div className='modal row'>
+
+  return modal ? (
+    <motion.div
+      className='modal row'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ delay: 10, duration: 1 }}
+    >
       <p className='modal__text'>{text}</p>
       <button type='button' onClick={cLickHandler} className='modal__btn'>
         <FaRegWindowClose />
       </button>
-    </div>
+    </motion.div>
+  ) : (
+    <></>
   );
 };
 
