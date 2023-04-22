@@ -36,7 +36,6 @@ const ContactMe: FC<ContactMeInterface> = () => {
 
   return (
     <section className='contact-me column' id='contact'>
-      <Modal text={'Thank You'} delay={1} />
       <h2 className='contact-me__title'>Contact Me</h2>
       <div className='contact-me__content row'>
         <motion.form

@@ -14,11 +14,11 @@ interface AboutMeProps {}
 
 const AboutMe: FC<AboutMeProps> = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, {once: true});
 
   return (
     <section className='about-me' id='about-me' ref={ref}>
-      {isInView && <Modal text='keep in mind that any 3D module can be click and dragged to control the camera angle or hovered to see them change ;)' delay={2} />}
+      {isInView && <Modal text='Keep in mind that any 3D module can be click and dragged to control the camera angle or hovered to see them change ;)' delay={2} />}
       <div
         className={`about-me__description ${
           isInView ? '' : 'description__framer'
