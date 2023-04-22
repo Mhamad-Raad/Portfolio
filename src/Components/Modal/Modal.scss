@@ -1,1 +1,24 @@
 @use '../../Styles/variables' as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $Active-Color;
+  z-index: 100;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 10px;
+
+  &__text {
+    font-size: 20px;
+    color: $white;
+    text-align: center;
+  }
+
+  &__btn {
+    font-size: 20px;
+    color: $white;
+  }
+}
