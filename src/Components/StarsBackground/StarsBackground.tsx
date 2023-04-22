@@ -17,7 +17,7 @@ import './StarsBackground.scss';
 const StarsCanvas = () => {
   return (
     <section className='stars-bg'>
-      <Modal text='This website is still under construction' />
+      <Modal text='want to explore the space? hold click and swipe in any direction you want.' delay={ 9 }/>
       <Canvas camera={{ position: [0, 0, 1] }}>
         <OrbitControls enableZoom={false} enablePan={false} />
         <Suspense fallback={<ComponentLoader />}>
