@@ -1,5 +1,6 @@
 import ReserveTravel from './assets/projects/reserve-travel.png';
 import PFM from './assets/projects/PFM.png';
+import Meetups from './assets/projects/Meetups.png';
 
 export const Projects = [
   {
@@ -24,19 +25,20 @@ export const Projects = [
   {
     title: 'Personal Finance Manager',
     description:
-      'Gateway challenge project, Introducing Personal Finance Manager! A simple application designed to help you track your income and expenses while managing your money like a pro, save filtered links for later returns ;).',
-    techs: ['Remix', 'SCSS', 'HTML', 'JavaScript', 'Yarn'],
+      'Introducing Personal Finance Manager - Gateway challenge project! Easily track income, expenses, and save links for the needed finances for later returns. Manage your money like a pro!',
+    techs: ['Remix', 'SCSS', 'HTML', 'JavaScript', 'Firabase', 'Yarn'],
     Llink: 'https://money-management-jttttj87h-mhamad-raad.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/PFM-With-Remix',
     img: PFM,
   },
   {
-    title: 'Project 3',
-    description: 'Project 3 description',
-    techs: ['HTML', 'SCSS', 'React', 'Redux'],
-    Llink: '',
-    GLink: '',
-    img: '',
+    title: 'Meetups',
+    description:
+      'Meetups lets you see and post events around you. Stay up-to-date with local happenings and share your own events with the community.',
+    techs: ['Next', 'HTML', 'CSS', 'JavaScript', 'MongoDb', 'npm'],
+    Llink: 'https://next-js-news-odq1sgkbk-mhamad-raad.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/NextJS-News',
+    img: Meetups,
   },
   {
     title: 'Project 4',
