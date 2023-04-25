@@ -24,13 +24,14 @@ const ProjectItem: FC<ProjectItemInterface> = ({
     <div className='projects-section__projects__project column'>
       <img
         src={img}
-        alt='demo'
+        alt={title}
         className='projects-section__projects__project__img'
       />
       <a
         href={Glink}
         className='projects-section__projects__project__github'
         title='Visite Github Repository'
+        target='_blank'
       >
         <FaGithub />
       </a>
@@ -49,6 +50,8 @@ const ProjectItem: FC<ProjectItemInterface> = ({
         <a
           href={Llink}
           className='projects-section__projects__project__links__link'
+          target='_blank'
+          title='see it live'
         >
           <FaShare /> Live
         </a>

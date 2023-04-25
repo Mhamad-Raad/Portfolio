@@ -1,11 +1,23 @@
+import ReserveTravel from './assets/projects/reserve-travel.png';
+
 export const Projects = [
   {
-    title: 'Project 1',
-    description: 'Project 1 description',
-    techs: ['HTML', 'SCSS', 'React', 'Redux'],
-    Llink: '',
-    GLink: '',
-    img: '',
+    title: 'Travel Reservation',
+    description:
+      'Microverse graduation project, in which users could sign up and users could add/delete travels and users could reserve a travel and see the history of their reservations.',
+    techs: [
+      'HTML',
+      'CSS',
+      'React',
+      'Redux',
+      'Ruby on Rails',
+      'Rspec',
+      'JWT',
+      'Jest',
+    ],
+    Llink: 'https://remarkable-buttercream-3be0d2.netlify.app/home',
+    GLink: 'https://github.com/Mhamad-Raad/final-capstone-frontend',
+    img: ReserveTravel,
   },
   {
     title: 'Project 2',
@@ -40,5 +52,3 @@ export const Projects = [
     img: '',
   },
 ];
-
-
