@@ -3,6 +3,7 @@ import { useInView } from 'framer-motion';
 
 import ProjectItem from './ProjectItem';
 
+import { Projects } from '../../../Constants';
 import demoImg1 from '../../../assets/ToolsMethodes/GitHub.png';
 
 interface ProjectListInterface {}
@@ -18,11 +19,17 @@ const ProjectList: FC<ProjectListInterface> = () => {
       }`}
       ref={ref}
     >
-      <ProjectItem img={demoImg1} />
-      <ProjectItem img={demoImg1} />
-      <ProjectItem img={demoImg1} />
-      <ProjectItem img={demoImg1} />
-      <ProjectItem img={demoImg1} />
+      {Projects.map((project, index) => (
+        <ProjectItem
+          key={index}
+          img={project.img}
+          title={project.title}
+          description={project.description}
+          Llink={project.Llink}
+          Glink={project.GLink}
+          techs={project.techs}
+        />
+      ))}
     </div>
   );
 };
