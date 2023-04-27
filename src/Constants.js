@@ -4,6 +4,7 @@ import Meetups from './assets/projects/Meetups.png';
 import Notes from './assets/projects/Notes.png';
 import Meals from './assets/projects/Meals.png';
 import Cash from './assets/projects/Cash.png';
+import RandomeQ from './assets/projects/RandomQ.png';
 
 export const Projects = [
   {
@@ -13,15 +14,13 @@ export const Projects = [
     techs: [
       'React',
       'Redux',
+      'React Router 6.4',
       'Ruby on Rails',
       'Rspec',
       'JWT',
       'Jest',
-      'HTML',
-      'JavaScript',
-      'Npm',
     ],
-    Llink: 'https://remarkable-buttercream-3be0d2.netlify.app/home',
+    Llink: 'https://remarkable-buttercream-3be0d2.netlify.app',
     GLink: 'https://github.com/Mhamad-Raad/final-capstone-frontend',
     img: ReserveTravel,
   },
@@ -65,9 +64,18 @@ export const Projects = [
     title: 'Cash Flow',
     description:
       "Keep track of your expenses and find out which months you've had the highest spending - and on what. Get a better handle on your finances and start saving today!",
-    techs: ['React', 'HTML', 'CSS', 'Javascript', 'Npm'],
+    techs: ['React', 'HTML', 'CSS', 'Javascript', 'Npm', 'Local Storage'],
     Llink: 'https://mhamad-raad.github.io/React-Cash-Flow/',
     GLink: 'https://github.com/Mhamad-Raad/React-Cash-Flow',
     img: Cash,
+  },
+  {
+    title: 'Random Quote',
+    description:
+      "Get inspired with this website that generates random quotes! With just a click, you'll receive a thought-provoking quote to brighten your day and stimulate your mind.",
+    techs: ['React', 'HTML', 'CSS', 'Javascript', 'Npm', 'API'],
+    Llink: 'https://grand-clafoutis-fe002e.netlify.app/',
+    GLink: 'https://github.com/Mhamad-Raad/random-quote',
+    img: RandomeQ,
   },
 ];

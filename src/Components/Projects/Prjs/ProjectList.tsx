@@ -4,7 +4,6 @@ import { useInView } from 'framer-motion';
 import ProjectItem from './ProjectItem';
 
 import { Projects } from '../../../Constants';
-import demoImg1 from '../../../assets/ToolsMethodes/GitHub.png';
 
 interface ProjectListInterface {}
 
