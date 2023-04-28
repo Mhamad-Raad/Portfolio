@@ -5,6 +5,8 @@ import Notes from './assets/projects/Notes.png';
 import Meals from './assets/projects/Meals.png';
 import Cash from './assets/projects/Cash.png';
 import RandomeQ from './assets/projects/RandomQ.png';
+import AwesomeB from './assets/projects/AwesomeB.png';
+import Hitex from './assets/projects/Hitex.png';
 
 export const Projects = [
   {
@@ -78,4 +80,26 @@ export const Projects = [
     GLink: 'https://github.com/Mhamad-Raad/random-quote',
     img: RandomeQ,
   },
+  {
+    title: 'Awesome Books',
+    description:
+      'A react like structure using vanilla JavaScript, read some books and want to put your favorites in a collection? this is the right place for you!',
+    techs: ['HTML', 'CSS', 'Javascript'],
+    Llink: 'https://mhamad-raad.github.io/Awesome-Books/',
+    GLink: 'https://github.com/Mhamad-Raad/Awesome-Books',
+    img: AwesomeB,
+  },
+  {
+    title: 'Hitex',
+    description:
+      'A simple landing page for a technologies and inventions/innovations event that occurs annually',
+    techs: ['HTML', 'CSS', 'Javascript'],
+    Llink: 'https://mhamad-raad.github.io/Hitex/',
+    GLink: 'https://github.com/Mhamad-Raad/Hitex',
+    img: Hitex,
+  },
+  // {
+  //   title: 'Hitex',
+
+  // }
 ];
