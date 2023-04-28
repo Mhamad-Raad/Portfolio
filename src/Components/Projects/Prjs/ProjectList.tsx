@@ -1,5 +1,4 @@
-import { useRef, FC } from 'react';
-import { useInView } from 'framer-motion';
+import { FC } from 'react';
 
 import ProjectItem from './ProjectItem';
 
@@ -8,16 +7,8 @@ import { Projects } from '../../../Constants';
 interface ProjectListInterface {}
 
 const ProjectList: FC<ProjectListInterface> = () => {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const inView: boolean = useInView(ref, { once: true });
-
   return (
-    <div
-      className={`projects-section__projects row ${
-        inView ? '' : 'projects__framer'
-      }`}
-      ref={ref}
-    >
+    <div className='projects-section__projects row'>
       {Projects.map((project, index) => (
         <ProjectItem
           key={index}
