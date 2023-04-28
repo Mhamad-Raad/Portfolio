@@ -7,6 +7,8 @@ import Cash from './assets/projects/Cash.png';
 import RandomeQ from './assets/projects/RandomQ.png';
 import AwesomeB from './assets/projects/AwesomeB.png';
 import Hitex from './assets/projects/Hitex.png';
+import Tindog from './assets/projects/Tindog.png';
+
 
 export const Projects = [
   {
@@ -98,8 +100,14 @@ export const Projects = [
     GLink: 'https://github.com/Mhamad-Raad/Hitex',
     img: Hitex,
   },
-  // {
-  //   title: 'Hitex',
-
-  // }
+  {
+    title: 'TinDog',
+    description:
+      'Find paw-some matches for your furry friend with Tindog - the Tinder-like website for dogs. Checkout TinDog!',
+    techs: ['HTML', 'CSS', 'Bootstrap'],
+    Llink: 'https://mhamad-raad.github.io/tindogAngelaYu-project/',
+    GLink: 'https://github.com/Mhamad-Raad/tindogAngelaYu-project',
+    img: Tindog,
+  },
+  
 ];
