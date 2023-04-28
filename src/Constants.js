@@ -14,6 +14,8 @@ import PortfolioT from './assets/projects/PortfolioT.png';
 import MyGh from './assets/projects/MyGh.png';
 import MarkDown from './assets/projects/MarkDown.png';
 
+import Shahez from './assets/Recommendations/Shahez.jpeg'
+
 export const Projects = [
   {
     title: 'Travel Reservation',
@@ -169,5 +171,14 @@ export const Projects = [
     Llink: 'https://github.com/Mhamad-Raad',
     GLink: 'https://github.com/Mhamad-Raad',
     img: MyGh,
+  },
+];
+
+export const Recommends = [
+  {
+    name: 'Shahez Shwana',
+    position: 'Product Manager',
+    text: 'I had the pleasure of being Mhamad’s direct supervisor under his traineeship at ShaTech(Lezan). Throughout the traineeship Mhamad proved himself to be a someone who knows how to take the initiative to get the job done. During the following months of the traineeship, he got a central role within his group and functioned as a great resource for his colleagues. Besides his technical capabilities Mhamad is a solution oriented and delightful person to work it. He brings a very positive energy to the team.',
+    img: Shahez,
   },
 ];

@@ -8,6 +8,8 @@ import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 import Slide from './Slide';
 
+import { Recommends } from '../../Constants';
+
 import './Recommendations.scss';
 
 interface RecommentationsInterface {}
@@ -78,9 +80,15 @@ const Recommentations: FC<RecommentationsInterface> = () => {
           }}
           transition={{ duration: 1.5, type: 'spring' }}
         >
-          <Slide />
-          <Slide />
-          <Slide />
+          {Recommends.map((item, i) => (
+            <Slide
+              key={i}
+              name={item.name}
+              position={item.position}
+              text={item.text}
+              img={item.img}
+            />
+          ))}
         </motion.div>
         {width > 600 && (
           <motion.button
