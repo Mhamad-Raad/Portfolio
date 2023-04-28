@@ -8,7 +8,7 @@ import RandomeQ from './assets/projects/RandomQ.png';
 import AwesomeB from './assets/projects/AwesomeB.png';
 import Hitex from './assets/projects/Hitex.png';
 import Tindog from './assets/projects/Tindog.png';
-
+import Todo from './assets/projects/Todo.png';
 
 export const Projects = [
   {
@@ -109,5 +109,13 @@ export const Projects = [
     GLink: 'https://github.com/Mhamad-Raad/tindogAngelaYu-project',
     img: Tindog,
   },
-  
+  {
+    title: 'Todo App',
+    description:
+      'Get your life in order with this fun React-based Todo app! Add, delete, and mark todos as done in a snap. Never miss a task again!',
+    techs: ['React', 'HTML', 'CSS', 'Javascript', 'Npm'],
+    Llink: 'https://mhamad-raad.github.io/ToDo-React/',
+    GLink: 'https://github.com/Mhamad-Raad/ToDo-React',
+    img: Todo,
+  },
 ];
