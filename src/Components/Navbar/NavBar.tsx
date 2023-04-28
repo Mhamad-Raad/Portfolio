@@ -56,10 +56,10 @@ const Header: FC<Props> = () => {
 
           <Link
             className='nav__Links__item'
-            to='experience'
+            to='contact'
             ignoreCancelEvents={true}
             smooth={true}
-            duration={1000}
+            duration={2000}
           >
             Contact
           </Link>
