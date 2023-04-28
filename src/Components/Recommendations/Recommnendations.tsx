@@ -42,14 +42,14 @@ const Recommentations: FC<RecommentationsInterface> = () => {
   });
   useEffect(() => {
     if (index < 0) {
-      setIndex(2);
-    } else if (index > 2) {
+      setIndex(4);
+    } else if (index > 4) {
       setIndex(0);
     }
 
     const slideTimer = setTimeout(() => {
       setIndex((prevState) => prevState + 1);
-    }, 5000);
+    }, 7500);
 
     return () => clearTimeout(slideTimer);
   }, [index]);
@@ -106,7 +106,7 @@ const Recommentations: FC<RecommentationsInterface> = () => {
           animate={{ y: inView ? 0 : 200 }}
           transition={{ duration: 0.5, type: 'spring', stiffness: 100 }}
         >
-          {[0, 1, 2].map((item, i) => (
+          {Recommends.map((item, i) => (
             <button
               type='button'
               key={i}

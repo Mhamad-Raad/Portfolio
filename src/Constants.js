@@ -14,7 +14,11 @@ import PortfolioT from './assets/projects/PortfolioT.png';
 import MyGh from './assets/projects/MyGh.png';
 import MarkDown from './assets/projects/MarkDown.png';
 
-import Shahez from './assets/Recommendations/Shahez.jpeg'
+import Shahez from './assets/Recommendations/Shahez.jpeg';
+import Jonathan from './assets/Recommendations/Jonathan.jpeg';
+import Alexandre from './assets/Recommendations/Alexandre.jpeg';
+import Muzaffer from './assets/Recommendations/Muzaffer.jpeg';
+import Fariaa from './assets/Recommendations/Fariaa.jpeg';
 
 export const Projects = [
   {
@@ -180,5 +184,29 @@ export const Recommends = [
     position: 'Product Manager',
     text: 'I had the pleasure of being Mhamad’s direct supervisor under his traineeship at ShaTech(Lezan). Throughout the traineeship Mhamad proved himself to be a someone who knows how to take the initiative to get the job done. During the following months of the traineeship, he got a central role within his group and functioned as a great resource for his colleagues. Besides his technical capabilities Mhamad is a solution oriented and delightful person to work it. He brings a very positive energy to the team.',
     img: Shahez,
+  },
+  {
+    name: 'Jonathan Kayizzi',
+    position: 'Full Stack Engineer',
+    text: 'I have worked with Mhamad through pair-programming and he is very good with Javascript, HTML & CSS.He is a good team player, he is punctual, always on time, and never afraid of taking on challenges.',
+    img: Jonathan,
+  },
+  {
+    name: 'Alexandre Medina',
+    position: 'Full Stack Engineer | Electrical Engineer',
+    text: 'I have worked with Mhamad for a few weeks on Microverse, and I can say that he is one of the brightest and kindest people I have had the pleasure of knowing. He is great at teamwork and very good with Javascript, HTML and CSS.',
+    img: Alexandre,
+  },
+  {
+    name: 'Muzaffer Dler',
+    position: 'Quality Assurance Engineer',
+    text: 'I have worked with Mhamad for a few weeks on Microverse, and I can say that he is one of the brightest and kindest people I have had the pleasure of knowing. He is great at teamwork and very good with Javascript, HTML and CSS.',
+    img: Muzaffer,
+  },
+  {
+    name: 'Fariaa Hamed',
+    position: 'University Lecturer at Qaiwan (UTM)',
+    text: "It is my pleasure to recommend Mhamad, who I taught in my Artificial Intelligence class ,and Object-oriented programming class as well. he demonstrated tremendous effort and brought a great energy to class. he is interest in understanding how things work lead me to believe that he will be a valuable addition in any class he'll join. moreover he is confident, well-organized, diligent, and capable leader, he has that combination of a positive attitude and the belief that he can always improve . I am confident that he will continue to display the same commitment and diligence in everything he does.",
+    img: Fariaa,
   },
 ];
