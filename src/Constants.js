@@ -9,12 +9,15 @@ import AwesomeB from './assets/projects/AwesomeB.png';
 import Hitex from './assets/projects/Hitex.png';
 import Tindog from './assets/projects/Tindog.png';
 import Todo from './assets/projects/Todo.png';
+import FreeGames from './assets/projects/FreeGames.png';
+import PortfolioT from './assets/projects/PortfolioT.png';
+import MyGh from './assets/projects/MyGh.png';
 
 export const Projects = [
   {
     title: 'Travel Reservation',
     description:
-      "Microverse graduation project, It's a platform where users can sign up and add or delete their travels. And the best part? You can reserve a travel and even see the history of your past reservations.",
+      'Microverse graduation project that lets you sign up, add/delete travels, reserve a travel, and see your reservation history. Bon voyage!.',
     techs: [
       'React',
       'Redux',
@@ -31,7 +34,7 @@ export const Projects = [
   {
     title: 'Finance Manager',
     description:
-      'Introducing Finance Manager - Gateway challenge project! Easily track income, expenses, and save links for the needed finances for later returns. Manage your money like a pro!',
+      'Introducing Finance Manager - Gateway project! Track income, expenses, and save links for later returns. Manage your money like a pro!',
     techs: ['Remix', 'SCSS', 'HTML', 'JavaScript', 'Firabase', 'Yarn'],
     Llink: 'https://money-management-jttttj87h-mhamad-raad.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/PFM-With-Remix',
@@ -49,7 +52,7 @@ export const Projects = [
   {
     title: 'Notes',
     description:
-      'Looking for a platform to share notes, life advice, or just some good jokes? Look no further! here is the perfect place to share with others. Join us today and start spreading love!',
+      'Looking for a platform to share notes, life advice, or just some good jokes? Look no further! here is the perfect place to share with others. Join us today!',
     techs: ['Remix', 'HTML', 'CSS', 'JavaScript', 'Firebase', 'Npm'],
     Llink: 'https://note-collector-jtl0kbpkm-mhamad-raad.vercel.app/Notes',
     GLink: 'https://github.com/Mhamad-Raad/Remix-Notes',
@@ -67,7 +70,7 @@ export const Projects = [
   {
     title: 'Cash Flow',
     description:
-      "Keep track of your expenses and find out which months you've had the highest spending - and on what. Get a better handle on your finances and start saving today!",
+      "Keep track of your expenses and find out which months you've had the highest spending - and on what. Get a better handle on your finances.",
     techs: ['React', 'HTML', 'CSS', 'Javascript', 'Npm', 'Local Storage'],
     Llink: 'https://mhamad-raad.github.io/React-Cash-Flow/',
     GLink: 'https://github.com/Mhamad-Raad/React-Cash-Flow',
@@ -76,7 +79,7 @@ export const Projects = [
   {
     title: 'Random Quote',
     description:
-      "Get inspired with this website that generates random quotes! With just a click, you'll receive a thought-provoking quote to brighten your day and stimulate your mind.",
+      'Get inspired with this website that generates random quotes! With just a click, stimulate your mind ;)',
     techs: ['React', 'HTML', 'CSS', 'Javascript', 'Npm', 'API'],
     Llink: 'https://grand-clafoutis-fe002e.netlify.app/',
     GLink: 'https://github.com/Mhamad-Raad/random-quote',
@@ -117,5 +120,44 @@ export const Projects = [
     Llink: 'https://mhamad-raad.github.io/ToDo-React/',
     GLink: 'https://github.com/Mhamad-Raad/ToDo-React',
     img: Todo,
+  },
+  {
+    title: 'Free Games',
+    description:
+      'Get your game on! Browse the latest and hottest free games for console and PC all in one place.',
+    techs: ['HTML', 'CSS', 'Javascript', 'API'],
+    Llink: 'https://mhamad-raad.github.io/Capstone-API/',
+    GLink: 'https://github.com/Mhamad-Raad/Capstone-API',
+    img: FreeGames,
+  },
+  {
+    title: 'Portfolio Template',
+    description:
+      'A simple portfolio template using HTML, CSS, and JavaScript. Feel free to use it as a template for your own portfolio!',
+    techs: ['HTML', 'CSS', 'Javascript'],
+    Llink: 'https://mhamad-raad.github.io/Microverse-Portfolio/',
+    GLink: 'https://github.com/Mhamad-Raad/Microverse-Portfolio',
+    img: PortfolioT,
+  },
+  {
+    title: 'My Github',
+    description:
+      'Check out my Github for cool projects including music websites, calculators, and other cool projects just for fun!',
+    techs: [
+      'Ruby on Rails',
+      'TypeScript',
+      'Flutter',
+      'Jest',
+      'yarn',
+      'PHP',
+      '.NET',
+      'Java Servlet',
+      'C++',
+      'Rduino',
+      'etc..',
+    ],
+    Llink: 'https://github.com/Mhamad-Raad',
+    GLink: 'https://github.com/Mhamad-Raad',
+    img: MyGh,
   },
 ];
