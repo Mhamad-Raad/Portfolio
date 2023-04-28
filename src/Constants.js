@@ -48,14 +48,15 @@ export const Projects = [
     img: PFM,
   },
   {
-    title: 'Meetups',
+    title: 'Random Quote',
     description:
-      'Meetups lets you see and post events around you. Stay up-to-date with local happenings and share your own events with the community.',
-    techs: ['Next', 'HTML', 'CSS', 'JavaScript', 'MongoDb', 'Npm'],
-    Llink: 'https://next-js-news-odq1sgkbk-mhamad-raad.vercel.app/',
-    GLink: 'https://github.com/Mhamad-Raad/NextJS-News',
-    img: Meetups,
+      'Get inspired with this website that generates random quotes! With just a click, stimulate your mind ;)',
+    techs: ['React', 'HTML', 'CSS', 'Javascript', 'Npm', 'API'],
+    Llink: 'https://grand-clafoutis-fe002e.netlify.app/',
+    GLink: 'https://github.com/Mhamad-Raad/random-quote',
+    img: RandomeQ,
   },
+
   {
     title: 'Notes',
     description:
@@ -64,6 +65,15 @@ export const Projects = [
     Llink: 'https://note-collector-jtl0kbpkm-mhamad-raad.vercel.app/Notes',
     GLink: 'https://github.com/Mhamad-Raad/Remix-Notes',
     img: Notes,
+  },
+  {
+    title: 'Meetups',
+    description:
+      'Meetups lets you see and post events around you. Stay up-to-date with local happenings and share your own events with the community.',
+    techs: ['Next', 'HTML', 'CSS', 'JavaScript', 'MongoDb', 'Npm'],
+    Llink: 'https://next-js-news-odq1sgkbk-mhamad-raad.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/NextJS-News',
+    img: Meetups,
   },
   {
     title: 'Meals',
@@ -84,13 +94,22 @@ export const Projects = [
     img: Cash,
   },
   {
-    title: 'Random Quote',
+    title: 'Todo App',
     description:
-      'Get inspired with this website that generates random quotes! With just a click, stimulate your mind ;)',
-    techs: ['React', 'HTML', 'CSS', 'Javascript', 'Npm', 'API'],
-    Llink: 'https://grand-clafoutis-fe002e.netlify.app/',
-    GLink: 'https://github.com/Mhamad-Raad/random-quote',
-    img: RandomeQ,
+      'Get your life in order with this fun React-based Todo app! Add, delete, and mark todos as done in a snap. Never miss a task again!',
+    techs: ['React', 'HTML', 'CSS', 'Javascript', 'Npm'],
+    Llink: 'https://mhamad-raad.github.io/ToDo-React/',
+    GLink: 'https://github.com/Mhamad-Raad/ToDo-React',
+    img: Todo,
+  },
+  {
+    title: 'Free Games',
+    description:
+      'Get your game on! Browse the latest and hottest free games for console and PC all in one place.',
+    techs: ['HTML', 'CSS', 'Javascript', 'API'],
+    Llink: 'https://mhamad-raad.github.io/Capstone-API/',
+    GLink: 'https://github.com/Mhamad-Raad/Capstone-API',
+    img: FreeGames,
   },
   {
     title: 'Awesome Books',
@@ -111,33 +130,6 @@ export const Projects = [
     img: Hitex,
   },
   {
-    title: 'TinDog',
-    description:
-      'Find paw-some matches for your furry friend with Tindog - the Tinder-like website for dogs. Checkout TinDog!',
-    techs: ['HTML', 'CSS', 'Bootstrap'],
-    Llink: 'https://mhamad-raad.github.io/tindogAngelaYu-project/',
-    GLink: 'https://github.com/Mhamad-Raad/tindogAngelaYu-project',
-    img: Tindog,
-  },
-  {
-    title: 'Todo App',
-    description:
-      'Get your life in order with this fun React-based Todo app! Add, delete, and mark todos as done in a snap. Never miss a task again!',
-    techs: ['React', 'HTML', 'CSS', 'Javascript', 'Npm'],
-    Llink: 'https://mhamad-raad.github.io/ToDo-React/',
-    GLink: 'https://github.com/Mhamad-Raad/ToDo-React',
-    img: Todo,
-  },
-  {
-    title: 'Free Games',
-    description:
-      'Get your game on! Browse the latest and hottest free games for console and PC all in one place.',
-    techs: ['HTML', 'CSS', 'Javascript', 'API'],
-    Llink: 'https://mhamad-raad.github.io/Capstone-API/',
-    GLink: 'https://github.com/Mhamad-Raad/Capstone-API',
-    img: FreeGames,
-  },
-  {
     title: 'Portfolio Template',
     description:
       'A simple portfolio template using HTML, CSS, and JavaScript. Feel free to use it as a template for your own portfolio!',
@@ -146,6 +138,16 @@ export const Projects = [
     GLink: 'https://github.com/Mhamad-Raad/Microverse-Portfolio',
     img: PortfolioT,
   },
+  {
+    title: 'TinDog',
+    description:
+      'Find paw-some matches for your furry friend with Tindog - the Tinder-like website for dogs. Checkout TinDog!',
+    techs: ['HTML', 'CSS', 'Bootstrap'],
+    Llink: 'https://mhamad-raad.github.io/tindogAngelaYu-project/',
+    GLink: 'https://github.com/Mhamad-Raad/tindogAngelaYu-project',
+    img: Tindog,
+  },
+
   {
     title: 'MarkDown',
     description:
@@ -186,16 +188,16 @@ export const Recommends = [
     img: Shahez,
   },
   {
+    name: 'Fariaa Hamed',
+    position: 'University Lecturer at Qaiwan (UTM)',
+    text: "It is my pleasure to recommend Mhamad, who I taught in my Artificial Intelligence class ,and Object-oriented programming class as well. he demonstrated tremendous effort and brought a great energy to class. he is interest in understanding how things work lead me to believe that he will be a valuable addition in any class he'll join. moreover he is confident, well-organized, diligent, and capable leader, he has that combination of a positive attitude and the belief that he can always improve . I am confident that he will continue to display the same commitment and diligence in everything he does.",
+    img: Fariaa,
+  },
+  {
     name: 'Jonathan Kayizzi',
     position: 'Full Stack Engineer',
     text: 'I have worked with Mhamad through pair-programming and he is very good with Javascript, HTML & CSS.He is a good team player, he is punctual, always on time, and never afraid of taking on challenges.',
     img: Jonathan,
-  },
-  {
-    name: 'Alexandre Medina',
-    position: 'Full Stack Engineer | Electrical Engineer',
-    text: 'I have worked with Mhamad for a few weeks on Microverse, and I can say that he is one of the brightest and kindest people I have had the pleasure of knowing. He is great at teamwork and very good with Javascript, HTML and CSS.',
-    img: Alexandre,
   },
   {
     name: 'Muzaffer Dler',
@@ -204,9 +206,9 @@ export const Recommends = [
     img: Muzaffer,
   },
   {
-    name: 'Fariaa Hamed',
-    position: 'University Lecturer at Qaiwan (UTM)',
-    text: "It is my pleasure to recommend Mhamad, who I taught in my Artificial Intelligence class ,and Object-oriented programming class as well. he demonstrated tremendous effort and brought a great energy to class. he is interest in understanding how things work lead me to believe that he will be a valuable addition in any class he'll join. moreover he is confident, well-organized, diligent, and capable leader, he has that combination of a positive attitude and the belief that he can always improve . I am confident that he will continue to display the same commitment and diligence in everything he does.",
-    img: Fariaa,
+    name: 'Alexandre Medina',
+    position: 'Full Stack Engineer | Electrical Engineer',
+    text: 'I have worked with Mhamad for a few weeks on Microverse, and I can say that he is one of the brightest and kindest people I have had the pleasure of knowing. He is great at teamwork and very good with Javascript, HTML and CSS.',
+    img: Alexandre,
   },
 ];
