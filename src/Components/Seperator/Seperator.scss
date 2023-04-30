@@ -16,5 +16,10 @@
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+
+    &__link {
+      text-decoration: underline;
+      color: #8094cd;
+    }
   }
 }

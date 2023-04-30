@@ -12,7 +12,10 @@ const Seperator: FC<SeperatorProps> = ({ text, link, type }) => {
   return (
     <div className='seperator row'>
       <p className='seperator__text'>
-        {text} <a href={link}>{type}</a>
+        {text}{' '}
+        <a href={link} className='seperator__text__link'>
+          {type}
+        </a>
       </p>
     </div>
   );
