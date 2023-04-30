@@ -2,11 +2,19 @@ import { FC } from 'react';
 
 import ProjectItem from './ProjectItem';
 
-import Projects from '../../../Constants';
 
-interface ProjectListInterface {}
+interface ProjectListInterface {
+  Projects: {
+    img: string;
+    title: string;
+    description: string;
+    Llink: string;
+    GLink: string;
+    techs: string[];
+  }[];
+}
 
-const ProjectList: FC<ProjectListInterface> = () => {
+const ProjectList: FC<ProjectListInterface> = ({Projects}) => {
   return (
     <div className='projects-section__projects row'>
       {Projects.map((project, index) => (

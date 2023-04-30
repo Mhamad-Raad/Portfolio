@@ -22,6 +22,18 @@ const Projects: FC<ProjectsInterface> = () => {
     };
   });
 
+  const handleSelect = (e: any) => {
+    if (e) {
+      const techs = e.map((data: any) => data.value);
+      const filteredProjects = Prs.filter((project) => {
+        return techs.every((tech: string) => project.techs.includes(tech));
+      });
+      setProjects(filteredProjects);
+    } else {
+      setProjects(Prs);
+    }
+  }
+
   return (
     <section className='projects-section column' id='projects'>
       <div className='projects-section__header row'>
@@ -33,6 +45,7 @@ const Projects: FC<ProjectsInterface> = () => {
           isMulti
           className='projects-section__header__select'
           placeholder='Search by Technology?'
+          onChange={handleSelect}
           styles={{
             multiValue: (styles) => {
               return {
@@ -47,7 +60,7 @@ const Projects: FC<ProjectsInterface> = () => {
           }}
         />
       </div>
-      <ProjectList />
+      <ProjectList Projects={projects} />
     </section>
   );
 };
