@@ -1,8 +1,10 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 
 import ProjectList from './Prjs/ProjectList';
+
+import Prs, { Techs } from '../../Constants';
 
 import './Projects.scss';
 
@@ -11,11 +13,14 @@ interface ProjectsInterface {}
 const animatedComponents = makeAnimated();
 
 const Projects: FC<ProjectsInterface> = () => {
-  const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' },
-  ];
+  const [projects, setProjects] = useState(Prs);
+
+  const options = Techs.map((data) => {
+    return {
+      value: data,
+      label: data,
+    };
+  });
 
   return (
     <section className='projects-section column' id='projects'>
@@ -27,6 +32,7 @@ const Projects: FC<ProjectsInterface> = () => {
           components={animatedComponents}
           isMulti
           className='projects-section__header__select'
+          placeholder='Search by Technology?'
           styles={{
             multiValue: (styles) => {
               return {

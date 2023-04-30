@@ -20,7 +20,7 @@ import Alexandre from './assets/Recommendations/Alexandre.jpeg';
 import Muzaffer from './assets/Recommendations/Muzaffer.jpeg';
 import Fariaa from './assets/Recommendations/Fariaa.jpeg';
 
-export const Projects = [
+const Projects = [
   {
     title: 'Travel Reservation',
     description:
@@ -70,7 +70,7 @@ export const Projects = [
     title: 'Meetups',
     description:
       'Meetups lets you see and post events around you. Stay up-to-date with local happenings and share your own events with the community.',
-    techs: ['Next', 'HTML', 'CSS', 'JavaScript', 'MongoDb', 'Npm'],
+    techs: ['Next', 'HTML', 'CSS', 'JavaScript', 'MongoDB', 'Npm'],
     Llink: 'https://next-js-news-odq1sgkbk-mhamad-raad.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/NextJS-News',
     img: Meetups,
@@ -180,6 +180,38 @@ export const Projects = [
   },
 ];
 
+export const Techs = [
+  'React',
+  'Next',
+  'Remix',
+  'Redux',
+  'Context',
+  'React Router 6.4',
+  'Jest',
+  'JavaScript',
+  'TypeScript',
+  'HTML',
+  'CSS',
+  'Bootstrap',
+  'SASS',
+  'API',
+  'Local Storage',
+  'Firebase',
+  'MongoDB',
+  'Npm',
+  'Ruby on Rails',
+  'Rspec',
+  'Flutter',
+  'Yarn',
+  'PHP',
+  '.NET',
+  'Java Servlet',
+  'C++',
+  'Rduino',
+  'Yarn',
+  'etc..',
+];
+
 export const Recommends = [
   {
     name: 'Shahez Shwana',
@@ -212,3 +244,5 @@ export const Recommends = [
     img: Alexandre,
   },
 ];
+
+export default Projects;

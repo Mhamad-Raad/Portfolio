@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import ProjectItem from './ProjectItem';
 
-import { Projects } from '../../../Constants';
+import Projects from '../../../Constants';
 
 interface ProjectListInterface {}
 
