@@ -39,6 +39,19 @@
         font-family: $Header-Font;
       }
 
+      &__error {
+        margin-bottom: 20px;
+
+        width: 100%;
+
+        p {
+          color: red;
+          font-size: 14px;
+          font-weight: 500;
+          font-family: $Body-Font;
+        }
+      }
+
       input {
         width: 80%;
         height: 40px;
@@ -86,6 +99,7 @@
           width: 100%;
         }
       }
+
       button {
         width: 50%;
         height: 40px;
@@ -100,6 +114,15 @@
         position: relative;
         overflow: hidden;
         margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        svg {
+          font-size: 20px;
+          color: $Active-Color;
+        }
 
         &:hover {
           box-shadow: 1px 1px 25px 10px $Active-Color;
@@ -134,6 +157,46 @@
       justify-content: center;
       align-items: center;
     }
+  }
+}
+
+.error {
+  border-color: red !important;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid $Active-Color;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: $Active-Color transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
