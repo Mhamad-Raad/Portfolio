@@ -10,6 +10,7 @@ import Projects from './Components/Projects/Projects';
 import Recommentations from './Components/Recommendations/Recommnendations';
 import NavBar from './Components/Navbar/NavBar';
 import Footer from './Components/Footer/Footer';
+import Seperator from './Components/Seperator/Seperator';
 
 import './App.scss';
 
@@ -50,7 +51,17 @@ const App = () => {
         <WorkExperience />
         <Skills />
         <Projects />
+        <Seperator
+          text='To see more projects checkout my '
+          type='GitHub'
+          link='https://github.com/Mhamad-Raad'
+        />
         <Recommentations />
+        <Seperator
+          text='To see more Recommendations checkout my '
+          type='LinkedIn'
+          link='https://www.linkedin.com/in/mhamad-raad'
+        />
         {!loading && <ContactMe />}
         <Footer />
       </motion.main>

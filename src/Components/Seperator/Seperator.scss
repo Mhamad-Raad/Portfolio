@@ -1,2 +1,20 @@
 @use '../../Styles/variables' as *;
 
+.seperator {
+  width: 100%;
+  height: 25px;
+  background-color: #193155;
+  margin-top: 4rem;
+  padding: 25px 0;
+  justify-content: center;
+  align-items: center;
+
+  &__text {
+    font-size: 12px;
+    font-weight: bolder;
+    font-family: $Body-Font;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+}
