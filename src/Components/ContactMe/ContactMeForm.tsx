@@ -105,7 +105,6 @@ const ContactMeForm: FC<ContactMeFormProps> = () => {
   };
 
   const error = !validEmail || !validName || !validText;
-  console.log(showModal);
   return (
     <>
       {showModal && (
