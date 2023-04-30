@@ -6,12 +6,22 @@
   padding: 0 20px;
   transition: all 0.5s;
 
-  &__title {
-    font-size: 2.5rem;
-    font-family: $Header-Font;
-    font-weight: 600;
-    color: white;
-    margin-bottom: 50px;
+  &__header {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+      font-size: 2.5rem;
+      font-family: $Header-Font;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 50px;
+    }
+
+    &__select {
+      width: 30%;
+    }
   }
 
   &__projects {
@@ -140,8 +150,10 @@
 
 @media only screen and (max-width: 400px) {
   .projects-section {
-    &__title {
-      font-size: 1.75rem;
+    &__header {
+      &__title {
+        font-size: 1.75rem;
+      }
     }
 
     &__projects {
