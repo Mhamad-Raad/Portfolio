@@ -12,16 +12,25 @@
     font-family: $Body-Font;
   }
 
+  &__bug-report {
+    color: white;
+    font-size: 12px;
+    margin-bottom: 10px;
+    a {
+      color: $Active-Color;
+      text-decoration: underline;
+    }
+  }
+
   &__made-by {
     color: white;
     font-size: 1.25rem;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 
   &__copy-rights {
     color: white;
     font-size: 0.75rem;
-    margin-top: 5px;
   }
 
   &__social-medias {
@@ -50,7 +59,7 @@
   &__special-thanks {
     color: white;
     font-size: 0.6rem;
-    margin-top: 10px;
+    // margin-top: 10px;
     text-align: center;
   }
 }

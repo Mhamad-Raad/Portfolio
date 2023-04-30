@@ -26,6 +26,16 @@ const Footer: FC<FooterProps> = () => {
           <p>Mhamad-Radd</p>
         </a>
       </div>
+      <p className='footer__bug-report'>
+        Bug Report? click{' '}
+        <a
+          href='https://github.com/Mhamad-Raad/Portfolio/issues'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          here
+        </a>
+      </p>
       <p className='footer__copy-rights'>© 2023 - All rights reserved</p>
       <p className='footer__special-thanks'>
         Special thanks to everyone who their tutorials, 3d models and code
