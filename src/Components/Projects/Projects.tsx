@@ -32,21 +32,27 @@ const Projects: FC<ProjectsInterface> = () => {
     } else {
       setProjects(Prs);
     }
-  }
+  };
 
   return (
     <section className='projects-section column' id='projects'>
-      <div className='projects-section__header row'>
-        <h2 className='projects-section__header__title'>Projects</h2>
+      
+        <h2 className='projects-section__title'>Projects</h2>
         <Select
           options={options}
           closeMenuOnSelect={false}
           components={animatedComponents}
           isMulti
-          className='projects-section__header__select'
+          className='projects-section__select'
           placeholder='Search by Technology?'
           onChange={handleSelect}
           styles={{
+            control: (baseStyles, state) => ({
+              ...baseStyles,
+              borderColor: state.isFocused ? '#8ab6f9' : 'none',
+              borderRadius: '10px',
+              height: '50px',
+            }),
             multiValue: (styles) => {
               return {
                 ...styles,
@@ -58,8 +64,16 @@ const Projects: FC<ProjectsInterface> = () => {
               color: '#8ab6f9',
             }),
           }}
+          theme={(theme) => ({
+            ...theme,
+            borderRadius: 0,
+            colors: {
+              ...theme.colors,
+              primary25: '#8ab6f9',
+              color: 'white',
+            },
+          })}
         />
-      </div>
       <ProjectList Projects={projects} />
     </section>
   );
