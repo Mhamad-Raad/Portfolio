@@ -1,0 +1,51 @@
+import { FC, FormEvent, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
+
+import { motion } from 'framer-motion';
+
+interface ContactMeFormProps {}
+
+const ContactMeForm: FC<ContactMeFormProps> = () => {
+  const form = useRef<HTMLFormElement | null>(null);
+
+  const formSubmissionHandler = (e: FormEvent) => {
+    e.preventDefault();
+
+    if (form.current === null) return;
+
+    emailjs
+      .sendForm(
+        'service_qz4ugws',
+        'template_mi83gfy',
+        form.current,
+        'user_HuKpwTBqfsVm40phvlXmn'
+      )
+      .then(
+        (_) => {
+          form.current?.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
+  return (
+    <motion.form
+      ref={form}
+      className='contact-me__content__form column'
+      onSubmit={formSubmissionHandler}
+    >
+      <h3 className='contact-me__content__form__title'> Let's Connect</h3>
+      <input type='text' placeholder='Full Name' name='user_name' required />
+      <input type='email' placeholder='Email' name='user_email' required />
+      <textarea placeholder={`What's up?`} name='user_message' required />
+      <button type='submit' value='Send'>
+        Send
+      </button>
+    </motion.form>
+  );
+}
+
+export default ContactMeForm;
