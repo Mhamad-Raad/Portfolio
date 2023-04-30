@@ -3,6 +3,8 @@ import { Link } from 'react-scroll';
 import { FC, useState, useEffect } from 'react';
 import useWindowSize from '../../CustomHooks/UseScreenSize';
 
+import Logo from '../../assets/Logo.png';
+
 import './Navbar.scss';
 
 interface Props {}
@@ -22,7 +24,9 @@ const Header: FC<Props> = () => {
   if (width > 768) {
     return (
       <ul className='nav'>
-        <li className='nav__logo'>Logo</li>
+        <li className='nav__logo'>
+          <img src={Logo} alt='logo' title='Logo' />
+        </li>
         <li className='nav__Links'>
           <Link
             to='about-me'
@@ -70,7 +74,7 @@ const Header: FC<Props> = () => {
 
   return (
     <nav className='mobile-nav row'>
-      <div className='mobile-nav__logo'>Logo</div>
+      <img src={Logo} className='mobile-nav__logo' alt='Logo' title='Logo' />
       <label htmlFor='mobile-nav__check' className='mobile-nav__btn'>
         <input
           type='checkbox'

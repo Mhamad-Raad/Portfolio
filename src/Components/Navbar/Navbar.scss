@@ -35,10 +35,10 @@ ul {
   }
 
   &__logo {
-    font-weight: bolder;
-    font-size: 20px;
-    font-family: $Header-Font;
-    color: $Primary-Text-Color;
+    img {
+      width: 50px;
+      height: 40px;
+    }
   }
 }
 
@@ -85,12 +85,12 @@ li {
   justify-content: space-between;
   background-color: transparent;
   padding: 0 15px;
+  margin-top: 10px;
 
   &__logo {
-    font-weight: bolder;
-    font-size: 20px;
-    font-family: $Header-Font;
-    color: $Primary-Text-Color;
+    width: 50px;
+    height: 40px;
+    z-index: 1000;
   }
 
   &__btn {
@@ -135,7 +135,7 @@ li {
     }
   }
   &__items {
-    background-color: #44546b68;;
+    background-color: #44546b68;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
