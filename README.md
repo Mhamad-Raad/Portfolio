@@ -7,13 +7,11 @@
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [🚀 Live Preview ](#-live-preview-)
-  - [🔗 Back End Link ](#-back-end-link-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
     - [Install](#install)
     - [Usage ](#usage-)
-    - [Run tests](#run-tests)
     - [Deployment](#deployment)
   - [👥 Author ](#-author-)
   - [🔭 Future Features ](#-future-features-)
@@ -36,23 +34,23 @@ This is a Portfolio project in which it showcases my skills.
   <br>
   <ul> 
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-      <img alt="ruby" width="90px"  height="35px" src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+      <img alt="ruby" width="90px"  height="35px" src="https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue" />
     </a>
     <br>
-    <a href="https://babeljs.io/">
-      <img alt="ruby" width="100px"  height="35px" src="https://img.shields.io/badge/Babel-F9DC3e?style=for-the-badge&logo=babel&logoColor=black" />
+    <a href="https://github.com/Mhamad-Raad/Portfolio">
+      <img alt="ruby" width="100px"  height="35px" src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" />
+    </a>
+    <br>
+    <a href="https://github.com/Mhamad-Raad/Portfolio">
+      <img alt="ruby" width="130px"  height="35px" src="https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white" />
     </a>
     <br>
     <a href="https://github.com/microverseinc/linters-config/tree/master/react-redux">
-      <img alt="ruby" width="130px"  height="35px" src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" />
-    </a>
-    <br>
-    <a href="https://github.com/microverseinc/linters-config/tree/master/react-redux">
-      <img alt="ruby" width="145px"  height="35px" src="https://img.shields.io/badge/stylelint-000?style=for-the-badge&logo=stylelint&logoColor=white" />
+      <img alt="ruby" width="145px"  height="35px" src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" />
     </a>
     <br>
     <a href="https://webpack.js.org/">
-      <img alt="ruby" width="140px"  height="35px" src="https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black" />
+      <img alt="ruby" width="140px"  height="35px" src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />
     </a>
     <br>
     <a href="https://reactjs.org/">
@@ -60,19 +58,7 @@ This is a Portfolio project in which it showcases my skills.
     </a>
     <br>
     <a href="https://redux.js.org/">
-      <img alt="ruby" width="120px"  height="35px" src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" />
-    </a>
-    <br>
-    <a href="https://jestjs.io/">
-      <img alt="ruby" width="100px"  height="35px" src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" />
-    </a>
-    <br>
-    <a href="https://testing-library.com/docs/react-testing-library/intro/">
-      <img alt="ruby" width="200px"  height="35px" src="https://img.shields.io/badge/-Testing_Library-%23E33332?style=for-the-badge&logo=testing-library&logoColor=white" />
-    </a>
-    <br>
-    <a href="https://www.netlify.com/">
-      <img alt="ruby" width="120px"  height="35px" src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" />
+      <img alt="ruby" width="120px"  height="35px" src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
     </a>
     <br>
     
