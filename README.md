@@ -33,7 +33,7 @@ This is a Portfolio project in which it showcases my skills.
   <summary>Client</summary>
   <br>
   <ul> 
-    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+    <a href="https://github.com/Mhamad-Raad/Portfolio">
       <img alt="ruby" width="90px"  height="35px" src="https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue" />
     </a>
     <br>
@@ -45,19 +45,19 @@ This is a Portfolio project in which it showcases my skills.
       <img alt="ruby" width="130px"  height="35px" src="https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white" />
     </a>
     <br>
-    <a href="https://github.com/microverseinc/linters-config/tree/master/react-redux">
+    <a href="https://github.com/Mhamad-Raad/Portfolio">
       <img alt="ruby" width="145px"  height="35px" src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" />
     </a>
     <br>
-    <a href="https://webpack.js.org/">
+    <a href="https://github.com/Mhamad-Raad/Portfolio">
       <img alt="ruby" width="140px"  height="35px" src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />
     </a>
     <br>
-    <a href="https://reactjs.org/">
+    <a href="https://github.com/Mhamad-Raad/Portfolio">
       <img alt="ruby" width="120px"  height="35px" src="https://img.shields.io/badge/React-0075A8?style=for-the-badge&logo=react&logoColor=61DAFB" />
     </a>
     <br>
-    <a href="https://redux.js.org/">
+    <a href="https://github.com/Mhamad-Raad/Portfolio">
       <img alt="ruby" width="120px"  height="35px" src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
     </a>
     <br>
