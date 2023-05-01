@@ -13,7 +13,9 @@ const Seperator: FC<SeperatorProps> = ({ text, link, type }) => {
     <div className='seperator row'>
       <p className='seperator__text'>
         {text}{' '}
-        <a href={link} className='seperator__text__link'>
+        <a href={link} className='seperator__text__link'
+          target='_blank'
+        >
           {type}
         </a>
       </p>
