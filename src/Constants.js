@@ -13,6 +13,7 @@ import FreeGames from './assets/projects/FreeGames.png';
 import PortfolioT from './assets/projects/PortfolioT.png';
 import MyGh from './assets/projects/MyGh.png';
 import MarkDown from './assets/projects/MarkDown.png';
+import LifeStruggles from './assets/projects/LifeStruggles.png';
 
 import Shahez from './assets/Recommendations/Shahez.jpeg';
 import Jonathan from './assets/Recommendations/Jonathan.jpeg';
@@ -65,6 +66,23 @@ const Projects = [
     Llink: 'https://note-collector-jtl0kbpkm-mhamad-raad.vercel.app/Notes',
     GLink: 'https://github.com/Mhamad-Raad/Remix-Notes',
     img: Notes,
+  },
+  {
+    title: 'Life Struggles',
+    description:
+      "Inspires hope, reminding individuals to never give up. it serves as a beacon of optimism, guiding users to find light in life's darkest moments. Embrace hope, there is light after the tunnel.",
+    techs: [
+      'React',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Npm',
+      'React Three Fiber',
+      'Frammer Motion',
+    ],
+    Llink: 'https://life-struggles.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/Life-Struggles',
+    img: LifeStruggles,
   },
   {
     title: 'Meetups',
@@ -187,12 +205,14 @@ export const Techs = [
   'Redux',
   'Context',
   'React Router 6.4',
+  'React Three Fiber',
   'Jest',
   'JavaScript',
   'TypeScript',
   'HTML',
   'CSS',
   'Bootstrap',
+  'Frammer Motion',
   'SASS',
   'API',
   'Local Storage',
