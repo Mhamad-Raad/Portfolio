@@ -34,31 +34,31 @@ This is a Portfolio project in which it showcases my skills.
   <br>
   <ul> 
     <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="ruby" width="90px"  height="35px" src="https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue" />
+      <img alt="Frammer Motion" width="90px"  height="35px" src="https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue" />
     </a>
     <br>
     <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="ruby" width="100px"  height="35px" src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" />
+      <img alt="HTML" width="100px"  height="35px" src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" />
     </a>
     <br>
     <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="ruby" width="130px"  height="35px" src="https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white" />
+      <img alt="Three.js" width="130px"  height="35px" src="https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white" />
     </a>
     <br>
     <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="ruby" width="145px"  height="35px" src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" />
+      <img alt="SASS" width="145px"  height="35px" src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" />
     </a>
     <br>
     <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="ruby" width="140px"  height="35px" src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />
+      <img alt="TypeScript" width="140px"  height="35px" src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />
     </a>
     <br>
     <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="ruby" width="120px"  height="35px" src="https://img.shields.io/badge/React-0075A8?style=for-the-badge&logo=react&logoColor=61DAFB" />
+      <img alt="React" width="120px"  height="35px" src="https://img.shields.io/badge/React-0075A8?style=for-the-badge&logo=react&logoColor=61DAFB" />
     </a>
     <br>
     <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="ruby" width="120px"  height="35px" src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
+      <img alt="Vercel" width="120px"  height="35px" src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
     </a>
     <br>
     
@@ -94,7 +94,7 @@ _**Contact me:**_
 In order to run this project you need:
 ```
   Source code editor
-  Node.js and Npm
+  Npm
   Git
 ```
 ### Setup
@@ -138,11 +138,11 @@ You can deploy this project using:
 👤 **Mhamad Raad**
 
  &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/Mhamad-Raad">
-      <img alt="ruby" width="130px" height="35px" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
+      <img alt="Github Account" width="130px" height="35px" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
     </a>
     <br>
  &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/mhamad-raad">
-      <img alt="ruby" height="35px" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+      <img alt="LinkedIn Account" height="35px" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
     </a>
 
 
