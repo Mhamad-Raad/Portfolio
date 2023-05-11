@@ -85,6 +85,15 @@ const Projects = [
     img: LifeStruggles,
   },
   {
+    title: 'Landing Page',
+    description:
+      'captivating showcase of innovative design (Landing Page), seamless user experience, and compelling content. Explore its intuitive interface.',
+    techs: ['React', 'HTML', 'SCSS', 'TypeScript', 'TailWind', 'Npm'],
+    Llink: 'https://company-website1-ashy.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/company-website1',
+    img: LifeStruggles,
+  },
+  {
     title: 'Meetups',
     description:
       'Meetups lets you see and post events around you. Stay up-to-date with local happenings and share your own events with the community.',
@@ -212,6 +221,7 @@ export const Techs = [
   'HTML',
   'CSS',
   'Bootstrap',
+  'TailWind',
   'Frammer Motion',
   'SASS',
   'API',
