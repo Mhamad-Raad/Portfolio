@@ -14,6 +14,7 @@ import PortfolioT from './assets/projects/PortfolioT.png';
 import MyGh from './assets/projects/MyGh.png';
 import MarkDown from './assets/projects/MarkDown.png';
 import LifeStruggles from './assets/projects/LifeStruggles.png';
+import Landing1 from './assets/projects/Landing1.png';
 
 import Shahez from './assets/Recommendations/Shahez.jpeg';
 import Jonathan from './assets/Recommendations/Jonathan.jpeg';
@@ -91,7 +92,7 @@ const Projects = [
     techs: ['React', 'HTML', 'SCSS', 'TypeScript', 'TailWind', 'Npm'],
     Llink: 'https://company-website1-ashy.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/company-website1',
-    img: LifeStruggles,
+    img: Landing1,
   },
   {
     title: 'Meetups',
