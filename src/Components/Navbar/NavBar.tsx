@@ -2,7 +2,7 @@ import { Link } from 'react-scroll';
 
 import { FC, useState, useEffect } from 'react';
 import useWindowSize from '../../CustomHooks/UseScreenSize';
-import { useScroll } from 'framer-motion';
+import { useMotionValueEvent, useScroll } from 'framer-motion';
 
 import Logo from '../../assets/Logo.png';
 
@@ -13,6 +13,9 @@ interface Props {}
 const Header: FC<Props> = () => {
   const { width }: { width: number } = useWindowSize();
   const [opened, setOpened] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
+
   const openHandle = () => {
     setOpened(!opened);
   };
@@ -22,9 +25,17 @@ const Header: FC<Props> = () => {
     else document.body.style.overflow = 'visible';
   }, [opened]);
 
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    if (latest > 725 && !scrolled) {
+      setScrolled(true);
+    } else if (latest < 725 && scrolled) {
+      setScrolled(false);
+    }
+  });
+
   if (width > 768) {
     return (
-      <ul className='nav'>
+      <ul className={`nav ${scrolled && 'scrolled'}`}>
         <li className='nav__logo'>
           <img src={Logo} alt='logo' title='Logo' />
         </li>
