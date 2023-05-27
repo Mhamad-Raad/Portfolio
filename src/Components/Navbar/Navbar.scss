@@ -7,7 +7,8 @@ ul {
   display: flex;
   flex-direction: row;
   background-color: transparent;
-  position: absolute;
+  position: fixed;
+  z-index: 99;
 }
 
 .nav {
