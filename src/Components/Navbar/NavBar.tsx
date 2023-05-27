@@ -2,6 +2,7 @@ import { Link } from 'react-scroll';
 
 import { FC, useState, useEffect } from 'react';
 import useWindowSize from '../../CustomHooks/UseScreenSize';
+import { useScroll } from 'framer-motion';
 
 import Logo from '../../assets/Logo.png';
 
