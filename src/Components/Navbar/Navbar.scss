@@ -15,7 +15,9 @@ ul {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 25px 50px;
+  padding: 12.5px 50px;
+  transition: all 0.5s ease-in-out;
+
 
   &__Links {
     width: 500px;
@@ -173,5 +175,9 @@ li {
 }
 
 .scrolled {
-  
+  /* From https://css.glass */
+  background: rgba(29, 43, 59, 0.5);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9.2px);
+  -webkit-backdrop-filter: blur(9.2px);
 }
