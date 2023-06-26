@@ -18,7 +18,12 @@ const AboutMe: FC<AboutMeProps> = () => {
 
   return (
     <section className='about-me' id='about-me' ref={ref}>
-      {isInView && <Modal text='Keep in mind that any 3D module can be click and dragged to control the camera angle or hovered to see them change ;)' delay={2} />}
+      {isInView && (
+        <Modal
+          text='Keep in mind that any 3D module can be click and dragged to control the camera angle or hovered to see them change ;)'
+          delay={2}
+        />
+      )}
       <div
         className={`about-me__description ${
           isInView ? '' : 'description__framer'
@@ -54,7 +59,7 @@ const AboutMe: FC<AboutMeProps> = () => {
             </h3>
             <a
               className='about-me__description__connection__resume__download'
-              href='./Mhamad-Raad-Front-end.pdf'
+              href='./Mhamad-Raad-Software-Engineer.pdf'
               target='_blank'
             >
               Download
