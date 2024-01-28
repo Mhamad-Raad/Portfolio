@@ -101,8 +101,11 @@ const Header: FC<Props> = () => {
           <li>
             <Link
               to='about-me'
+              spy={true}
+              activeClass='mobile-active'
               ignoreCancelEvents={true}
               smooth={true}
+              offset={-75}
               duration={750}
               onClick={openHandle}
             >
@@ -112,6 +115,8 @@ const Header: FC<Props> = () => {
           <li>
             <Link
               to='experience'
+              spy={true}
+              activeClass='mobile-active'
               ignoreCancelEvents={true}
               smooth={true}
               duration={1000}
@@ -123,6 +128,8 @@ const Header: FC<Props> = () => {
           <li>
             <Link
               to='projects'
+              spy={true}
+              activeClass='mobile-active'
               ignoreCancelEvents={true}
               smooth={true}
               duration={1200}
@@ -135,8 +142,11 @@ const Header: FC<Props> = () => {
           <li>
             <Link
               to='contact'
+              spy={true}
+              activeClass='mobile-active'
               ignoreCancelEvents={true}
               smooth={true}
+              offset={-75}
               duration={1500}
               onClick={openHandle}
             >

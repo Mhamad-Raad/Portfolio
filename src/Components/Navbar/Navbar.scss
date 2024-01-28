@@ -144,8 +144,6 @@ li {
   &__items {
     background-color: #44546b68;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
     position: absolute;
     left: 100%;
     height: 100vh;
@@ -161,7 +159,6 @@ li {
       list-style-type: none;
       transition: all 0.2s ease;
       color: white;
-      opacity: 0.6;
 
       &:hover {
         opacity: 1;
@@ -184,5 +181,10 @@ li {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(9.2px);
   -webkit-backdrop-filter: blur(9.2px);
+  padding: 10px;
+}
+
+.mobile-active {
+  background-color: $Active-Color !important;
   padding: 10px;
 }
