@@ -5,8 +5,6 @@ import { Suspense } from 'react';
 import ComponentLoader from '../CanvaObjects/Loader/ComponentLoader/ComponentLoader';
 
 import Stars from '../CanvaObjects/Stars';
-import Satalite from '../CanvaObjects/Satalite';
-import Astrounount from '../CanvaObjects/Astronount';
 
 import Modal from '../Modal/Modal';
 
@@ -23,8 +21,6 @@ const StarsCanvas = () => {
         <OrbitControls enableZoom={false} enablePan={false} />
         <Suspense fallback={<ComponentLoader />}>
           <Stars />
-          <Astrounount />
-          <Satalite />
         </Suspense>
         <Preload all />
       </Canvas>
