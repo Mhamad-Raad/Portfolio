@@ -43,8 +43,11 @@ const Header: FC<Props> = () => {
           <Link
             to='about-me'
             className='nav__Links__item'
+            spy={true}
+            activeClass='active'
             ignoreCancelEvents={true}
             smooth={true}
+            offset={-75}
             duration={750}
           >
             About
@@ -53,6 +56,8 @@ const Header: FC<Props> = () => {
           <Link
             className='nav__Links__item'
             to='experience'
+            spy={true}
+            activeClass='active'
             ignoreCancelEvents={true}
             smooth={true}
             duration={1000}
@@ -63,6 +68,8 @@ const Header: FC<Props> = () => {
           <Link
             className='nav__Links__item'
             to='projects'
+            spy={true}
+            activeClass='active'
             ignoreCancelEvents={true}
             smooth={true}
             duration={1200}
@@ -73,9 +80,12 @@ const Header: FC<Props> = () => {
           <Link
             className='nav__Links__item'
             to='contact'
+            spy={true}
+            activeClass='active'
             ignoreCancelEvents={true}
             smooth={true}
             duration={2000}
+            offset={-75}
           >
             Contact
           </Link>
