@@ -85,7 +85,7 @@ const Header: FC<Props> = () => {
   }
 
   return (
-    <nav className='mobile-nav row'>
+    <nav className={`mobile-nav row ${scrolled && 'scrolled'}`}>
       <img src={Logo} className='mobile-nav__logo' alt='Logo' title='Logo' />
       <label htmlFor='mobile-nav__check' className='mobile-nav__btn'>
         <input
