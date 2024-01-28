@@ -6,9 +6,7 @@ import ComponentLoader from '../CanvaObjects/Loader/ComponentLoader/ComponentLoa
 
 import Stars from '../CanvaObjects/Stars';
 import Satalite from '../CanvaObjects/Satalite';
-import MovingMeteor from '../CanvaObjects/MovingMeteor';
 import Astrounount from '../CanvaObjects/Astronount';
-import Ship from '../CanvaObjects/ShipModel';
 
 import Modal from '../Modal/Modal';
 
@@ -25,10 +23,8 @@ const StarsCanvas = () => {
         <OrbitControls enableZoom={false} enablePan={false} />
         <Suspense fallback={<ComponentLoader />}>
           <Stars />
-          <MovingMeteor />
           <Astrounount />
           <Satalite />
-          <Ship />
         </Suspense>
         <Preload all />
       </Canvas>

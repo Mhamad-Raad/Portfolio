@@ -1,8 +1,6 @@
 import { lazy, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { collection, getDocs } from 'firebase/firestore';
-
 import Loader from './Components/CanvaObjects/Loader/ScreenLoader';
 import WorkExperience from './Components/WorkExperience/WorkExperience';
 import Skills from './Components/Skills/Skills';
