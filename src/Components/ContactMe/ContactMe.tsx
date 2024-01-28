@@ -23,26 +23,30 @@ const ContactMe: FC<ContactMeInterface> = () => {
       <div className='contact-me__content row'>
         <div className='contact-me__content__info column'>
           <h3 className='contact-me__content__info__title'>
-            Get in Touch with Us
+            Get in Touch with Me
           </h3>
           <p className='contact-me__content__info__description'>
-            We Value your feedback, questions, and suggestions. Please Reach out
-            to us if you have any inquiries or concerns we are here to help.
+            I Value your feedback, questions, and suggestions. Please Reach out
+            to me if you have any inquiries or concerns I am here to help.
           </p>
           <div className='contact-me__content__info__seperator' />
-          <div className='contact-me__content__info'>
-            <div className='flex gap-3 items-center'>
-              <IoCallOutline className='text-[22px]' />
-              <p className='font-semibold text-[17px]'>+964 (770) 123 4567</p>
+          <div className='contact-me__content__info__social column'>
+            <div className='contact-me__content__info__social__row row'>
+              <IoCallOutline className='contact-me__content__info__social__row__icon' />
+              <p className='contact-me__content__info__social__row__text'>
+                +964 (770) 184 4913
+              </p>
             </div>
-            <div className='flex gap-3 items-center'>
-              <MdMailOutline className='text-[22px]' />
-              <p className='font-semibold text-[17px]'>info@company.com</p>
+            <div className='contact-me__content__info__social__row row'>
+              <MdMailOutline className='contact-me__content__info__social__row__icon' />
+              <p className='contact-me__content__info__social__row__text'>
+                hamaraad883@gmail.com
+              </p>
             </div>
-            <div className='flex gap-3 items-center'>
-              <IoLocationOutline className='text-[22px]' />
-              <p className='font-semibold text-[17px]'>
-                Bakrajo, Sulaimaniyah, Kurdistan Region, Iraq
+            <div className='contact-me__content__info__social__row row'>
+              <IoLocationOutline className='contact-me__content__info__social__row__icon' />
+              <p className='contact-me__content__info__social__row__text'>
+                Sulaimaniyah, Kurdistan Region, Iraq
               </p>
             </div>
           </div>
