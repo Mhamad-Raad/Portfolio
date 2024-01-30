@@ -5,9 +5,11 @@ import { motion } from 'framer-motion';
 
 import Modal from '../Modal/Modal';
 
-interface ContactMeFormProps {}
+interface ContactMeFormProps {
+  isInView: boolean;
+}
 
-const ContactMeForm: FC<ContactMeFormProps> = () => {
+const ContactMeForm: FC<ContactMeFormProps> = ({ isInView }) => {
   const [validEmail, setValidEmail] = useState<boolean>(true);
   const [validName, setValidName] = useState<boolean>(true);
   const [validText, setValidateText] = useState<boolean>(true);
@@ -115,6 +117,10 @@ const ContactMeForm: FC<ContactMeFormProps> = () => {
         className={`contact-me__content__form column ${
           validText ? '' : 'error'
         }`}
+        style={{
+          opacity: isInView ? 1 : 0,
+          transform: isInView ? 'translateX(0)' : 'translateX(100%)',
+        }}
         onSubmit={formSubmissionHandler}
       >
         <h3 className='contact-me__content__form__title'> Let's Connect</h3>
