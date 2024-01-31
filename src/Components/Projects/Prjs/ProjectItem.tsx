@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
+import { useInView } from 'framer-motion';
 
 import Tech from './Tech';
 
@@ -20,8 +21,28 @@ const ProjectItem: FC<ProjectItemInterface> = ({
   Glink,
   techs,
 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true });
+
+  // get a random number between 1 and 4 no decimals
+  const random = Math.floor(Math.random() * 4 + 1);
+
+  let style = '';
+
+  if (random === 1) style = 'translateX(-100%)';
+  else if (random === 2) style = 'translateX(100%)';
+  else if (random === 3) style = 'translateY(-100%)';
+  else style = 'translateY(100%)';
+
   return (
-    <div className='projects-section__projects__project column'>
+    <div
+      className='projects-section__projects__project column'
+      ref={ref}
+      style={{
+        opacity: isInView ? 1 : 0,
+        transform: isInView ? 'translate(0)' : style,
+      }}
+    >
       <img
         src={img}
         alt={title}
