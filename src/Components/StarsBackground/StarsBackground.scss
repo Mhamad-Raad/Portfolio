@@ -95,16 +95,16 @@
   position: absolute;
   top: 40%;
   transform: translate(-50%, -50%);
-  width: 30%;
+  width: 400px;
   animation: slideIn;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-delay: 7s;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box !important;
 
   & > div {
-    height: 50%;
     overflow: hidden;
     position: absolute;
     width: 100%;
@@ -162,11 +162,11 @@
   }
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1023px) {
   .animated-title {
     & > div {
       height: 50%;
-      width: 83%;
+      width: 85%;
 
       div {
         span {
@@ -179,23 +179,23 @@
 
     & > div.text-top {
       border-bottom: 0.75vmin solid white;
-
+      top: -10px;
       div {
         span {
-          font-size: 1.75rem;
+          font-size: 2.5rem;
         }
       }
     }
 
     & > div.text-bottom {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
   }
 }
 
 @media only screen and (max-width: 768px) {
   .animated-title {
-    width: 200px;
+    width: 275px;
     left: 0;
     right: 0;
     top: 40%;
@@ -219,28 +219,37 @@
 
     & > div.text-top {
       border-bottom: 0.75vmin solid white;
-      top: 0;
+      top: -5px;
       text-align: center;
 
       div {
         span {
           color: white;
-          font-size: 1.75rem;
+          font-size: 2rem;
         }
       }
     }
 
     & > div.text-bottom {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
     }
   }
 }
 
-@media only screen and (max-width: 500px) {
-    .animated-title {
-      top: 25%;
+@media only screen and (max-width: 767px) {
+  .animated-title {
+    top: 30%;
+    & > div.text-top {
+      border-bottom: 4px solid white !important;
+
+      div {
+        span {
+          font-size: 2rem;
+        }
+      }
     }
-    .stars-bg__scroll {
-      top: 55%;
-    }
+  }
+  .stars-bg__scroll {
+    top: 55%;
+  }
 }
