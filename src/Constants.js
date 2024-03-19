@@ -15,6 +15,7 @@ import MyGh from './assets/projects/MyGh.png';
 import MarkDown from './assets/projects/MarkDown.png';
 import LifeStruggles from './assets/projects/LifeStruggles.png';
 import Landing1 from './assets/projects/Landing1.png';
+import TelenetPro from './assets/projects/TelenetPro.png';
 
 import Shahez from './assets/Recommendations/Shahez.jpeg';
 import Jonathan from './assets/Recommendations/Jonathan.jpeg';
@@ -23,6 +24,23 @@ import Muzaffer from './assets/Recommendations/Muzaffer.jpeg';
 import Fariaa from './assets/Recommendations/Fariaa.jpeg';
 
 const Projects = [
+  {
+    title: 'Telenet Pro',
+    description:
+      'A website for a company that provides services in the field of telecommunications and information technology.',
+    techs: [
+      'Next',
+      'React Three Fiber',
+      'HTML',
+      'CSS',
+      'TailWind',
+      'Npm',
+      'AWS',
+    ],
+    Llink: 'https://telle-net.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/TelleNet',
+    img: TelenetPro,
+  },
   {
     title: 'Travel Reservation',
     description:
