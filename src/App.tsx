@@ -27,7 +27,7 @@ const App = () => {
     if (loading) {
       timer = setTimeout(() => {
         setLoading(false);
-      }, 7000);
+      }, 5500);
     }
     // eslint-disable-next-line
     () => clearTimeout(timer);
