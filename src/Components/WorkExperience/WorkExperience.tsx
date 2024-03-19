@@ -158,7 +158,7 @@ const WorkExperience = () => {
             Software Engineer
           </h3>
           <h4 className='vertical-timeline-element-subtitle'>
-            Student, Universit of Technology Malaysia, Bachelor's degree
+            Student, University of Technology Malaysia, Bachelor's degree
           </h4>
           <p>
             C++, C#, Java, JavaScript, Dart, HTML5, CSS, Bootstrap5, jQuery,
