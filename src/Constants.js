@@ -53,8 +53,8 @@ const Projects = [
       'TailWind',
       'Npm',
     ],
-    Llink: 'https://telle-net.vercel.app/',
-    GLink: 'https://github.com/Mhamad-Raad/TelleNet',
+    Llink: 'https://glacier-nine.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/Glacier',
     img: Glacier,
   },
   {
