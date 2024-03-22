@@ -15,6 +15,7 @@ import MyGh from './assets/projects/MyGh.png';
 import MarkDown from './assets/projects/MarkDown.png';
 import LifeStruggles from './assets/projects/LifeStruggles.png';
 import Landing1 from './assets/projects/Landing1.png';
+import Glacier from './assets/projects/Glacier.png';
 import TelenetPro from './assets/projects/TelenetPro.png';
 
 import Shahez from './assets/Recommendations/Shahez.jpeg';
@@ -40,6 +41,21 @@ const Projects = [
     Llink: 'https://telle-net.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/TelleNet',
     img: TelenetPro,
+  },
+  {
+    title: 'Glacier',
+    description:
+      'A demo website for a company that provides services in the field of trading in crypto currency.',
+    techs: [
+      'Next',
+      'HTML',
+      'CSS',
+      'TailWind',
+      'Npm',
+    ],
+    Llink: 'https://telle-net.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/TelleNet',
+    img: Glacier,
   },
   {
     title: 'Travel Reservation',
