@@ -6,9 +6,10 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import './WorkExperience.scss';
 
+import DhorniImg from '../../assets/Dhorni.png';
+import GatewayImg from '../../assets/Gateway.png';
 import LezanImg from '../../assets/Lezan.jpg';
 import MicroverseImg from '../../assets/Microverse.jpg';
-import GatewayImg from '../../assets/Gateway.png';
 import IndexImg from '../../assets/Index.jpg';
 import UtmImg from '../../assets/UTM.png';
 
@@ -18,6 +19,33 @@ const WorkExperience = () => {
       <h2 className='work-experience__title'>Work Experience</h2>
       <h4 className='work-experience__subtitle'>WHAT I HAVE DONE SO FAR</h4>
       <VerticalTimeline lineColor='#8ab6f9'>
+        <VerticalTimelineElement
+          contentStyle={{ background: '#4073c5', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  #4073c5' }}
+          date='JUN-2023 - DEC-2023'
+          dateClassName='work-experience__date'
+          iconClassName='work-experience__icon'
+          icon={
+            <img
+              src={DhorniImg}
+              alt='Lezan Logo'
+              className='work-experience__logo'
+              title='Gateway for ICT Solutions'
+            />
+          }
+        >
+          <h3 className='vertical-timeline-element-title work-experience__job-title'>
+            Front-end Developer
+          </h3>
+          <h4 className='vertical-timeline-element-subtitle work-experience__job-subtitle'>
+            Dhorni
+          </h4>
+          <p>
+            React Developer, Responsive Design Integration, Agile(Scrum), Mobile
+            First Development
+          </p>
+        </VerticalTimelineElement>
+        {/*  */}
         <VerticalTimelineElement
           contentStyle={{ background: '#4073c5', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  #4073c5' }}
