@@ -6,6 +6,9 @@ import {
 import 'react-vertical-timeline-component/style.min.css';
 import './WorkExperience.scss';
 
+import BrandBazzar from '../../assets/BrandBazzar.png';
+import AoneImg from '../../assets/Aone.png';
+import TelleNetProImg from '../../assets/TelleNetpro.png';
 import DhorniImg from '../../assets/Dhorni.png';
 import GatewayImg from '../../assets/Gateway.png';
 import LezanImg from '../../assets/Lezan.jpg';
@@ -22,15 +25,89 @@ const WorkExperience = () => {
         <VerticalTimelineElement
           contentStyle={{ background: '#4073c5', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  #4073c5' }}
+          date='FEB-2025 - JUL-2024'
+          dateClassName='work-experience__date'
+          iconClassName='work-experience__icon'
+          icon={
+            <img
+              src={BrandBazzar}
+              alt='BrandBazzar Logo'
+              className='work-experience__logo'
+              title='BrandBazzar'
+            />
+          }
+        >
+          <h3 className='vertical-timeline-element-title work-experience__job-title'>
+            Full-Stack Developer
+          </h3>
+          <h4 className='vertical-timeline-element-subtitle work-experience__job-subtitle'>
+            BrandBazzar
+          </h4>
+          <p>
+            Laravel, Commuication, Time Management, Team Lead, Automated Emails,
+            Payment Integration
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          contentStyle={{ background: '#4073c5', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  #4073c5' }}
+          date='FEB-2025 - JUL-2024'
+          dateClassName='work-experience__date'
+          iconClassName='work-experience__icon'
+          icon={
+            <img
+              src={AoneImg}
+              alt='AOne Logo'
+              className='work-experience__logo'
+              title='A-One'
+            />
+          }
+        >
+          <h3 className='vertical-timeline-element-title work-experience__job-title'>
+            Front-end Developer
+          </h3>
+          <h4 className='vertical-timeline-element-subtitle work-experience__job-subtitle'>
+            A-One
+          </h4>
+          <p>Electron.js, Agile-Scrum, , Windows</p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          contentStyle={{ background: '#4073c5', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  #4073c5' }}
+          date='JAN-2024 - JUN-2024'
+          dateClassName='work-experience__date'
+          iconClassName='work-experience__icon'
+          icon={
+            <img
+              src={TelleNetProImg}
+              alt='TelleNetpro Logo'
+              className='work-experience__logo'
+              title='Telle-Netpro'
+            />
+          }
+        >
+          <h3 className='vertical-timeline-element-title work-experience__job-title'>
+            Front-end Developer
+          </h3>
+          <h4 className='vertical-timeline-element-subtitle work-experience__job-subtitle'>
+            Telle-Netpro
+          </h4>
+          <p>
+            Next, Responsive Design Integration, 3D Modules, SSR, Communication
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          contentStyle={{ background: '#4073c5', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  #4073c5' }}
           date='JUN-2023 - DEC-2023'
           dateClassName='work-experience__date'
           iconClassName='work-experience__icon'
           icon={
             <img
               src={DhorniImg}
-              alt='Lezan Logo'
+              alt='Dhorni Logo'
               className='work-experience__logo'
-              title='Gateway for ICT Solutions'
+              title='Dhorni'
             />
           }
         >
@@ -55,7 +132,7 @@ const WorkExperience = () => {
           icon={
             <img
               src={GatewayImg}
-              alt='Lezan Logo'
+              alt='Gateway for ICT Solutions Logo'
               className='work-experience__logo'
               title='Gateway for ICT Solutions'
             />
@@ -65,7 +142,7 @@ const WorkExperience = () => {
             Front-end Developer
           </h3>
           <h4 className='vertical-timeline-element-subtitle work-experience__job-subtitle'>
-            Internship, Gateway for ICT Solutions
+            Gateway for ICT Solutions
           </h4>
           <p>
             React Developer, Payment Intigration, Agile(Scrum), SASS, Team
