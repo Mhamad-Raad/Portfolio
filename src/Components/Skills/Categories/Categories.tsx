@@ -10,7 +10,7 @@ import './Categories.scss';
 import StudentImg from '../../../assets/Student.jpg';
 import FrontendImg from '../../../assets/Frontend.jpg';
 import BackendImg from '../../../assets/Backend.jpg';
-import FlutterImg from '../../../assets/frontend/Flutter.jpg';
+import FlutterImg from '../../../assets/frontend/FRN.png';
 
 interface CategoriesInterface {}
 
@@ -23,29 +23,25 @@ const Categories: FC<CategoriesInterface> = () => {
         inView={isInView}
         title='Front-end'
         img={FrontendImg}
-        description='Developing responsive pixel perfect web-applications, following best
-          practices during development, optimize performance, different
-          development approches, such as mobile first development'
+        description='Building responsive, pixel-perfect web apps with a focus on performance, best practices, and modern approaches like mobile-first and TDD.'
       />
       <CategoriesItem
         inView={isInView}
-        title='Student'
+        title='Tech Explorer'
         img={StudentImg}
-        description='Continues Learner, Constantly trying new technologies out, keeping up
-          to date and the new trends'
+        description='Continuous learner, always exploring new technologies and staying updated with the latest trends in the tech industry.'
       />
       <CategoriesItem
         inView={isInView}
         title='Back-end'
         img={BackendImg}
-        description='Developing API, authentication, authorization, using different
-          approches such as Test Driven Development'
+        description='Developing APIs with secure authentication and authorization. Experienced with Test-Driven Development (TDD) and RESTful principles.'
       />
       <CategoriesItem
         inView={isInView}
-        title='Flutter'
+        title='Flutter / R Native'
         img={FlutterImg}
-        description='Developing responsive, interactive and adaptive Flutter applications'
+        description='Creating responsive and interactive mobile apps using Flutter and React Native, with a focus on adaptability across platforms and devices.'
       />
     </div>
   );
