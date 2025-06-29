@@ -7,6 +7,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import './WorkExperience.scss';
 
 import BrandBazzar from '../../assets/BrandBazzar.png';
+import BISImg from '../../assets/BIS.png';
 import AoneImg from '../../assets/Aone.png';
 import TelleNetProImg from '../../assets/TelleNetpro.png';
 import DhorniImg from '../../assets/Dhorni.png';
@@ -25,7 +26,7 @@ const WorkExperience = () => {
         <VerticalTimelineElement
           contentStyle={{ background: '#4073c5', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  #4073c5' }}
-          date='FEB-2025 - JUL-2024'
+          date='FEB-2025 - JUL-2025'
           dateClassName='work-experience__date'
           iconClassName='work-experience__icon'
           icon={
@@ -51,7 +52,32 @@ const WorkExperience = () => {
         <VerticalTimelineElement
           contentStyle={{ background: '#4073c5', color: '#fff' }}
           contentArrowStyle={{ borderRight: '7px solid  #4073c5' }}
-          date='FEB-2025 - JUL-2024'
+          date='AUG-2024 - JUN-2025'
+          dateClassName='work-experience__date'
+          iconClassName='work-experience__icon'
+          icon={
+            <img
+              src={BISImg}
+              alt='BIS Logo'
+              className='work-experience__logo'
+              title='British International School'
+            />
+          }
+        >
+          <h3 className='vertical-timeline-element-title work-experience__job-title'>
+            Web Admin / ICT Lecturer
+          </h3>
+          <h4 className='vertical-timeline-element-subtitle work-experience__job-subtitle'>
+            A-One
+          </h4>
+          <p>
+            Edu app, Networking, HTML, CSS, JavaScript, Python, Time Management
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          contentStyle={{ background: '#4073c5', color: '#fff' }}
+          contentArrowStyle={{ borderRight: '7px solid  #4073c5' }}
+          date='FEB-2024 - JUL-2024'
           dateClassName='work-experience__date'
           iconClassName='work-experience__icon'
           icon={
@@ -69,7 +95,7 @@ const WorkExperience = () => {
           <h4 className='vertical-timeline-element-subtitle work-experience__job-subtitle'>
             A-One
           </h4>
-          <p>Electron.js, Agile-Scrum, , Windows</p>
+          <p>Electron.js, Tailwind Agile-Scrum, Windows, Team Work</p>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           contentStyle={{ background: '#4073c5', color: '#fff' }}
