@@ -7,15 +7,17 @@ import './CategorySkills.scss';
 
 import PosgresqlImg from '../../assets/backend/Postgresql.png';
 import MysqlImg from '../../assets/backend/Mysql.png';
-import RorImg from '../../assets/backend/Ror.png';
 import NodeImg from '../../assets/backend/Node.png';
-import RspecImg from '../../assets/backend/Rspec.png';
+import SQLite from '../../assets/backend/SQLite.png';
+import MongoImg from '../../assets/backend/Mongo.png';
+import FirebaseImg from '../../assets/backend/Firebase.png';
+import Express from '../../assets/backend/Express.png';
 
 interface BackendSkillsInterface {}
 
 const BackendSkills: FC<BackendSkillsInterface> = () => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const inView: boolean = useInView(ref, {once: true});
+  const inView: boolean = useInView(ref, { once: true });
 
   return (
     <div className='category-skills column'>
@@ -28,9 +30,11 @@ const BackendSkills: FC<BackendSkillsInterface> = () => {
       >
         <CircleSkill img={PosgresqlImg} title='PostgreSQL' />
         <CircleSkill img={MysqlImg} title='MySQL' />
-        <CircleSkill img={RorImg} title='Ruby on Rails' />
         <CircleSkill img={NodeImg} title='Node.js' />
-        <CircleSkill img={RspecImg} title='Rspec' />
+        <CircleSkill img={Express} title='ExpressJs' />
+        <CircleSkill img={SQLite} title='SQLite' />
+        <CircleSkill img={FirebaseImg} title='Firebase' />
+        <CircleSkill img={MongoImg} title='MongoDB' />
       </div>
     </div>
   );

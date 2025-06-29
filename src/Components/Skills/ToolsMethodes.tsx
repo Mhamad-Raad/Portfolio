@@ -12,11 +12,9 @@ import JiraImg from '../../assets/ToolsMethodes/Jira.png';
 import Github from '../../assets/ToolsMethodes/GitHub.png';
 import TrelloImg from '../../assets/ToolsMethodes/Trello.png';
 import VSCodeImg from '../../assets/ToolsMethodes/VSCode.png';
-import FirebaseImg from '../../assets/ToolsMethodes/Firebase.png';
 import FigmaImg from '../../assets/ToolsMethodes/Figma.png';
 import MFAImg from '../../assets/ToolsMethodes/MFA.png';
 import TDDImg from '../../assets/ToolsMethodes/TDD.png';
-import MongoImg from '../../assets/ToolsMethodes/Mongo.png';
 import NetlifyImg from '../../assets/ToolsMethodes/Netlify.png';
 import NPMImg from '../../assets/ToolsMethodes/Npm.png';
 import YarnImg from '../../assets/ToolsMethodes/Yarn.png';
@@ -46,11 +44,9 @@ const ToolsMethodes: FC<ToolsMethodesInterface> = () => {
         <CircleSkill img={Github} title='Github' />
         <CircleSkill img={TrelloImg} title='Trello' />
         <CircleSkill img={VSCodeImg} title='VSCode' />
-        <CircleSkill img={FirebaseImg} title='Firebase' />
         <CircleSkill img={FigmaImg} title='Figma' />
         <CircleSkill img={MFAImg} title='Mobile First Approach' />
         <CircleSkill img={TDDImg} title='Test Driven Development' />
-        <CircleSkill img={MongoImg} title='MongoDB' />
         <CircleSkill img={NetlifyImg} title='Netlify' />
         <CircleSkill img={NPMImg} title='Node Package Manager' />
         <CircleSkill img={YarnImg} title='Yarn Package Manager' />

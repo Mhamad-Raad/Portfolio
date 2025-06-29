@@ -22,6 +22,10 @@ import MaterialUiImg from '../../assets/frontend/MaterialUi.png';
 import JestImg from '../../assets/frontend/Jest.png';
 import ReactTestingLibraryImg from '../../assets/frontend/ReactTestingLibrary.jpg';
 import Flutter from '../../assets/frontend/Flutter.jpg';
+import ReactN from '../../assets/frontend/ReactN.png';
+import Electron from '../../assets/frontend/Electron.png';
+import Vue from '../../assets/frontend/Vue.png';
+import Angular from '../../assets/frontend/Angular.png';
 
 interface FrontEndSkillsInterface {}
 
@@ -51,6 +55,10 @@ const FrontEndSkills: FC<FrontEndSkillsInterface> = () => {
           title='React Testing Library'
         />
         <CircleSkill img={Flutter} title='Flutter' />
+        <CircleSkill img={ReactN} title='React Native' />
+        <CircleSkill img={Electron} title='ElectronJS' />
+        <CircleSkill img={Vue} title='VueJs' />
+        <CircleSkill img={Angular} title='AngularJs' />
       </div>
     </div>
   );
