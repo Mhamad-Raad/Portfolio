@@ -17,6 +17,10 @@ import LifeStruggles from './assets/projects/LifeStruggles.png';
 import Landing1 from './assets/projects/Landing1.png';
 import Glacier from './assets/projects/Glacier.png';
 import TelenetPro from './assets/projects/TelenetPro.png';
+import BrandBazzar from './assets/projects/BrandBazzar.png';
+import Miswag from './assets/projects/Miswag.png';
+import TaskTracker from './assets/projects/TaskTracker.png';
+import Naas from './assets/projects/Naas.png';
 
 import Shahez from './assets/Recommendations/Shahez.jpeg';
 import Jonathan from './assets/Recommendations/Jonathan.jpeg';
@@ -25,6 +29,15 @@ import Muzaffer from './assets/Recommendations/Muzaffer.jpeg';
 import Fariaa from './assets/Recommendations/Fariaa.jpeg';
 
 const Projects = [
+  {
+    title: 'Brand Bazzar',
+    description:
+      'E-commerce website, with payment Integration, user authentication, and admin/vendor panel for managing products and orders.',
+    techs: ['Laravel', 'MySQL', 'HTML', 'CSS', 'PHP', 'Composer', 'GoDaddy'],
+    Llink: 'https://github.com/Mhamad-Raad/E-Commerce',
+    GLink: 'https://brandbazzarr.com/',
+    img: BrandBazzar,
+  },
   {
     title: 'Telenet Pro',
     description:
@@ -45,14 +58,8 @@ const Projects = [
   {
     title: 'Glacier',
     description:
-      'A demo website for a company that provides services in the field of trading in crypto currency.',
-    techs: [
-      'Next',
-      'HTML',
-      'CSS',
-      'TailWind',
-      'Npm',
-    ],
+      'A demo version of a website for a company that provides services in the field of trading in crypto currency.',
+    techs: ['Next', 'HTML', 'CSS', 'TailWind', 'Npm'],
     Llink: 'https://glacier-nine.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/Glacier',
     img: Glacier,
@@ -79,9 +86,52 @@ const Projects = [
     description:
       'Introducing Finance Manager - Gateway project! Track income, expenses, and save links for later returns. Manage your money like a pro!',
     techs: ['Remix', 'SCSS', 'HTML', 'JavaScript', 'Firabase', 'Yarn'],
-    Llink: 'https://money-management-jttttj87h-mhamad-raad.vercel.app/',
+    Llink: 'https://miswag.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/PFM-With-Remix',
     img: PFM,
+  },
+  {
+    title: 'Task Manager',
+    description:
+      'Local task manager that lets you add, delete, and mark tasks as done.',
+    techs: ['Angular', 'NGx', 'HTML', 'CSS', 'JavaScript', 'Local Storage'],
+    Llink: 'https://task-manager-angular-blond.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/task-manager-angular',
+    img: TaskTracker,
+  },
+  {
+    title: 'Miswag Challenge',
+    description: 'Local E-commerce challenge that has been created by Miswag',
+    techs: [
+      'Vue',
+      'Nuxt',
+      'Taiwlind',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Json',
+      'Versel',
+    ],
+    Llink: 'https://github.com/Mhamad-Raad/E-Commerce',
+    GLink: 'https://github.com/Mhamad-Raad/Miswag',
+    img: Miswag,
+  },
+  {
+    title: 'Naas Challenge',
+    description: 'Company Portfolio challenge that has been created by Naas',
+    techs: [
+      'Next',
+      'React',
+      'Tailwind',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Npm',
+      'Versel',
+    ],
+    Llink: 'https://naas-project.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/Naas-Project',
+    img: Naas,
   },
   {
     title: 'Random Quote',
