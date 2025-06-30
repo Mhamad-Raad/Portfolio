@@ -67,16 +67,18 @@ const ProjectItem: FC<ProjectItemInterface> = ({
         ))}
       </div>
 
-      <div className='projects-section__projects__project__links row'>
-        <a
-          href={Llink}
-          className='projects-section__projects__project__links__link'
-          target='_blank'
-          title='see it live'
-        >
-          <FaShare /> Live
-        </a>
-      </div>
+      {Llink.length > 0 && (
+        <div className='projects-section__projects__project__links row'>
+          <a
+            href={Llink}
+            className='projects-section__projects__project__links__link'
+            target='_blank'
+            title='see it live'
+          >
+            <FaShare /> Live
+          </a>
+        </div>
+      )}
     </div>
   );
 };

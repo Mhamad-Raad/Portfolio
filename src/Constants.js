@@ -21,6 +21,7 @@ import BrandBazzar from './assets/projects/BrandBazzar.png';
 import Miswag from './assets/projects/Miswag.png';
 import TaskTracker from './assets/projects/TaskTracker.png';
 import Naas from './assets/projects/Naas.png';
+import AOne from './assets/projects/AOne.png';
 
 import Shahez from './assets/Recommendations/Shahez.jpeg';
 import Jonathan from './assets/Recommendations/Jonathan.jpeg';
@@ -56,6 +57,23 @@ const Projects = [
     img: TelenetPro,
   },
   {
+    title: 'AOne',
+    description:
+      'A Windows application used for warehouse management for multiple vendors',
+    techs: [
+      'Electron',
+      'Express',
+      'HTML',
+      'CSS',
+      'TailWind',
+      'JavaScript',
+      'Npm',
+    ],
+    Llink: '',
+    GLink: 'https://github.com/A-One-Org/A1-Frontend',
+    img: AOne,
+  },
+  {
     title: 'Glacier',
     description:
       'A demo version of a website for a company that provides services in the field of trading in crypto currency.',
@@ -82,11 +100,29 @@ const Projects = [
     img: ReserveTravel,
   },
   {
+    title: 'Naas Challenge',
+    description: 'Company Portfolio challenge that has been created by Naas',
+    techs: [
+      'Next',
+      'React',
+      'Tailwind',
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'GraphJs',
+      'Npm',
+      'Versel',
+    ],
+    Llink: 'https://naas-project.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/Naas-Project',
+    img: Naas,
+  },
+  {
     title: 'Finance Manager',
     description:
       'Introducing Finance Manager - Gateway project! Track income, expenses, and save links for later returns. Manage your money like a pro!',
     techs: ['Remix', 'SCSS', 'HTML', 'JavaScript', 'Firabase', 'Yarn'],
-    Llink: 'https://miswag.vercel.app/',
+    Llink: 'https://money-management-zeta.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/PFM-With-Remix',
     img: PFM,
   },
@@ -112,27 +148,11 @@ const Projects = [
       'Json',
       'Versel',
     ],
-    Llink: 'https://github.com/Mhamad-Raad/E-Commerce',
+    Llink: 'https://miswag.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/Miswag',
     img: Miswag,
   },
-  {
-    title: 'Naas Challenge',
-    description: 'Company Portfolio challenge that has been created by Naas',
-    techs: [
-      'Next',
-      'React',
-      'Tailwind',
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Npm',
-      'Versel',
-    ],
-    Llink: 'https://naas-project.vercel.app/',
-    GLink: 'https://github.com/Mhamad-Raad/Naas-Project',
-    img: Naas,
-  },
+
   {
     title: 'Random Quote',
     description:
