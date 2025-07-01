@@ -48,14 +48,16 @@ const ProjectItem: FC<ProjectItemInterface> = ({
         alt={title}
         className='projects-section__projects__project__img'
       />
-      <a
-        href={Glink}
-        className='projects-section__projects__project__github'
-        title='Visite Github Repository'
-        target='_blank'
-      >
-        <FaGithub />
-      </a>
+      {Glink.length > 0 && (
+        <a
+          href={Glink}
+          className='projects-section__projects__project__github'
+          title='Visite Github Repository'
+          target='_blank'
+        >
+          <FaGithub />
+        </a>
+      )}
       <h3 className='projects-section__projects__project__title'>{title}</h3>
       <p className='projects-section__projects__project__description'>
         {description}

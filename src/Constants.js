@@ -16,6 +16,7 @@ import MarkDown from './assets/projects/MarkDown.png';
 import LifeStruggles from './assets/projects/LifeStruggles.png';
 import Landing1 from './assets/projects/Landing1.png';
 import Glacier from './assets/projects/Glacier.png';
+import Dhorni from './assets/projects/Dhorni.png';
 import TelenetPro from './assets/projects/TelenetPro.png';
 import BrandBazzar from './assets/projects/BrandBazzar.png';
 import Miswag from './assets/projects/Miswag.png';
@@ -55,6 +56,15 @@ const Projects = [
     Llink: 'https://telle-net.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/TelleNet',
     img: TelenetPro,
+  },
+  {
+    title: 'Dhorni',
+    description:
+      'A website for a company that provides services in the field of Crypto and investment.',
+    techs: ['Next', 'HTML', 'CSS', 'TailWind', 'Npm'],
+    Llink: 'https://dohrnii.io/',
+    GLink: '',
+    img: Dhorni,
   },
   {
     title: 'AOne',
