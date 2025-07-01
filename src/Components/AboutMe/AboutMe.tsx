@@ -14,7 +14,7 @@ interface AboutMeProps {}
 
 const AboutMe: FC<AboutMeProps> = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, {once: true});
+  const isInView = useInView(ref, { once: true });
 
   return (
     <section className='about-me' id='about-me' ref={ref}>
@@ -35,15 +35,15 @@ const AboutMe: FC<AboutMeProps> = () => {
           Mhamad
         </h2>
         <p className='about-me__description__me'>
-          I am a Software Engineer Graduate, that is very passionate about
-          learning new technologies, making new connections, and make a career
-          in front end development, of course in this field only tech skills
-          wont be enough, thoughout my experience and journey I have also
-          improved my time management, and communications, but also I have
-          recieved a lot of feedback from my colleagues and friends, such as I
-          am highly adaptive, dedicated, and hard working, like a Samurai which
-          is a great honor toward both work and my surroundings, interested in
-          learning more?
+          I’m a passionate Software Engineering graduate with a strong interest
+          in front-end development. I thrive on learning new technologies,
+          building meaningful connections, and growing both technically and
+          personally. Throughout my journey, I’ve developed solid time
+          management and communication skills, and I’ve consistently received
+          feedback highlighting my adaptability, dedication, and strong work
+          ethic. Like a samurai, I approach every challenge with honor, focus,
+          and commitment—always striving to improve and contribute in meaningful
+          ways. Curious to know more?
         </p>
         <div className='about-me__description__connection row'>
           <div className='column about-me__description__connection__connect'>
