@@ -58,19 +58,13 @@ const ContactMe: FC<ContactMeInterface> = () => {
             <div className='contact-me__content__info__social__row row'>
               <IoCallOutline className='contact-me__content__info__social__row__icon' />
               <p className='contact-me__content__info__social__row__text'>
-                +964 (770) 184 4913
+                (+964) 770 184 4913 || (+44) 7537 167153
               </p>
             </div>
             <div className='contact-me__content__info__social__row row'>
               <MdMailOutline className='contact-me__content__info__social__row__icon' />
               <p className='contact-me__content__info__social__row__text'>
                 hamaraad883@gmail.com
-              </p>
-            </div>
-            <div className='contact-me__content__info__social__row row'>
-              <IoLocationOutline className='contact-me__content__info__social__row__icon' />
-              <p className='contact-me__content__info__social__row__text'>
-                Sulaimaniyah, Kurdistan Region, Iraq
               </p>
             </div>
           </div>

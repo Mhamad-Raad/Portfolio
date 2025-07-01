@@ -351,13 +351,13 @@ export const Recommends = [
   {
     name: 'Shahez Shwana',
     position: 'Product Manager',
-    text: 'I had the pleasure of being Mhamad’s direct supervisor under his traineeship at ShaTech(Lezan). Throughout the traineeship Mhamad proved himself to be a someone who knows how to take the initiative to get the job done. During the following months of the traineeship, he got a central role within his group and functioned as a great resource for his colleagues. Besides his technical capabilities Mhamad is a solution oriented and delightful person to work it. He brings a very positive energy to the team.',
+    text: 'I had the pleasure of being Mhamad’s direct supervisor ShaTech(Lezan). Mhamad proved himself to be a someone who knows how to take the initiative to get the job done. During the following months of the traineeship, he got a central role within his group and functioned as a great resource for his colleagues. Besides his technical capabilities Mhamad is a solution oriented and delightful person to work it. He brings a very positive energy to the team.',
     img: Shahez,
   },
   {
     name: 'Fariaa Hamed',
     position: 'University Lecturer at Qaiwan (UTM)',
-    text: "It is my pleasure to recommend Mhamad, who I taught in my Artificial Intelligence class ,and Object-oriented programming class as well. he demonstrated tremendous effort and brought a great energy to class. he is interest in understanding how things work lead me to believe that he will be a valuable addition in any class he'll join. moreover he is confident, well-organized, diligent, and capable leader, he has that combination of a positive attitude and the belief that he can always improve . I am confident that he will continue to display the same commitment and diligence in everything he does.",
+    text: "It is my pleasure to recommend Mhamad, who I taught. he demonstrated tremendous effort and brought a great energy to the enviroment. his interest in understanding how things work lead me to believe that he will be a valuable addition in any team he'll join. moreover he is confident, well-organized, diligent, and capable leader, he has that combination of a positive attitude and the belief that he can always improve. I am confident that he will continue to display the same commitment and diligence in everything he does.",
     img: Fariaa,
   },
   {
@@ -375,7 +375,7 @@ export const Recommends = [
   {
     name: 'Alexandre Medina',
     position: 'Full Stack Engineer | Electrical Engineer',
-    text: 'I have worked with Mhamad for a few weeks on Microverse, and I can say that he is one of the brightest and kindest people I have had the pleasure of knowing. He is great at teamwork and very good with Javascript, HTML and CSS.',
+    text: 'I have worked with Mhamad, and He is truly one of the most talented and genuinely kind people I’ve had the chance to work with. He thrives in collaborative environments and has a solid command of JavaScript, HTML, and CSS, along with hands-on experience in React and Tailwind CSS.',
     img: Alexandre,
   },
 ];
