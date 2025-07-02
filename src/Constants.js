@@ -168,7 +168,7 @@ const Projects = [
     description:
       'Get inspired with this website that generates random quotes! With just a click, stimulate your mind ;)',
     techs: ['React', 'HTML', 'CSS', 'Javascript', 'Npm', 'API'],
-    Llink: 'https://grand-clafoutis-fe002e.netlify.app/',
+    Llink: 'https://random-quote-seven-tan.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/random-quote',
     img: RandomeQ,
   },
