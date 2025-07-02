@@ -16,7 +16,7 @@ import MarkDown from './assets/projects/MarkDown.png';
 import LifeStruggles from './assets/projects/LifeStruggles.png';
 import Landing1 from './assets/projects/Landing1.png';
 import Glacier from './assets/projects/Glacier.png';
-import Dhorni from './assets/projects/Dhorni.png';
+import Dhorni from './assets/projects/DhorniW.png';
 import TelenetPro from './assets/projects/TelenetPro.png';
 import BrandBazzar from './assets/projects/BrandBazzar.png';
 import Miswag from './assets/projects/Miswag.png';
