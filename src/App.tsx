@@ -9,6 +9,7 @@ import Recommentations from './Components/Recommendations/Recommnendations';
 import NavBar from './Components/Navbar/NavBar';
 import Footer from './Components/Footer/Footer';
 import Seperator from './Components/Seperator/Seperator';
+import ChatBot from './Components/ChatBot/ChatBot';
 
 import './App.scss';
 
@@ -45,6 +46,7 @@ const App = () => {
       >
         <NavBar />
         <Background />
+        <ChatBot />
         <AboutMe />
         <WorkExperience />
         <Skills />
