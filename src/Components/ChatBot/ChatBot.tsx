@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import './ChatBot.scss';
 
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import GhostModel from './GhostModel';
+
 type Message = {
   sender: 'user' | 'bot';
   text: string;
@@ -46,10 +50,29 @@ const ChatBot: React.FC = () => {
 
   return (
     <>
+      {open && (
+        <div className='chatbot-ghost'>
+          <Canvas camera={{ position: [0, 0, 1.8], fov: 25 }}>
+            <ambientLight intensity={0.6} />
+            <directionalLight position={[1, 2, 1]} intensity={1} />
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              enableRotate={false}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 2}
+            />
+            <GhostModel />
+          </Canvas>
+        </div>
+      )}
+
+      {/* 💬 Floating chat button */}
       <button className='chat-launcher' onClick={toggleChat}>
         {open ? '✖' : '💬'}
       </button>
 
+      {/* 🗨️ Chat Panel */}
       <div className={`chat-container ${open ? 'open' : ''}`}>
         <div className='chat-box'>
           {chat.map((msg, i) => (

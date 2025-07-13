@@ -1,3 +1,5 @@
+@use '../../Styles/variables' as *;
+
 .chat-container {
   position: fixed;
   bottom: 20px;
@@ -7,7 +9,7 @@
   background-color: #1e1e1e;
   padding: 16px;
   border-radius: 12px;
-  color: #fff;
+  color: $Primary-Text-Color;
   display: flex;
   flex-direction: column;
   height: 450px;
@@ -34,6 +36,16 @@
   gap: 8px;
 }
 
+.chatbot-ghost {
+  position: fixed;
+  bottom: 100px;
+  right: 500px;
+  width: 120px;
+  height: 120px;
+  z-index: 900;
+  pointer-events: none;
+}
+
 .chat-bubble {
   padding: 10px 14px;
   border-radius: 18px;
@@ -42,14 +54,14 @@
 
   &.user {
     align-self: flex-end;
-    background-color: #007bff;
-    color: #fff;
+    background-color: $Active-Color;
+    color: $Primary-Text-Color;
   }
 
   &.bot {
     align-self: flex-start;
     background-color: #333;
-    color: #ddd;
+    color: $Primary-Text-Color;
   }
 
   &.loading {
@@ -75,8 +87,8 @@
   }
 
   button {
-    background-color: #007bff;
-    color: #fff;
+    background-color: $Active-Color;
+    color: $Primary-Text-Color;
     border: none;
     padding: 0 16px;
     border-radius: 8px;
@@ -93,8 +105,8 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: $Active-Color;
+  color: $Primary-Text-Color;
   border: none;
   border-radius: 50%;
   width: 56px;
