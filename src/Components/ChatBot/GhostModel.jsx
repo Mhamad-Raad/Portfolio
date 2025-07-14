@@ -4,14 +4,12 @@ import { useGLTF, useAnimations } from '@react-three/drei';
 const GhostModel = (props) => {
   const ref = useRef();
   const { scene, animations } = useGLTF('/models/DestinyGhost.glb');
-
   const { actions } = useAnimations(animations, ref);
 
   useEffect(() => {
-    // Play the first available animation
     if (actions && animations.length > 0) {
-      const firstAction = actions[animations[0].name];
-      firstAction?.reset().play();
+      const action = actions[animations[0].name];
+      action?.reset().play();
     }
   }, [actions, animations]);
 
@@ -20,8 +18,9 @@ const GhostModel = (props) => {
       ref={ref}
       {...props}
       dispose={null}
-      scale={0.1}
-      position={[0, 0, -1]}
+      scale={0.09}
+      position={[0, -0.15, -1]}
+      rotation={[0, 0, 0]}
     >
       <primitive object={scene} />
     </group>
@@ -29,5 +28,4 @@ const GhostModel = (props) => {
 };
 
 export default GhostModel;
-
 useGLTF.preload('/models/DestinyGhost.glb');

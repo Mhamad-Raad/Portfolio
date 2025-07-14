@@ -50,30 +50,26 @@ const ChatBot: React.FC = () => {
 
   return (
     <>
-      {open && (
-        <div className='chatbot-ghost'>
-          <Canvas camera={{ position: [0, 0, 1.8], fov: 25 }}>
-            <ambientLight intensity={0.6} />
-            <directionalLight position={[1, 2, 1]} intensity={1} />
-            <OrbitControls
-              enableZoom={false}
-              enablePan={false}
-              enableRotate={false}
-              maxPolarAngle={Math.PI / 2}
-              minPolarAngle={Math.PI / 2}
-            />
-            <GhostModel />
-          </Canvas>
-        </div>
-      )}
+      <div className='chatbot-launcher' onClick={toggleChat}>
+        <Canvas camera={{ position: [0, 0, 1.8], fov: 25 }}>
+          <ambientLight intensity={0.6} />
+          <directionalLight position={[1, 2, 1]} intensity={1} />
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            enableRotate={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+          <GhostModel />
+        </Canvas>
+      </div>
 
-      {/* 💬 Floating chat button */}
-      <button className='chat-launcher' onClick={toggleChat}>
-        {open ? '✖' : '💬'}
-      </button>
-
-      {/* 🗨️ Chat Panel */}
       <div className={`chat-container ${open ? 'open' : ''}`}>
+        <button className='chat-close' onClick={toggleChat}>
+          ✖
+        </button>
+
         <div className='chat-box'>
           {chat.map((msg, i) => (
             <div key={i} className={`chat-bubble ${msg.sender}`}>
