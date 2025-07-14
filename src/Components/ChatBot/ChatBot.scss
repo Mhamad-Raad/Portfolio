@@ -30,6 +30,22 @@
   }
 }
 
+.typing-cursor {
+  animation: blink 1s infinite;
+  opacity: 1;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 .chat-container {
   position: fixed;
   bottom: 20px;
@@ -58,6 +74,12 @@
   transition: all 0.3s ease;
 }
 
+.chat-container.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .chat-close {
   background: none;
   border: none;
@@ -70,10 +92,32 @@
   z-index: 1000;
 }
 
-.chat-container.open {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+.chat-buttons {
+  display: flex;
+  gap: 8px;
+
+  button {
+    background: linear-gradient(135deg, #00bfff, #0077ff);
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #00d4ff, #3399ff);
+      transform: scale(1.05);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+  }
 }
 
 .chat-box {
@@ -86,16 +130,6 @@
   font-family: $Body-Font;
   font-size: 15px;
   padding: 8px;
-}
-
-.chatbot-ghost {
-  position: fixed;
-  bottom: 100px;
-  right: 500px;
-  width: 120px;
-  height: 120px;
-  z-index: 900;
-  pointer-events: none;
 }
 
 .chat-bubble {
@@ -144,29 +178,10 @@
     padding: 0 16px;
     border-radius: 8px;
     cursor: pointer;
-  }
 
-  button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
   }
-}
-
-.chat-launcher {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: $Active-Color;
-  color: $Primary-Text-Color;
-  border: none;
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 999;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }

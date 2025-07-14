@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './ChatBot.scss';
-
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import GhostModel from './GhostModel';
@@ -8,23 +7,44 @@ import GhostModel from './GhostModel';
 type Message = {
   sender: 'user' | 'bot';
   text: string;
+  final?: boolean;
 };
 
 const ChatBot: React.FC = () => {
   const [input, setInput] = useState('');
   const [chat, setChat] = useState<Message[]>([]);
-  const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
+  const [typing, setTyping] = useState(false);
+  const typingRef = useRef<NodeJS.Timeout | null>(null);
+  const botIndexRef = useRef<number | null>(null);
+  const chatEndRef = useRef<HTMLDivElement | null>(null);
+
+  const scrollToBottom = () => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [chat, typing]);
+
+  // Clean up intervals on unmount
+  useEffect(() => {
+    return () => {
+      if (typingRef.current) {
+        clearInterval(typingRef.current);
+      }
+    };
+  }, []);
 
   const toggleChat = () => setOpen((prev) => !prev);
 
   const askBot = async () => {
     const trimmed = input.trim();
-    if (!trimmed) return;
+    if (!trimmed || typing) return;
 
     setChat((prev) => [...prev, { sender: 'user', text: trimmed }]);
     setInput('');
-    setLoading(true);
+    setTyping(true);
 
     try {
       const res = await fetch('http://localhost:5000/api/chat', {
@@ -35,17 +55,72 @@ const ChatBot: React.FC = () => {
 
       const data = await res.json();
       const reply = data.reply || 'No response received.';
+      const botIndex = chat.length + 1;
+      botIndexRef.current = botIndex;
 
-      setChat((prev) => [...prev, { sender: 'bot', text: reply }]);
-    } catch (err) {
-      console.error(err);
+      setChat((prev) => [...prev, { sender: 'bot', text: '', final: false }]);
+
+      let charIndex = 0;
+
+      if (typingRef.current) {
+        clearInterval(typingRef.current);
+      }
+
+      typingRef.current = setInterval(() => {
+        if (charIndex >= reply.length) {
+          if (typingRef.current) {
+            clearInterval(typingRef.current);
+            typingRef.current = null;
+          }
+          setChat((prev) => {
+            const updated = [...prev];
+            const currentBotMsg = updated[botIndex];
+            if (currentBotMsg) {
+              updated[botIndex] = {
+                ...currentBotMsg,
+                final: true,
+              };
+            }
+            return updated;
+          });
+          setTyping(false);
+          return;
+        }
+
+        const char = reply[charIndex];
+        charIndex++;
+
+        setChat((prev) => {
+          const updated = [...prev];
+          const currentBotMsg = updated[botIndex];
+          if (currentBotMsg) {
+            updated[botIndex] = {
+              ...currentBotMsg,
+              text: currentBotMsg.text + char,
+            };
+          }
+          return updated;
+        });
+      }, 30);
+    } catch (error) {
+      console.error(error);
       setChat((prev) => [
         ...prev,
-        { sender: 'bot', text: 'Error communicating with the chatbot.' },
+        {
+          sender: 'bot',
+          text: 'Oops! Something went wrong.',
+          final: true,
+        },
       ]);
+      setTyping(false);
     }
+  };
 
-    setLoading(false);
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      askBot();
+    }
   };
 
   return (
@@ -74,11 +149,12 @@ const ChatBot: React.FC = () => {
           {chat.map((msg, i) => (
             <div key={i} className={`chat-bubble ${msg.sender}`}>
               {msg.text}
+              {msg.sender === 'bot' && !msg.final && (
+                <span className='typing-cursor'>|</span>
+              )}
             </div>
           ))}
-          {loading && (
-            <div className='chat-bubble bot loading'>Bot is typing...</div>
-          )}
+          <div ref={chatEndRef} />
         </div>
 
         <div className='chat-input'>
@@ -86,11 +162,15 @@ const ChatBot: React.FC = () => {
             rows={2}
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
             placeholder='Ask me anything about Mohammed...'
+            disabled={typing}
           />
-          <button onClick={askBot} disabled={loading}>
-            {loading ? '...' : 'Send'}
-          </button>
+          <div className='chat-buttons'>
+            <button onClick={askBot} disabled={typing}>
+              {typing ? '...' : 'Send'}
+            </button>
+          </div>
         </div>
       </div>
     </>
