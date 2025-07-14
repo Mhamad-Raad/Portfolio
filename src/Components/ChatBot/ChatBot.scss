@@ -49,6 +49,13 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
   z-index: 998;
+  background: rgba(30, 30, 30, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
 .chat-close {
@@ -76,6 +83,9 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  font-family: $Body-Font;
+  font-size: 15px;
+  padding: 8px;
 }
 
 .chatbot-ghost {
@@ -101,9 +111,8 @@
   }
 
   &.bot {
-    align-self: flex-start;
-    background-color: #333;
-    color: $Primary-Text-Color;
+    background-color: #007bff;
+    color: white;
   }
 
   &.loading {

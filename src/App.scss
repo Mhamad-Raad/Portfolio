@@ -97,3 +97,7 @@ input,
 textarea {
   caret-color: $Active-Color;
 }
+
+textarea {
+  font-family: inherit;
+}
