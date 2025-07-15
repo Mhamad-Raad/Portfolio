@@ -11,7 +11,7 @@ type Message = {
 };
 
 const SUGGESTIONS = [
-  'Who is Mohammed?',
+  'Who is Mhamad?',
   'What are his hobbies?',
   'what does he dislike?',
   'Can you describe his personality?',
@@ -201,19 +201,22 @@ const ChatBot: React.FC = () => {
               )}
             </div>
           ))}
-          <div ref={chatEndRef} />
-        </div>
 
-        <div className='chat-suggestions'>
-          {SUGGESTIONS.map((suggestion, index) => (
-            <button
-              key={index}
-              onClick={() => askBot(suggestion)}
-              disabled={typing}
-            >
-              {suggestion}
-            </button>
-          ))}
+          {chat.length === 1 && chat[0].sender === 'bot' && (
+            <div className='chat-suggestions-inbox'>
+              {SUGGESTIONS.map((suggestion, index) => (
+                <button
+                  key={index}
+                  onClick={() => askBot(suggestion)}
+                  disabled={typing}
+                >
+                  {suggestion}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <div ref={chatEndRef} />
         </div>
 
         <div className='chat-input'>
