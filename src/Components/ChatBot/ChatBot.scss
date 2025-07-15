@@ -13,7 +13,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(6px);
   animation: fadeInOut 7s ease-in-out forwards;
-  animation-delay: 15s;
   z-index: 1001;
 }
 
@@ -221,65 +220,53 @@
   }
 }
 
-@media (max-width: 768px) {
-  .chatbot-launcher {
-    width: 56px;
-    height: 56px;
-    bottom: 16px;
-    right: 16px;
+.chat-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
 
-    canvas {
-      width: 100%;
-      height: 100%;
+  button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
     }
   }
+}
 
-  .chatbot-helper-bubble {
-    bottom: 80px;
+@media (max-width: 480px) {
+  .chatbot-launcher {
+    bottom: 90px;
     right: 16px;
-    font-size: 13px;
-    padding: 8px 12px;
-    max-width: 90%;
   }
 
   .chat-container {
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    border-radius: 0;
-    padding: 16px 12px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-
-  .chat-box {
-    font-size: 14px;
-    gap: 6px;
-    padding: 6px;
-  }
-
-  .chat-input textarea {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .chat-buttons button {
-    font-size: 14px;
-    padding: 6px 14px;
-  }
-
-  .chat-bubble {
-    font-size: 14px;
-    padding: 8px 12px;
-    max-width: 85%;
-  }
-
-  .chat-close {
-    top: 10px;
     right: 16px;
-    font-size: 20px;
+    left: 16px;
+    max-width: unset;
+    width: auto;
+    height: 70vh;
+  }
+
+  .chat-input {
+    flex-direction: column;
+
+    textarea {
+      width: 100%;
+    }
+
+    .chat-buttons {
+      width: 100%;
+      height: 35px;
+      justify-content: flex-end;
+    }
   }
 }

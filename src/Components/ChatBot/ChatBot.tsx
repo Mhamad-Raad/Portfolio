@@ -10,6 +10,13 @@ type Message = {
   final?: boolean;
 };
 
+const SUGGESTIONS = [
+  'Who is Mohammed?',
+  'What are his hobbies?',
+  'what does he dislike?',
+  'Can you describe his personality?',
+];
+
 const ChatBot: React.FC = () => {
   const [input, setInput] = useState('');
   const [chat, setChat] = useState<Message[]>([]);
@@ -25,12 +32,9 @@ const ChatBot: React.FC = () => {
   useEffect(() => {
     const showHintOnce = () => {
       if (hintCountRef.current >= 5) return;
-
       setShowHint(true);
       hintCountRef.current += 1;
-
       setTimeout(() => setShowHint(false), 7000);
-
       if (hintCountRef.current >= 5 && hintIntervalRef.current) {
         clearInterval(hintIntervalRef.current);
         hintIntervalRef.current = null;
@@ -39,9 +43,7 @@ const ChatBot: React.FC = () => {
 
     const initialDelay = setTimeout(() => {
       showHintOnce();
-      const interval = setInterval(() => {
-        showHintOnce();
-      }, 30000);
+      const interval = setInterval(showHintOnce, 30000);
       hintIntervalRef.current = interval;
     }, 15000);
 
@@ -61,9 +63,7 @@ const ChatBot: React.FC = () => {
 
   useEffect(() => {
     return () => {
-      if (typingRef.current) {
-        clearInterval(typingRef.current);
-      }
+      if (typingRef.current) clearInterval(typingRef.current);
     };
   }, []);
 
@@ -81,18 +81,17 @@ const ChatBot: React.FC = () => {
 
   const toggleChat = () => setOpen((prev) => !prev);
 
-  const askBot = async () => {
-    const trimmed = input.trim();
-    if (!trimmed || typing) return;
+  const askBot = async (customMessage?: string) => {
+    const messageToSend = customMessage || input.trim();
+    if (!messageToSend || typing) return;
 
-    setChat((prev) => [...prev, { sender: 'user', text: trimmed }]);
+    setChat((prev) => [...prev, { sender: 'user', text: messageToSend }]);
     setInput('');
     setTyping(true);
 
     const botIndex = chat.length + 1;
     botIndexRef.current = botIndex;
 
-    // Add loading placeholder
     setChat((prev) => [
       ...prev,
       {
@@ -106,18 +105,11 @@ const ChatBot: React.FC = () => {
       const res = await fetch('http://localhost:5000/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: trimmed }),
+        body: JSON.stringify({ message: messageToSend }),
       });
 
       const data = await res.json();
       const reply = data.reply || 'No response received.';
-
-      // Clear the thinking text before streaming
-      setChat((prev) => {
-        const updated = [...prev];
-        updated[botIndex] = { sender: 'bot', text: '', final: false };
-        return updated;
-      });
 
       let charIndex = 0;
       if (typingRef.current) clearInterval(typingRef.current);
@@ -129,28 +121,23 @@ const ChatBot: React.FC = () => {
           setChat((prev) => {
             const updated = [...prev];
             const currentBotMsg = updated[botIndex];
-            if (currentBotMsg) {
-              updated[botIndex] = {
-                ...currentBotMsg,
-                final: true,
-              };
-            }
+            if (currentBotMsg)
+              updated[botIndex] = { ...currentBotMsg, final: true };
             return updated;
           });
           setTyping(false);
           return;
         }
 
-        const char = reply[charIndex];
-        charIndex++;
-
+        const char = reply[charIndex++];
         setChat((prev) => {
           const updated = [...prev];
           const currentBotMsg = updated[botIndex];
           if (currentBotMsg) {
+            const isThinking = currentBotMsg.text.startsWith('🤖 Thinking');
             updated[botIndex] = {
               ...currentBotMsg,
-              text: currentBotMsg.text + char,
+              text: isThinking ? char : currentBotMsg.text + char,
             };
           }
           return updated;
@@ -217,6 +204,18 @@ const ChatBot: React.FC = () => {
           <div ref={chatEndRef} />
         </div>
 
+        <div className='chat-suggestions'>
+          {SUGGESTIONS.map((suggestion, index) => (
+            <button
+              key={index}
+              onClick={() => askBot(suggestion)}
+              disabled={typing}
+            >
+              {suggestion}
+            </button>
+          ))}
+        </div>
+
         <div className='chat-input'>
           <textarea
             rows={2}
@@ -227,7 +226,7 @@ const ChatBot: React.FC = () => {
             disabled={typing}
           />
           <div className='chat-buttons'>
-            <button onClick={askBot} disabled={typing}>
+            <button onClick={() => askBot()} disabled={typing}>
               {typing ? '...' : 'Send'}
             </button>
           </div>
