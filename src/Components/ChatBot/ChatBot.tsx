@@ -18,6 +18,38 @@ const ChatBot: React.FC = () => {
   const typingRef = useRef<NodeJS.Timeout | null>(null);
   const botIndexRef = useRef<number | null>(null);
   const chatEndRef = useRef<HTMLDivElement | null>(null);
+  const [showHint, setShowHint] = useState(false);
+  const hintIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const hintCountRef = useRef(0);
+
+  useEffect(() => {
+    const showHintOnce = () => {
+      if (hintCountRef.current >= 5) return;
+
+      setShowHint(true);
+      hintCountRef.current += 1;
+
+      setTimeout(() => setShowHint(false), 7000);
+
+      if (hintCountRef.current >= 5 && hintIntervalRef.current) {
+        clearInterval(hintIntervalRef.current);
+        hintIntervalRef.current = null;
+      }
+    };
+
+    const initialDelay = setTimeout(() => {
+      showHintOnce();
+      const interval = setInterval(() => {
+        showHintOnce();
+      }, 30000);
+      hintIntervalRef.current = interval;
+    }, 15000);
+
+    return () => {
+      clearTimeout(initialDelay);
+      if (hintIntervalRef.current) clearInterval(hintIntervalRef.current);
+    };
+  }, []);
 
   const scrollToBottom = () => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -27,7 +59,6 @@ const ChatBot: React.FC = () => {
     scrollToBottom();
   }, [chat, typing]);
 
-  // Clean up intervals on unmount
   useEffect(() => {
     return () => {
       if (typingRef.current) {
@@ -35,6 +66,18 @@ const ChatBot: React.FC = () => {
       }
     };
   }, []);
+
+  useEffect(() => {
+    if (open && chat.length === 0) {
+      setChat([
+        {
+          sender: 'bot',
+          text: "👋 Hi! I'm an AI bot. Ask me anything about Mohammed, and I might also surprise you with related suggestions!",
+          final: true,
+        },
+      ]);
+    }
+  }, [open]);
 
   const toggleChat = () => setOpen((prev) => !prev);
 
@@ -46,6 +89,19 @@ const ChatBot: React.FC = () => {
     setInput('');
     setTyping(true);
 
+    const botIndex = chat.length + 1;
+    botIndexRef.current = botIndex;
+
+    // Add loading placeholder
+    setChat((prev) => [
+      ...prev,
+      {
+        sender: 'bot',
+        text: '🤖 Thinking..., I am a slow thinker.',
+        final: false,
+      },
+    ]);
+
     try {
       const res = await fetch('http://localhost:5000/api/chat', {
         method: 'POST',
@@ -55,23 +111,21 @@ const ChatBot: React.FC = () => {
 
       const data = await res.json();
       const reply = data.reply || 'No response received.';
-      const botIndex = chat.length + 1;
-      botIndexRef.current = botIndex;
 
-      setChat((prev) => [...prev, { sender: 'bot', text: '', final: false }]);
+      // Clear the thinking text before streaming
+      setChat((prev) => {
+        const updated = [...prev];
+        updated[botIndex] = { sender: 'bot', text: '', final: false };
+        return updated;
+      });
 
       let charIndex = 0;
-
-      if (typingRef.current) {
-        clearInterval(typingRef.current);
-      }
+      if (typingRef.current) clearInterval(typingRef.current);
 
       typingRef.current = setInterval(() => {
         if (charIndex >= reply.length) {
-          if (typingRef.current) {
-            clearInterval(typingRef.current);
-            typingRef.current = null;
-          }
+          clearInterval(typingRef.current!);
+          typingRef.current = null;
           setChat((prev) => {
             const updated = [...prev];
             const currentBotMsg = updated[botIndex];
@@ -125,6 +179,12 @@ const ChatBot: React.FC = () => {
 
   return (
     <>
+      {showHint && (
+        <div className='chatbot-helper-bubble'>
+          💡 Hi! I'm your assistant. Ask me anything about Mohammed.
+        </div>
+      )}
+
       <div className='chatbot-launcher' onClick={toggleChat}>
         <Canvas camera={{ position: [0, 0, 1.8], fov: 25 }}>
           <ambientLight intensity={0.6} />
