@@ -6,7 +6,6 @@
   "scripts": {
     "start": "react-scripts start",
     "server": "nodemon server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -23,8 +22,6 @@
     "@types/node": "^16.18.12",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "cors": "^2.8.5",
-    "express": "^5.1.0",
     "framer-motion": "^10.9.1",
     "maath": "^0.5.3",
     "node-sass": "^7.0.3",
@@ -46,9 +43,7 @@
   "devDependencies": {
     "@types/react-router-dom": "^5.3.3",
     "@types/react-scroll": "^1.8.6",
-    "@types/react-vertical-timeline-component": "^3.3.3",
-    "concurrently": "^9.2.0",
-    "nodemon": "^3.1.10"
+    "@types/react-vertical-timeline-component": "^3.3.3"
   },
   "eslintConfig": {
     "extends": [
