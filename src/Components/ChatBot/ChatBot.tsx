@@ -11,9 +11,7 @@ type Message = {
 };
 
 const SUGGESTIONS = [
-  'Who is Mhamad?',
   'What are his hobbies?',
-  'what does he dislike?',
   'Can you describe his personality?',
 ];
 
@@ -28,6 +26,8 @@ const ChatBot: React.FC = () => {
   const [showHint, setShowHint] = useState(false);
   const hintIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const hintCountRef = useRef(0);
+
+  const API_URL = process.env.REACT_APP_CHATBOT_API!;
 
   useEffect(() => {
     const showHintOnce = () => {
@@ -102,7 +102,7 @@ const ChatBot: React.FC = () => {
     ]);
 
     try {
-      const res = await fetch('http://localhost:5000/api/chat', {
+      const res = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: messageToSend }),
