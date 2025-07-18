@@ -26,6 +26,7 @@ const ChatBot: React.FC = () => {
   const [showHint, setShowHint] = useState(false);
   const hintIntervalRef = useRef<NodeJS.Timeout | null>(null);
   const hintCountRef = useRef(0);
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
 
   const API_URL = process.env.REACT_APP_CHATBOT_API!;
 
@@ -111,6 +112,14 @@ const ChatBot: React.FC = () => {
       const data = await res.json();
       const reply = data.reply || 'No response received.';
 
+      if (
+        reply[0].includes('Chat generation failed') ||
+        reply[0].includes('402 Client Error')
+      ) {
+        reply[0] =
+          'Oops! It appears that I am under maintenance, please try again later.';
+      }
+
       let charIndex = 0;
       if (typingRef.current) clearInterval(typingRef.current);
 
@@ -163,6 +172,12 @@ const ChatBot: React.FC = () => {
       askBot();
     }
   };
+
+  useEffect(() => {
+    if (open && inputRef.current && !typing) {
+      inputRef.current.focus();
+    }
+  }, [open, typing]);
 
   return (
     <>
@@ -221,6 +236,7 @@ const ChatBot: React.FC = () => {
 
         <div className='chat-input'>
           <textarea
+            ref={inputRef}
             rows={2}
             value={input}
             onChange={(e) => setInput(e.target.value)}
