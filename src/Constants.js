@@ -36,8 +36,8 @@ const Projects = [
     description:
       'E-commerce website, with payment Integration, user authentication, and admin/vendor panel for managing products and orders.',
     techs: ['Laravel', 'MySQL', 'HTML', 'CSS', 'PHP', 'Composer', 'GoDaddy'],
-    Llink: 'https://github.com/Mhamad-Raad/E-Commerce',
-    GLink: 'https://brandbazzarr.com/',
+    Llink: 'https://brandbazzarr.com/',
+    GLink: 'https://github.com/Mhamad-Raad/E-Commerce',
     img: BrandBazzar,
   },
   {
