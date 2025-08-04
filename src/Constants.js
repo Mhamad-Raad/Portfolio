@@ -23,6 +23,7 @@ import Miswag from './assets/projects/Miswag.png';
 import TaskTracker from './assets/projects/TaskTracker.png';
 import Naas from './assets/projects/Naas.png';
 import AOne from './assets/projects/AOne.png';
+import OrderManagement from './assets/projects/OrderManagement.png';
 
 import Shahez from './assets/Recommendations/Shahez.jpeg';
 import Jonathan from './assets/Recommendations/Jonathan.jpeg';
@@ -65,6 +66,25 @@ const Projects = [
     Llink: 'https://dohrnii.io/',
     GLink: '',
     img: Dhorni,
+  },
+  {
+    title: 'Order Management',
+    description:
+      'A Trello-like application for manaing orders, Challenge by Akkoo company.',
+    techs: [
+      'TypeScript',
+      'HTML',
+      'CSS',
+      'Material UI',
+      'Npm',
+      'React',
+      'Vite',
+      ' DnD',
+      'Redux',
+    ],
+    Llink: 'https://order-management-akkoo-challenge.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/Order-Management-Akkoo-Challenge',
+    img: OrderManagement,
   },
   {
     title: 'AOne',
