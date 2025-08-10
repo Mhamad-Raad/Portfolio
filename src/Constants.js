@@ -100,8 +100,8 @@ const Projects = [
       'Localization',
       'Dark Theme',
     ],
-    Llink: 'https://order-management-akkoo-challenge.vercel.app/',
-    GLink: 'https://github.com/Mhamad-Raad/Order-Management-Akkoo-Challenge',
+    Llink: 'https://mini-market-three.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/MiniMarket',
     img: WareHouse,
   },
   {
