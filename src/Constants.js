@@ -24,6 +24,7 @@ import TaskTracker from './assets/projects/TaskTracker.png';
 import Naas from './assets/projects/Naas.png';
 import AOne from './assets/projects/AOne.png';
 import OrderManagement from './assets/projects/OrderManagement.png';
+import WareHouse from './assets/projects/WareHouse.png';
 
 import Shahez from './assets/Recommendations/Shahez.jpeg';
 import Jonathan from './assets/Recommendations/Jonathan.jpeg';
@@ -79,12 +80,29 @@ const Projects = [
       'Npm',
       'React',
       'Vite',
-      ' DnD',
+      'DnD',
       'Redux',
     ],
     Llink: 'https://order-management-akkoo-challenge.vercel.app/',
     GLink: 'https://github.com/Mhamad-Raad/Order-Management-Akkoo-Challenge',
     img: OrderManagement,
+  },
+  {
+    title: 'WareHouse Management',
+    description: 'A Warehouse Item Management Website that has three users',
+    techs: [
+      'JavaScript',
+      'HTML',
+      'CSS',
+      'Tailwind',
+      'Npm',
+      'React',
+      'Localization',
+      'Dark Theme',
+    ],
+    Llink: 'https://order-management-akkoo-challenge.vercel.app/',
+    GLink: 'https://github.com/Mhamad-Raad/Order-Management-Akkoo-Challenge',
+    img: WareHouse,
   },
   {
     title: 'AOne',
