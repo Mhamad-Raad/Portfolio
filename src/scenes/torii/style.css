@@ -1,0 +1,63 @@
+/* generated from playground/torii.html, scoped to .sc-torii */
+
+/* Layout: one WebGL scene. Scrolling flies the camera through five torii gates in space, one per area of the stack; every technology is an ema plaque hanging from its gate. A caption on the right names the gate you're approaching. Single dark look. */
+.sc-torii{
+  --void:#050507; --smoke:#8c8a96; --bone:#f3f1f5; --crimson:#e5243b; --blood:#6e0d1c; --violet:#8b5cf6; --line:rgba(243,241,245,.14);
+  --display:'Anton', Impact, 'Arial Narrow', sans-serif;
+  --body:'Manrope', system-ui, -apple-system, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --jp:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif;
+  --gl:max(16px, env(safe-area-inset-left, 0px)); --gr:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:dark;
+}
+.sc-torii,.sc-torii{height:100%}
+.sc-torii [hidden]{display:none!important}
+.sc-torii{background:var(--void);color:var(--bone);font-family:var(--body);overflow:hidden;-webkit-font-smoothing:antialiased}
+.sc-torii button{font:inherit;color:inherit}
+.sc-torii :focus-visible{outline:2px solid var(--crimson);outline-offset:3px}
+.sc-torii #gl{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:1;touch-action:none}
+.sc-torii .ui{position:fixed;z-index:6}
+.sc-torii .thread{position:fixed;left:calc(var(--gl) + 4px);top:0;bottom:0;width:1px;z-index:5;background:linear-gradient(transparent,var(--crimson) 25%,var(--crimson) 75%,transparent);opacity:.6;pointer-events:none}
+
+.sc-torii #head{left:var(--gl);top:calc(env(safe-area-inset-top,0px) + 22px);padding-left:18px;pointer-events:none;transition:opacity .5s}
+.sc-torii .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke)}
+.sc-torii .eyebrow b{color:var(--crimson);font-weight:600}
+.sc-torii #head h1{margin:8px 0 0;font-family:var(--display);font-weight:400;font-size:clamp(40px,4.8vw,76px);line-height:.88;text-transform:uppercase}
+.sc-torii #head h1 em{font-style:normal;color:var(--crimson);display:block}
+
+.sc-torii #gate{right:calc(var(--gr) + 36px);top:50%;transform:translateY(-50%);width:min(400px,calc(100% - 32px));text-align:right;pointer-events:none;opacity:0;transition:opacity .35s}
+.sc-torii #gate .k{font-family:var(--jp);font-weight:800;font-size:92px;line-height:1;color:var(--crimson);text-shadow:0 0 30px rgba(229,36,59,.45)}
+.sc-torii #gate small{display:block;margin-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke)}
+.sc-torii #gate h2{margin:4px 0 14px;font-family:var(--display);font-weight:400;font-size:clamp(40px,4.4vw,66px);line-height:.9;text-transform:uppercase}
+.sc-torii #gate ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.sc-torii #gate li{display:flex;align-items:baseline;gap:10px;font-family:var(--display);font-size:24px;text-transform:uppercase;line-height:1}
+.sc-torii #gate li span{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--smoke)}
+.sc-torii #gate li i{display:inline-block;height:3px;background:linear-gradient(90deg,transparent,var(--crimson));box-shadow:0 0 6px rgba(229,36,59,.6)}
+
+.sc-torii #outro{left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;opacity:0;transition:opacity .6s;width:calc(100% - 32px)}
+.sc-torii #outro.on{pointer-events:auto}
+.sc-torii #outro h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(52px,8vw,128px);line-height:.88;text-transform:uppercase}
+.sc-torii #outro h2 em{font-style:normal;color:var(--crimson)}
+.sc-torii #outro p{margin:14px 0 18px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke)}
+.sc-torii .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:10px 13px;border:1px solid var(--crimson);background:var(--crimson);color:var(--bone);cursor:pointer;text-decoration:none;box-shadow:0 0 18px rgba(229,36,59,.45)}
+
+.sc-torii #hint{right:var(--gr);bottom:calc(env(safe-area-inset-bottom,0px) + 22px);display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke)}
+.sc-torii #hint ol{list-style:none;margin:0;padding:0;display:flex;gap:6px}
+.sc-torii #hint li{font-family:var(--jp);font-weight:800;font-size:13px;color:rgba(243,241,245,.25);transition:color .3s}
+.sc-torii #hint li.on{color:var(--crimson)}
+.sc-torii #hint li.done{color:var(--bone)}
+.sc-torii #loader{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:var(--void);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);transition:opacity .6s}
+@media (max-width:760px){ .sc-torii #gate{right:var(--gr);top:auto;bottom:70px;transform:none} .sc-torii #gate .k{font-size:54px} .sc-torii #gate h2{font-size:34px} .sc-torii #gate li{font-size:17px} .sc-torii #head h1{font-size:34px} .sc-torii #head h1 em{display:inline} }
+@media (prefers-reduced-motion: reduce){ .sc-torii *{transition-duration:.01s !important} }
+
+/* phones: the gate caption sits low and compact, technologies wrap as a short list; the kanji progress steps aside */
+@media (max-width:760px){
+  .sc-torii #gate{bottom:calc(env(safe-area-inset-bottom,0px) + 76px);left:var(--gl);right:var(--gr);width:auto;padding-top:14px;background:linear-gradient(transparent,rgba(5,5,7,.85) 30%)}
+  .sc-torii #gate .k{font-size:38px}
+  .sc-torii #gate small{font-size:9.5px;letter-spacing:.14em}
+  .sc-torii #gate h2{font-size:30px;margin:2px 0 10px}
+  .sc-torii #gate ul{flex-direction:row;flex-wrap:wrap;justify-content:flex-end;gap:4px 12px}
+  .sc-torii #gate li{font-size:16px;gap:5px}
+  .sc-torii #gate li i{display:none}
+  .sc-torii #hint{display:none}
+}

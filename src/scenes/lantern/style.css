@@ -1,0 +1,119 @@
+/* generated from about/lantern.html, scoped to .sc-lantern */
+
+/* 04 Contact: a hanging scroll letter on the left; a paper lantern waits on the lake and takes your words as you write;
+   sealing rolls the scroll up, lights the lantern and lets the current carry it to the moon among many others. */
+.sc-lantern{
+  --void:#050507; --smoke:#8c8a96; --bone:#f3f1f5; --crimson:#e5243b; --blood:#6e0d1c; --violet:#8b5cf6; --line:rgba(243,241,245,.14);
+  --paper:#ece3d1; --ink:#1a1113; --sumi:#2a1d1f; --seal:#b3112a;
+  --display:'Anton', Impact, 'Arial Narrow', sans-serif;
+  --body:'Manrope', system-ui, -apple-system, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --serif:'Shippori Mincho','Hiragino Mincho ProN','Yu Mincho',serif;
+  --gl:max(16px, env(safe-area-inset-left, 0px)); --gr:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:dark;
+}
+.sc-lantern,.sc-lantern{height:100%}
+.sc-lantern [hidden]{display:none!important}
+.sc-lantern{margin:0;background:var(--void);color:var(--bone);font-family:var(--body);overflow:hidden;-webkit-font-smoothing:antialiased}
+.sc-lantern button,.sc-lantern input,.sc-lantern textarea{font:inherit;color:inherit}
+.sc-lantern :focus-visible{outline:2px solid var(--crimson);outline-offset:3px}
+.sc-lantern #gl{position:fixed;inset:0;width:100%;height:100%;display:block}
+.sc-lantern .thread{position:fixed;left:calc(var(--gl) + 4px);top:0;bottom:0;width:1px;z-index:5;background:linear-gradient(transparent,var(--crimson) 25%,var(--crimson) 75%,transparent);opacity:.6;pointer-events:none}
+.sc-lantern .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:10px 13px;border:1px solid var(--line);background:rgba(5,5,7,.6);color:var(--bone);cursor:pointer;transition:all .2s;text-decoration:none}
+.sc-lantern .btn:hover{border-color:var(--crimson);background:rgba(229,36,59,.14)}
+
+/* the title sits to the right of the scroll, over the sky */
+.sc-lantern #title{position:fixed;z-index:6;right:calc(var(--gr) + 30px);top:96px;text-align:right;pointer-events:none}
+.sc-lantern #title .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke)}
+.sc-lantern #title .eyebrow b{color:var(--crimson);font-weight:600}
+.sc-lantern #title h2{margin:10px 0 0;font-family:var(--display);font-weight:400;font-size:clamp(46px,5.2vw,82px);line-height:.86;text-transform:uppercase;text-shadow:0 4px 30px rgba(5,5,7,.8)}
+.sc-lantern #title h2 em{font-style:normal;color:var(--crimson);display:block}
+.sc-lantern #links{position:fixed;z-index:8;right:calc(var(--gr) + 30px);bottom:26px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+
+/* ---------- the hanging scroll ---------- */
+.sc-lantern #scroll{position:fixed;z-index:8;left:calc(var(--gl) + 30px);top:64px;width:min(600px,calc(100vw - 80px));filter:drop-shadow(0 34px 50px rgba(0,0,0,.75))}
+.sc-lantern .hang{position:relative;height:30px}
+.sc-lantern .hang .cord{position:absolute;left:50%;top:-6px;width:150px;height:30px;transform:translateX(-50%);border:2px solid #7a1424;border-bottom:0;border-radius:80px 80px 0 0}
+.sc-lantern .hang .cord::after{content:"";position:absolute;left:50%;top:-8px;width:10px;height:10px;transform:translateX(-50%);border-radius:50%;background:#2a1a12;box-shadow:0 0 0 2px #7a1424}
+.sc-lantern .rod{position:relative;height:16px;margin:0 -12px;border-radius:3px;background:linear-gradient(#3b2618,#1a0f09 55%,#2c1b11);box-shadow:0 3px 8px rgba(0,0,0,.6)}
+.sc-lantern .rod.bottom{height:24px;margin:0 -30px;border-radius:12px;background:linear-gradient(#3b2618,#140b07 60%,#2c1b11)}
+.sc-lantern .rod.bottom::before,.sc-lantern .rod.bottom::after{content:"";position:absolute;top:-3px;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#d9d4e2,#6d6880 45%,#2a2833)}
+.sc-lantern .rod.bottom::before{left:-6px}.sc-lantern .rod.bottom::after{right:-6px}
+.sc-lantern .roll{display:grid;grid-template-rows:0fr;transition:grid-template-rows 1.6s cubic-bezier(.6,0,.2,1)}
+.sc-lantern #scroll.open .roll{grid-template-rows:1fr}
+.sc-lantern .roll > div{overflow:hidden;min-height:0}
+/* silk mounting with ichimonji bands */
+.sc-lantern .silk{padding:22px 22px 26px;background:
+  radial-gradient(circle at 25% 25%, rgba(229,36,59,.12) 0 2px, transparent 3px) 0 0/14px 14px,
+  radial-gradient(circle at 75% 75%, rgba(0,0,0,.3) 0 2px, transparent 3px) 0 0/14px 14px,
+  linear-gradient(#4a0d17,#3a0a12)}
+.sc-lantern .ichi{height:14px;background:repeating-linear-gradient(90deg,#141016 0 6px,#1d1820 6px 7px),#141016;border-top:1px solid rgba(217,212,226,.15);border-bottom:1px solid rgba(217,212,226,.15)}
+/* the letter paper */
+.sc-lantern .paper{position:relative;color:var(--ink);background:
+   radial-gradient(60% 40% at 85% 12%, rgba(120,60,30,.08), transparent 70%),
+   radial-gradient(40% 30% at 10% 90%, rgba(120,60,30,.07), transparent 70%),
+   repeating-linear-gradient(93deg, rgba(120,90,60,.035) 0 1px, transparent 1px 7px),
+   repeating-linear-gradient(-3deg, rgba(120,90,60,.03) 0 1px, transparent 1px 13px),
+   var(--paper);
+  display:grid;grid-template-columns:62px minmax(0,1fr) 70px;gap:0 18px;padding:26px 22px 22px;min-height:min(560px,calc(100vh - 230px));box-sizing:border-box}
+.sc-lantern .paper::before{content:"";position:absolute;inset:10px;border:1px solid rgba(179,17,42,.28);pointer-events:none}
+.sc-lantern .vert{writing-mode:vertical-rl;font-family:var(--serif);color:var(--ink);display:flex;align-items:center;gap:14px}
+.sc-lantern .col-r{border-left:1px solid rgba(179,17,42,.25);padding-left:12px;justify-content:flex-start}
+.sc-lantern .col-r b{font-weight:800;font-size:40px;letter-spacing:.1em}
+.sc-lantern .col-r span{font-weight:500;font-size:19px;letter-spacing:.08em;color:var(--sumi)}
+.sc-lantern .col-l{border-right:1px solid rgba(179,17,42,.25);padding-right:12px;justify-content:space-between;align-items:center;flex-direction:row}
+.sc-lantern .col-l .close{writing-mode:vertical-rl;font-family:var(--serif);font-weight:800;font-size:30px;letter-spacing:.14em}
+.sc-lantern .col-l .date{writing-mode:vertical-rl;font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:#7d6f66;margin-top:14px}
+.sc-lantern .colstack{display:flex;flex-direction:column;align-items:center;justify-content:space-between;height:100%}
+.sc-lantern .body{display:flex;flex-direction:column;min-width:0}
+.sc-lantern .body .lbl{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:#8a2030;display:flex;align-items:center;gap:8px}
+.sc-lantern .body .lbl i{font-style:normal;font-family:var(--serif);font-weight:700;font-size:14px;letter-spacing:.1em;color:var(--ink)}
+.sc-lantern .body textarea,.sc-lantern .body input{width:100%;box-sizing:border-box;background:transparent;border:0;outline:none;color:var(--ink);font-family:var(--serif);font-weight:500}
+.sc-lantern .body textarea{flex:1;min-height:250px;resize:none;margin:8px 0 18px;font-size:22px;line-height:40px;padding:0 2px;
+  background-image:repeating-linear-gradient(transparent 0 39px, rgba(26,17,19,.18) 39px 40px);background-attachment:local}
+.sc-lantern .body textarea:focus{background-image:repeating-linear-gradient(transparent 0 39px, rgba(179,17,42,.45) 39px 40px)}
+.sc-lantern .body ::placeholder{color:rgba(26,17,19,.32)}
+.sc-lantern .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.sc-lantern .pair input{font-size:19px;padding:6px 1px 5px;background-image:linear-gradient(90deg, rgba(26,17,19,.4) 50%, transparent 0);background-size:6px 1px;background-repeat:repeat-x;background-position:0 100%}
+.sc-lantern .pair input:focus{background-image:linear-gradient(90deg, var(--seal) 50%, transparent 0)}
+.sc-lantern .leaf{position:absolute;right:22px;bottom:26px;width:56px;opacity:.55;transform:rotate(-24deg);pointer-events:none;mix-blend-mode:multiply}
+.sc-lantern .stain{position:absolute;left:44%;top:6%;width:90px;height:60px;border-radius:50%;background:radial-gradient(closest-side, rgba(40,20,20,.07), transparent);pointer-events:none}
+.sc-lantern .note{font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:#8d8077;margin-top:12px}
+/* the seal */
+.sc-lantern .seal{position:relative;width:58px;height:58px;border:0;padding:0;cursor:pointer;background:var(--seal);color:#f3e9e0;display:grid;place-items:center;transform:rotate(-4deg);
+  box-shadow:inset 0 0 0 3px var(--seal), inset 0 0 0 5px #f3e9e0, inset 0 0 0 7px var(--seal), 0 5px 12px -4px rgba(120,10,25,.6);
+  clip-path:polygon(3% 5%, 97% 0, 100% 95%, 2% 100%);transition:transform .25s cubic-bezier(.3,1.6,.5,1), filter .2s}
+.sc-lantern .seal b{font-family:var(--serif);font-weight:800;font-size:26px;line-height:1;margin-top:-4px}
+.sc-lantern .seal i{position:absolute;bottom:5px;font-style:normal;font-family:var(--mono);font-size:7px;letter-spacing:.16em}
+.sc-lantern .seal:hover{transform:rotate(0) scale(1.07);filter:brightness(1.1)}
+.sc-lantern .seal:active{transform:scale(.9)}
+.sc-lantern .seal-cap{writing-mode:vertical-rl;font-family:var(--mono);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#8a2030;margin-bottom:8px}
+/* after sending */
+.sc-lantern #sent{position:fixed;z-index:8;left:calc(var(--gl) + 40px);top:50%;transform:translateY(-40%);width:min(420px,calc(100vw - 80px));opacity:0;transition:opacity .9s, transform 1s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.sc-lantern #sent.on{opacity:1;transform:translateY(-50%);pointer-events:auto}
+.sc-lantern #sent .k{font-family:var(--serif);font-weight:800;font-size:64px;color:var(--crimson);line-height:1}
+.sc-lantern #sent h3{margin:12px 0 8px;font-family:var(--display);font-weight:400;font-size:48px;line-height:.9;text-transform:uppercase}
+.sc-lantern #sent p{margin:0 0 18px;color:#c9c6d1;font-size:15px;line-height:1.6;text-shadow:0 1px 12px rgba(5,5,7,.9)}
+.sc-lantern #scroll.away{opacity:0;transform:translateY(-30px);transition:opacity .8s .9s, transform 1s .9s;pointer-events:none}
+.sc-lantern #loader{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:var(--void);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);transition:opacity .7s}
+@media (max-width:900px){
+  .sc-lantern #title{top:auto;bottom:86px;right:var(--gr)} .sc-lantern #title h2{font-size:34px}
+  .sc-lantern #scroll{left:var(--gl);width:calc(100vw - var(--gl) - var(--gr) - 24px)}
+  .sc-lantern .paper{grid-template-columns:40px minmax(0,1fr) 44px;gap:0 10px;padding:18px 12px;min-height:0}
+  .sc-lantern .col-r b{font-size:28px} .sc-lantern .col-r span{font-size:14px} .sc-lantern .col-l .close{font-size:22px} .sc-lantern .col-l .date{display:none}
+  .sc-lantern .body textarea{min-height:140px;font-size:18px;line-height:34px;background-image:repeating-linear-gradient(transparent 0 33px, rgba(26,17,19,.18) 33px 34px)}
+  .sc-lantern .pair{grid-template-columns:1fr} .sc-lantern .leaf{display:none}
+  .sc-lantern #links{left:var(--gl);right:auto;justify-content:flex-start}
+}
+@media (prefers-reduced-motion: reduce){ .sc-lantern *{transition-duration:.01s !important;animation:none !important} }
+
+/* joined site: real sending */
+.sc-lantern #form .miss{border-bottom-color:var(--crimson)!important;box-shadow:0 2px 0 -1px var(--crimson)}
+.sc-lantern #form .note.warn{color:#b3122a}
+.sc-lantern #sent p a{color:var(--bone)}
+
+/* phones: the title sits above the link buttons instead of on them */
+@media (max-width:900px){
+  .sc-lantern #title{bottom:calc(env(safe-area-inset-bottom,0px) + 118px)}
+  .sc-lantern #title h2{font-size:30px}
+}

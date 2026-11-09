@@ -1,0 +1,126 @@
+/* generated from archive/index.html, scoped to .sc-archive */
+
+/* Layout: left column = title, chapters, tech filters; right = a lacquered sword stand floating in space, grouped into four chapters. Clicking a sword dollies in, draws it and slashes the screen open to reveal the project. Single dark look. */
+.sc-archive{
+  --void:#050507; --ash:#14131a; --smoke:#8c8a96; --bone:#f3f1f5; --crimson:#e5243b; --blood:#6e0d1c; --violet:#8b5cf6; --line:rgba(243,241,245,.14);
+  --display:'Anton', Impact, 'Arial Narrow', sans-serif;
+  --body:'Manrope', system-ui, -apple-system, sans-serif;
+  --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  --jp:'Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif;
+  --gl:max(16px, env(safe-area-inset-left, 0px)); --gr:max(16px, env(safe-area-inset-right, 0px));
+  color-scheme:dark;
+}
+.sc-archive,.sc-archive{height:100%}
+.sc-archive [hidden]{display:none!important}
+.sc-archive{background:var(--void);color:var(--bone);font-family:var(--body);overflow:hidden;-webkit-font-smoothing:antialiased}
+.sc-archive button{font:inherit;color:inherit}
+.sc-archive :focus-visible{outline:2px solid var(--crimson);outline-offset:3px}
+.sc-archive #gl{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:1;touch-action:none}
+.sc-archive .backdrop{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.sc-archive .giant{position:absolute;right:-1vw;top:50%;transform:translateY(-50%);font-family:var(--jp);font-weight:800;font-size:min(72vh,660px);line-height:.9;color:rgba(229,36,59,.07);-webkit-text-stroke:1.5px rgba(229,36,59,.28);user-select:none;
+  -webkit-mask:linear-gradient(160deg,#000 calc(var(--ink,0)*140% - 30%),transparent calc(var(--ink,0)*140% - 10%));mask:linear-gradient(160deg,#000 calc(var(--ink,0)*140% - 30%),transparent calc(var(--ink,0)*140% - 10%))}
+.sc-archive .lantern{position:absolute;left:44%;top:18%;width:60vmin;height:60vmin;border-radius:50%;background:radial-gradient(circle,rgba(229,36,59,.16),rgba(229,36,59,.05) 40%,transparent 70%);filter:blur(6px);animation:archive-flick 4s ease-in-out infinite}
+@keyframes archive-flick{0%,100%{opacity:.85}45%{opacity:1}55%{opacity:.75}}
+.sc-archive .thread{position:absolute;left:calc(var(--gl) + 4px);top:0;bottom:0;width:1px;background:linear-gradient(transparent,var(--crimson) 25%,var(--crimson) 75%,transparent);opacity:.7}
+.sc-archive .ui{position:fixed;z-index:6;transition:opacity .3s}
+
+.sc-archive #side{left:var(--gl);top:calc(env(safe-area-inset-top,0px) + 22px);bottom:calc(env(safe-area-inset-bottom,0px) + 22px);width:min(400px,calc(100% - 32px));padding-left:18px;display:flex;flex-direction:column;gap:16px;pointer-events:none}
+.sc-archive #side > *{pointer-events:auto}
+.sc-archive .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke)}
+.sc-archive .eyebrow b{color:var(--crimson);font-weight:600}
+.sc-archive h1{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(52px,6.6vw,98px);line-height:.86;text-transform:uppercase;text-wrap:balance}
+.sc-archive h1 em{font-style:normal;color:var(--crimson);display:block}
+.sc-archive .lede{margin:0;color:#bdb9c6;font-size:14px;line-height:1.6;max-width:38ch}
+.sc-archive #chapters{display:flex;flex-direction:column;gap:2px}
+.sc-archive #chapters button{display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:8px;background:none;border:0;border-left:2px solid var(--line);padding:6px 10px;text-align:left;cursor:pointer;color:var(--smoke);transition:color .2s, border-color .2s, background .2s}
+.sc-archive #chapters button b{font-family:var(--jp);font-weight:800;font-size:16px;color:var(--crimson)}
+.sc-archive #chapters button span{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.sc-archive #chapters button i{font-style:normal;font-family:var(--mono);font-size:10px;color:var(--smoke)}
+.sc-archive #chapters button:hover{color:var(--bone)}
+.sc-archive #chapters button[aria-current="true"]{color:var(--bone);border-left-color:var(--crimson);background:linear-gradient(90deg,rgba(229,36,59,.12),transparent)}
+.sc-archive #chapters button.off{opacity:.3}
+.sc-archive #chips{display:flex;flex-wrap:wrap;gap:6px}
+.sc-archive #chips button{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border:1px solid var(--line);background:rgba(5,5,7,.6);color:var(--smoke);cursor:pointer;transition:all .2s}
+.sc-archive #chips button span{color:var(--crimson);margin-left:5px}
+.sc-archive #chips button:hover{color:var(--bone);border-color:rgba(243,241,245,.35)}
+.sc-archive #chips button[aria-pressed="true"]{background:var(--crimson);border-color:var(--crimson);color:var(--bone);box-shadow:0 0 16px rgba(229,36,59,.45)}
+.sc-archive #chips button[aria-pressed="true"] span{color:var(--bone)}
+.sc-archive #foot{margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.sc-archive #count{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke)}
+.sc-archive #count b{color:var(--bone);font-weight:600;font-size:22px;font-family:var(--display);letter-spacing:.02em;margin-right:6px}
+.sc-archive .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:10px 13px;border:1px solid var(--line);background:rgba(5,5,7,.6);color:var(--bone);cursor:pointer;transition:all .2s}
+.sc-archive .btn:hover{border-color:var(--crimson);background:rgba(229,36,59,.14)}
+.sc-archive .btn.primary{background:var(--crimson);border-color:var(--crimson);box-shadow:0 0 18px rgba(229,36,59,.45)}
+.sc-archive .btn.primary:hover{background:#ff3a52}
+.sc-archive #snd{padding:7px 10px;font-size:10px}
+.sc-archive #snd[aria-pressed="true"]{border-color:var(--crimson)}
+.sc-archive .hint{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke);margin:0}
+
+.sc-archive #scroll{right:calc(var(--gr) + 2px);top:50%;transform:translateY(-50%);width:2px;height:40vh;background:var(--line)}
+.sc-archive #scroll i{position:absolute;left:0;right:0;top:0;height:20%;background:var(--crimson);box-shadow:0 0 8px var(--crimson)}
+
+/* hover preview, pinned to the sword's tag */
+.sc-archive #peek{position:fixed;z-index:7;left:0;top:0;width:240px;pointer-events:none;opacity:0;transform:translate(-9999px,0);transition:opacity .18s;background:rgba(10,9,13,.94);border:1px solid rgba(229,36,59,.5);box-shadow:0 18px 50px rgba(0,0,0,.6), 0 0 24px rgba(229,36,59,.18)}
+.sc-archive #peek.on{opacity:1}
+.sc-archive #peek::before{content:"";position:absolute;left:-26px;top:22px;width:26px;height:1px;background:var(--crimson);box-shadow:0 0 6px var(--crimson)}
+.sc-archive #peek img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.sc-archive #peek div{padding:9px 10px}
+.sc-archive #peek small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke);margin-bottom:4px}
+.sc-archive #peek b{display:block;font-family:var(--display);font-weight:400;font-size:22px;text-transform:uppercase;line-height:1}
+.sc-archive #peek p{margin:5px 0 0;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:#d9ccff}
+
+/* the end of the rack */
+.sc-archive #ending{right:calc(var(--gr) + 24px);bottom:calc(env(safe-area-inset-bottom,0px) + 26px);display:flex;flex-direction:column;align-items:flex-end;gap:10px;opacity:0;pointer-events:none}
+.sc-archive #ending.on{opacity:1;pointer-events:auto}
+.sc-archive #ending p{margin:0;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke)}
+.sc-archive #ending .btns{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+
+/* project detail: takes over the left column, the rack stays visible */
+.sc-archive #cutfx{position:fixed;inset:0;z-index:9;pointer-events:none;width:100%;height:100%}
+.sc-archive #side{transition:opacity .35s, transform .45s cubic-bezier(.2,.8,.2,1)}
+.sc-archive.open #side{opacity:0;transform:translateX(-24px);pointer-events:none}
+.sc-archive.open #side > *{pointer-events:none}
+.sc-archive #detail{left:var(--gl);top:calc(env(safe-area-inset-top,0px) + 22px);bottom:calc(env(safe-area-inset-bottom,0px) + 22px);width:min(460px,calc(100% - 32px));padding-left:18px;display:flex;flex-direction:column;justify-content:center;gap:14px;opacity:0;pointer-events:none;transform:translateX(-24px);transition:opacity .35s, transform .45s cubic-bezier(.2,.8,.2,1)}
+.sc-archive.open #detail{opacity:1;pointer-events:auto;transform:none}
+.sc-archive #detail .top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.sc-archive #detail .chap{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke)}
+.sc-archive #detail .chap b{font-family:var(--jp);font-weight:800;color:var(--crimson);font-size:15px;margin-right:6px}
+.sc-archive #detail .nav{display:flex;gap:4px}
+.sc-archive #detail .nav button{width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--line);background:rgba(5,5,7,.6);cursor:pointer;font-family:var(--mono);font-size:13px;color:var(--bone);transition:all .2s}
+.sc-archive #detail .nav button:hover{border-color:var(--crimson);background:rgba(229,36,59,.14)}
+.sc-archive #detail h2{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(40px,4.6vw,68px);line-height:.88;text-transform:uppercase;text-wrap:balance}
+.sc-archive #detail h2 em{font-style:normal;color:var(--crimson)}
+.sc-archive #detail figure{margin:0;position:relative;border:1px solid var(--line);background:#000;box-shadow:0 24px 60px rgba(0,0,0,.55), 0 0 0 1px rgba(229,36,59,.25)}
+.sc-archive #detail figure{overflow:hidden}
+.sc-archive #detail figure img{display:block;width:100%;height:auto;max-height:36vh;object-fit:contain;background:#0a090d;animation:archive-pan 14s ease-in-out infinite alternate;transform-origin:30% 20%}
+@keyframes archive-pan{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.09) translate(-2%,-2%)}}
+.sc-archive #detail figure figcaption{position:absolute;left:8px;top:8px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:rgba(5,5,7,.8);color:var(--bone);padding:3px 7px;border:1px solid rgba(243,241,245,.3)}
+.sc-archive #detail p.line{margin:0;color:#c9c6d1;font-size:14px;line-height:1.6}
+.sc-archive #detail .inner{display:flex;flex-direction:column;gap:14px}
+.sc-archive .chipsP{display:flex;flex-wrap:wrap;gap:6px}
+.sc-archive .chipsP span{font-family:var(--mono);font-size:11px;letter-spacing:.06em;padding:5px 9px;border:1px solid rgba(139,92,246,.6);color:#e1d6ff;background:rgba(139,92,246,.08)}
+.sc-archive .btns{display:flex;gap:8px;flex-wrap:wrap}
+.sc-archive #loader{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:var(--void);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);transition:opacity .6s}
+
+@media (max-width:820px){
+  .sc-archive #side{bottom:auto;width:auto;right:var(--gr);gap:8px}
+  .sc-archive h1{font-size:40px} .sc-archive h1 em{display:inline}
+  .sc-archive .lede,.sc-archive .hint,.sc-archive #chapters{display:none}
+  .sc-archive #foot{margin-top:0}
+  .sc-archive #peek{display:none}
+  .sc-archive #detail{top:auto;width:auto;right:var(--gr);background:rgba(5,5,7,.92);padding:14px;border:1px solid var(--line);max-height:62vh;overflow:auto;justify-content:flex-start}
+  .sc-archive #detail figure img{max-height:24vh}
+  .sc-archive #ending{left:var(--gl);right:var(--gr);align-items:stretch}
+}
+@media (prefers-reduced-motion: reduce){ .sc-archive *{transition-duration:.01s !important;animation:none !important} }
+
+/* phones: one swipeable row of filter chips, a slimmer header */
+@media (max-width:820px){
+  .sc-archive #chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-right:calc(-1 * var(--gr));padding-right:var(--gr);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .sc-archive #chips::-webkit-scrollbar{display:none}
+  .sc-archive #chips button{flex:none}
+  .sc-archive #foot{align-items:center}
+  .sc-archive #count b{font-size:16px}
+  .sc-archive #detail{bottom:calc(env(safe-area-inset-bottom,0px) + 70px)}
+  .sc-archive #ending{bottom:calc(env(safe-area-inset-bottom,0px) + 70px)}
+}

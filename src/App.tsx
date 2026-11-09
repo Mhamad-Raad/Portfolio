@@ -1,72 +1,40 @@
-import { lazy, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { Director, SCENES } from './director';
 
-import Loader from './Components/CanvaObjects/Loader/ScreenLoader';
-import WorkExperience from './Components/WorkExperience/WorkExperience';
-import Skills from './Components/Skills/Skills';
-import Projects from './Components/Projects/Projects';
-import Recommentations from './Components/Recommendations/Recommnendations';
-import NavBar from './Components/Navbar/NavBar';
-import Footer from './Components/Footer/Footer';
-import Seperator from './Components/Seperator/Seperator';
-import ChatBot from './Components/ChatBot/ChatBot';
+const NAV = SCENES.filter(s => s.id !== 'hero' && s.id !== 'archive');
 
-import './App.scss';
-
-const Background = lazy(
-  () => import('./Components/StarsBackground/StarsBackground')
-);
-
-const AboutMe = lazy(() => import('./Components/AboutMe/AboutMe'));
-const ContactMe = lazy(() => import('./Components/ContactMe/ContactMe'));
-
-const App = () => {
-  const [loading, setLoading] = useState(true);
+export default function App() {
+  const host = useRef<HTMLDivElement>(null);
+  const cut = useRef<SVGSVGElement>(null);
+  const [index, setIndex] = useState(-1);
 
   useEffect(() => {
-    let timer: ReturnType<typeof setTimeout>;
-    if (loading) {
-      timer = setTimeout(() => {
-        setLoading(false);
-      }, 5500);
-    }
-    // eslint-disable-next-line
-    () => clearTimeout(timer);
+    const d = new Director(host.current!, cut.current!);
+    const off = d.onChange(setIndex);
+    if (import.meta.env.DEV) (window as any).__dir = d;
+    d.start();
+    return () => { off(); d.destroy(); };
   }, []);
+
+  const cur = SCENES[index]?.id;
+  const onNav = cur === 'archive' ? 'work' : cur;
 
   return (
     <>
-      {loading && <Loader />}
-
-      <motion.main
-        className={`app-page ${loading && 'disable-scroll'}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 7 }}
-      >
-        <NavBar />
-        <Background />
-        <ChatBot />
-        <AboutMe />
-        <WorkExperience />
-        <Skills />
-        <Projects />
-        <Seperator
-          text='To see more projects checkout my '
-          type='GitHub'
-          link='https://github.com/Mhamad-Raad'
-        />
-        <Recommentations />
-        <Seperator
-          text='To see more Recommendations checkout my '
-          type='LinkedIn'
-          link='https://www.linkedin.com/in/mhamad-raad'
-        />
-        {!loading && <ContactMe />}
-        <Footer />
-      </motion.main>
+      <div ref={host} className="stage" />
+      <svg ref={cut} className="cut" aria-hidden="true">
+        <line className="glow" /><line className="core" />
+      </svg>
+      <nav className={'way' + (index > 0 ? ' on' : '')} aria-label="Sections">
+        <a className="mr" href="#top" aria-label="Back to the start">MR</a>
+        <ol>
+          {NAV.map(s => (
+            <li key={s.id}>
+              <a href={'#' + s.hash} aria-current={onNav === s.id ? 'true' : undefined}><sup>{s.num}</sup>{s.label}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
     </>
   );
-};
-
-export default App;
+}

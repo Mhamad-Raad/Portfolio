@@ -1,0 +1,54 @@
+:root{
+  --void:#050507; --smoke:#8c8a96; --bone:#f3f1f5; --crimson:#e5243b; --blood:#6e0d1c; --violet:#8b5cf6;
+  --mono:'JetBrains Mono', ui-monospace, Menlo, monospace;
+  color-scheme:dark;
+}
+html,body{margin:0;height:100%;background:var(--void);overflow:hidden;overscroll-behavior:none}
+body{color:var(--bone);font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+
+/* every scene is a full-screen world; only the active one is visible (two during a cut) */
+.stage{position:fixed;inset:0}
+.scene{position:fixed;inset:0;overflow:hidden;visibility:hidden;contain:layout paint style}
+.scene.is-on{visibility:visible}
+.scene-error{position:absolute;left:24px;bottom:24px;z-index:99;background:var(--blood);color:var(--bone);padding:12px 14px;font:12px var(--mono)}
+
+/* the blade line that sweeps between scenes */
+.cut{position:fixed;inset:0;width:100%;height:100%;z-index:50;pointer-events:none;opacity:0;overflow:visible}
+.cut line{fill:none}
+.cut .glow{stroke:var(--crimson);stroke-width:10;opacity:.6;filter:blur(5px)}
+.cut .core{stroke:#fff;stroke-width:2}
+
+/* the way: section nav shared by every scene after the hero */
+.way{position:fixed;z-index:40;top:calc(env(safe-area-inset-top,0px) + 14px);left:50%;transform:translate(-50%,-8px);display:flex;align-items:center;gap:14px;
+  padding:7px 8px 7px 8px;background:rgba(5,5,7,.55);border:1px solid rgba(243,241,245,.1);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  opacity:0;pointer-events:none;transition:opacity .5s, transform .5s cubic-bezier(.2,.8,.2,1)}
+.way.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.way .mr{font-family:'Anton',Impact,sans-serif;font-size:15px;color:#fff;background:var(--crimson);text-decoration:none;width:26px;height:26px;display:grid;place-items:center;transform:rotate(-4deg)}
+.way ol{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.way ol a{display:block;padding:6px 9px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke);text-decoration:none;transition:color .2s}
+.way ol a:hover{color:var(--bone)}
+.way ol a sup{color:var(--crimson);margin-right:5px;font-size:8.5px}
+.way ol a[aria-current]{color:var(--bone);box-shadow:inset 0 -1px 0 var(--crimson)}
+.way a:focus-visible{outline:2px solid var(--crimson);outline-offset:2px}
+@media (max-width:820px){
+  .way{top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 10px)}
+  .way ol a{padding:6px 6px;font-size:9.5px;letter-spacing:.08em}
+  .way ol a sup{display:none}
+}
+/* on phones the section nav sits at the bottom; lift each scene's bottom corner items above it */
+@media (max-width:820px){
+  .scene.sc-work #prog{bottom:calc(env(safe-area-inset-bottom,0px) + 62px)}
+  .scene.sc-torii #hint{bottom:calc(env(safe-area-inset-bottom,0px) + 62px)}
+  .scene.sc-lantern #links{bottom:calc(env(safe-area-inset-bottom,0px) + 62px)}
+}
+
+/* "keep scrolling" hint at the end (or start) of a scene: fills while the visitor pushes on */
+.edgehint{position:fixed;z-index:45;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 26px);transform:translate(-50%,10px);display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--bone);pointer-events:none;opacity:0;transition:opacity .35s, transform .35s;
+  text-shadow:0 1px 12px rgba(5,5,7,.9)}
+.edgehint.on{opacity:1;transform:translate(-50%,0)}
+.edgehint.up{bottom:auto;top:calc(env(safe-area-inset-top,0px) + 72px);flex-direction:column-reverse}
+.edgehint i{display:block;width:140px;height:2px;background:rgba(243,241,245,.16);overflow:hidden}
+.edgehint b{display:block;height:100%;background:var(--crimson);box-shadow:0 0 10px var(--crimson);transform-origin:left;transform:scaleX(0);transition:transform .12s linear}
+@media (max-width:820px){ .edgehint{bottom:calc(env(safe-area-inset-bottom,0px) + 72px)} }

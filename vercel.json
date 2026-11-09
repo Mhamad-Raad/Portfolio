@@ -1,0 +1,9 @@
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "headers": [
+    { "source": "/samurai.glb", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] },
+    { "source": "/img/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] }
+  ]
+}

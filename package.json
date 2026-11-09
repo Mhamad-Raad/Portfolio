@@ -1,66 +1,27 @@
 {
-  "name": "app-name",
-  "version": "0.1.0",
+  "name": "mhamad-raad-portfolio",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "server": "nodemon server/index.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test:e2e": "node tools/e2e.mjs"
   },
   "dependencies": {
-    "@emailjs/browser": "^3.11.0",
-    "@gradio/client": "^1.15.5",
-    "@react-three/drei": "^9.56.25",
-    "@react-three/fiber": "^8.11.2",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.12",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "framer-motion": "^10.9.1",
-    "maath": "^0.5.3",
-    "node-sass": "^7.0.3",
-    "react": "^18.2.0",
-    "react-circular-progressbar": "^2.1.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^4.8.0",
-    "react-router-dom": "^6.9.0",
-    "react-scripts": "5.0.1",
-    "react-scroll": "^1.8.9",
-    "react-select": "^5.7.2",
-    "react-swipeable": "^7.0.0",
-    "react-vertical-timeline-component": "^3.6.0",
-    "sass": "^1.58.3",
-    "three": "^0.149.0",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "@emailjs/browser": "^4.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "0.147.0"
   },
   "devDependencies": {
-    "@types/react-router-dom": "^5.3.3",
-    "@types/react-scroll": "^1.8.6",
-    "@types/react-vertical-timeline-component": "^3.3.3"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "0.147.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "playwright-core": "^1.49.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
   }
 }

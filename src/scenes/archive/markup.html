@@ -1,0 +1,27 @@
+<div class="backdrop"><div class="lantern"></div><div class="thread"></div><div class="giant" id="giant" aria-hidden="true">刀</div></div>
+<canvas id="gl" aria-label="A sword stand with one sword per archived project"></canvas>
+<section id="side" class="ui">
+  <div class="eyebrow"><b>01</b> · Work · the archive</div>
+  <h1>The <em>blade rack</em></h1>
+  <p class="lede">{{Archive}} smaller builds, in the order I forged them: training projects, sharpening, hiring duels and experiments.</p>
+  <nav id="chapters" aria-label="Chapters"></nav>
+  <div id="chips" role="group" aria-label="Filter by technology"></div>
+  <p class="hint">Scroll the rack · hover to draw · click to cut</p>
+  <div id="foot"><div id="count"><b>19</b>blades on the rack</div><button type="button" id="snd" class="btn" aria-pressed="false">♪ Sound off</button></div>
+</section>
+<div id="scroll" class="ui" aria-hidden="true"><i></i></div>
+<div id="peek" aria-hidden="true"><img alt=""><div><small></small><b></b><p></p></div></div>
+<div id="ending" class="ui"><p>End of the rack · {{total}} projects in all</p><div class="btns"><a class="btn" href="#work">← Back to the 道 map</a><a class="btn primary" href="#" id="nextBtn">Next · 02 The stack →</a></div></div>
+<canvas id="cutfx"></canvas>
+<section id="detail" class="ui" aria-live="polite">
+  <div class="inner">
+    <div class="top"><div class="chap" id="dChap"></div><div class="nav"><button type="button" id="dPrev" aria-label="Previous blade">↑</button><button type="button" id="dNext" aria-label="Next blade">↓</button></div></div>
+    <h2 id="dTitle"></h2>
+    <figure><img id="dImg" alt=""><figcaption id="dNum"></figcaption></figure>
+    <p class="line" id="dLine"></p>
+    <div class="chipsP" id="dStack"></div>
+    <div class="btns" id="dLinks"></div>
+    <div class="btns"><button type="button" class="btn" id="sheathe">⟵ Sheathe · back to the rack</button></div>
+  </div>
+</section>
+<div id="loader">Polishing nineteen blades</div>

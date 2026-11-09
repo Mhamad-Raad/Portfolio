@@ -1,0 +1,40 @@
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="thread" aria-hidden="true"></div>
+<div id="title"><div class="eyebrow"><b>04</b> · Contact</div><h2>Set a lantern <em>adrift</em></h2></div>
+<section id="scroll" aria-label="Write a letter">
+  <div class="hang" aria-hidden="true"><span class="cord"></span></div>
+  <div class="rod" aria-hidden="true"></div>
+  <div class="roll"><div>
+    <div class="silk">
+      <div class="ichi" aria-hidden="true"></div>
+      <form class="paper" id="form" novalidate>
+        <span class="stain" aria-hidden="true"></span>
+        <!-- read right to left, as a letter would be -->
+        <div class="colstack col-l-wrap" style="grid-column:1">
+          <div class="vert col-l" style="flex-direction:column;justify-content:flex-start"><span class="close">敬具</span><span class="date" id="date"></span></div>
+          <div style="display:flex;flex-direction:column;align-items:center"><span class="seal-cap">Seal to send</span><button class="seal" type="submit" aria-label="Seal, light the lantern and send"><b>灯</b><i>SEND</i></button></div>
+        </div>
+        <div class="body" style="grid-column:2">
+          <label class="lbl" for="m"><i>本文</i>Your message</label>
+          <textarea id="m" data-k="message" placeholder="I saw your portfolio and I'd love to talk about…"></textarea>
+          <div class="pair">
+            <div><label class="lbl" for="n"><i>署名</i>Signed</label><input id="n" data-k="name" autocomplete="name" placeholder="Your name"></div>
+            <div><label class="lbl" for="e"><i>返信</i>Write back to</label><input id="e" data-k="email" type="email" autocomplete="email" placeholder="you@studio.com"></div>
+          </div>
+          <div class="note" aria-live="polite">Your words are written onto the lantern as you type</div>
+        </div>
+        <div class="vert col-r" style="grid-column:3" aria-hidden="true"><b>拝啓</b><span>Mhamad 様</span></div>
+        <svg class="leaf" viewBox="0 0 100 100" aria-hidden="true"><path fill="#9a1226" d="M50 4l7 22 15-14-3 22 22-6-14 17 20 7-22 6 9 20-20-9-6 22-8-19-8 19-6-22-20 9 9-20-22-6 20-7-14-17 22 6-3-22 15 14z"/><path d="M50 50v46" stroke="#5a0a16" stroke-width="2.4"/></svg>
+      </form>
+      <div class="ichi" aria-hidden="true"></div>
+    </div>
+  </div></div>
+  <div class="rod bottom" aria-hidden="true"></div>
+</section>
+<div id="sent" aria-live="polite"><div class="k">灯</div><h3>Your lantern is drifting</h3><p>The current is carrying it to me…</p><button class="btn" type="button" id="again">Write another</button></div>
+<div id="links">
+  <a class="btn" href="{{linkedin}}" target="_blank" rel="noopener">LinkedIn ↗</a>
+  <a class="btn" href="{{github}}" target="_blank" rel="noopener">GitHub ↗</a>
+  <a class="btn" href="{{resume}}" target="_blank" rel="noopener" id="resume">Resume ↓</a>
+</div>
+<div id="loader">Folding the lantern</div>

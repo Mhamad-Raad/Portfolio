@@ -1,194 +1,46 @@
-<a name="readme-top"></a>
+# Mhamad Raad · Portfolio
 
-# 📗 Table of Contents
-- [📗 Table of Contents](#-table-of-contents)
-- [🚜 Portfolio ](#-Portfolio-)
-  - [🛠 Built With ](#-built-with-)
-    - [Tech Stack ](#tech-stack-)
-    - [Key Features ](#key-features-)
-  - [🚀 Live Preview ](#-live-preview-)
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Usage ](#usage-)
-    - [Deployment](#deployment)
-  - [👥 Author ](#-author-)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [📝 License ](#-license-)
+An ink-and-blade portfolio: one continuous WebGL journey through six scenes, joined by blade cuts.
 
-<!-- PROJECT DESCRIPTION -->
+**Hero** → **01 Work** (the red thread past seven blade-cut planets on 道) → **Katana Archive** → **02 The stack** (torii gates) → **03 About** (the moonlit dojo path) → **04 Contact** (set a lantern adrift).
 
-# 🚜 Portfolio <a name="about-the-project"></a>
-This is a Portfolio project in which it showcases my skills. 
+Live: https://portfolio-mhamad-raad.vercel.app/
 
-## 🛠 Built With <a name="built-with"></a>
+## Run it
 
-### Tech Stack <a name="tech-stack"></a>
-
-<details>
-  <summary>Client</summary>
-  <br>
-  <ul> 
-    <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="Frammer Motion" width="90px"  height="35px" src="https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue" />
-    </a>
-    <br>
-    <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="HTML" width="100px"  height="35px" src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white" />
-    </a>
-    <br>
-    <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="Three.js" width="130px"  height="35px" src="https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white" />
-    </a>
-    <br>
-    <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="SASS" width="145px"  height="35px" src="https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white" />
-    </a>
-    <br>
-    <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="TypeScript" width="140px"  height="35px" src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" />
-    </a>
-    <br>
-    <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="React" width="120px"  height="35px" src="https://img.shields.io/badge/React-0075A8?style=for-the-badge&logo=react&logoColor=61DAFB" />
-    </a>
-    <br>
-    <a href="https://github.com/Mhamad-Raad/Portfolio">
-      <img alt="Vercel" width="120px"  height="35px" src="https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white" />
-    </a>
-    <br>
-    
-  </ul>
-
-</details>
-
-<!-- Features -->
-
-### Key Features <a name="key-features"></a>
-
-_**Contact me:**_
-
-- _You are able to contact me through the websites contact me form in the contact me section._
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Preview <a name="live-demo"></a>
-> _Check out our live site to see our app in action! Click the link below to visit the site and try it out for yourself_
-
-  &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://portfolio-mhamad-raad.vercel.app/">
-    <img alt="live link" width="120px"  height="35px" src="https://img.shields.io/badge/Active-00A95C?style=for-the-badge&logo=netlify&logoColor=white" />
-  </a>
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
-
-## 💻 Getting Started <a name="getting-started"></a>
-
-### Prerequisites
-
-In order to run this project you need:
-```
-  Source code editor
-  Npm
-  Git
-```
-### Setup
-
-Clone this repository to your desired folder:
-
-```
-  git clone https://github.com/Mhamad-Raad/Portfolio.git
-  cd Portfolio
+```bash
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # type-check + production build into dist/
+npm run test:e2e   # with the dev server running; needs Google Chrome (BASE=… to change the URL)
 ```
 
-### Install
+## Editing the content
 
-Install thr project dependencies with:
+Everything visitors read lives in `src/data/`. Change it there, and every section updates, including the counts.
 
-```
-  npm install
-```
+| File | What it holds |
+| --- | --- |
+| `src/data/projects.js` | All projects. `featured: true` makes a planet in 01 Work (in list order); the rest hang in the archive under a `chapter`. Add `about` to give an archive project its own line. Screenshots go in `public/img/<img>.jpg`. |
+| `src/data/stack.js` | The five torii gates and which stack names each technology counts. "React · 11 projects" is computed from `projects.js`. |
+| `src/data/about.js` | Bio, roles (oldest first), recommendations, LinkedIn/GitHub/resume links, EmailJS ids. |
 
-### Usage <a name="usage"></a>
+Scene markup can use `{{featured}}`, `{{archive}}`, `{{total}}`, `{{tech}}`, `{{linkedin}}` … (see `fill()` in `src/data/index.js`).
 
-To run the project, execute the following command:
+## How it is built
 
-```
-  npm start
-```
-### Deployment
+- **Vite + React + TypeScript** for the shell, **three.js 0.147** for every scene.
+- `src/director.ts` decides which scene is on screen. Only one renders at a time, and moving between scenes is a diagonal blade cut. The scenes on either side of the current one stay built (paused). Further ones are released, WebGL context included, and rebuilt on return. Each scene has its own URL hash (`#work`, `#stack`, `#about`, `#contact`), and the back button works.
+- `src/scenes/<id>/` holds one scene each: `markup.html`, `style.css` (scoped to `.sc-<id>`) and `scene.js` exporting `mount(root, api)`.
+- `src/engine/scope.js` runs a scene as if it owned the page. Inside a scene, `document.querySelector` searches the scene, and `document.body` **is the scene root**. Listeners only fire while the scene is active, and `requestAnimationFrame` pauses with it.
+- `src/engine/edge.js`: when a scene is at its first or last position, a new scroll gesture crosses to the neighbouring scene. Momentum from the gesture that reached the edge never crosses.
+- `src/engine/model.js` downloads the samurai (`public/samurai.glb`) once for the hero and the dojo.
+- `src/engine/mail.js` sends the contact letter through EmailJS.
 
-You can deploy this project using:
+## Author
 
-```
-  npm run build
-```
+**Mhamad Raad** · [GitHub](https://github.com/Mhamad-Raad) · [LinkedIn](https://www.linkedin.com/in/mhamad-raad)
 
+## License
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
-## 👥 Author <a name="authors"></a>
-
-👤 **Mhamad Raad**
-
- &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/Mhamad-Raad">
-      <img alt="Github Account" width="130px" height="35px" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
-    </a>
-    <br>
- &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/mhamad-raad">
-      <img alt="LinkedIn Account" height="35px" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
-    </a>
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
-
-- Add a page for sharing content.
-- Add a page to see the projects more clearly.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## 🤝 Contributing <a name="contributing"></a>
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/Mhamad-Raad/Portfolio/issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
-
-## ⭐️ Show your support <a name="support"></a>
-
-If you like this project please give it a ⭐️!
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-Thanks to everyone who their codes/tutorials/3D models has been used in this project.
-without them this would have been harder than it was, so thank you <3.
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-<!-- LICENSE -->
-
-## 📝 License <a name="license"></a>
-
-This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/)
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+MIT, see [LICENSE](LICENSE).
