@@ -224,9 +224,24 @@ function fillCard(k){
   card.querySelector('ul').innerHTML = r.s.map(x => `<li>${esc(x)}</li>`).join('');
 }
 const scr = new T.Vector3();
-let qi = 0, qt = 0;
-function showQuote(){ const r = RECS[qi % RECS.length], p = words.querySelector('p'); p.style.opacity = 0; setTimeout(() => { p.textContent = `“${r.q}”`; words.querySelector('footer').innerHTML = `<b>${esc(r.n)}</b> · ${esc(r.p)}`; p.style.opacity = 1; }, 400); qi++; }
-showQuote();
+let qi = 0, qt = 0, qHold = 0;
+const dots = words.querySelector('.dots');
+dots.innerHTML = RECS.map((r, k) => `<button type="button" aria-label="Words from ${esc(r.n)}" data-k="${k}"></button>`).join('');
+function showQuote(k = qi + 1){
+  qi = (k + RECS.length) % RECS.length; const r = RECS[qi], bq = words.querySelector('blockquote');
+  [...dots.children].forEach((d, j) => d.classList.toggle('on', j === qi));
+  words.querySelector('.count').textContent = `${String(qi + 1).padStart(2, '0')} / ${String(RECS.length).padStart(2, '0')}`;
+  bq.style.opacity = 0;
+  setTimeout(() => { bq.querySelector('p').textContent = r.q; bq.querySelector('footer').innerHTML = `<b>${esc(r.n)}</b><span>${esc(r.p)}</span>`; bq.style.opacity = 1; }, 350);
+}
+qi = -1; showQuote(0);
+words.addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (!b){ if (narrow() && e.target.closest('blockquote')){ showQuote(qi + 1); qt = 0; qHold = 14; } return; }
+  if (b.dataset.k) showQuote(+b.dataset.k); else showQuote(qi + (b.classList.contains('prev') ? -1 : 1));
+  qt = 0; qHold = 14;                        // the visitor took over: wait longer before turning again
+});
+
 
 const clock = new T.Clock();
 route();
@@ -281,7 +296,7 @@ const ld = $('#loader'); samuraiP.finally(() => { ld.style.opacity = 0; setTimeo
   } else card.style.opacity = 0;
   const atEnd = stop === N + 1 && prog > N + .7;
   letter.classList.toggle('on', atEnd); words.classList.toggle('on', atEnd);
-  if (atEnd){ qt += dt; if (qt > 6){ qt = 0; showQuote(); } }
+  if (atEnd){ qt += dt; if (qt > 8 + qHold){ qt = 0; qHold = 0; showQuote(); } }
   composer.render();
 })();
 

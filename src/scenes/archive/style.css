@@ -124,3 +124,11 @@
   .sc-archive #detail{bottom:calc(env(safe-area-inset-bottom,0px) + 70px)}
   .sc-archive #ending{bottom:calc(env(safe-area-inset-bottom,0px) + 70px)}
 }
+
+/* phones and small tablets: the open blade's card sits in the middle of the space above the section nav, the rack still showing around it */
+@media (max-width:820px){
+  .sc-archive #detail{top:calc(50% - 35px - env(safe-area-inset-bottom,0px)/2);bottom:auto;max-height:min(72vh,calc(100% - 120px));
+    transform:translateY(-50%) scale(.96);transition:opacity .35s, transform .45s cubic-bezier(.2,.8,.2,1);
+    box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .sc-archive.open #detail{transform:translateY(-50%)}
+}

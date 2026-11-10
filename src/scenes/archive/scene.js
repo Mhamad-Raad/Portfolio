@@ -221,9 +221,29 @@ addEventListener('touchstart', e => edge.touchstart(e), { passive:true });
 addEventListener('touchend', e => edge.touchend(e, atStart, atEnd), { passive:true });
 addEventListener('wheel', e => { if (edge.wheel(e, atStart, atEnd)) return; scrollT = clamp(scrollT + e.deltaY*.004, 0, maxScroll()); }, { passive:true });
 let drag = null;
-canvas.addEventListener('pointerdown', e => { drag = { y:e.clientY, s:scrollT, moved:false }; });
-addEventListener('pointermove', e => { if (!drag) return; const dy = e.clientY - drag.y; if (Math.abs(dy) > 6) drag.moved = true; scrollT = clamp(drag.s + dy*.012, 0, maxScroll()); });
-addEventListener('pointerup', e => { if (drag && !drag.moved && e.target === canvas){ const h = pick(); if (h >= 0) choose(h); } drag = null; });
+// drag the rack like a phone list: it follows the finger (pull up to see the swords below), a flick glides on.
+// A tap picks the sword under the finger where it touched (touch has no hover, so aim from the tap itself).
+const aimAt = e => { ptr.nx = e.clientX/innerWidth*2 - 1; ptr.ny = -(e.clientY/innerHeight)*2 + 1; };
+canvas.addEventListener('pointerdown', e => { aimAt(e); drag = { y:e.clientY, x:e.clientX, s:scrollT, moved:false, ly:e.clientY, lt:performance.now(), v:0, touch:e.pointerType !== 'mouse' }; });
+addEventListener('pointermove', e => {
+  if (!drag) return;
+  const dy = e.clientY - drag.y, slop = drag.touch ? 12 : 6;
+  if (!drag.moved && Math.hypot(dy, e.clientX - drag.x) > slop) drag.moved = true;
+  if (!drag.moved) return;
+  scrollT = clamp(drag.s - dy*.012, 0, maxScroll());
+  const now = performance.now(), dt = Math.max(1, now - drag.lt);
+  drag.v = lerp(drag.v, -(e.clientY - drag.ly)*.012/dt, .4); drag.ly = e.clientY; drag.lt = now;   // scroll units per ms
+});
+addEventListener('pointerup', e => {
+  if (!drag) return;
+  if (!drag.moved && e.target === canvas){
+    if (phase === 'open') sheathe();                                  // a tap outside the open blade's card puts it back on the rack
+    else { aimAt(e); const h = pick(); if (h >= 0) choose(h); }
+  }
+  else if (drag.moved && performance.now() - drag.lt < 90) scrollT = clamp(scrollT + drag.v*260, 0, maxScroll());   // flick: glide on a little
+  drag = null;
+});
+addEventListener('pointercancel', () => { drag = null; });
 addEventListener('keydown', e => {
   if (['PageDown','PageUp',' '].includes(e.key) && edge.key(e, atStart, atEnd)) return;
   if (phase === 'open' && e.key === 'Escape'){ sheathe(); return; }

@@ -39,9 +39,8 @@
 .sc-lantern .rod.bottom{height:24px;margin:0 -30px;border-radius:12px;background:linear-gradient(#3b2618,#140b07 60%,#2c1b11)}
 .sc-lantern .rod.bottom::before,.sc-lantern .rod.bottom::after{content:"";position:absolute;top:-3px;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#d9d4e2,#6d6880 45%,#2a2833)}
 .sc-lantern .rod.bottom::before{left:-6px}.sc-lantern .rod.bottom::after{right:-6px}
-.sc-lantern .roll{display:grid;grid-template-rows:0fr;transition:grid-template-rows 1.6s cubic-bezier(.6,0,.2,1)}
-.sc-lantern #scroll.open .roll{grid-template-rows:1fr}
-.sc-lantern .roll > div{overflow:hidden;min-height:0}
+/* the paper unrolls by its real height (set from scene.js), so the bottom rod always rides exactly on the paper's edge */
+.sc-lantern .roll{height:0;overflow:hidden;transition:height 1.5s cubic-bezier(.65,0,.35,1)}
 /* silk mounting with ichimonji bands */
 .sc-lantern .silk{padding:22px 22px 26px;background:
   radial-gradient(circle at 25% 25%, rgba(229,36,59,.12) 0 2px, transparent 3px) 0 0/14px 14px,
@@ -117,3 +116,35 @@
   .sc-lantern #title{bottom:calc(env(safe-area-inset-bottom,0px) + 118px)}
   .sc-lantern #title h2{font-size:30px}
 }
+
+/* ---------- the scroll starts rolled up: a paper tag hangs under it; tapping it unrolls the letter ---------- */
+.sc-lantern #unroll{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;left:50%;top:100%;margin-top:-4px;width:150px;padding:16px 12px 14px;
+  display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;color:var(--ink);transform-origin:50% -14px;
+  background:repeating-linear-gradient(93deg, rgba(120,90,60,.04) 0 1px, transparent 1px 7px), var(--paper);
+  box-shadow:0 18px 36px rgba(0,0,0,.55), inset 0 0 0 1px rgba(179,17,42,.25);
+  transform:translateX(-50%) rotate(0deg);animation:lantern-tag 5s ease-in-out infinite;transition:opacity .4s, box-shadow .25s}
+.sc-lantern #unroll::before{content:"";position:absolute;left:50%;top:-14px;width:1px;height:14px;background:#7a1424}
+.sc-lantern #unroll .k{font-family:var(--serif);font-weight:800;font-size:30px;line-height:1;color:var(--crimson)}
+.sc-lantern #unroll .t{font-family:var(--display);font-size:20px;line-height:1;text-transform:uppercase;letter-spacing:.02em}
+.sc-lantern #unroll .s{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:#7a5a52}
+.sc-lantern #unroll:hover{box-shadow:0 18px 36px rgba(0,0,0,.55), inset 0 0 0 2px var(--crimson)}
+.sc-lantern #unroll:focus-visible{outline:2px solid var(--crimson);outline-offset:4px}
+@keyframes lantern-tag{0%,100%{transform:translateX(-50%) rotate(-2deg)}50%{transform:translateX(-50%) rotate(2deg)}}
+.sc-lantern #scroll.open #unroll,.sc-lantern #scroll.away #unroll{opacity:0;pointer-events:none;animation:none}
+.sc-lantern #rollup{all:unset;cursor:pointer;position:absolute;right:0;top:4px;padding:6px 10px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--bone);background:rgba(5,5,7,.7);border:1px solid var(--line);opacity:0;pointer-events:none;transition:opacity .4s, border-color .2s}
+.sc-lantern #rollup:hover{border-color:var(--crimson)}
+.sc-lantern #rollup:focus-visible{outline:2px solid var(--crimson);outline-offset:3px}
+.sc-lantern #scroll.open #rollup{opacity:1;pointer-events:auto;transition-delay:.8s}
+@media (max-width:900px){
+  .sc-lantern #unroll{width:140px;padding:14px 10px 12px}
+}
+/* phones and iPads: the scroll hangs in the middle, rolled up or open */
+@media (max-width:900px){
+  .sc-lantern #scroll{left:var(--gl);right:var(--gr);margin:0 auto}
+}
+/* the scroll keeps one width whether rolled up or open (only its height unrolls) */
+@media (max-width:900px){ .sc-lantern #scroll{width:min(600px,calc(100vw - var(--gl) - var(--gr) - 24px))} }
+/* the bottom rod sits right on the paper: no silk band or margin between them */
+.sc-lantern .silk{padding-bottom:0}
+.sc-lantern .silk > .ichi:last-child{display:none}

@@ -150,6 +150,40 @@ export class Director {
   /** warm the module of a neighbouring scene so the cut does not wait on the network */
   private prefetch(i: number) { const s = this.slots[i]; if (s) s.def.load().catch(() => {}); }
 
+  /**
+   * Build a neighbouring scene in the background (paused, hidden) and draw one hidden frame so its shaders are
+   * compiled: the blade cut then only has to reveal it, instead of building a whole 3D world mid-animation.
+   * Waits until the current scene has settled and the browser is idle.
+   */
+  private prebuildTimer = 0;
+  private prebuild(order: number[]) {
+    clearTimeout(this.prebuildTimer);
+    const idle = (fn: () => void) => ('requestIdleCallback' in window) ? (window as any).requestIdleCallback(fn, { timeout: 2500 }) : setTimeout(fn, 200);
+    const next = () => {
+      const k = order.shift();
+      if (k === undefined) return;
+      const slot = this.slots[k];
+      if (!slot || slot.mounted || this.busy || Math.abs(k - this.index) > KEEP) { next(); return; }
+      idle(() => {
+        if (slot.mounted || this.busy || Math.abs(k - this.index) > KEEP) { next(); return; }
+        const api = slot.api;
+        this.ensure(slot).then(() => {
+          if (api.disposed || api.active) { next(); return; }
+          // a hidden frame: the scene's loop runs once (rendering compiles its shaders), then it sleeps again.
+          // Twice: models that finish loading after mount (the samurai) get their turn on the second pass.
+          const warm = (done: () => void) => {
+            if (api.disposed || this.slots[this.index] === slot) { done(); return; }
+            api.lockUntil = performance.now() + 200;     // hidden: it draws, but ignores scroll, swipe and keys
+            api.active = true; api._wake?.();
+            requestAnimationFrame(() => requestAnimationFrame(() => { if (!api.disposed && this.slots[this.index] !== slot) api.active = false; done(); }));
+          };
+          warm(() => { this.prebuildTimer = window.setTimeout(() => warm(() => { this.prebuildTimer = window.setTimeout(next, 400); }), 1500); });
+        });
+      });
+    };
+    this.prebuildTimer = window.setTimeout(next, 1800);           // let the scene that just arrived play its entrance first
+  }
+
   go(i: number, dir: number, instant = false, fromHistory = false) {
     if (i < 0 || i >= this.slots.length) return;
     if (this.busy) { this.queued = { i, dir, fromHistory }; return; }    // taken as soon as the current cut lands
@@ -191,6 +225,7 @@ export class Director {
       this.busy = false;
       this.slots.forEach((s, k) => { if (Math.abs(k - i) > KEEP) this.release(s); });
       this.prefetch(i + 1); this.prefetch(i - 1);
+      this.prebuild(dir < 0 ? [i - 1, i + 1] : [i + 1, i - 1]);   // the way the visitor is heading first
       const q = this.queued; this.queued = null;
       if (q && q.i !== this.index) this.go(q.i, q.i > this.index ? 1 : -1, false, q.fromHistory);
     };

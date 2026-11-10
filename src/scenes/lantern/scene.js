@@ -34,6 +34,10 @@ function ctex(c){ const t = new T.CanvasTexture(c); t.encoding = T.sRGBEncoding;
 function radialTex(stops){ const [c,x] = mk(128,128); const g = x.createRadialGradient(64,64,0,64,64,64); stops.forEach(([o,col]) => g.addColorStop(o,col)); x.fillStyle = g; x.fillRect(0,0,128,128); return new T.CanvasTexture(c); }
 const add = { transparent:true, depthWrite:false, blending:T.AdditiveBlending };
 const DOT = radialTex([[0,'#fff'],[.3,'rgba(255,255,255,.7)'],[1,'rgba(255,255,255,0)']]);
+// the light around a lantern: a faint, smooth spill that fades out with no edge (no ring, no disc).
+// Each frame it sits just in front of its own lantern (toward the camera), so it never slices through the walls,
+// while nearer lanterns still hide it.
+const HALO = radialTex(Array.from({ length:12 }, (_, k) => { const r = k/11, a = Math.exp(-r*r*5.5)*(1 - r); return [r, `rgba(255,${Math.round(160 - r*110)},${Math.round(100 - r*60)},${(a*.3).toFixed(3)})`]; }));
 const WARM = radialTex([[0,'rgba(255,226,190,.95)'],[.12,'rgba(255,150,90,.55)'],[.4,'rgba(214,52,40,.14)'],[1,'rgba(150,20,30,0)']]);
 function wrapLines(x, text, maxW, max){ const out = []; let line = ''; for (const w of String(text).split(/\s+/)){ if (!w) continue; const t = line ? line + ' ' + w : w; if (x.measureText(t).width > maxW && line){ out.push(line); line = w; if (out.length >= max) break; } else line = t; } if (out.length < max && line) out.push(line); return out; }
 
@@ -58,7 +62,7 @@ const key = new T.DirectionalLight(0xd8d4ff, .45); key.position.set(-3, 6, 10); 
   s.lineTo(320, -6); s.closePath();
   const m = new T.Mesh(new T.ShapeGeometry(s), new T.MeshBasicMaterial({ color:lin(col), fog:false })); m.position.z = z; scene.add(m);
 });
-// water: the moon's broken reflection, plus every lantern's own streak, warm pool and slow ripple rings
+// water: the moon's broken reflection, plus every lantern's own broken streak and warm pool
 const NL = 16;
 const water = new T.Mesh(new T.PlaneGeometry(700, 700), new T.ShaderMaterial({
   uniforms:{ time:{ value:0 }, camPos:{ value:new T.Vector3() }, voidCol:{ value:VOID }, moonCol:{ value:new T.Color(.55, .03, .06) }, wind:{ value:0 }, lp:{ value:Array.from({ length:NL }, () => new T.Vector4(0, 999, 0, 0)) } },
@@ -81,8 +85,8 @@ const water = new T.Mesh(new T.PlaneGeometry(700, 700), new T.ShaderMaterial({
         vec2 d = p - L.xy; float r = length(d);
         float pool = exp(-r*r*1.1);
         float dz = d.y; float streak = exp(-pow(d.x + rip*.08*abs(dz), 2.)*7.)*exp(-dz*dz*(dz > 0. ? .05 : 1.6));
-        float ring = smoothstep(.75, 1., sin(r*7. - time*1.8 + L.w))*exp(-r*.9)*smoothstep(.15, .5, r);
-        col += warm*L.z*(pool*.6 + streak*.45*mix(.35, 1., bands) + ring*.18);
+        pool *= mix(.35, 1., bands)*(.75 + rip*.25);
+        col += warm*L.z*(pool*.5 + streak*.45*mix(.35, 1., bands));
       }
       col = mix(col, voidCol, smoothstep(80., 190., length(vW - camPos)));
       gl_FragColor = vec4(col, 1.);
@@ -170,33 +174,44 @@ function makeLantern(scale, writable){
   const g = new T.Group();
   let ftex = null, fx = null; if (writable){ const [fc, x] = mk(512, 512); paperDraw(x, null, 512, 512); ftex = ctex(fc); fx = x; }
   const front = new T.MeshBasicMaterial({ map:writable ? ftex : SIDE, color:new T.Color(1,1,1) }), side = writable ? new T.MeshBasicMaterial({ map:SIDE, color:new T.Color(1,1,1) }) : front;
-  const inside = writable ? TOPMAT.clone() : TOPMAT;                     // yours lights up on its own; the far ones share one
+  const inside = TOPMAT.clone();                                         // each lantern's inside glows with its own candle
   const box = new T.Mesh(GEO.box, [side, side, inside, WOOD, front, side]); box.position.y = .41; g.add(box);
   const base = new T.Mesh(GEO.base, WOOD); base.position.y = .04; g.add(base);
   // an open top: a thin wooden rim around the opening instead of a solid lid
   [0, 1, 2, 3].forEach(k => { const b = new T.Mesh(GEO.rim, WOOD); const a = k*Math.PI/2; b.position.set(Math.sin(a)*.325, .76, Math.cos(a)*.325); b.rotation.y = a; g.add(b); });
   [[-1,-1],[1,-1],[1,1],[-1,1]].forEach(([a, b]) => { const p = new T.Mesh(GEO.post, WOOD); p.position.set(a*.315, .41, b*.315); g.add(p); });
   const flame = new T.Sprite(new T.SpriteMaterial({ map:FLAME, ...add, opacity:0 })); flame.position.y = .62; flame.scale.set(.09, .16, 1); g.add(flame);
-  const glow = new T.Sprite(new T.SpriteMaterial({ map:WARM, ...add, opacity:0 })); glow.position.y = .45; glow.scale.setScalar(2.2); g.add(glow);
+  const glow = new T.Sprite(new T.SpriteMaterial({ map:HALO, ...add, opacity:0 })); glow.position.y = .41; glow.scale.setScalar(1.7); g.add(glow);
   g.scale.setScalar(scale); scene.add(g);
   return { g, front, side, inside, flame, glow, ftex, fx, ph:Math.random()*7, lit:0, fade:1, vx:0, vz:0 };
 }
+// keep a lantern's halo between it and the camera (local space, so spin and tilt don't matter)
+const _v = new T.Vector3();
+function faceHalo(L, cam){ L.g.updateMatrixWorld(); _v.copy(cam.position); L.g.worldToLocal(_v); _v.y -= .41; _v.normalize().multiplyScalar(.6); L.glow.position.set(_v.x, .41 + _v.y, _v.z); }
 // candle flicker: slow sways plus a fast shiver, each lantern its own
-const flick = (t, ph) => .86 + Math.sin(t*5.3 + ph)*.06 + Math.sin(t*11.9 + ph*3)*.04 + Math.sin(t*27 + ph*2)*.025 + Math.sin(t*1.3 + ph)*.03;
+// kept gentle: a candle behind paper breathes, it does not strobe
+const flick = (t, ph) => .9 + Math.sin(t*1.3 + ph)*.035 + Math.sin(t*2.9 + ph*2)*.025 + Math.sin(t*7.1 + ph*3)*.012;
 // the current: a slow flow field that bends every path differently, plus a wind that comes and goes
 const flow = (x, z, t) => Math.sin(z*.045 + t*.08) *.32 + Math.sin(x*.11 - z*.02 + t*.05)*.18;
 let wind = 0;
 const FAR = LOW ? 8 : 15;
-const far = Array.from({ length:FAR }, (_, i) => {
+// half the width of the view at depth z (the camera sits at z = 10), so lanterns can come and go out of sight
+const CAMZ = 10, view = { fov:42, aspect:innerWidth/innerHeight };
+view.fov = view.aspect < .8 ? 60 : 42;
+const halfW = z => Math.tan(view.fov*Math.PI/360)*(CAMZ - z)*view.aspect;
+const far = Array.from({ length:FAR }, () => {
   const L = makeLantern(1, false); L.lit = 1;
-  L.spawn = (near) => {
+  // every lantern is already burning: it floats in from beyond the edge of the view (or sits somewhere on the lake at the start)
+  L.spawn = (first) => {
     L.scale = rnd(.62, 1.05); L.g.scale.setScalar(L.scale);
-    L.speed = rnd(.16, .55); L.spin = rnd(-.12, .12); L.bright = rnd(.65, 1); L.ph = Math.random()*7; L.ring = Math.random()*7;
-    if (near){ L.g.position.set(rnd(-16, 16), 0, rnd(-18, -5)); L.lit = 0; L.fade = 1; L.born = 0; }          // set adrift just now: a spark that grows
-    else { L.g.position.set(rnd(-24, 24), 0, rnd(-12, -112)); L.lit = 1; L.fade = 1; L.born = 99; }
-    L.g.rotation.y = rnd(-.6, .6); L.dying = false;
+    L.speed = rnd(.16, .5); L.spin = rnd(-.12, .12); L.bright = rnd(.75, 1); L.ph = Math.random()*7; L.ring = Math.random()*7;
+    const z = -(Math.random() < .45 ? rnd(5, 28) : rnd(28, 85));
+    if (first){ L.g.position.set(rnd(-.9, .9)*halfW(z), 0, z); L.drift = rnd(-.25, .25); }
+    else { const s = Math.random() < .5 ? -1 : 1; L.g.position.set(s*(halfW(z) + 1.5), 0, z); L.drift = -s*rnd(.3, .55); }   // carried in from the side
+    L.vx = L.drift; L.vz = -L.speed*.7; L.fade = 1;
+    L.g.rotation.y = rnd(-.6, .6);
   };
-  L.spawn(i % 3 === 0); if (L.born === 0) L.born = 6 + Math.random()*4; return L;
+  L.spawn(true); return L;
 });
 
 // yours, on the shallows, waiting for words
@@ -210,7 +225,7 @@ function writeOn(){ paperDraw(mine.fx, draft, 512, 512); mine.ftex.needsUpdate =
 const cam = new T.PerspectiveCamera(42, 1, .05, 800);
 const composer = new T.EffectComposer(R); composer.addPass(new T.RenderPass(scene, cam));
 composer.addPass(new T.UnrealBloomPass(new T.Vector2(innerWidth*(LOW ? .5 : 1), innerHeight*(LOW ? .5 : 1)), .4, .45, .72));
-function resize(){ R.setSize(innerWidth, innerHeight, false); composer.setSize(innerWidth, innerHeight); cam.aspect = innerWidth/innerHeight; cam.fov = cam.aspect < .8 ? 60 : 42; cam.updateProjectionMatrix(); }
+function resize(){ R.setSize(innerWidth, innerHeight, false); composer.setSize(innerWidth, innerHeight); cam.aspect = innerWidth/innerHeight; cam.fov = cam.aspect < .8 ? 60 : 42; cam.updateProjectionMatrix(); view.fov = cam.fov; view.aspect = cam.aspect; }
 addEventListener('resize', resize); resize();
 const ptrS = { x:0, y:0 }, ptrT = { x:0, y:0 };
 addEventListener('pointermove', e => { ptrT.x = e.clientX/innerWidth*2 - 1; ptrT.y = -(e.clientY/innerHeight)*2 + 1; });
@@ -240,14 +255,14 @@ form.addEventListener('submit', e => {
     .then(() => { p.textContent = 'It reached me. I usually reply within a couple of days.'; })
     .catch(err => { console.error(err); p.innerHTML = `The current turned it back, so it did not reach me. Please try again, or message me on <a href="${DATA.LINKS.linkedin}" target="_blank" rel="noopener">LinkedIn</a>.`; });
   writeOn(); dirty = false; sendT = 0;
-  scroll.classList.remove('open'); scroll.classList.add('away');                      // the scroll rolls itself up
+  setOpen(false); scroll.classList.add('away');                      // the scroll rolls itself up
 });
 $('#again').addEventListener('click', () => {
   form.querySelectorAll('[data-k]').forEach(el => el.value = ''); sync();
   sendT = -1; sent.classList.remove('on'); scroll.classList.remove('away');
   if (mine.g.position.distanceTo(HOME) > .5){ scene.remove(mine.g); mine = makeLantern(1.15, true); }
   mine.g.position.copy(HOME).setY(-.6); mine.g.rotation.set(0, -.35, 0); mine.lit = 0; dirty = true;
-  setTimeout(() => { scroll.classList.add('open'); $('#m').focus(); }, 400);
+  setTimeout(() => setOpen(true), 400);
 });
 form.querySelectorAll('[data-k]').forEach(el => el.addEventListener('input', () => el.classList.remove('miss')));
 // the lake is the last place; scrolling up walks back to the dojo (but not while writing)
@@ -259,7 +274,28 @@ addEventListener('keydown', e => { if (edge.key(e, atStart, never)) e.preventDef
 
 const clock = new T.Clock();
 const ld = $('#loader'); ld.style.opacity = 0; setTimeout(() => ld.remove(), 750);
-setTimeout(() => scroll.classList.add('open'), 500);                                   // the scroll unrolls
+// the scroll starts rolled up so the lake and the lanterns have the stage; the visitor unrolls it to write
+const unroll = $('#unroll'), roll = scroll.querySelector('.roll');
+// animate the roll between 0 and the paper's measured height; once open it lets go (auto) so the paper can still grow
+function setRoll(on){
+  roll.style.height = roll.getBoundingClientRect().height + 'px';
+  void roll.offsetHeight;
+  roll.style.height = (on ? roll.firstElementChild.scrollHeight : 0) + 'px';
+}
+roll.addEventListener('transitionend', e => { if (e.target === roll && e.propertyName === 'height' && scroll.classList.contains('open')) roll.style.height = 'auto'; });
+function setOpen(on, focus = true){
+  if (on !== scroll.classList.contains('open')) setRoll(on);
+  scroll.classList.toggle('open', on); unroll.setAttribute('aria-expanded', on);
+  if (on && focus) setTimeout(() => $('#m').focus({ preventScroll:true }), 900);
+  if (!on && scroll.contains(document.activeElement)) document.activeElement.blur();
+}
+unroll.addEventListener('click', () => setOpen(true));
+$('#rollup').addEventListener('click', () => setOpen(false));
+// a tap on the lake rolls it back up (the draft stays, on the paper and on your lantern)
+let downAt = null;
+canvas.addEventListener('pointerdown', e => { downAt = { x:e.clientX, y:e.clientY }; });
+canvas.addEventListener('pointerup', e => { if (downAt && Math.hypot(e.clientX - downAt.x, e.clientY - downAt.y) < 10 && scroll.classList.contains('open') && sendT < 0) setOpen(false); downAt = null; });
+addEventListener('keydown', e => { if (e.key === 'Escape' && scroll.classList.contains('open')) setOpen(false); });
 let redrawT = 0;
 (function loop(){
   requestAnimationFrame(loop);
@@ -274,16 +310,16 @@ let redrawT = 0;
   // everyone else's lanterns: each on its own path, speed, spin and bob; new ones set adrift nearby, old ones fade into the distance
   far.forEach((L, i) => {
     const p = L.g.position;
-    const tvx = flow(p.x, p.z, t + L.ph)*(.6 + L.speed) + wind*.18, tvz = -L.speed*(.7 + .3*Math.sin(t*.17 + L.ph*2));
+    const tvx = flow(p.x, p.z, t + L.ph)*(.45 + L.speed*.6) + wind*.14 + L.drift, tvz = -L.speed*(.7 + .3*Math.sin(t*.17 + L.ph*2));
     L.vx = lerp(L.vx, tvx, dt*.6); L.vz = lerp(L.vz, tvz, dt*.6);
     p.x += L.vx*dt; p.z += L.vz*dt;
     p.y = Math.sin(t*1.1 + L.ph)*.03 + Math.sin(t*2.3 + L.ph*2)*.012;
     L.g.rotation.y += (L.spin + wind*.04)*dt; L.g.rotation.z = Math.sin(t*.9 + L.ph)*.04 + wind*.03; L.g.rotation.x = Math.sin(t*.7 + L.ph)*.03;
-    L.born += dt; if (L.born < 6) L.lit = Math.min(1, L.born/4);
-    if (p.z < -118 || Math.abs(p.x) > 40) L.dying = true;
-    if (L.dying){ L.fade -= dt*.4; if (L.fade <= 0) L.spawn(Math.random() < .7); }
-    const f = flick(t, L.ph)*L.bright*L.fade, v = .1 + L.lit*.8*f;
-    L.front.color.setScalar(v); L.glow.material.opacity = L.lit*.7*f; L.flame.material.opacity = L.lit*.8*f; L.glow.scale.setScalar(2 + Math.sin(t*3 + L.ph)*.08);
+    // far away the candle slowly burns down into the mist; off the sides it is out of sight, so it can be set adrift again
+    L.fade = clamp((p.z + 122)/34, 0, 1);
+    if (L.fade <= 0 || Math.abs(p.x) > halfW(p.z) + 2.5) L.spawn(false);
+    const f = flick(t, L.ph)*L.bright*L.fade, v = .04 + L.lit*.86*f;
+    L.front.color.setScalar(v); L.inside.color.setScalar(.06 + .94*f); faceHalo(L, cam); L.glow.material.opacity = L.lit*.6*f;                                   // far away the flame is hidden: only the paper and its spill glow
     LP[i + 1].set(p.x, p.z, L.lit*f*.42*Math.min(1, L.scale), L.ring);
   });
   for (let i = far.length + 1; i < NL; i++) LP[i].z = 0;
@@ -305,8 +341,8 @@ let redrawT = 0;
     if (p.z < -118){ scene.remove(g); mine = makeLantern(1.15, true); mine.g.position.copy(HOME).setZ(40); }
   }
   const v = .12 + mine.lit*.95*f;
-  mine.front.color.setScalar(v); mine.side.color.setScalar(v); mine.glow.material.opacity = mine.lit*.85*f;
-  mine.inside.color.setScalar(.15 + mine.lit*.95*f); mine.flame.material.opacity = mine.lit*f; mine.flame.scale.set(.09, .15 + (f - .86)*.5, 1);
+  mine.front.color.setScalar(v); mine.side.color.setScalar(v); faceHalo(mine, cam); mine.glow.material.opacity = mine.lit*mine.lit*.8*f;   // dim until it is really burning
+  mine.inside.color.setScalar(.15 + mine.lit*.95*f); mine.flame.material.opacity = mine.lit*f; mine.flame.scale.set(.09, .15 + (f - .9)*.35, 1);
   light.position.set(g.position.x, g.position.y + .7, g.position.z); light.intensity = mine.lit*2.4*f;
   LP[0].set(g.position.x, g.position.z, mine.lit*.62*f, 0);
   composer.render();

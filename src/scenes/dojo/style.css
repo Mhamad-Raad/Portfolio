@@ -78,18 +78,12 @@
 .sc-dojo #letter form.sealed .hanko{transform:rotate(-8deg) scale(1);opacity:1}
 .sc-dojo #letter .note{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke)}
 .sc-dojo #letter .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-.sc-dojo #words{position:fixed;z-index:6;left:calc(var(--gl) + 22px);bottom:9vh;width:min(420px,calc(100% - 44px));opacity:0;transition:opacity .8s;pointer-events:none}
-.sc-dojo #words.on{opacity:1}
-.sc-dojo #words blockquote{margin:0;padding:0 0 0 16px;border-left:2px solid var(--crimson)}
-.sc-dojo #words p{margin:0;font-size:15px;line-height:1.65;color:var(--bone);text-shadow:0 1px 14px rgba(5,5,7,.95);transition:opacity .5s}
-.sc-dojo #words footer{margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke)}
-.sc-dojo #words footer b{color:var(--crimson);font-weight:600}
 .sc-dojo #loader{position:fixed;inset:0;z-index:20;display:grid;place-items:center;background:var(--void);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);transition:opacity .8s}
 @media (max-width:820px){
   .sc-dojo #card{width:min(300px,calc(100vw - 80px))} .sc-dojo #card .yr b{font-size:54px} .sc-dojo #card h3{font-size:26px}
   .sc-dojo #rail button span{display:none}
   .sc-dojo #letter{right:var(--gr);top:auto;bottom:16px;transform:translateY(40px)} .sc-dojo #letter.on{transform:none}
-  .sc-dojo #letter h2{font-size:38px} .sc-dojo #words{display:none}
+  .sc-dojo #letter h2{font-size:38px}
 }
 @media (prefers-reduced-motion: reduce){ .sc-dojo *{transition-duration:.01s !important;animation:none !important} }
 
@@ -112,4 +106,40 @@
   .sc-dojo #letter{left:var(--gl);right:var(--gr);width:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 70px)}
   .sc-dojo #letter .paper{padding:18px}
   .sc-dojo #letter h2{font-size:34px}
+}
+
+/* ---------- recommendations at the end of the way: one big quote at a time, left of the samurai (top of the screen on phones) ---------- */
+.sc-dojo #words{position:fixed;z-index:6;left:calc(var(--gl) + 34px);top:50%;width:min(500px,calc(50vw - 280px));opacity:0;pointer-events:none;transform:translate(-30px,-50%);transition:opacity .7s, transform .8s cubic-bezier(.2,.8,.2,1)}
+.sc-dojo #words.on{opacity:1;transform:translate(0,-50%);pointer-events:auto}
+.sc-dojo #words .top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px}
+.sc-dojo #words .count{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--smoke);white-space:nowrap}
+.sc-dojo #words blockquote{position:relative;margin:0;padding:52px 0 0;transition:opacity .35s}
+.sc-dojo #words blockquote::before{content:'“';position:absolute;left:-6px;top:-14px;font-family:var(--display);font-size:130px;line-height:1;color:var(--crimson);opacity:.9;pointer-events:none}
+.sc-dojo #words p{position:relative;margin:0;font-family:var(--display);font-size:clamp(28px,2.7vw,42px);line-height:1.08;text-transform:uppercase;letter-spacing:.01em;color:var(--bone);text-shadow:0 2px 24px rgba(5,5,7,.95)}
+.sc-dojo #words footer{margin-top:18px;display:flex;flex-direction:column;gap:4px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke)}
+.sc-dojo #words footer b{font-family:var(--display);font-size:22px;letter-spacing:.02em;font-weight:400;color:var(--crimson)}
+.sc-dojo #words .ctl{display:flex;align-items:center;gap:10px;margin-top:24px}
+.sc-dojo #words .ctl button{all:unset;cursor:pointer;width:34px;height:34px;display:grid;place-items:center;border:1px solid var(--line);color:var(--bone);font-size:14px;transition:all .2s}
+.sc-dojo #words .ctl button:hover{border-color:var(--crimson);background:rgba(229,36,59,.14)}
+.sc-dojo #words .ctl button:focus-visible{outline:2px solid var(--crimson);outline-offset:3px}
+.sc-dojo #words .dots{display:flex;gap:6px;align-items:center}
+.sc-dojo #words .dots button{width:22px;height:22px;border:0;position:relative}
+.sc-dojo #words .dots button::after{content:'';position:absolute;left:4px;right:4px;top:10px;height:2px;background:rgba(243,241,245,.25);transition:background .3s}
+.sc-dojo #words .dots button.on::after{background:var(--crimson)}
+.sc-dojo #words .dots button:hover{background:none}
+
+/* phones: smaller, at the top above the samurai, no big mark, dots only (tap the quote for the next) so his face stays clear */
+@media (max-width:820px){
+  .sc-dojo #words{left:var(--gl);right:var(--gr);width:auto;top:calc(env(safe-area-inset-top,0px) + 16px);transform:translateY(-16px);padding:0 14px 0 18px}
+  .sc-dojo #words.on{transform:none}
+  .sc-dojo #words .top{margin-bottom:10px}
+  .sc-dojo #words .top .eyebrow{font-size:9.5px;letter-spacing:.12em;white-space:nowrap}
+  .sc-dojo #words .count{font-size:9.5px;letter-spacing:.1em}
+  .sc-dojo #words blockquote{padding-top:0}
+  .sc-dojo #words blockquote::before{content:none}
+  .sc-dojo #words p{font-size:19px;line-height:1.1}
+  .sc-dojo #words footer{margin-top:8px;flex-direction:row;align-items:baseline;gap:10px}
+  .sc-dojo #words footer b{font-size:15px}
+  .sc-dojo #words .ctl{margin-top:6px}
+  .sc-dojo #words .ctl .prev,.sc-dojo #words .ctl .next{display:none}
 }
