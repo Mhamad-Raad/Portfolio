@@ -210,7 +210,7 @@ export class Director {
       if (instant) history.replaceState(null, '', i === 0 ? location.pathname + location.search : hash);
       else history.pushState(null, '', i === 0 ? location.pathname + location.search : hash);
     }
-    document.title = i === 0 ? 'Mhamad Raad · Front-end developer' : `${to.def.label} · Mhamad Raad`;
+    document.title = i === 0 ? 'Mhamad Raad · Full-stack developer' : `${to.def.label} · Mhamad Raad`;
 
     const finish = () => {
       if (from) {

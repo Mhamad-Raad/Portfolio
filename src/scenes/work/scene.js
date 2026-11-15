@@ -21,9 +21,9 @@ const lerp = (a,b,t) => a + (b-a)*t, clamp = (x,a,b) => Math.min(b, Math.max(a, 
 const ease = f => f*f*(3-2*f);
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const P = DATA.FEATURED.map(p => ({ a:p.split[0], b:p.split[1] || '', k:p.kind, d:p.about, s:p.stack, live:p.live, code:p.code, img:p.img, sfx:p.sfx }));
+const P = DATA.FEATURED.map(p => ({ a:p.split[0], b:p.split[1] || '', k:p.kind, d:p.about, s:p.stack, live:p.live, code:p.code, img:p.img, sfx:p.sfx, demo:p.demo }));
 const KANJI = ['壱','弐','参','肆','伍','陸','漆','捌','玖','拾','十一','十二'];
-const N = P.length, src = p => 'img/' + p.img + '.jpg';
+const N = P.length, src = p => 'img/' + p.img + '.webp';
 const T_MIN = -1, T_MAX = N;   // -1 intro, 0..N-1 stars, N = the ink map
 const wide = () => innerWidth > 820;
 
@@ -39,7 +39,7 @@ function pageHTML(p, i){
     <div class="pn strip">
       <div class="crop"><span class="lbl">Close-up</span><div class="shot" style="background-image:url(${src(p)})"></div></div>
       <div class="stackp"><span class="lbl">Weapons used</span><div class="chips">${p.s.map(s => '<span>'+esc(s)+'</span>').join('')}</div></div>
-      <div class="links"><span class="lbl">Go</span>${links}</div>
+      <div class="links"><span class="lbl">Go</span>${links}${p.demo ? `<div class="demo"><b>Demo login</b><span><code>${esc(p.demo.user)}</code><i> / </i><code>${esc(p.demo.pass)}</code></span></div>` : ''}</div>
     </div>`;
 }
 let pageI = -1, pageOpen = false;

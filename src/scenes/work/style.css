@@ -98,6 +98,11 @@
 .sc-work .chips{display:flex;flex-wrap:wrap;gap:5px;justify-content:center}
 .sc-work .chips span{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;padding:3px 7px;border:1px solid rgba(139,92,246,.7);color:#e1d6ff;background:rgba(139,92,246,.08)}
 .sc-work .links{display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap;padding:28px 8px 8px;background:repeating-linear-gradient(90deg, rgba(229,36,59,.14) 0 2px, transparent 2px 14px), #000 !important}
+.sc-work .links .demo{flex-basis:100%;order:3;display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:4px;font:11px/1.35 ui-monospace,SFMono-Regular,Menlo,monospace;color:rgba(255,240,225,.82)}
+.sc-work .links .demo b{font-weight:600;color:#e5243b;text-transform:uppercase;letter-spacing:.12em;font-size:10px}
+.sc-work .links .demo span{white-space:nowrap}
+.sc-work .links .demo code{font:inherit;color:#fff;user-select:all}
+.sc-work .links .demo i{font-style:normal}
 .sc-work .btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;padding:9px 11px;border:1px solid var(--line);background:rgba(5,5,7,.6);color:var(--bone);cursor:pointer;transition:background .2s,border-color .2s, box-shadow .2s}
 .sc-work .btn:hover{border-color:var(--crimson);background:rgba(229,36,59,.15)}
 .sc-work .btn.primary{background:var(--crimson);border-color:var(--crimson);box-shadow:0 0 18px rgba(229,36,59,.5)}
@@ -185,6 +190,9 @@
   .sc-work .chips span{font-size:10px;padding:3px 6px}
   .sc-work .links{flex-direction:column;align-items:stretch;justify-content:center;gap:6px;padding:28px 10px 10px}
   .sc-work .links .btn{justify-content:center;padding:9px 10px}
+  .sc-work .links .demo{font-size:10px;flex-basis:auto;width:100%;min-width:0}
+  .sc-work .links .demo span{display:flex;flex-direction:column;align-items:center}
+  .sc-work .links .demo i{display:none}
 }
 /* small phones: the page may grow tall; keep it clear of the header */
 @media (max-width:820px) and (max-height:760px){ .sc-work .pn.hero{aspect-ratio:16/6} }

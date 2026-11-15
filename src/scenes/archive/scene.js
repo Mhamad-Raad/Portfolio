@@ -22,7 +22,7 @@ const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 /* ---------- chapters + projects (in rack order) ---------- */
 const CH = DATA.CHAPTERS;
 const A = DATA.ARCHIVE.map(p => ({ c:p.chapter, t:p.name, s:p.stack, live:p.live, code:p.code, img:p.img, about:p.about }));
-const N = A.length, src = p => 'img/' + p.img + '.jpg';
+const N = A.length, src = p => 'img/' + p.img + '.webp';
 const num = i => pad(i + DATA.FEATURED.length + 1);   // continues after the featured planets
 const wide = () => innerWidth > 820;
 const lineFor = p => p.about || `${CH[p.c].name}. Built with ${p.s.length > 1 ? p.s.slice(0,-1).join(', ') + ' and ' + p.s[p.s.length-1] : p.s[0]}.`;
@@ -138,7 +138,7 @@ const swords = A.map((p, i) => {
   const saya = new T.Mesh(sayaGeo, [lac, lac, lac, lac, m({ map:sayaTex(p, i), roughness:.4, metalness:.1 }), lac]); k.add(saya);
   const pivot = new T.Group(); pivot.position.y = RR; k.add(pivot);
   const steel = new T.Group(); steel.position.y = -RR; pivot.add(steel);
-  const ch = p.c;
+  const ch = CH[p.c].blade ?? p.c;
   const bladeM = ch === 0 ? m({ map:FINISH[0], metalness:0, roughness:.85, emissive:0x000000 })
                           : m({ map:FINISH[ch], metalness:.38, roughness:.28, emissive:EDGE_COL[ch] || 0x000000, emissiveMap:EDGE_COL[ch] ? EDGE : null, emissiveIntensity:EDGE_COL[ch] ? .6 : 0 });
   steel.add(new T.Mesh(bladeGeo, bladeM));

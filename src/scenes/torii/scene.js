@@ -91,7 +91,7 @@ function plaqueTex(t){
   x.textAlign = 'center'; x.textBaseline = 'middle';
   let fs = 62; x.font = `400 ${fs}px Anton, Impact, sans-serif`; while (x.measureText(t.n.toUpperCase()).width > 240 && fs > 30){ fs -= 2; x.font = `400 ${fs}px Anton, Impact, sans-serif`; }
   x.fillStyle = '#f3f1f5'; x.fillText(t.n.toUpperCase(), 160, 118);
-  x.font = '600 18px "JetBrains Mono", monospace'; x.fillStyle = '#e5243b'; x.fillText(`${t.c} PROJECT${t.c === 1 ? '' : 'S'}`, 160, 170);
+  x.font = '600 18px "JetBrains Mono", monospace'; x.fillStyle = '#e5243b'; x.fillText(t.c ? `${t.c} PROJECT${t.c === 1 ? '' : 'S'}` : 'AT WORK', 160, 170);
   return ctex(c);
 }
 const plaqueGeo = new T.PlaneGeometry(2.05, 1.41);
@@ -195,7 +195,7 @@ const ld = $('#loader'); ld.style.opacity = 0; setTimeout(() => ld.remove(), 650
     if (capEl.dataset.k !== best.def.k){ const d = best.def; capEl.dataset.k = d.k;
       capEl.querySelector('.k').textContent = d.k; capEl.querySelector('small').textContent = `Gate ${gates.indexOf(best) + 1} / ${gates.length} · ${d.sub}`;
       capEl.querySelector('h2').textContent = d.name;
-      capEl.querySelector('ul').innerHTML = d.tech.map(x => `<li><i style="width:${Math.round(10 + x.c/MAXC*70)}px"></i>${esc(x.n)} <span>${x.c}</span></li>`).join(''); }
+      capEl.querySelector('ul').innerHTML = d.tech.map(x => `<li><i style="width:${Math.round(10 + Math.max(x.c, 1)/MAXC*70)}px"></i>${esc(x.n)} <span>${x.c || 'work'}</span></li>`).join(''); }
   } else capEl.style.opacity = 0;
   const end = clamp((prog - .9)/.08, 0, 1);
   outro.style.opacity = end; outro.classList.toggle('on', end > .5); head.style.opacity = 1 - clamp(prog*4, 0, 1)*.7;

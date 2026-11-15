@@ -3,15 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <title>Mhamad Raad · Front-end developer</title>
-  <meta name="description" content="Mhamad Raad, front-end developer. React, TypeScript and Three.js: interfaces drawn with one clean cut.">
+  <title>Mhamad Raad · Full-stack developer</title>
+  <meta name="description" content="Mhamad Raad, full-stack developer. React, TypeScript, NestJS, Django and Flutter: complete products drawn with one clean cut.">
   <meta name="theme-color" content="#050507">
-  <link rel="icon" href="/Logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;600;800&family=Shippori+Mincho:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;600;800&display=swap">
+  <!-- The serif is only used in 04 Contact: loaded without holding up the first paint (360 kB of CSS on its own). -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&display=swap" media="print" onload="this.media='all'">
 </head>
 <body>
+  <!-- Shown at once while the first scene's code and 3D library download; the hero draws the same paper and loader, then this goes. -->
+  <div id="boot" aria-hidden="true" style="position:fixed;inset:0;z-index:50;background:#eee9ee;transition:opacity .35s ease;display:none">
+    <div style="position:absolute;left:16px;bottom:26px;display:flex;gap:14px;align-items:baseline;color:#17151d">
+      <b style="font:400 34px Anton,Impact,sans-serif;color:#e5243b">0%</b>
+      <span style="font:500 11px 'JetBrains Mono',ui-monospace,monospace;letter-spacing:.18em;text-transform:uppercase">Grinding the ink</span>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var boot = document.getElementById('boot');
+      if (!/^(#|#top)?$/.test(location.hash)) { boot.remove(); return; }
+      boot.style.display = 'block';
+      var done = false;
+      function finish() { if (done) return; done = true; obs.disconnect(); boot.style.opacity = '0'; setTimeout(function () { boot.remove(); }, 400); }
+      var obs = new MutationObserver(function () { if (document.querySelector('.sc-hero canvas, [class*="sc-"] canvas')) setTimeout(finish, 250); });
+      obs.observe(document.documentElement, { childList: true, subtree: true });
+      setTimeout(finish, 15000);
+    })();
+  </script>
   <div id="app"></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
